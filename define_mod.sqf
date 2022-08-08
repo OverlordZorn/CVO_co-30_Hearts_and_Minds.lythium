@@ -41,28 +41,26 @@ BIS_respSpecLists = true;                // Show list of available units and loc
         ];
 */
 private _weapons = [
-    "rhs_weap_ak105",
+/*    "rhs_weap_ak105",
     "rhs_weap_ak104",
     "rhs_weap_ak103",
-    "rhs_weap_ak74m_fullplum_gp25",
+   "rhs_weap_ak74m_fullplum_gp25",
     "rhs_weap_ak74m_gp25",
     "rhs_weap_ak74m_fullplum",
     "rhs_weap_ak74m_desert",
     "rhs_weap_ak74m_camo",
     "rhs_weap_ak74m"
-];
+*/];
 
 private _attachments = [
-    "tsp_meleeweapon_ak_pointer",
-    "rhs_acc_pgo7v2",
+/*    "tsp_meleeweapon_ak_pointer",
+   "rhs_acc_pgo7v2",
     "rhs_acc_dtk3",
-    "rhs_acc_2dpzenit_ris",
-    "rhs_acc_pkas",
-    "rhs_acc_pso1m2"
-];
+    "rhs_acc_2dpzenit_ris"
+*/];
 
 private _magazines = [
-    "rhs_mag_9x19_17",
+/*    "rhs_mag_9x19_17",
     "rhs_100Rnd_762x54mmR",
     "rhs_100Rnd_762x54mmR_green",
     "rhs_10Rnd_762x54mmR_7N1",
@@ -77,10 +75,10 @@ private _magazines = [
     "rhs_rpg7_PG7V_mag",
     "rhs_rpg7_OG7V_mag",
     "rhs_mag_9k38_rocket"
-];
+*/];
 
 private _items = [
-    "ACE_wirecutter",
+/*    "ACE_wirecutter",
     "ACE_UAVBattery",
     "ACE_SpraypaintRed",
     "ACE_SpareBarrel_Item",
@@ -97,12 +95,12 @@ private _items = [
     "murshun_cigs_cigpack",
     "murshun_cigs_matches",
     "acex_intelitems_notepad"
-];
+*/];
 
 private _radio = ["tf_anprc152", "ACRE_BF888S"] select (isClass(configFile >> "cfgPatches" >> "acre_main"));
 
 private _itemsMedical = [
-    "ACE_bodyBag",
+/*    "ACE_bodyBag",
     "ACE_surgicalKit",
     "ACE_tourniquet",
     "ACE_splint",
@@ -115,7 +113,7 @@ private _itemsMedical = [
     "ACE_packingBandage",
     "ACE_elasticBandage",
     "ACE_fieldDressing"
-];
+*/];
 
 private _uniforms = [
     "UK3CB_TKP_B_U_CIB_CombatUniform_BLK",
@@ -134,7 +132,7 @@ private _uniformsCBRN = ["U_C_CBRN_Suit_01_Blue_F", "U_B_CBRN_Suit_01_White_F"];
 private _uniformsSniper = [];
 
 private _vests = [
-    "UK3CB_TKP_B_V_TacVest_Tan",
+/*    "UK3CB_TKP_B_V_TacVest_Tan",
     "UK3CB_TKP_B_V_TacVest_Blk",
     "UK3CB_TKP_B_V_GA_HEAVY_BLK",
     "UK3CB_TKP_B_V_GA_LITE_BLK",
@@ -149,10 +147,10 @@ private _vests = [
     "UK3CB_TKP_O_V_6b23_medic_BLK",
     "UK3CB_TKP_O_V_6b23_ML_6sh92_radio_BLK",
     "UK3CB_TKP_O_V_6b23_ml_BLK"
-];
+*/];
 
 private _helmets = [
-    "UK3CB_TKP_O_H_Beret",
+/*    "UK3CB_TKP_O_H_Beret",
     "UK3CB_TKP_I_H_Beret",
     "UK3CB_TKP_B_H_Beret",
     "UK3CB_TKP_O_H_Patrolcap_Off_Blk",
@@ -163,10 +161,10 @@ private _helmets = [
     "UK3CB_TKA_O_H_6b7_1m_ess_bala1_TAN",
     "UK3CB_TKA_O_H_6b7_1m_bala2_DES",
     "rhs_cossack_visor_cap"
-];
+/*/];
 
 private _hoods = [
-    "rhsusf_shemagh_od",
+/*    "rhsusf_shemagh_od",
     "rhsusf_shemagh2_od",
     "rhsusf_shemagh_tan",
     "rhsusf_shemagh2_tan",
@@ -180,28 +178,27 @@ private _hoods = [
     "UK3CB_G_Balaclava2_DES",
     "G_Balaclava_blk",
     "G_Aviator"
-];
+/*/];
 
 private _hoodCBRN = ["G_AirPurifyingRespirator_01_F"];
 private _laserdesignators = [];
 private _night_visions = [];
-private _weapons_machineGunner = ["rhs_weap_rpk74m","rhs_weap_pkm"];
-private _weapons_sniper = ["rhs_weap_svds","rhs_weap_svdp"];
+private _weapons_machineGunner = [];
+private _weapons_sniper = [];
 private _bipods = [];
 
 private _pistols = [
-    "rhs_weap_pya",
-    "rhs_weap_pb_6p9",
+/*    "rhs_weap_pya",
     "tsp_meleeWeapon_okc",
     "tsp_meleeWeapon_mpl50_black",
     "tsp_meleeWeapon_ak"
-];
+/*/];
 
-private _launcher_AT = ["rhs_weap_rpg7"];
-private _launcher_AA = ["rhs_weap_igla"];
+private _launcher_AT = [/*"rhs_weap_rpg7"/*/];
+private _launcher_AA = [/*"rhs_weap_igla"/*/];
 
 private _backpacks = [
-    "UK3CB_TKA_O_B_ENG_Khk",
+/*    "UK3CB_TKA_O_B_ENG_Khk",
     "UK3CB_TKA_O_B_RIF_Khk",
     "UK3CB_TKP_I_B_ASS_MED_TAN",
     "UK3CB_TKP_O_B_ASS_MED_BLK",
@@ -214,20 +211,20 @@ private _backpacks = [
     "rhs_rpg_2",
     "rhs_rpg_6b2",
     "rhs_rpg_6b3"
-];
+/*/];
 
 private _backpacks_big = [
-    "rhs_tortila_grey",
+/*    "rhs_tortila_grey",
     "rhs_tortila_black"
-];
+/*/];
 
 private _backpacksUAV = [
-    "B_UAV_01_backpack_F",
+/*    "B_UAV_01_backpack_F",
     "B_UAV_06_backpack_F",
     "B_UGV_02_Demining_backpack_F",
     "B_UGV_02_Science_backpack_F"
-];
-private _backpackCBRN = ["B_SCBA_01_F"];
+/*/];
+private _backpackCBRN = [/*"B_SCBA_01_F"/*/];
 
 btc_custom_arsenal = [_weapons, _attachments, _magazines, _items, _radio, _itemsMedical, _uniforms, _uniformsCBRN, _vests, _helmets, _hoods, _hoodCBRN, _weapons_machineGunner, _weapons_sniper, _pistols, _launcher_AT, _launcher_AA, _backpacks, _backpacks_big, _backpacksUAV,_backpackCBRN];
 btc_arsenal_loadout = [_uniforms, _uniformsCBRN, _uniformsSniper, _vests, _helmets, _hoods, [_hoodCBRN, _hoodCBRN, _hoodCBRN, _hoodCBRN], _laserdesignators, _night_visions, _weapons, _weapons_sniper, _weapons_machineGunner, _bipods, _pistols, _launcher_AT, _launcher_AA, _backpacks, _backpacks_big, [_backpackCBRN, _backpackCBRN, _backpackCBRN, _backpackCBRN], [_radio, _radio, _radio, _radio]];
