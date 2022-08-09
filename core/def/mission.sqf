@@ -101,6 +101,9 @@ btc_p_city_free_trigger_condition = if (_p_city_free_trigger isEqualTo 0) then {
 btc_p_flag = "btc_p_flag" call BIS_fnc_getParamValue;
 btc_p_debug = "btc_p_debug" call BIS_fnc_getParamValue;
 
+// Custom CVO Parameters
+cvo_p_custom_construction_array = "cvo_p_custom_construction_array" call BIS_fnc_getParamValue;
+
 switch (btc_p_debug) do {
     case 0 : {
         btc_debug_log = false;
@@ -520,6 +523,8 @@ btc_construction_array =
         ] + (_allClassSorted select {_x isKindOf "FlexibleTank_base_F"})
     ]
 ];
+
+if (cvo_p_custom_construction_array == 1) then{[compileScript ["cvo\cvo_construction_array_custom.sqf"]] call CBA_fnc_directCall;};
 
 (btc_construction_array select 1) params [
     "_cFortifications", "_cStatics", "_cAmmobox",

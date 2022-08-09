@@ -437,4 +437,16 @@ class Params {
         texts[]={$STR_DISABLED,$STR_ENABLED, $STR_BTC_HAM_PARAM_OTHER_DEBUG_LOGONLY}; // texts[]={"Off","On","Log only"};
         default = 0;
     };
+    class cvo_p_title { // << CVO options >>
+        title = "CVO Customs";
+        values[]={0};
+        texts[]={""};
+        default = 0;
+    };
+    class cvo_p_custom_construction_array { // CVO - Custom Construction Array
+        title = "Custom Construction Array";
+        values[]={0,1};
+        texts[]={"Off","On"};
+        default = 1;
+    };
 };
