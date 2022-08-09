@@ -37,3 +37,8 @@ _cvo_fullAceHeal = [
 	["ACE_MainActions"],					// Parent path of the new action <Array>
 	_cvo_fullAceHeal
 ] call ace_interact_menu_fnc_addActionToClass;		// Alternative: ace_interact_menu_fnc_addActionToObject 
+
+
+// Init CVO Foritfy Preset
+if (isServer) then {[compileScript ["cvo\cvo_fortify_preset.sqf"]] call CBA_fnc_directCall;};
+
