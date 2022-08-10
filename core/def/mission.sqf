@@ -102,10 +102,11 @@ btc_p_flag = "btc_p_flag" call BIS_fnc_getParamValue;
 btc_p_debug = "btc_p_debug" call BIS_fnc_getParamValue;
 
 //<< Custom CVO Parameters >>
-cvo_p_custom_construction_array = "cvo_p_custom_construction_array" call BIS_fnc_getParamValue;
-cvo_p_custom_ace_arsenal = "cvo_p_custom_ace_arsenal" call BIS_fnc_getParamValue;
-cvo_p_fortify = "cvo_p_fortify" call BIS_fnc_getParamValue;
-cvo_fullHeal = "cvo_fullHeal" call BIS_fnc_getParamValue;
+cvo_fullHeal = "cvo_fullHeal" call BIS_fnc_getParamValue isEqualTo 1;
+cvo_p_fortify = "cvo_p_fortify" call BIS_fnc_getParamValue isEqualTo 1;
+cvo_p_custom_construction_array = "cvo_p_custom_construction_array" call BIS_fnc_getParamValue isEqualTo 1;
+cvo_p_custom_ace_arsenal = "cvo_p_custom_ace_arsenal" call BIS_fnc_getParamValue isEqualTo 1;
+
 
 switch (btc_p_debug) do {
     case 0 : {
@@ -527,7 +528,7 @@ btc_construction_array =
     ]
 ];
 
-if (cvo_p_custom_construction_array == 1) then{[compileScript ["cvo\cvo_construction_array_custom.sqf"]] call CBA_fnc_directCall;};
+if (cvo_p_custom_construction_array) then{[compileScript ["cvo\cvo_construction.sqf"]] call CBA_fnc_directCall;};
 
 (btc_construction_array select 1) params [
     "_cFortifications", "_cStatics", "_cAmmobox",

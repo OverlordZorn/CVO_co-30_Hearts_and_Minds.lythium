@@ -17,7 +17,7 @@ private _medicalTab = [
 // Defining Custom Arsenal Pools
 //// Basic Kit, for everyone
 
-_CVO_A_Basic = []
+_CVO_A_Basic = [] + _CVO_A_Basic_Medical;
 
 _CVO_A_Basic_Medical = [
 	//"ACE_quikclot", 
@@ -90,10 +90,10 @@ _CVO_A_CBRN = [];
  * Public: Yes
 */
 
-_cvo_addToArsenal = [];
+_cvo_addToArsenal = _CVO_A_Basic
 
-[cvo_test_crate, _cvo_addToArsenal, false] call ace_arsenal_fnc_addVirtualItems
+[cvo_test_crate, _cvo_addToArsenal, false] call ace_arsenal_fnc_addVirtualItems;
 
 
 
-// if (cvo_p_custom_ace_arsenal == 1) exitWith {};
+// if (cvo_p_custom_ace_arsenal) exitWith {};
