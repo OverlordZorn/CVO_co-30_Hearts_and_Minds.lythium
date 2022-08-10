@@ -8,7 +8,7 @@ class EditorData
 	toggles=577;
 	class ItemIDProvider
 	{
-		nextID=1447;
+		nextID=1448;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=224;
+		nextID=256;
 	};
 	class Camera
 	{
-		pos[]={12184.446,352.72003,17396.457};
-		dir[]={-0.60449922,-0.398471,-0.68979061};
-		up[]={-0.26262709,0.91717923,-0.29968244};
-		aside[]={-0.75207663,-3.4371624e-008,0.65908444};
+		pos[]={12175.784,349.34747,17380.74};
+		dir[]={-0.74577463,-0.47400501,0.4681378};
+		up[]={-0.40146947,0.88051736,0.25201076};
+		aside[]={0.53165847,-2.0452717e-008,0.84696591};
 	};
 };
 binarizationWanted=0;
@@ -13904,7 +13904,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={12235.383,342.7746,17305.244};
-						angles[]={-0,4.68963,0};
+						angles[]={0,4.68963,0};
 					};
 					side="Empty";
 					flags=4;
@@ -14226,7 +14226,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={12223.772,344.67151,17354.678};
-								angles[]={-0,2.35309,0};
+								angles[]={0,2.35309,0};
 							};
 							side="Empty";
 							flags=4;
@@ -17968,13 +17968,14 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={12184.123,345.83908,17359.807};
-								angles[]={0,2.4817734,0};
+								position[]={12184.123,345.83945,17359.807};
+								angles[]={0,2.481771,0};
 							};
 							side="West";
 							flags=5;
 							class Attributes
 							{
+								init="this setVariable [""Medic"",true];";
 								description="Medic@1-1 Alpha";
 								isPlayable=1;
 								class Inventory
@@ -18080,6 +18081,7 @@ class Mission
 							};
 							id=760;
 							type="B_medic_F";
+							atlOffset=0.00036621094;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -18128,13 +18130,14 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={12185.233,345.83908,17360.684};
-								angles[]={0,2.4228506,0};
+								position[]={12185.233,345.83945,17360.684};
+								angles[]={0,2.4228487,0};
 							};
 							side="West";
 							flags=4;
 							class Attributes
 							{
+								init="this setVariable [""AT"",true]; ";
 								description="AT@1-1 Alpha";
 								isPlayable=1;
 								class Inventory
@@ -18240,6 +18243,7 @@ class Mission
 							};
 							id=761;
 							type="B_soldier_AT_F";
+							atlOffset=0.00036621094;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -18288,13 +18292,14 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={12186.343,345.83908,17361.559};
-								angles[]={0,2.4228506,0};
+								position[]={12186.343,345.83945,17361.559};
+								angles[]={0,2.4228487,0};
 							};
 							side="West";
 							flags=4;
 							class Attributes
 							{
+								init="this setVariable [""MG"",true];";
 								description="AR@1-1 Alpha";
 								isPlayable=1;
 								class Inventory
@@ -18400,6 +18405,7 @@ class Mission
 							};
 							id=762;
 							type="B_soldier_AR_F";
+							atlOffset=0.00036621094;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -18448,13 +18454,14 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={12179.303,345.83908,17355.189};
-								angles[]={0,2.4228506,0};
+								position[]={12179.303,345.83945,17355.189};
+								angles[]={0,2.4228487,0};
 							};
 							side="West";
 							flags=5;
 							class Attributes
 							{
+								init="this setVariable [""Marksman"",true]; " \n "";
 								description="Marksman@1-1 Alpha";
 								isPlayable=1;
 								class Inventory
@@ -18560,6 +18567,7 @@ class Mission
 							};
 							id=763;
 							type="B_Sharpshooter_F";
+							atlOffset=0.00036621094;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -18768,13 +18776,14 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={12180.412,345.83908,17356.066};
-								angles[]={0,2.4228506,0};
+								position[]={12180.412,345.83945,17356.066};
+								angles[]={0,2.4228487,0};
 							};
 							side="West";
 							flags=4;
 							class Attributes
 							{
+								init="this setVariable [""AA"",true];";
 								description="AA@1-1 Alpha";
 								isPlayable=1;
 								class Inventory
@@ -18880,6 +18889,7 @@ class Mission
 							};
 							id=765;
 							type="B_soldier_AA_F";
+							atlOffset=0.00036621094;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -18964,15 +18974,15 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={12172.705,341.95145,17389.359};
-								angles[]={-0,5.514534,0};
+								position[]={12172.705,341.95145,17389.361};
+								angles[]={0,5.5145421,0};
 							};
 							side="West";
 							flags=6;
 							class Attributes
 							{
 								skill=0.60000002;
-								init="this setVariable [""side_mission"",true];" \n "this setVariable [""officer"",true];";
+								init="this setVariable [""side_mission"",true];" \n "this setVariable [""Officer"",true];";
 								description="Officer@1-0 COY HQ";
 								isPlayer=1;
 								isPlayable=1;
@@ -19289,13 +19299,14 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={12183.62,342.54498,17306.836};
+								position[]={12183.62,342.54544,17306.836};
 								angles[]={0,1.0388548,0};
 							};
 							side="West";
 							flags=4;
 							class Attributes
 							{
+								init="this setVariable [""EW"",true];";
 								description="Electronical Warfare@1-0 COY HQ";
 								isPlayable=1;
 								class Inventory
@@ -19401,6 +19412,7 @@ class Mission
 							};
 							id=757;
 							type="B_soldier_UAV_F";
+							atlOffset=0.00045776367;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -20504,13 +20516,14 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={12196.9,345.83908,17362.494};
+								position[]={12196.9,345.83945,17362.494};
 								angles[]={0,5.6487579,0};
 							};
 							side="West";
 							flags=5;
 							class Attributes
 							{
+								init="this setVariable [""Medic"",true]; ";
 								description="Medic@1-2 Bravo";
 								isPlayable=1;
 								class Inventory
@@ -20616,6 +20629,7 @@ class Mission
 							};
 							id=768;
 							type="B_medic_F";
+							atlOffset=0.00036621094;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -20664,13 +20678,14 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={12195.9,345.83908,17361.494};
+								position[]={12195.9,345.83945,17361.494};
 								angles[]={0,5.4473467,0};
 							};
 							side="West";
 							flags=4;
 							class Attributes
 							{
+								init="this setVariable [""MG"",true]; " \n "";
 								description="AR@1-2 Bravo";
 								isPlayable=1;
 								class Inventory
@@ -20776,6 +20791,7 @@ class Mission
 							};
 							id=769;
 							type="B_soldier_AR_F";
+							atlOffset=0.00036621094;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -20824,13 +20840,14 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={12194.9,345.83908,17360.494};
+								position[]={12194.9,345.83945,17360.494};
 								angles[]={0,5.4473467,0};
 							};
 							side="West";
 							flags=4;
 							class Attributes
 							{
+								init="this setVariable [""AT"",true];";
 								description="AT@1-2 Bravo";
 								isPlayable=1;
 								class Inventory
@@ -20936,6 +20953,7 @@ class Mission
 							};
 							id=770;
 							type="B_soldier_AT_F";
+							atlOffset=0.00036621094;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -20984,13 +21002,14 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={12202.004,345.83908,17367.76};
+								position[]={12202.004,345.83945,17367.762};
 								angles[]={0,5.4473467,0};
 							};
 							side="West";
 							flags=5;
 							class Attributes
 							{
+								init="this setVariable [""Marksman"",true];";
 								description="Marksman@1-2 Bravo";
 								isPlayable=1;
 								class Inventory
@@ -21096,6 +21115,7 @@ class Mission
 							};
 							id=771;
 							type="B_Sharpshooter_F";
+							atlOffset=0.00036621094;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -21304,13 +21324,14 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={12200.004,345.83908,17365.76};
+								position[]={12200.004,345.83945,17365.762};
 								angles[]={0,5.4473467,0};
 							};
 							side="West";
 							flags=4;
 							class Attributes
 							{
+								init="this setVariable [""AA"",true];";
 								description="AA@1-2 Bravo";
 								isPlayable=1;
 								class Inventory
@@ -21416,6 +21437,7 @@ class Mission
 							};
 							id=773;
 							type="B_soldier_AA_F";
+							atlOffset=0.00036621094;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -21670,7 +21692,7 @@ class Mission
 				};
 			};
 			id=270;
-			atlOffset=0.37188721;
+			atlOffset=0.76687622;
 		};
 		class Item3
 		{
@@ -25313,7 +25335,6 @@ class Mission
 		{
 			dataType="Layer";
 			name="Base Armory";
-			state=1;
 			class Entities
 			{
 				items=9;

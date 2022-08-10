@@ -41,10 +41,10 @@ BIS_respSpecLists = true;                // Show list of available units and loc
         ];
 */
 private _weapons = [
-/*    "rhs_weap_ak105",
+/*  "rhs_weap_ak105",
     "rhs_weap_ak104",
     "rhs_weap_ak103",
-   "rhs_weap_ak74m_fullplum_gp25",
+    "rhs_weap_ak74m_fullplum_gp25",
     "rhs_weap_ak74m_gp25",
     "rhs_weap_ak74m_fullplum",
     "rhs_weap_ak74m_desert",
@@ -168,8 +168,7 @@ private _hoods = [
     "rhsusf_shemagh2_od",
     "rhsusf_shemagh_tan",
     "rhsusf_shemagh2_tan",
-    "G_Spectacles_Tinted",
-    "G_RegulatorMask_F",
+  
     "rhs_scarf",
     "G_Bandanna_blk",
     "G_Bandanna_oli",
@@ -219,10 +218,7 @@ private _backpacks_big = [
 /*/];
 
 private _backpacksUAV = [
-/*    "B_UAV_01_backpack_F",
-    "B_UAV_06_backpack_F",
-    "B_UGV_02_Demining_backpack_F",
-    "B_UGV_02_Science_backpack_F"
+/*    
 /*/];
 private _backpackCBRN = [/*"B_SCBA_01_F"/*/];
 

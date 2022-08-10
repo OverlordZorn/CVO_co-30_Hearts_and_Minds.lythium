@@ -453,7 +453,7 @@ class Params {
         title = "Overwrite Arsenal, Custom Ace Arsenal";
         values[]={0,1};
         texts[]={"Off","On"};
-        default = 0;
+        default = 1;
     };
         class cvo_p_fortify { // CVO - Add Fortify
         title = "Enable ACE Fortify";
