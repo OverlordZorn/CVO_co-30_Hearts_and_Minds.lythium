@@ -101,8 +101,11 @@ btc_p_city_free_trigger_condition = if (_p_city_free_trigger isEqualTo 0) then {
 btc_p_flag = "btc_p_flag" call BIS_fnc_getParamValue;
 btc_p_debug = "btc_p_debug" call BIS_fnc_getParamValue;
 
-// Custom CVO Parameters
+//<< Custom CVO Parameters >>
 cvo_p_custom_construction_array = "cvo_p_custom_construction_array" call BIS_fnc_getParamValue;
+cvo_p_custom_ace_arsenal = "cvo_p_custom_ace_arsenal" call BIS_fnc_getParamValue;
+cvo_p_fortify = "cvo_p_fortify" call BIS_fnc_getParamValue;
+cvo_fullHeal = "cvo_fullHeal" call BIS_fnc_getParamValue;
 
 switch (btc_p_debug) do {
     case 0 : {
@@ -686,7 +689,9 @@ btc_flag_textures = [
     "\A3\Data_F\Flags\flag_green_CO.paa",
     "\A3\Data_F\Flags\flag_blue_CO.paa",
     '#(argb,8,8,3)color(0.9,0.9,0,1)',
-    "\A3\Data_F\Flags\flag_NATO_CO.paa"
+    "\A3\Data_F\Flags\flag_NATO_CO.paa",
+    "cvo\img\voron_flag_olive.paa",
+    "cvo\img\voron_flag_red.paa"
 ];
 
 //Respawn

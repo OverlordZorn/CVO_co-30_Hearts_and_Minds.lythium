@@ -37,7 +37,10 @@ btc_construction_array = [
 		"rhs_7ya37_1_single",	// AK74M + Ammo
 		"ACE_medicalSupplyCrate_advanced",
 		"ACE_fastropingSupplyCrate",
-		"ACE_Box_Chemlights"],
+		"ACE_Box_Chemlights",
+		"Land_WoodenBox_F"
+		],
+		
 
 		// Containers
 		["Land_Cargo20_military_green_F",

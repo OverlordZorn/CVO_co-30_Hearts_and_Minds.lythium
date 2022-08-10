@@ -33,13 +33,13 @@ class Params {
         title = __EVAL(format ["      %1", localize "STR_BTC_HAM_PARAM_DB_ARESTART"]);
         values[]={0,1,2,3,4};
         texts[]={$STR_DISABLED,$STR_DISP_MP_DS_RESTART,$STR_BTC_HAM_PARAM_DB_SHUTDOWN,$STR_BTC_HAM_PARAM_DB_SAVERESTART, $STR_BTC_HAM_PARAM_DB_SAVESHUTDOWN}; // texts[]={"Off","Restart", "Shutdown","Save and restart", "Save and shutdown"};
-        default = 3;
+        default = 0;
     };
     class btc_p_db_autoRestartTime { // Time before auto restart/shutdown server
         title = __EVAL(format ["      %1", localize "STR_BTC_HAM_PARAM_DB_ARESTARTTIME"]);
         values[]={1,2,3,4,5,6,7,8,9,10,11,12,24,48,72};
         texts[]={"1h","2h","3h","4h","5h","6h","7h","8h","9h","10h","11h","12h","24h","48h","72h"};
-        default = 12;
+        default = 24;
     };
     class btc_p_respawn_title { // << Respawn options >>
         title = $STR_BTC_HAM_RESP_TITLE;
@@ -438,13 +438,31 @@ class Params {
         default = 0;
     };
     class cvo_p_title { // << CVO options >>
-        title = "CVO Customs";
+        title = "<< CVO Customs >>";
         values[]={0};
         texts[]={""};
         default = 0;
     };
     class cvo_p_custom_construction_array { // CVO - Custom Construction Array
         title = "Custom Construction Array";
+        values[]={0,1};
+        texts[]={"Off","On"};
+        default = 1;
+    };
+        class cvo_p_custom_ace_arsenal { // CVO - Custom Ace Arsenal
+        title = "Overwrite Arsenal, Custom Ace Arsenal";
+        values[]={0,1};
+        texts[]={"Off","On"};
+        default = 0;
+    };
+        class cvo_p_fortify { // CVO - Add Fortify
+        title = "Enable ACE Fortify";
+        values[]={0,1};
+        texts[]={"Off","On"};
+        default = 1;
+    };
+        class cvo_fullHeal { // CVO - Add FullHeal
+        title = "Enable FullHeal";
         values[]={0,1};
         texts[]={"Off","On"};
         default = 1;
