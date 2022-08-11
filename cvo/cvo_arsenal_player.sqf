@@ -41,6 +41,10 @@ if (player getVariable ["CBRN",false]) then {
 	systemChat "CBRN detected";
 	_individualKit append CVO_A_CBRN;
 };
+if (player getVariable ["Engineer",false]) then {
+	systemChat "Engineer detected";
+	_individualKit append CVO_A_Engineer;
+};
 if (player getVariable ["Marksman",false]) then {
 	systemChat "Marksman detected";
 	_individualKit append CVO_A_Marksman;
