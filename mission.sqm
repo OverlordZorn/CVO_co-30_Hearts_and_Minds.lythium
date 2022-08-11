@@ -8,7 +8,7 @@ class EditorData
 	toggles=577;
 	class ItemIDProvider
 	{
-		nextID=1464;
+		nextID=1465;
 	};
 	class MarkerIDProvider
 	{
@@ -16,18 +16,18 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=352;
+		nextID=400;
 	};
 	class Camera
 	{
-		pos[]={12252.946,397.61472,17255.086};
-		dir[]={-0.76814723,-0.45362902,0.45186117};
-		up[]={-0.39099777,0.89119035,0.23000406};
-		aside[]={0.50703138,1.9557774e-008,0.86193371};
+		pos[]={12268.558,517.81824,17101.408};
+		dir[]={-0.30249837,-0.56566417,0.76718938};
+		up[]={-0.20749649,0.82463032,0.52625126};
+		aside[]={0.9303326,-8.1185135e-008,0.3668232};
 	};
 };
 binarizationWanted=0;
-sourceName="CVO_co@30_Hearts_and_Minds";
+sourceName="cvo_co@30_hearts_and_minds";
 addons[]=
 {
 	"A3_Modules_F",
@@ -23429,8 +23429,8 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={12178.481,341.95145,17307.674};
-								angles[]={0,2.7052608,0};
+								position[]={12164.686,341.95145,17340.74};
+								angles[]={0,5.0989132,0};
 							};
 							side="West";
 							flags=7;
@@ -25805,7 +25805,7 @@ class Mission
 			name="Base Decoration";
 			class Entities
 			{
-				items=178;
+				items=179;
 				class Item0
 				{
 					dataType="Object";
@@ -33046,9 +33046,48 @@ class Mission
 						nAttributes=1;
 					};
 				};
+				class Item178
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={12178.869,345.72205,17307.553};
+						angles[]={0,2.94222,0};
+					};
+					side="Empty";
+					flags=5;
+					class Attributes
+					{
+					};
+					id=1464;
+					type="Land_LampShabby_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="allowDamage";
+							expression="_this allowdamage _value;";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
 			};
 			id=175;
-			atlOffset=0.016418457;
+			atlOffset=0.0082092285;
 		};
 		class Item9
 		{

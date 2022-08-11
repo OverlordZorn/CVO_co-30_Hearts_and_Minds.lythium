@@ -65,6 +65,7 @@ private _CVO_A_Basic_Backpacks = [
     "UK3CB_TKP_I_B_ASS_MED_TAN",
     "UK3CB_TKP_O_B_ASS_MED_BLK",
     "UK3CB_TKP_O_B_ASS_BLK",
+	"UK3CB_UN_B_B_ASS",
     "B_LegStrapBag_black_F",
     "B_Messenger_Black_F",
     "B_Messenger_Coyote_F",
@@ -90,8 +91,12 @@ private _CVO_A_Basic_Helmets = [
 	"UK3CB_ARD_B_H_Crew_Cap",
 	"H_Cap_tan",
 	"H_Cap_blk",
-	"rhs_gssh18"
-	
+	"rhs_gssh18",
+	"UK3CB_TKA_O_H_6b27m_Tan",
+	"UK3CB_TKA_O_H_6b27m_ESS_Tan",
+	"UK3CB_ADA_B_H_6b27m_ml_ESS_OLI",
+	"UK3CB_ADA_B_H_6b27m_ml_OLI"
+
 ];
 
 private _CVO_A_Basic_Face = [
@@ -331,7 +336,7 @@ CVO_A_MG = [
 	"rhs_100Rnd_762x54mmR",
 	"rhs_100Rnd_762x54mmR_green"];
 
-CVO_A_Marksman = ["UK3CB_SVD_OLD","rhs_10Rnd_762x54mmR_7N1"];
+CVO_A_Marksman = ["UK3CB_SVD_OLD","rhs_10Rnd_762x54mmR_7N1","rhs_acc_pso1m2"];
 
 CVO_A_AT = ["rhs_weap_rpg7", 
 	"rhs_acc_pgo7v",
@@ -377,4 +382,4 @@ CVO_A_Rifleman = [
 ];
 
 [CVO_arsenal, false, false] call ace_arsenal_fnc_initBox;
-[CVO_arsenal, CVO_A_Basic, true] call ace_arsenal_fnc_addVirtualItems;
+[CVO_arsenal, CVO_A_Basic, false] call ace_arsenal_fnc_addVirtualItems;
