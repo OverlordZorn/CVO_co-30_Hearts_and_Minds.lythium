@@ -9,7 +9,7 @@ class Params {
         title = __EVAL(format ["      %1", localize "STR_A3_CFGVEHICLES_MODULEDATE_F_ARGUMENTS_HOUR_0"]);
         values[]={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24};
         texts[]={"1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24"};
-        default = 5;
+        default = 4;
     };
     class btc_p_acctime { // Acceleration time multiplier:
         title = __EVAL(format ["      %1", localize "STR_USRACT_TIME_INC"]);
@@ -165,7 +165,7 @@ class Params {
         title = __EVAL(format ["      %1", localize "STR_BTC_HAM_PARAM_SPWAN_MIL_INHOUSE_DENSITY"]);
         values[]={0,10,20,30,40,50,60,70,80,90,100};
         texts[]={"0%","10%","20%","30%","40%","50%","60%","70%","80%","90%","100%"};
-        default = 50;
+        default = 70;
     };
     class btc_p_veh_armed_ho { // Add armed vehicles in Hideout:
         title = __EVAL(format ["      %1", localize "STR_BTC_HAM_PARAM_SPAWN_ARMEDHIDEOUT"]);
@@ -183,7 +183,7 @@ class Params {
         title = __EVAL(format ["      %1", localize "STR_BTC_HAM_PARAM_SPWAN_PATROL_MAX"]);
         values[]={0,1,2,3,4,5,6,7,8,9,10};
         texts[]={"1","2","3","4","5","6","7","8","9","10"};
-        default = 10;
+        default = 8;
     };
     class btc_p_civ_max_veh { // Maximum number of civilian patrol:
         title = __EVAL(format ["      %1", localize "STR_BTC_HAM_PARAM_SPWAN_CIV_MAX_VEH"]);
@@ -201,7 +201,7 @@ class Params {
         title = __EVAL(format ["      %1", localize "STR_BTC_HAM_PARAM_IED_RATIO"]);
         values[]={0, 1, 2, 3};
         texts[]={$STR_DISABLED,$STR_A3_TIME_TRIALS_MISCTT_ROF_25,$STR_3DEN_ATTRIBUTES_SPEEDMODE_NORMAL,$STR_A3_TIME_TRIALS_MISCTT_ROF_21}; //texts[]={"Off","Low","Normal","High"};
-        default = 1;
+        default = 2;
     };
     class btc_p_ied_spot { // IEDs spotting difficulty:
         title = __EVAL(format ["      %1", localize "STR_BTC_HAM_PARAM_IED_SPOT"]);
@@ -438,7 +438,7 @@ class Params {
         default = 0;
     };
     class cvo_p_title { // << CVO options >>
-        title = "<< CVO Customs >>";
+        title = "<<<< CVO Customs >>>>";
         values[]={0};
         texts[]={""};
         default = 0;
@@ -449,22 +449,30 @@ class Params {
         texts[]={"Off","On"};
         default = 1;
     };
-        class cvo_p_custom_ace_arsenal { // CVO - Custom Ace Arsenal
-        title = "Overwrite Arsenal, Custom Ace Arsenal";
-        values[]={0,1};
-        texts[]={"Off","On"};
-        default = 1;
-    };
-        class cvo_p_fortify { // CVO - Add Fortify
+
+    class cvo_p_fortify { // CVO - Add Fortify
         title = "Enable ACE Fortify";
         values[]={0,1};
         texts[]={"Off","On"};
         default = 1;
     };
-        class cvo_fullHeal { // CVO - Add FullHeal
+    class cvo_fullHeal { // CVO - Add FullHeal
         title = "Enable FullHeal";
         values[]={0,1};
         texts[]={"Off","On"};
         default = 1;
     };
+   class cvo_p_arsenal { // CVO - Custom Arsenal
+        title = "Overwrite Arsenal, Custom Ace Arsenal";
+        values[]={0,1};
+        texts[]={"Off","On"};
+        default = 1;
+    };
+    class cvo_p_arsenal_medicalTab { // CVO - Arsenal
+        title = "Add Medical Tab";
+        values[]={0,1};
+        texts[]={"Off","On"};
+        default = 1;
+    };
+
 };

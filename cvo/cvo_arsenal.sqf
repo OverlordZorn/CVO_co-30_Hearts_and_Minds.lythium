@@ -1,29 +1,9 @@
-// Enables cvo custom Arsenal, based on Role, defined by setVariable / getVariable.
 
-// Adding a custom sub item category
-//// Adding a Medical Tab
-private _medicalTab = [
-	"ACE_quikclot", "ACE_packingBandage","ACE_elasticBandage", "ACE_fieldDressing",
-	"ACE_tourniquet", "ACE_splint",
-    "ACE_morphine","ACE_epinephrine", "ACE_adenosine", 
-	"ACE_salineIV", "ACE_salineIV_500","ACE_salineIV_250",
-	"ACE_plasmaIV","ACE_plasmaIV_500","ACE_plasmaIV_250",
-    "ACE_bloodIV","ACE_bloodIV_500","ACE_bloodIV_250",
-    "ACE_surgicalKit","ACE_personalAidKit","ACE_bodyBag"
-];
-[_medicalTab, "Medical", getMissionPath "\cvo\img\redCrystal.paa"] call ace_arsenal_fnc_addRightPanelButton;
-
-
-if (!cvo_p_custom_ace_arsenal) exitWith {};
-
+CVO_A_Basic = [];
+private _individualKit = [];
 // Defining Custom Arsenal Pools
 //// Basic Kit, for everyone
-
-CVO_A_Basic = [] + _CVO_A_Basic_Medical + _CVO_A_Basic_Radio + _CVO_A_Basic_Uniform + _CVO_A_Basic_Vests + _CVO_A_Basic_Backpacks; 
-CVO_A_Basic = CVO_A_Basic + _CVO_A_Basic_Helmets + _CVO_A_Basic_Face + _CVO_A_Basic_NVG + _CVO_A_Basic_Bino + _CVO_A_Basic_Tools;
-CVO_A_Basic = CVP_A_Basic + _CVO_A_Throwable + _CVO_A_EXO + _CVO_A_Basic_Rifles + _CVO_A_Basic_Pistols + _CVO_A_Basic_attachments;
-
-_CVO_A_Basic_Medical = [
+private _CVO_A_Basic_Medical = [
 	"ACE_packingBandage",
 	"ACE_fieldDressing",
 	"ACE_tourniquet", 
@@ -37,9 +17,18 @@ _CVO_A_Basic_Medical = [
 	"ACE_bodyBag"
 ];
 
-_CVO_A_Basic_Radios = ["ACRE_BF888S"];
+private _CVO_A_Basic_RespawnTent = [
+	"B_Respawn_TentA_F",
+	"B_Respawn_Sleeping_bag_F",
+	"B_Patrol_Respawn_bag_F",
+	"B_Respawn_TentDome_F",
+	"B_Respawn_Sleeping_bag_brown_F",
+	"B_Respawn_Sleeping_bag_blue_F"
+	];
 
-_CVO_A_Basic_Uniforms = [
+private _CVO_A_Basic_Radios = ["ACRE_BF888S"];
+
+private _CVO_A_Basic_Uniforms = [
     "UK3CB_TKP_B_U_CIB_CombatUniform_BLK",
     "UK3CB_TKP_B_U_CIB_CombatUniform_Shortsleeve_BLK",
     "UK3CB_TKP_I_U_CIB_CombatUniform_DBLU",
@@ -52,7 +41,7 @@ _CVO_A_Basic_Uniforms = [
     "UK3CB_TKP_O_U_CombatUniform_Blk"
 ];
 
-_CVO_A_Basic_Vests = [
+private _CVO_A_Basic_Vests = [
 	"rhs_belt_AK4_back",
     "UK3CB_TKP_B_V_TacVest_Tan",
     "UK3CB_TKP_B_V_TacVest_Blk",
@@ -71,7 +60,7 @@ _CVO_A_Basic_Vests = [
     "UK3CB_TKP_O_V_6b23_ml_BLK"
 ];
 
-_CVO_A_Basic_Backpacks = [
+private _CVO_A_Basic_Backpacks = [
     "UK3CB_TKA_O_B_ENG_Khk",
     "UK3CB_TKA_O_B_RIF_Khk",
     "UK3CB_TKP_I_B_ASS_MED_TAN",
@@ -87,7 +76,7 @@ _CVO_A_Basic_Backpacks = [
     "rhs_rpg_6b3"
 ];
 
-_CVO_A_Basic_Helmets = [
+private _CVO_A_Basic_Helmets = [
     "UK3CB_TKP_I_H_Beret",
 	"UK3CB_TKP_O_H_Beret",
     "UK3CB_TKP_O_H_Patrolcap_Blk",
@@ -106,7 +95,7 @@ _CVO_A_Basic_Helmets = [
 	
 ];
 
-_CVO_A_Basic_Face = [
+private _CVO_A_Basic_Face = [
 	"G_Respirator_white_F",
     "rhsusf_shemagh_od",
     "rhsusf_shemagh2_od",
@@ -138,11 +127,11 @@ _CVO_A_Basic_Face = [
 	"UK3CB_G_Neck_Shemag_KLR_tan",
 	"UK3CB_G_Neck_Shemag_KL_blk"];
 
-_CVO_A_Basic_NVG = [
+private _CVO_A_Basic_NVG = [
 	//"rhs_1PN138"
 ];
 
-_CVO_A_Basic_Bino = [
+private _CVO_A_Basic_Bino = [
 	//"Hate_Smartphone_HUD",
 	//"Hate_Smartphone",
 	//"Nikon_DSLR_HUD",
@@ -153,7 +142,7 @@ _CVO_A_Basic_Bino = [
 	"rhs_tr8_periscope",
 	"Binocular"
 ];
-_CVO_A_Basic_Tools = [
+private _CVO_A_Basic_Tools = [
 	"ChemicalDetector_01_watch_F",
 
 	"ItemWatch",
@@ -179,7 +168,7 @@ _CVO_A_Basic_Tools = [
 	"acex_intelitems_notepad"
 ];
 
-_CVO_A_Throwable =  [
+private _CVO_A_Basic_Throwable =  [
 	"rhs_mag_rdg2_white",
 	"rhs_mag_rdg2_black",
 	"rhs_mag_rgd5",
@@ -193,12 +182,12 @@ _CVO_A_Throwable =  [
 	"ACE_M84"
 ];
 
-_CVO_A_EXO = [
+private _CVO_A_Basic_EXO = [
 	"tsp_popperCharge_auto_mag",
 	"tsp_popperCharge_mag"
 	];
 
-_CVO_A_Basic_Rifles = [
+private _CVO_A_Basic_Rifles = [
     "rhs_weap_ak74m_fullplum",
     "rhs_weap_ak74m_desert",
     "rhs_weap_ak74m_camo",
@@ -236,7 +225,7 @@ _CVO_A_Basic_Rifles = [
 	"uk3cb_muzzle_sks_bayonet"
 ];
 
-_CVO_A_Basic_Pistols = [
+private _CVO_A_Basic_Pistols = [
 	"rhs_weap_pya",
 	"rhs_mag_9x19_17",
 	
@@ -248,7 +237,7 @@ _CVO_A_Basic_Pistols = [
 	"tsp_meleeWeapon_ak"
 ];
 
-_CVO_A_Basic_attachments = [
+private _CVO_A_Basic_attachments = [
 	"rhs_acc_2dpZenit",
 	"rhs_acc_2dpZenit_ris",
 	"rhs_acc_dtkakm",
@@ -267,20 +256,18 @@ _CVO_A_Basic_attachments = [
 
 //// Specific Kit, for certain "Roles" only
 
-_CVO_A_Officer = [
+private _CVO_A_Officer = [
 	"G_Spectacles_Tinted",
 	"UK3CB_TKP_B_H_Beret",
     "UK3CB_TKP_O_H_Patrolcap_Off_Blk",
     "UK3CB_TKP_B_H_Patrolcap_Off_TAN",
     "rhs_cossack_visor_cap",
 	"H_Beret_blk",
-	"rhs_cossack_visor_cap_tan"
+	"rhs_cossack_visor_cap_tan"];
 
-	];
+private _CVO_A_Interpreter = [];
 
-_CVO_A_Interpreter = [];
-
-_CVO_A_TeamLeader = [
+private _CVO_A_TeamLeader = [
 	"rhs_weap_ak74m_fullplum_gp25",
     "rhs_weap_ak74m_gp25",
 	"rhs_VOG25",
@@ -296,12 +283,12 @@ _CVO_A_TeamLeader = [
 	"rhs_VG40MD"
 ];
 
-_CVO_A_RTO = ["ACRE_PRC77",
+private _CVO_A_RTO = ["ACRE_PRC77",
 	"ACRE_VHF30108SPIKE",
 	"ACRE_VHF30108",
 	"ACRE_VHF30108MAST"];
 
-_CVO_A_Medic = [
+private _CVO_A_Medic = [
 	"ACE_quikclot", 
 	"ACE_elasticBandage", 
 	"ACE_adenosine", 
@@ -311,10 +298,9 @@ _CVO_A_Medic = [
     "ACE_bloodIV",
 	"ACE_bloodIV_500",
 	"ACE_bloodIV_250",
-    "ACE_surgicalKit"
-];
+    "ACE_surgicalKit"];
 
-_CVO_A_MG = [
+private _CVO_A_MG = [
 	"ACE_SpareBarrel_Item",
 	"UK3CB_RPK_74",
 	"UK3CB_RPK_74_BLK",
@@ -324,17 +310,16 @@ _CVO_A_MG = [
 	"rhs_60Rnd_545X39_AK_Green",
 	"rhs_weap_pkm",
 	"rhs_100Rnd_762x54mmR",
-	"rhs_100Rnd_762x54mmR_green"
-	];
+	"rhs_100Rnd_762x54mmR_green"];
 
-_CVO_A_Marksman = ["UK3CB_SVD_OLD","rhs_10Rnd_762x54mmR_7N1"];
+private _CVO_A_Marksman = ["UK3CB_SVD_OLD","rhs_10Rnd_762x54mmR_7N1"];
 
-_CVO_A_AT = ["rhs_weap_rpg7", 
+private _CVO_A_AT = ["rhs_weap_rpg7", 
 	"rhs_acc_pgo7v",
 	"rhs_rpg7_PG7V_mag",
 	"rhs_rpg7_OG7V_mag"];
 
-_CVO_A_AA = ["rhs_weap_igla", "rhs_mag_9k38_rocket"];
+private _CVO_A_AA = ["rhs_weap_igla", "rhs_mag_9k38_rocket"];
 
 _CVO_A_Engineer = [
 	"ACE_VMM3","ACE_VMH3", 
@@ -345,17 +330,16 @@ _CVO_A_Engineer = [
 	"rhs_ec200_sand_mag",
 	"tsp_frameCharge_mag",
 	"tsp_stickCharge_mag",
-	"tsp_stickCharge_auto_mag"
-];
+	"tsp_stickCharge_auto_mag"];
 
 
-_CVO_A_CBRN = ["U_C_CBRN_Suit_01_Blue_F", 
+private _CVO_A_CBRN = ["U_C_CBRN_Suit_01_Blue_F", 
 "U_B_CBRN_Suit_01_White_F",
 "G_AirPurifyingRespirator_01_F",
 "G_RegulatorMask_F", 
 "B_SCBA_01_F"];
 
-_CVO_A_EW = [
+private _CVO_A_EW = [
 	"hgun_esd_01_F",
 	"muzzle_antenna_01_f",
 	"muzzle_antenna_02_f",
@@ -368,20 +352,33 @@ _CVO_A_EW = [
 	"B_UGV_02_Demining_backpack_F",
 	"B_UGV_02_Science_backpack_F"]; 
 
-_CVO_A_Rifleman = [
+private _CVO_A_Rifleman = [
 	"rhs_acc_1p78",
 	"tsp_paperclip"
 ];
 
-CVO_A_Basic = [];
-_individualKit = [];
-systemChat str count CVO_A_Basic;
-CVO_A_Basic = CVO_A_Basic + _CVO_A_Basic_Medical + _CVO_A_Basic_Radio + _CVO_A_Basic_Uniform + _CVO_A_Basic_Vests + _CVO_A_Basic_Backpacks;
-systemChat str count CVO_A_Basic;
-CVO_A_Basic = CVO_A_Basic + _CVO_A_Basic_Helmets + _CVO_A_Basic_Face + _CVO_A_Basic_NVG + _CVO_A_Basic_Bino + _CVO_A_Basic_Tools;
-systemChat str count CVO_A_Basic;
-CVO_A_Basic = CVP_A_Basic + _CVO_A_Throwable + _CVO_A_EXO + _CVO_A_Basic_Rifles + _CVO_A_Basic_Pistols + _CVO_A_Basic_attachments;
-systemChat str count CVO_A_Basic;
+
+
+
+CVO_A_Basic append _CVO_A_Basic_Medical; 
+CVO_A_Basic append _CVO_A_Basic_Radios; 
+CVO_A_Basic append _CVO_A_Basic_Uniforms; 
+CVO_A_Basic append _CVO_A_Basic_Vests; 
+CVO_A_Basic append _CVO_A_Basic_Backpacks;
+CVO_A_Basic append _CVO_A_Basic_RespawnTent;
+
+CVO_A_Basic append _CVO_A_Basic_Helmets;
+CVO_A_Basic append _CVO_A_Basic_Face;
+CVO_A_Basic append _CVO_A_Basic_NVG;
+CVO_A_Basic append _CVO_A_Basic_Bino;
+CVO_A_Basic append _CVO_A_Basic_Tools;
+
+CVO_A_Basic append _CVO_A_Basic_Throwable;
+CVO_A_Basic append _CVO_A_Basic_EXO;
+CVO_A_Basic append _CVO_A_Basic_Rifles;
+CVO_A_Basic append _CVO_A_Basic_Pistols;
+CVO_A_Basic append _CVO_A_Basic_attachments;
+systemChat str (count CVO_A_Basic);
 
 
 if (player getVariable ["Officer",false]) then {
@@ -455,13 +452,11 @@ if (player getVariable ["Rifleman",false]) then {
  * Public: Yes
 */
 
-systemChat "Basic Kit, count: " + str count CVO_A_Basic;
-systemChat "_individualKit, count: " + str count _individualKit;
+private _addItems = CVO_A_Basic;
+_addItems append _individualKit;
 
-private _addItems = CVO_A_Basic + _individualKit;
-
-[cvo_test_crate, false, false] call ace_arsenal_fnc_initBox;
-[cvo_test_crate, _addItems, false] call ace_arsenal_fnc_addVirtualItems;
+[CVO_arsenal, false, false] call ace_arsenal_fnc_initBox;
+[CVO_arsenal, _addItems, false] call ace_arsenal_fnc_addVirtualItems;
 
 
 
