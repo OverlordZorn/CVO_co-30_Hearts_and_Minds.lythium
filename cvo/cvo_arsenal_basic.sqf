@@ -1,8 +1,7 @@
-
-CVO_A_Basic = [];
-private _individualKit = [];
 // Defining Custom Arsenal Pools
 //// Basic Kit, for everyone
+
+
 private _CVO_A_Basic_Medical = [
 	"ACE_packingBandage",
 	"ACE_fieldDressing",
@@ -253,113 +252,7 @@ private _CVO_A_Basic_attachments = [
 	"rhs_acc_dtk1l"
 ];
 
-
-//// Specific Kit, for certain "Roles" only
-
-private _CVO_A_Officer = [
-	"G_Spectacles_Tinted",
-	"UK3CB_TKP_B_H_Beret",
-    "UK3CB_TKP_O_H_Patrolcap_Off_Blk",
-    "UK3CB_TKP_B_H_Patrolcap_Off_TAN",
-    "rhs_cossack_visor_cap",
-	"H_Beret_blk",
-	"rhs_cossack_visor_cap_tan"];
-
-private _CVO_A_Interpreter = [];
-
-private _CVO_A_TeamLeader = [
-	"rhs_weap_ak74m_fullplum_gp25",
-    "rhs_weap_ak74m_gp25",
-	"rhs_VOG25",
-	"rhs_VOG25P",
-	"rhs_VG40SZ",
-	"rhs_GRD40_White",
-	"rhs_GRD40_Green",
-	"rhs_GRD40_Red",
-	"rhs_GDM40",
-	"rhs_VG40OP_white",
-	"rhs_VG40OP_red",
-	"rhs_VG40OP_green",
-	"rhs_VG40MD"
-];
-
-private _CVO_A_RTO = ["ACRE_PRC77",
-	"ACRE_VHF30108SPIKE",
-	"ACRE_VHF30108",
-	"ACRE_VHF30108MAST"];
-
-private _CVO_A_Medic = [
-	"ACE_quikclot", 
-	"ACE_elasticBandage", 
-	"ACE_adenosine", 
-	"ACE_plasmaIV",
-	"ACE_plasmaIV_500",
-	"ACE_plasmaIV_250",
-    "ACE_bloodIV",
-	"ACE_bloodIV_500",
-	"ACE_bloodIV_250",
-    "ACE_surgicalKit"];
-
-private _CVO_A_MG = [
-	"ACE_SpareBarrel_Item",
-	"UK3CB_RPK_74",
-	"UK3CB_RPK_74_BLK",
-	"UK3CB_RPK_74_PLUM",
-	"rhs_45Rnd_545X39_7N10_AK",
-	"rhs_45Rnd_545X39_AK_Green",
-	"rhs_60Rnd_545X39_AK_Green",
-	"rhs_weap_pkm",
-	"rhs_100Rnd_762x54mmR",
-	"rhs_100Rnd_762x54mmR_green"];
-
-private _CVO_A_Marksman = ["UK3CB_SVD_OLD","rhs_10Rnd_762x54mmR_7N1"];
-
-private _CVO_A_AT = ["rhs_weap_rpg7", 
-	"rhs_acc_pgo7v",
-	"rhs_rpg7_PG7V_mag",
-	"rhs_rpg7_OG7V_mag"];
-
-private _CVO_A_AA = ["rhs_weap_igla", "rhs_mag_9k38_rocket"];
-
-_CVO_A_Engineer = [
-	"ACE_VMM3","ACE_VMH3", 
-	"ACE_wirecutter", "ToolKit", 
-	"ACE_Fortify", "ACE_DefusalKit",
-	"rhs_ec75_sand_mag",
-	"rhs_ec400_sand_mag",
-	"rhs_ec200_sand_mag",
-	"tsp_frameCharge_mag",
-	"tsp_stickCharge_mag",
-	"tsp_stickCharge_auto_mag"];
-
-
-private _CVO_A_CBRN = ["U_C_CBRN_Suit_01_Blue_F", 
-"U_B_CBRN_Suit_01_White_F",
-"G_AirPurifyingRespirator_01_F",
-"G_RegulatorMask_F", 
-"B_SCBA_01_F"];
-
-private _CVO_A_EW = [
-	"hgun_esd_01_F",
-	"muzzle_antenna_01_f",
-	"muzzle_antenna_02_f",
-	"muzzle_antenna_03_f",
-
-	"ACE_UAVBattery",
-	"B_UavTerminal",
-	//"B_UAV_01_backpack_F",
-	"B_UAV_06_backpack_F",
-	"B_UGV_02_Demining_backpack_F",
-	"B_UGV_02_Science_backpack_F"]; 
-
-private _CVO_A_Rifleman = [
-	"rhs_acc_1p78",
-	"tsp_paperclip"
-];
-
-
-
-
+CVO_A_Basic = [];
 CVO_A_Basic append _CVO_A_Basic_Medical; 
 CVO_A_Basic append _CVO_A_Basic_Radios; 
 CVO_A_Basic append _CVO_A_Basic_Uniforms; 
@@ -380,84 +273,108 @@ CVO_A_Basic append _CVO_A_Basic_Pistols;
 CVO_A_Basic append _CVO_A_Basic_attachments;
 systemChat str (count CVO_A_Basic);
 
+//// Specific Kit, for certain "Roles" only
 
-if (player getVariable ["Officer",false]) then {
-	systemChat "Officer detected";
-	_individualKit append _CVO_A_Officer;
-	_individualKit append _CVO_A_TeamLeader;
-	_individualKit append _CVO_A_RTO;
-};
-if (player getVariable ["Interpreter",false]) then {
-	systemChat "Interpreter detected";
-	_individualKit append _CVO_A_Officer;
-};
-if (player getVariable ["TeamLeader",false]) then {
-	systemChat "TeamLeader detected";
-	_individualKit append _CVO_A_TeamLeader;
-};
-if (player getVariable ["Medic",false]) then {
-	systemChat "Medic detected";
-	_individualKit append _CVO_A_Medic;
-};
-if (player getVariable ["MG",false]) then {
-	systemChat "MG detected";
-	_individualKit append _CVO_A_MG;
-};
-if (player getVariable ["AT",false]) then {
-	systemChat "AT detected";
-	_individualKit append _CVO_A_AT;
-};
-if (player getVariable ["AA",false]) then {
-	systemChat "AA detected";
-	_individualKit append _CVO_A_AA;
+CVO_A_Officer = [
+	"G_Spectacles_Tinted",
+	"UK3CB_TKP_B_H_Beret",
+    "UK3CB_TKP_O_H_Patrolcap_Off_Blk",
+    "UK3CB_TKP_B_H_Patrolcap_Off_TAN",
+    "rhs_cossack_visor_cap",
+	"H_Beret_blk",
+	"rhs_cossack_visor_cap_tan"];
 
-};
-if (player getVariable ["EW",false]) then {
-	systemChat "EW detected";
-	_individualKit append _CVO_A_EW;
-	_individualKit append _CVO_A_RTO;
-};
-if (player getVariable ["CBRN",false]) then {
-	systemChat "CBRN detected";
-	_individualKit append _CVO_A_CBRN;
-};
-if (player getVariable ["Marksman",false]) then {
-	systemChat "Marksman detected";
-	_individualKit append _CVO_A_Marksman;
-};
-if (player getVariable ["Rifleman",false]) then {
-	systemChat "Rifleman detected";
-	_individualKit append _CVO_A_Rifleman;
-};
+CVO_A_Interpreter = [];
+
+CVO_A_TeamLeader = [
+	"rhs_weap_ak74m_fullplum_gp25",
+    "rhs_weap_ak74m_gp25",
+	"rhs_VOG25",
+	"rhs_VOG25P",
+	"rhs_VG40SZ",
+	"rhs_GRD40_White",
+	"rhs_GRD40_Green",
+	"rhs_GRD40_Red",
+	"rhs_GDM40",
+	"rhs_VG40OP_white",
+	"rhs_VG40OP_red",
+	"rhs_VG40OP_green",
+	"rhs_VG40MD"
+];
+
+CVO_A_RTO = ["ACRE_PRC77",
+	"ACRE_VHF30108SPIKE",
+	"ACRE_VHF30108",
+	"ACRE_VHF30108MAST"];
+
+CVO_A_Medic = [
+	"ACE_quikclot", 
+	"ACE_elasticBandage", 
+	"ACE_adenosine", 
+	"ACE_plasmaIV",
+	"ACE_plasmaIV_500",
+	"ACE_plasmaIV_250",
+    "ACE_bloodIV",
+	"ACE_bloodIV_500",
+	"ACE_bloodIV_250",
+    "ACE_surgicalKit"];
+
+CVO_A_MG = [
+	"ACE_SpareBarrel_Item",
+	"UK3CB_RPK_74",
+	"UK3CB_RPK_74_BLK",
+	"UK3CB_RPK_74_PLUM",
+	"rhs_45Rnd_545X39_7N10_AK",
+	"rhs_45Rnd_545X39_AK_Green",
+	"rhs_60Rnd_545X39_AK_Green",
+	"rhs_weap_pkm",
+	"rhs_100Rnd_762x54mmR",
+	"rhs_100Rnd_762x54mmR_green"];
+
+CVO_A_Marksman = ["UK3CB_SVD_OLD","rhs_10Rnd_762x54mmR_7N1"];
+
+CVO_A_AT = ["rhs_weap_rpg7", 
+	"rhs_acc_pgo7v",
+	"rhs_rpg7_PG7V_mag",
+	"rhs_rpg7_OG7V_mag"];
+
+CVO_A_AA = ["rhs_weap_igla", "rhs_mag_9k38_rocket"];
+
+CVO_A_Engineer = [
+	"ACE_VMM3","ACE_VMH3", 
+	"ACE_wirecutter", "ToolKit", 
+	"ACE_Fortify", "ACE_DefusalKit",
+	"rhs_ec75_sand_mag",
+	"rhs_ec400_sand_mag",
+	"rhs_ec200_sand_mag",
+	"tsp_frameCharge_mag",
+	"tsp_stickCharge_mag",
+	"tsp_stickCharge_auto_mag"];
 
 
+CVO_A_CBRN = ["U_C_CBRN_Suit_01_Blue_F", 
+"U_B_CBRN_Suit_01_White_F",
+"G_AirPurifyingRespirator_01_F",
+"G_RegulatorMask_F", 
+"B_SCBA_01_F"];
 
+CVO_A_EW = [
+	"hgun_esd_01_F",
+	"muzzle_antenna_01_f",
+	"muzzle_antenna_02_f",
+	"muzzle_antenna_03_f",
 
-/*
- * Author: Alganthe, Dedmen
- * Add virtual items to the provided target.
- *
- * Arguments:
- * 0: Target <OBJECT>
- * 1: Items <ARRAY of strings> <BOOL>
- * 2: Add globally <BOOL>
- *
- * Return Value:
- * None
- *
- * Example:
- * [_box, ["item1", "item2", "itemN"]] call ace_arsenal_fnc_addVirtualItems
- * [_box, true, false] call ace_arsenal_fnc_addVirtualItems
- *
- * Public: Yes
-*/
+	"ACE_UAVBattery",
+	"B_UavTerminal",
+	//"B_UAV_01_backpack_F",
+	"B_UAV_06_backpack_F",
+	"B_UGV_02_Demining_backpack_F",
+	"B_UGV_02_Science_backpack_F"]; 
 
-private _addItems = CVO_A_Basic;
-_addItems append _individualKit;
+CVO_A_Rifleman = [
+	"rhs_acc_1p78",
+	"tsp_paperclip"
+];
 
 [CVO_arsenal, false, false] call ace_arsenal_fnc_initBox;
-[CVO_arsenal, _addItems, false] call ace_arsenal_fnc_addVirtualItems;
-
-
-
-// if (cvo_p_custom_ace_arsenal) then {};
+[CVO_arsenal, CVO_A_Basic, true] call ace_arsenal_fnc_addVirtualItems;

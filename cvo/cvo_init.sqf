@@ -12,4 +12,7 @@ if (cvo_p_fortify) then {[compileScript ["cvo\cvo_fortify.sqf"]] call CBA_fnc_di
 if (cvo_p_arsenal_medicalTab) then {[compileScript ["cvo\cvo_arsenal_medTab.sqf"]] call CBA_fnc_directCall;};
 
 // Init CVO Arsenal
-if (cvo_p_arsenal) then {[compileScript ["cvo\cvo_arsenal.sqf"]] call CBA_fnc_directCall;};
+if (cvo_p_arsenal) then {
+	[compileScript ["cvo\cvo_arsenal_basic.sqf"]] call CBA_fnc_directCall;
+	};
+
