@@ -183,7 +183,11 @@ private _CVO_A_Basic_Throwable =  [
 	"ACE_Chemlight_Orange",
 	"Chemlight_blue",
 	"Chemlight_green",
-	"ACE_M84"
+	"ACE_M84",
+	"ACE_HandFlare_Green",
+	"ACE_HandFlare_Yellow",
+	"ACE_HandFlare_Red",
+	"ACE_HandFlare_White"
 ];
 
 private _CVO_A_Basic_EXO = [
@@ -236,6 +240,9 @@ private _CVO_A_Basic_Pistols = [
 	"rhs_weap_rsp30_red",
 	"rhs_weap_rsp30_green",
 	"rhs_weap_rsp30_white",
+	"rhs_mag_rsp30_white",
+	"rhs_mag_rsp30_green",
+	"rhs_mag_rsp30_red",
 	
 	"tsp_meleeWeapon_mpl50_black",
 	"tsp_meleeWeapon_ak"
