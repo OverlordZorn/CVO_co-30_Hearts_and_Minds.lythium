@@ -336,7 +336,7 @@ CVO_A_MG = [
 	"rhs_100Rnd_762x54mmR",
 	"rhs_100Rnd_762x54mmR_green"];
 
-CVO_A_Marksman = ["UK3CB_SVD_OLD","rhs_10Rnd_762x54mmR_7N1","rhs_acc_pso1m2"];
+CVO_A_Marksman = ["UK3CB_SVD_OLD","rhs_10Rnd_762x54mmR_7N1","rhs_acc_pso1m2","ACE_RangeCard"];
 
 CVO_A_AT = ["rhs_weap_rpg7", 
 	"rhs_acc_pgo7v",
