@@ -474,5 +474,12 @@ class Params {
         texts[]={"Off","On"};
         default = 1;
     };
+    class cvo_p_loadout { // CVO - Custom Loadout Handling
+        title = "Custom Loadout Handling";
+        values[]={0,1};
+        texts[]={"Off","On"};
+        default = 1;
+    };
+
 
 };

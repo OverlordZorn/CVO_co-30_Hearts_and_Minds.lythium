@@ -16,3 +16,5 @@ if (cvo_p_arsenal) then {
 	[compileScript ["cvo\cvo_arsenal_basic.sqf"]] call CBA_fnc_directCall;
 	};
 
+// Init CVO Loadout
+// core\init_player.sqf around line 31 

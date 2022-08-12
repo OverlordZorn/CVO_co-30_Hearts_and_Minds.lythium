@@ -107,6 +107,7 @@ cvo_p_fortify = "cvo_p_fortify" call BIS_fnc_getParamValue isEqualTo 1;
 cvo_p_custom_construction_array = "cvo_p_custom_construction_array" call BIS_fnc_getParamValue isEqualTo 1;
 cvo_p_arsenal = "cvo_p_arsenal" call BIS_fnc_getParamValue isEqualTo 1;
 cvo_p_arsenal_medicalTab = "cvo_p_arsenal_medicalTab" call BIS_fnc_getParamValue isEqualTo 1;
+cvo_p_loadout = "cvo_p_loadout" call BIS_fnc_getParamValue isEqualTo 1;
 
 switch (btc_p_debug) do {
     case 0 : {
