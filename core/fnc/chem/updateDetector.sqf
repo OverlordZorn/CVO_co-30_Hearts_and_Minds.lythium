@@ -44,37 +44,3 @@ Author:
 
     _obj ctrlAnimateModel ["Threat_Level_Source", _level, true]; //Displaying a threat level (value between 0.0 and 1.0)
 }, 0.3, _this] call CBA_fnc_addPerFrameHandler;
-
-// Play sound on threat
-[{
-    params ["_arguments", "_idPFH"];
-    _arguments params [
-        ["_obj", controlNull, [controlNull]]
-    ];
-
-    if !(visibleWatch) exitWith {
-        [_idPFH] call CBA_fnc_removePerFrameHandler;
-    };
-    private _level = selectMin (btc_chem_contaminated apply {player distance _x});
-    if (_level < btc_chem_range) then {
-        _level = 1;
-    } else {
-        _level = (floor (btc_chem_range / _level * 10)) / 10;
-    };
-
-    if (_level < 0.1) exitWith {};
-
-    private _file = "";
-
-    if (_level < 0.5) then {
-        _file = getMissionPath "cvo\sounds\chem_detector_beep_1.ogg";
-    } else {
-        if (_level < 0.8) then {
-            _file = getMissionPath "cvo\sounds\chem_detector_beep_2.ogg";
-        } else {
-            _file = getMissionPath "cvo\sounds\chem_detector_beep_3.ogg";
-        };
-    };
-
-    playSound3D [_file, player, false, getPosASL player, 5, 1, 15];
-}, 1.5, _this] call CBA_fnc_addPerFrameHandler;
