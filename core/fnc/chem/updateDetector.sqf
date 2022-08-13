@@ -67,14 +67,14 @@ Author:
     private _file = "";
 
     if (_level < 0.5) then {
-        _file = getMissionPath "cvo\sounds\chem_detector_beep_1.ogg";
+        _file = "cvo_detector_beep_1";
     } else {
         if (_level < 0.8) then {
-            _file = getMissionPath "cvo\sounds\chem_detector_beep_2.ogg";
+            _file = "cvo_detector_beep_2";
         } else {
-            _file = getMissionPath "cvo\sounds\chem_detector_beep_3.ogg";
+            _file = "cvo_detector_beep_3";
         };
     };
 
-    playSound3D [_file, player, false, getPosASL player, 5, 1, 15];
+    player say3D _file;
 }, 1.5, _this] call CBA_fnc_addPerFrameHandler;
