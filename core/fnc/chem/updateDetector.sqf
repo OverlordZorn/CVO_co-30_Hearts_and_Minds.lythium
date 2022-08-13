@@ -77,4 +77,4 @@ Author:
     };
 
     player say3D _file;
-}, 1.5, _this] call CBA_fnc_addPerFrameHandler;
+}, 1, _this] call CBA_fnc_addPerFrameHandler;
