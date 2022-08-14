@@ -12,6 +12,8 @@ if (player getVariable ["Interpreter",false]) then {
 	systemChat "Interpreter detected";
 	_individualKit append CVO_A_Officer;
 };
+
+
 if (player getVariable ["TeamLeader",false]) then {
 	systemChat "TeamLeader detected";
 	_individualKit append CVO_A_TeamLeader;
@@ -32,19 +34,6 @@ if (player getVariable ["AA",false]) then {
 	systemChat "AA detected";
 	_individualKit append CVO_A_AA;
 };
-if (player getVariable ["EW",false]) then {
-	systemChat "EW detected";
-	_individualKit append CVO_A_EW;
-	_individualKit append CVO_A_RTO;
-};
-if (player getVariable ["CBRN",false]) then {
-	systemChat "CBRN detected";
-	_individualKit append CVO_A_CBRN;
-};
-if (player getVariable ["Engineer",false]) then {
-	systemChat "Engineer detected";
-	_individualKit append CVO_A_Engineer;
-};
 if (player getVariable ["Marksman",false]) then {
 	systemChat "Marksman detected";
 	_individualKit append CVO_A_Marksman;
@@ -54,5 +43,24 @@ if (player getVariable ["Rifleman",false]) then {
 	_individualKit append CVO_A_Rifleman;
 };
 
+
+if (player getVariable ["EW",false]) then {
+	systemChat "EW detected";
+	_individualKit append CVO_A_EW;
+	_individualKit append CVO_A_RTO;
+};
+
+
+if (player getVariable ["CBRN",false]) then {
+	systemChat "CBRN detected";
+	_individualKit append CVO_A_CBRN;
+};
+if (player getVariable ["Engineer",false]) then {
+	systemChat "Engineer detected";
+	_individualKit append CVO_A_Engineer;
+};
+
 systemChat str (count _individualKit);
 [CVO_arsenal, _individualKit, false] call ace_arsenal_fnc_addVirtualItems;
+[CVO_arsenal_1, _individualKit, false] call ace_arsenal_fnc_addVirtualItems;
+[CVO_arsenal_2, _individualKit, false] call ace_arsenal_fnc_addVirtualItems;
