@@ -76,5 +76,10 @@ Author:
         };
     };
 
-    player say3D _file;
+
+    switch (CVO_chemDetector_sound_mode) do {
+        case 1: { playSound [_file, false]; };
+        case 2: { player say3D _file; };
+        default {};
+    };
 }, 1, _this] call CBA_fnc_addPerFrameHandler;
