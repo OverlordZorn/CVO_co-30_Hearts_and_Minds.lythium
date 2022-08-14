@@ -167,6 +167,9 @@ private _CVO_A_Basic_Tools = [
 	"ACE_EntrenchingTool",
 	"ACE_EarPlugs",
 
+	"ACE_SpraypaintGreen",
+	"ACE_SpraypaintRed",
+
 	"ACE_DAGR",
 	"ACE_CableTie",
 	"acex_intelitems_notepad"
@@ -183,7 +186,11 @@ private _CVO_A_Basic_Throwable =  [
 	"ACE_Chemlight_Orange",
 	"Chemlight_blue",
 	"Chemlight_green",
-	"ACE_M84"
+	"ACE_M84",
+	"ACE_HandFlare_Green",
+	"ACE_HandFlare_Yellow",
+	"ACE_HandFlare_Red",
+	"ACE_HandFlare_White"
 ];
 
 private _CVO_A_Basic_EXO = [
@@ -236,6 +243,9 @@ private _CVO_A_Basic_Pistols = [
 	"rhs_weap_rsp30_red",
 	"rhs_weap_rsp30_green",
 	"rhs_weap_rsp30_white",
+	"rhs_mag_rsp30_white",
+	"rhs_mag_rsp30_green",
+	"rhs_mag_rsp30_red",
 	
 	"tsp_meleeWeapon_mpl50_black",
 	"tsp_meleeWeapon_ak"
@@ -281,6 +291,7 @@ systemChat str (count CVO_A_Basic);
 //// Specific Kit, for certain "Roles" only
 
 CVO_A_Officer = [
+	"ACRE_PRC148",
 	"G_Spectacles_Tinted",
 	"UK3CB_TKP_B_H_Beret",
     "UK3CB_TKP_O_H_Patrolcap_Off_Blk",
@@ -292,6 +303,7 @@ CVO_A_Officer = [
 CVO_A_Interpreter = [];
 
 CVO_A_TeamLeader = [
+	"ACRE_PRC148",
 	"rhs_weap_ak74m_fullplum_gp25",
     "rhs_weap_ak74m_gp25",
 	"rhs_VOG25",
@@ -308,6 +320,7 @@ CVO_A_TeamLeader = [
 ];
 
 CVO_A_RTO = ["ACRE_PRC77",
+	"ACRE_PRC148",
 	"ACRE_VHF30108SPIKE",
 	"ACRE_VHF30108",
 	"ACRE_VHF30108MAST"];
@@ -381,5 +394,9 @@ CVO_A_Rifleman = [
 	"tsp_paperclip"
 ];
 
-[CVO_arsenal, false, false] call ace_arsenal_fnc_initBox;
-[CVO_arsenal, CVO_A_Basic, false] call ace_arsenal_fnc_addVirtualItems;
+
+{
+	[_x, false, false] call ace_arsenal_fnc_initBox;
+	[_x, CVO_A_Basic, false] call ace_arsenal_fnc_addVirtualItems;
+
+} forEach [CVO_arsenal, CVO_arsenal_1, CVO_arsenal_2];

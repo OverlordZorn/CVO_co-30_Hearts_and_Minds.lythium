@@ -22,7 +22,7 @@ _code = {
 
 
 // Here we create the action which we later attach to something
-_cvo_fullAceHeal = [
+_cvo_saveLoadout = [
 	"CVO_Arsenal_Loadout",					// Action Name
 	"Fillout the Stupid Armory Paperwork",	// Name for the ACE Interaction Menu
 	"",										// Statement - i have no fucking clue what that is supposed to mean
@@ -31,18 +31,16 @@ _cvo_fullAceHeal = [
 ] call ace_interact_menu_fnc_createAction;
 
 // Here we define where we want this action that we created to be attached to
-[
-	cvo_arsenal_loadout,				// Class the action should be assigned to
-	0,										// Type of action, 0 for action, 1 for self-actionIDs
-	["ACE_MainActions"],					// Parent path of the new action <Array>
-	_cvo_fullAceHeal
-] call ace_interact_menu_fnc_addActionToObject;		// Alternative: ace_interact_menu_fnc_addActionToObject 
 
-[
-	cvo_arsenal,				// Class the action should be assigned to
-	0,										// Type of action, 0 for action, 1 for self-actionIDs
-	["ACE_MainActions"],					// Parent path of the new action <Array>
-	_cvo_fullAceHeal
-] call ace_interact_menu_fnc_addActionToObject;		// Alternative: ace_interact_menu_fnc_addActionToObject 
-
-
+{
+	[
+		_x,														// Class the action should be assigned to
+		0,														// Type of action, 0 for action, 1 for self-actionIDs
+		["ACE_MainActions"],									// Parent path of the new action <Array>
+		_cvo_saveLoadout
+	] call ace_interact_menu_fnc_addActionToObject;				// Alternative: ace_interact_menu_fnc_addActionToObject 
+} forEach [
+	cvo_arsenal_loadout,
+	cvo_arsenal_loadout_1,
+	cvo_arsenal_loadout_2
+	];
