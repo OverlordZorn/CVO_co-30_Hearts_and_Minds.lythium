@@ -25,7 +25,7 @@ private _CVO_A_Basic_RespawnTent = [
 	"B_Respawn_Sleeping_bag_blue_F"
 	];
 
-private _CVO_A_Basic_Radios = ["ACRE_BF888S"];
+private _CVO_A_Basic_Radios = ["ACRE_PRC343"];
 
 private _CVO_A_Basic_Uniforms = [
     "UK3CB_TKP_B_U_CIB_CombatUniform_BLK",
@@ -111,7 +111,7 @@ private _CVO_A_Basic_Face = [
     "UK3CB_G_Balaclava2_BLK",
     "UK3CB_G_Balaclava2_DES",
     "G_Balaclava_blk",
-	"G_Balaclava_TI_blk_F",
+	
     "G_Aviator",
 	"rhs_googles_yellow",
 	"rhs_googles_orange",
