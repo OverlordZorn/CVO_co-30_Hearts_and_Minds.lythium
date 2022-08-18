@@ -95,8 +95,11 @@ private _CVO_A_Basic_Helmets = [
 	"UK3CB_TKA_O_H_6b27m_Tan",
 	"UK3CB_TKA_O_H_6b27m_ESS_Tan",
 	"UK3CB_ADA_B_H_6b27m_ml_ESS_OLI",
-	"UK3CB_ADA_B_H_6b27m_ml_OLI"
-
+	"UK3CB_ADA_B_H_6b27m_ml_OLI",
+	"UK3CB_H_Beanie_02_GRY",
+	"UK3CB_H_Beanie_02_BRN",
+	"UK3CB_H_Beanie_02_BLK",
+	"rhs_beanie_green"
 ];
 
 private _CVO_A_Basic_Face = [
@@ -218,9 +221,10 @@ private _CVO_A_Basic_Rifles = [
 	"rhs_30Rnd_545x39_7N10_2mag_camo_AK",
 	"rhs_30Rnd_545x39_7N10_2mag_AK",
 
-
+	
     "rhs_weap_ak104",
     "rhs_weap_ak103",
+	"rhs_weap_akm",
 	"rhs_weap_akms",
 	"rhs_30Rnd_762x39mm_89",
 	"rhs_30Rnd_762x39mm_tracer",
@@ -233,7 +237,11 @@ private _CVO_A_Basic_Rifles = [
 	"uk3cb_sks_01_sling",
 	"uk3cb_sks_01",
 	"uk3cb_10rnd_magazine_sks",
-	"uk3cb_muzzle_sks_bayonet"
+	"uk3cb_muzzle_sks_bayonet",
+
+	"UK3CB_Enfield_Rail",
+	"UK3CB_Enfield_10rnd_Mag",
+	"UK3CB_Enfield_10rnd_Mag_YT"
 ];
 
 private _CVO_A_Basic_Pistols = [
@@ -349,7 +357,7 @@ CVO_A_MG = [
 	"rhs_100Rnd_762x54mmR",
 	"rhs_100Rnd_762x54mmR_green"];
 
-CVO_A_Marksman = ["UK3CB_SVD_OLD","rhs_10Rnd_762x54mmR_7N1","rhs_acc_pso1m2","ACE_RangeCard"];
+CVO_A_Marksman = ["UK3CB_SVD_OLD","rhs_10Rnd_762x54mmR_7N1","rhs_acc_pso1m2","ACE_RangeCard","optic_khs_old","rhsusf_acc_harris_swivel"];
 
 CVO_A_AT = ["rhs_weap_rpg7", 
 	"rhs_acc_pgo7v",
