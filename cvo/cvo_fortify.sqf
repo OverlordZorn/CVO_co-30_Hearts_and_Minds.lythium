@@ -4,7 +4,7 @@
 // 1. Define current Fortify Budget, Objects and Prices
 
 if (isServer) then {
-[west, 2500, [
+[west, 5000, [
 	["Land_HBarrier_3_F", 15],
 	["Land_HBarrier_5_F", 25],
 	["Land_HBarrier_Big_F", 10],
@@ -43,7 +43,7 @@ cvo_engineerVehicleClass = "B_APC_Tracked_01_CRV_F";
 [{
 	params ["_unit", "_object", "_cost"];
 
-	private _condition1 = (_unit) getVariable ["isEngineer", false];
+	private _condition1 = (_unit) getVariable ["Engineer", false];
 	
 	private _condition2 = 1 >= cvo_engineerVehicleClass countType (_unit nearEntities ["Tank",100]); // scans near entities, filtered by tanks. Then counts the amount of 
 
