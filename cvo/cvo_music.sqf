@@ -68,4 +68,4 @@ _selection = switch (_playlist) do {
 }; 
 
 _song = _selection call BIS_fnc_selectRandom;
-playMusic _song; 
+_song remoteExec ["playMusic", -2, false]; 
