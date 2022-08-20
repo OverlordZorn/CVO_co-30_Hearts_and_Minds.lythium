@@ -1,6 +1,6 @@
 
 loadScreen = "cvo\cvo_ham_title.paa";
-author = "Dr. Zorn - Original byGiallustio";
+author = "Dr. Zorn - Original by Giallustio";
 onLoadName = $STR_BTC_HAM_DESCR_NAME;
 onLoadMission = $STR_BTC_HAM_DESCR_MISSION;
 enabledebugconsole = 1;
@@ -64,3 +64,16 @@ wreckManagerMode = 0;
 corpseManagerMode = 0;
 
 disabledAI = 1;
+
+class CfgMusic
+{
+	tracks[] = {};
+	class CVO1
+	{
+		// display name
+		name	= "CVO1";
+
+		// filename, volume, pitch
+		sound[]	= { "cvo\sounds\cvo1.ogg", db + 0, 1.0 };
+	};
+};

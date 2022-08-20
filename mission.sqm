@@ -29418,6 +29418,16 @@ class Mission
 								nAttributes=1;
 							};
 						};
+						class Item26
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={12204.05,343.87674,17339.336};
+								angles[]={0,2.2694294,0};
+							};
+							side="Empty";
+							flags=4;
 					};
 					id=249;
 					atlOffset=0.087799072;
@@ -29427,8 +29437,13 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
+<<<<<<< Updated upstream
 						position[]={12231.069,341.95001,17316.615};
 						angles[]={-0,0.84079683,0};
+=======
+						position[]={12230.686,341.95001,17316.176};
+						angles[]={0,0.84079492,0};
+>>>>>>> Stashed changes
 					};
 					side="Empty";
 					flags=4;
@@ -35608,6 +35623,16 @@ class Mission
 			};
 			id=270;
 			atlOffset=0.046936035;
+=======
+					id=766;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="groupID";
+							expression=" if (isNil 'CBA_fnc_setCallsign') then { _this setGroupID [_value]; } else { [_this, _value] call CBA_fnc_setCallsign; }; ";
+							class Value
+							{
 		};
 		class Item3
 		{
@@ -57701,5 +57726,14 @@ class Mission
 			type="mil_dot";
 			id=1733;
 		};
+		{
+			dataType="Trigger";
+			position[]={12238.628,341.95001,17221.727};
+			class Attributes
+			{
+				text="play music when all players left base";
+				onActivation="[""leavebase""] call compileScript [""cvo\cvo_music.sqf""];";
+				sizeA=250;
+				sizeB=250;
 	};
 };

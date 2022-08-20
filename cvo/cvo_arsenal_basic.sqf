@@ -275,6 +275,12 @@ private _CVO_A_Basic_attachments = [
 	"rhs_acc_dtk1l"
 ];
 
+private _CVO_A_Basic_csw = [
+	"ace_compat_rhs_afrf3_mag_9M131M",
+	"ace_compat_rhs_afrf3_mag_9M131F",
+	"ace_compat_rhs_afrf3_metis_carry"
+];
+
 CVO_A_Basic = [];
 CVO_A_Basic append _CVO_A_Basic_Medical; 
 CVO_A_Basic append _CVO_A_Basic_Radios; 
@@ -294,6 +300,8 @@ CVO_A_Basic append _CVO_A_Basic_EXO;
 CVO_A_Basic append _CVO_A_Basic_Rifles;
 CVO_A_Basic append _CVO_A_Basic_Pistols;
 CVO_A_Basic append _CVO_A_Basic_attachments;
+
+CVO_A_Basic append _CVO_A_Basic_csw;
 systemChat str (count CVO_A_Basic);
 
 //// Specific Kit, for certain "Roles" only

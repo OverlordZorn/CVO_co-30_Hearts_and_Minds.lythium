@@ -8,6 +8,9 @@
 
 // Here you define the code you want to execute, in this case, via a progress bar
 _code = {
+	if (round random 100 < 5) then { 
+		player say3D "cvo_heal";
+	};
 	[{
 		[
 			"Get Treated...",				// Title of progressBar
