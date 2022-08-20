@@ -8,11 +8,7 @@ class EditorData
 	toggles=1601;
 	class ItemIDProvider
 	{
-<<<<<<< Updated upstream
 		nextID=1770;
-=======
-		nextID=1749;
->>>>>>> Stashed changes
 	};
 	class MarkerIDProvider
 	{
@@ -20,7 +16,6 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-<<<<<<< Updated upstream
 		nextID=589;
 	};
 	class Camera
@@ -29,21 +24,10 @@ class EditorData
 		dir[]={0.52233964,-0.48187873,-0.70356578};
 		up[]={0.28726915,0.87621427,-0.38693663};
 		aside[]={-0.80292839,-5.4856355e-007,-0.59611028};
-=======
-		nextID=658;
-	};
-	class Camera
-	{
-		pos[]={12168.979,430.79251,17399.398};
-		dir[]={-0.006053735,-0.62820458,-0.77802569};
-		up[]={-0.0048878654,0.77804834,-0.62818688};
-		aside[]={-0.99997175,-1.2789769e-008,0.0077806786};
->>>>>>> Stashed changes
 	};
 };
 binarizationWanted=0;
 sourceName="cvo_co@30_hearts_and_minds";
-sourceName="CVO_co@30_Hearts_and_Minds";
 addons[]=
 {
 	"A3_Modules_F",
@@ -11157,11 +11141,7 @@ class Mission
 	};
 	class Entities
 	{
-<<<<<<< Updated upstream
 		items=31;
-=======
-		items=33;
->>>>>>> Stashed changes
 		class Item0
 		{
 			dataType="Layer";
@@ -25312,7 +25292,6 @@ class Mission
 					class Entities
 					{
 						items=26;
-						items=27;
 						class Item0
 						{
 							dataType="Comment";
@@ -29449,245 +29428,9 @@ class Mission
 							};
 							side="Empty";
 							flags=4;
-							class Attributes
-							{
-								textures="DES";
-							};
-							id=1746;
-							type="UK3CB_KDF_O_Gaz66_Open";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="VehicleCustomization";
-									expression="if (local _this) then {([_this] + _value + [true]) call (uinamespace getvariable 'BIS_fnc_initVehicle')};";
-									class Value
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"ARRAY"
-												};
-											};
-											class value
-											{
-												items=2;
-												class Item0
-												{
-													class data
-													{
-														class type
-														{
-															type[]=
-															{
-																"ARRAY"
-															};
-														};
-														class value
-														{
-															items=2;
-															class Item0
-															{
-																class data
-																{
-																	class type
-																	{
-																		type[]=
-																		{
-																			"STRING"
-																		};
-																	};
-																	value="DES";
-																};
-															};
-															class Item1
-															{
-																class data
-																{
-																	class type
-																	{
-																		type[]=
-																		{
-																			"SCALAR"
-																		};
-																	};
-																	value=1;
-																};
-															};
-														};
-													};
-												};
-												class Item1
-												{
-													class data
-													{
-														class type
-														{
-															type[]=
-															{
-																"ARRAY"
-															};
-														};
-														class value
-														{
-															items=10;
-															class Item0
-															{
-																class data
-																{
-																	class type
-																	{
-																		type[]=
-																		{
-																			"STRING"
-																		};
-																	};
-																	value="cover_hide";
-																};
-															};
-															class Item1
-															{
-																class data
-																{
-																	class type
-																	{
-																		type[]=
-																		{
-																			"SCALAR"
-																		};
-																	};
-																	value=1;
-																};
-															};
-															class Item2
-															{
-																class data
-																{
-																	class type
-																	{
-																		type[]=
-																		{
-																			"STRING"
-																		};
-																	};
-																	value="spare_hide";
-																};
-															};
-															class Item3
-															{
-																class data
-																{
-																	class type
-																	{
-																		type[]=
-																		{
-																			"SCALAR"
-																		};
-																	};
-																	value=0;
-																};
-															};
-															class Item4
-															{
-																class data
-																{
-																	class type
-																	{
-																		type[]=
-																		{
-																			"STRING"
-																		};
-																	};
-																	value="bench_hide";
-																};
-															};
-															class Item5
-															{
-																class data
-																{
-																	class type
-																	{
-																		type[]=
-																		{
-																			"SCALAR"
-																		};
-																	};
-																	value=0;
-																};
-															};
-															class Item6
-															{
-																class data
-																{
-																	class type
-																	{
-																		type[]=
-																		{
-																			"STRING"
-																		};
-																	};
-																	value="rear_numplate_hide";
-																};
-															};
-															class Item7
-															{
-																class data
-																{
-																	class type
-																	{
-																		type[]=
-																		{
-																			"SCALAR"
-																		};
-																	};
-																	value=1;
-																};
-															};
-															class Item8
-															{
-																class data
-																{
-																	class type
-																	{
-																		type[]=
-																		{
-																			"STRING"
-																		};
-																	};
-																	value="light_hide";
-																};
-															};
-															class Item9
-															{
-																class data
-																{
-																	class type
-																	{
-																		type[]=
-																		{
-																			"SCALAR"
-																		};
-																	};
-																	value=0;
-																};
-															};
-														};
-													};
-												};
-											};
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
 					};
 					id=249;
 					atlOffset=0.087799072;
-					atlOffset=0.090026855;
 				};
 				class Item10
 				{
@@ -35875,7 +35618,6 @@ class Mission
 					class Attributes
 					{
 					};
-<<<<<<< Updated upstream
 					id=1760;
 				};
 			};
@@ -35891,255 +35633,6 @@ class Mission
 							expression=" if (isNil 'CBA_fnc_setCallsign') then { _this setGroupID [_value]; } else { [_this, _value] call CBA_fnc_setCallsign; }; ";
 							class Value
 							{
-								class data
-								{
-									class type
-									{
-										type[]=
-										{
-											"STRING"
-										};
-									};
-									value="1-2 Bravo";
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item15
-				{
-					dataType="Layer";
-					name="Decon Shower";
-					state=1;
-					class Entities
-					{
-						items=9;
-						class Item0
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={12249.165,345.435,17276.578};
-								angles[]={0,0.74549472,0};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-							};
-							id=238;
-							type="DeconShower_02_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="Decon_Shower_DisableUserActions";
-									expression="if(_value)then{_this setVariable ['bin_deconshower_disableAction',true]};";
-									class Value
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"BOOL"
-												};
-											};
-											value=0;
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="Decon_Shower";
-									expression="if(_value)then{[_this,5.4,4,2,true] spawn bin_fnc_deconShowerAnimLarge;};";
-									class Value
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"BOOL"
-												};
-											};
-											value=0;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
-						class Item1
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={12244.673,342.36316,17277.273};
-								angles[]={0,3.5348051,0};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-							};
-							id=240;
-							type="RoadCone_L_F";
-						};
-						class Item2
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={12248.533,342.36316,17280.313};
-								angles[]={0,0.42141932,0};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-							};
-							id=241;
-							type="RoadCone_L_F";
-						};
-						class Item3
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={12250,342.36316,17272.107};
-								angles[]={0,1.4436265,0};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-							};
-							id=242;
-							type="RoadCone_L_F";
-						};
-						class Item4
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={12253.096,342.36316,17275.771};
-								angles[]={0,0.53036356,0};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-							};
-							id=243;
-							type="RoadCone_L_F";
-						};
-						class Item5
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={12248.867,341.95001,17276.482};
-								angles[]={0,0.74549997,0};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-							};
-							id=239;
-							type="Tarp_01_Large_Black_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="allowDamage";
-									expression="_this allowdamage _value;";
-									class Value
-									{
-										class data
-										{
-											class type
-											{
-												type[]=
-												{
-													"BOOL"
-												};
-											};
-											value=0;
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item6
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={12247.903,343.23755,17283.27};
-								angles[]={0,3.9321041,0};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-							};
-							id=1506;
-							type="DeconShower_01_F";
-						};
-						class Item7
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={12243.586,343.23755,17278.705};
-								angles[]={0,3.9321041,0};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-							};
-							id=1508;
-							type="DeconShower_01_F";
-						};
-						class Item8
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={12249.287,342.21176,17277.68};
-								angles[]={0,0.79446912,0};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-							};
-							id=1510;
-							type="ContainmentArea_01_sand_F";
-						};
-					};
-					id=1331;
-					atlOffset=0.014892578;
-				};
-				class Item16
-				{
-					dataType="Marker";
-					position[]={12230.666,341.95001,17308.037};
-					name="btc_base";
-					type="UK3CB_Marker_TKP";
-					id=681;
-				};
-			};
-			id=270;
-			atlOffset=0.012756348;
->>>>>>> Stashed changes
 		};
 		class Item3
 		{
@@ -58233,7 +57726,6 @@ class Mission
 			type="mil_dot";
 			id=1733;
 		};
-		class Item32
 		{
 			dataType="Trigger";
 			position[]={12238.628,341.95001,17221.727};
@@ -58243,16 +57735,5 @@ class Mission
 				onActivation="[""leavebase""] call compileScript [""cvo\cvo_music.sqf""];";
 				sizeA=250;
 				sizeB=250;
-				timeout[]={60,150,300};
-				interuptable=1;
-				repeatable=1;
-				activationType="NOT PRESENT";
-				activationBy="ANYPLAYER";
-				isServerOnly=1;
-				triggerInterval=60;
-			};
-			id=1745;
-			type="EmptyDetectorAreaR250";
-		};
 	};
 };
