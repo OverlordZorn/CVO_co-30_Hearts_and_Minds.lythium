@@ -8,7 +8,7 @@ class EditorData
 	toggles=1601;
 	class ItemIDProvider
 	{
-		nextID=1770;
+		nextID=1771;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=589;
+		nextID=612;
 	};
 	class Camera
 	{
-		pos[]={12170.597,371.47507,17319.385};
-		dir[]={0.52233964,-0.48187873,-0.70356578};
-		up[]={0.28726915,0.87621427,-0.38693663};
-		aside[]={-0.80292839,-5.4856355e-007,-0.59611028};
+		pos[]={12319.034,404.84869,17370.375};
+		dir[]={-0.74070024,-0.47538108,-0.47494677};
+		up[]={-0.40028825,0.87971288,-0.25667056};
+		aside[]={-0.53983015,-1.8319115e-006,0.84188807};
 	};
 };
 binarizationWanted=0;
@@ -701,7 +701,7 @@ class ScenarioData
 };
 class CustomAttributes
 {
-	class Category1
+	class Category0
 	{
 		name="Scenario";
 		class Attribute0
@@ -11141,7 +11141,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=31;
+		items=32;
 		class Item0
 		{
 			dataType="Layer";
@@ -24546,6 +24546,7 @@ class Mission
 					};
 					id=442;
 					type="Land_RoadCone_01_F";
+					atlOffset=0.00012207031;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -29418,16 +29419,6 @@ class Mission
 								nAttributes=1;
 							};
 						};
-						class Item26
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={12204.05,343.87674,17339.336};
-								angles[]={0,2.2694294,0};
-							};
-							side="Empty";
-							flags=4;
 					};
 					id=249;
 					atlOffset=0.087799072;
@@ -29437,13 +29428,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-<<<<<<< Updated upstream
 						position[]={12231.069,341.95001,17316.615};
-						angles[]={-0,0.84079683,0};
-=======
-						position[]={12230.686,341.95001,17316.176};
-						angles[]={0,0.84079492,0};
->>>>>>> Stashed changes
+						angles[]={0,0.84079683,0};
 					};
 					side="Empty";
 					flags=4;
@@ -33359,6 +33345,7 @@ class Mission
 							};
 							id=240;
 							type="RoadCone_L_F";
+							atlOffset=0.00012207031;
 						};
 						class Item2
 						{
@@ -33375,6 +33362,7 @@ class Mission
 							};
 							id=241;
 							type="RoadCone_L_F";
+							atlOffset=0.00012207031;
 						};
 						class Item3
 						{
@@ -33391,6 +33379,7 @@ class Mission
 							};
 							id=242;
 							type="RoadCone_L_F";
+							atlOffset=0.00012207031;
 						};
 						class Item4
 						{
@@ -33407,6 +33396,7 @@ class Mission
 							};
 							id=243;
 							type="RoadCone_L_F";
+							atlOffset=0.00012207031;
 						};
 						class Item5
 						{
@@ -33462,6 +33452,7 @@ class Mission
 							};
 							id=1506;
 							type="DeconShower_01_F";
+							atlOffset=0.00012207031;
 						};
 						class Item7
 						{
@@ -33478,14 +33469,15 @@ class Mission
 							};
 							id=1508;
 							type="DeconShower_01_F";
+							atlOffset=0.00012207031;
 						};
 						class Item8
 						{
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={12249.287,342.21176,17277.68};
-								angles[]={0,0.79446912,0};
+								position[]={12249.287,342.21164,17277.68};
+								angles[]={0,0.79447389,0};
 							};
 							side="Empty";
 							flags=4;
@@ -33494,10 +33486,53 @@ class Mission
 							};
 							id=1510;
 							type="ContainmentArea_01_sand_F";
+							atlOffset=0.023010254;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="Fold_Side_F_Property";
+									expression="_this animateSource ['Fold_Side_F',_value,true]";
+									class Value
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"SCALAR"
+												};
+											};
+											value=1;
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="Fold_Side_B_Property";
+									expression="_this animateSource ['Fold_Side_B',_value,true]";
+									class Value
+									{
+										class data
+										{
+											class type
+											{
+												type[]=
+												{
+													"SCALAR"
+												};
+											};
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
 						};
 					};
 					id=1331;
-					atlOffset=0.014892578;
+					atlOffset=0.014831543;
 				};
 				class Item16
 				{
@@ -35622,17 +35657,7 @@ class Mission
 				};
 			};
 			id=270;
-			atlOffset=0.046936035;
-=======
-					id=766;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="groupID";
-							expression=" if (isNil 'CBA_fnc_setCallsign') then { _this setGroupID [_value]; } else { [_this, _value] call CBA_fnc_setCallsign; }; ";
-							class Value
-							{
+			atlOffset=0.0015869141;
 		};
 		class Item3
 		{
@@ -39575,19 +39600,19 @@ class Mission
 				{
 					dataType="Trigger";
 					position[]={12225.94,342.04202,17263.525};
-					angle=5.4451246;
+					angle=5.4451303;
 					class Attributes
 					{
 						name="cvo_base_gate_1_trigger";
 						onActivation="cvo_base_gate_1 animate [""Door_1_rot"", 1];" \n "cvo_base_gate_1 animate [""Door_2_rot"", 1];" \n "" \n "";
 						onDeactivation="cvo_base_gate_1 animate [""Door_1_rot"", 0];" \n "cvo_base_gate_1 animate [""Door_2_rot"", 0];" \n "";
-						sizeA=4.645082;
-						sizeB=16.821634;
+						sizeA=4.645;
+						sizeB=16.822001;
 						sizeC=4.0700002;
 						repeatable=1;
 						activationBy="ANYPLAYER";
 						isRectangle=1;
-						triggerInterval=3;
+						triggerInterval=2;
 						effectSoundEnvironment="Wind";
 					};
 					id=1149;
@@ -57726,14 +57751,26 @@ class Mission
 			type="mil_dot";
 			id=1733;
 		};
+		class Item31
 		{
 			dataType="Trigger";
-			position[]={12238.628,341.95001,17221.727};
+			position[]={12204.285,341.95001,17278.344};
 			class Attributes
 			{
-				text="play music when all players left base";
+				text="play music when no player at base";
 				onActivation="[""leavebase""] call compileScript [""cvo\cvo_music.sqf""];";
 				sizeA=250;
 				sizeB=250;
+				timeout[]={60,120,300};
+				interuptable=1;
+				repeatable=1;
+				activationType="NOT PRESENT";
+				activationBy="ANYPLAYER";
+				isServerOnly=1;
+				triggerInterval=150;
+			};
+			id=1770;
+			type="EmptyDetectorAreaR250";
+		};
 	};
 };
