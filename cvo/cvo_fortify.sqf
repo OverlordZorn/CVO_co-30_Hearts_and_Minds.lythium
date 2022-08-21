@@ -92,9 +92,132 @@ _cvo_Fort_refillVehicle = [
 [
 	btc_create_object,						// Object the action should be assigned to
 	0,										// Type of action, 0 for action, 1 for self-actionIDs
-	["ACE_MainActions"],					// Parent path of the new action <Array>
-	_cvo_Fort_refillVehicle					// The Ace_action to be attached
+	["ACE_MainActions","Fortify"],					// Parent path of the new action <Array>
+	_cvo_Fort_refillVehicle							// The Ace_action to be attached
 ] call ace_interact_menu_fnc_addActionToObject;		// Alternative: ace_interact_menu_fnc_addActionToObject 
 
 
 
+
+// ################################################
+// 4. Change Presets to have 2 short lists instead of 1 long.
+
+// -> HBarrier Preset 
+private _code_p1 = {
+	[{
+		[
+			"Switching Fortify Blueprints",	// Title of progressBar
+			3,								// Duration of progressBar in secounds
+			{true},							// Condition, will check every frame
+			{
+				_currentBudget = [west] call ace_fortify_fnc_getBudget;	
+
+				[west, _currentBudget, [
+					["Land_HBarrier_1_F", 10],
+					["Land_HBarrier_3_F", 15],
+					["Land_HBarrier_5_F", 25],
+					["Land_HBarrier_Big_F", 20],
+					["Land_HBarrierWall_corridor_F", 50],
+					["Land_HBarrierWall_corner_F", 50],
+					["Land_HBarrierWall_corner_F", 50],
+					["Land_HBarrierWall6_F", 50],
+					["Land_HBarrierWall4_F", 50],
+					["Land_HBarrierTower_F", 200]
+				]] call ace_fortify_fnc_registerObjects;
+			}								// codeblock to be executed on completion
+		] call CBA_fnc_progressBar;			// Executing a CBA progressBar from an Ace Interaction results in crash. Delay execution by 1 frame!!!
+	}] call CBA_fnc_execNextFrame;			// <- this will delay the execution by 1 Frame. 
+}; 											// This is the code you want the interaction to execute.
+
+
+_cvo_Fort_preset1 = [
+	"CVO_Fort_preset1",						// Action Name
+	"Get Sandbag Blueprints",				// Name for the ACE Interaction Menu
+	"",										// Statement - i have no fucking clue what that is supposed to mean
+	_code_p1,									// the code you're executing
+	{true}										// Condition for action to be shown:
+] call ace_interact_menu_fnc_createAction;
+
+// -> Sandbag Preset
+private _code_p2 = {
+	[{
+		[
+			"Switching Fortify Blueprints",	// Title of progressBar
+			3,								// Duration of progressBar in secounds
+			{true},							// Condition, will check every frame
+			{
+				_currentBudget = [west] call ace_fortify_fnc_getBudget;	
+
+				[west, _currentBudget, [
+					["Land_BagBunker_Tower_F", 100],
+					["Land_BagBunker_Large_F", 100],
+					["Land_BagBunker_Small_F", 50],
+					["Land_BagFence_Long_F", 50],
+					["Land_BagFence_Short_F", 25],
+					["Land_SandbagBarricade_01_half_F", 25],
+					["Land_SandbagBarricade_01_F", 25],
+					["Land_SandbagBarricade_01_hole_F", 25],
+					["Land_BagFence_Round_F", 25]
+				]] call ace_fortify_fnc_registerObjects;
+			}								// codeblock to be executed on completion
+		] call CBA_fnc_progressBar;			// Executing a CBA progressBar from an Ace Interaction results in crash. Delay execution by 1 frame!!!
+	}] call CBA_fnc_execNextFrame;			// <- this will delay the execution by 1 Frame. 
+}; 											// This is the code you want the interaction to execute.
+
+
+// Here we create the action which we later attach to something
+_cvo_Fort_preset2 = [
+	"CVO_Fort_preset2",						// Action Name
+	"Get Sand Back Blueprints",				// Name for the ACE Interaction Menu
+	"",										// Statement - i have no fucking clue what that is supposed to mean
+	_code_p2,									// the code you're executing
+	{true}										// Condition for action to be shown:
+] call ace_interact_menu_fnc_createAction;
+
+
+// -> Concrete n Shit Preset
+private _code_p3 = {
+	[{
+		[
+			"Switching Fortify Blueprints",	// Title of progressBar
+			3,								// Duration of progressBar in secounds
+			{true},							// Condition, will check every frame
+			{
+				_currentBudget = [west] call ace_fortify_fnc_getBudget;	
+
+				[west, _currentBudget, [
+					["Land_Razorwire_F", 15],
+					["Land_CncWall1_F", 50],
+					["Land_CncWall4_F", 200],
+					["Land_CncBarrierMedium4_F", 100],
+					["Land_CncBarrierMedium_F", 20],
+					["Land_CncBarrier_F", 10],
+					["Land_Concrete_SmallWall_4m_F", 10],
+					["Land_Concrete_SmallWall_8m_F", 20]
+				]] call ace_fortify_fnc_registerObjects;
+			}								// codeblock to be executed on completion
+		] call CBA_fnc_progressBar;			// Executing a CBA progressBar from an Ace Interaction results in crash. Delay execution by 1 frame!!!
+	}] call CBA_fnc_execNextFrame;			// <- this will delay the execution by 1 Frame. 
+}; 											// This is the code you want the interaction to execute.
+
+
+// Here we create the action which we later attach to something
+_cvo_Fort_preset3 = [
+	"CVO_Fort_preset3",						// Action Name
+	"Get Concrete and Other Blueprints",	// Name for the ACE Interaction Menu
+	"",										// Statement - i have no fucking clue what that is supposed to mean
+	_code_p3,									// the code you're executing
+	{true}										// Condition for action to be shown:
+] call ace_interact_menu_fnc_createAction;
+
+
+
+
+// Here we define where we want this action that we created to be attached to
+{[
+	cvo_engineerVehicleClass,						// Object the action should be assigned to
+	0,												// Type of action, 0 for action, 1 for self-actionIDs
+	["ACE_MainActions"],							// Parent path of the new action <Array>
+	_x												// The Ace_action to be attached
+] call ace_interact_menu_fnc_addActionToClass;		// Alternative: ace_interact_menu_fnc_addActionToObject 
+} forEach [_cvo_Fort_preset1,_cvo_Fort_preset2,_cvo_Fort_preset3];
