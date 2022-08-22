@@ -13,7 +13,6 @@ if (player getVariable ["Interpreter",false]) then {
 	_individualKit append CVO_A_Officer;
 };
 
-
 if (player getVariable ["TeamLeader",false]) then {
 	systemChat "TeamLeader detected";
 	_individualKit append CVO_A_TeamLeader;
@@ -29,6 +28,7 @@ if (player getVariable ["MG",false]) then {
 if (player getVariable ["AT",false]) then {
 	systemChat "AT detected";
 	_individualKit append CVO_A_AT;
+	
 };
 if (player getVariable ["AA",false]) then {
 	systemChat "AA detected";
