@@ -123,7 +123,7 @@ private _code_p1 = {
 					["Land_HBarrierWall6_F", 50],
 					["Land_HBarrierWall4_F", 50],
 					["Land_HBarrierTower_F", 200]
-				]] call ace_fortify_fnc_registerObjects;
+				]] remoteExec  ["ace_fortify_fnc_registerObjects", 2];
 			}								// codeblock to be executed on completion
 		] call CBA_fnc_progressBar;			// Executing a CBA progressBar from an Ace Interaction results in crash. Delay execution by 1 frame!!!
 	}] call CBA_fnc_execNextFrame;			// <- this will delay the execution by 1 Frame. 
@@ -158,7 +158,7 @@ private _code_p2 = {
 					["Land_SandbagBarricade_01_F", 25],
 					["Land_SandbagBarricade_01_hole_F", 25],
 					["Land_BagFence_Round_F", 25]
-				]] call ace_fortify_fnc_registerObjects;
+				]] remoteExec ["ace_fortify_fnc_registerObjects", 2];
 			}								// codeblock to be executed on completion
 		] call CBA_fnc_progressBar;			// Executing a CBA progressBar from an Ace Interaction results in crash. Delay execution by 1 frame!!!
 	}] call CBA_fnc_execNextFrame;			// <- this will delay the execution by 1 Frame. 
@@ -193,8 +193,13 @@ private _code_p3 = {
 					["Land_CncBarrierMedium_F", 20],
 					["Land_CncBarrier_F", 10],
 					["Land_Concrete_SmallWall_4m_F", 10],
-					["Land_Concrete_SmallWall_8m_F", 20]
-				]] call ace_fortify_fnc_registerObjects;
+					["Land_Concrete_SmallWall_8m_F", 20],
+					["Land_Sawmill_01_illuminati_tower_F", 250],
+					["Land_LampShabby_F",50],
+					["Land_LampHarbour_F",50],
+					["Land_LampHalogen_F",50]
+
+				]] remoteExec  ["ace_fortify_fnc_registerObjects", 2];
 			}								// codeblock to be executed on completion
 		] call CBA_fnc_progressBar;			// Executing a CBA progressBar from an Ace Interaction results in crash. Delay execution by 1 frame!!!
 	}] call CBA_fnc_execNextFrame;			// <- this will delay the execution by 1 Frame. 
