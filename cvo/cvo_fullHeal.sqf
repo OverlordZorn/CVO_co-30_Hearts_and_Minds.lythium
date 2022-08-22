@@ -28,8 +28,8 @@ _code = {
 _cvo_fullAceHeal = [
 	"CVO_FullHeal",							// Action Name
 	"Get Full Health Check",				// Name for the ACE Interaction Menu
-	"",										// Statement - i have no fucking clue what that is supposed to mean
-	_code,									// the coe you're executing
+	"",										// custom Icon
+	_code,									// Statement - the coe you're executing
 	{true}									// Condition
 ] call ace_interact_menu_fnc_createAction;
 
