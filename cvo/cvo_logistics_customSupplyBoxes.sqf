@@ -1,4 +1,5 @@
-cvo_logistics_fnc_addSupplybox = compileScript ["cvo\cvo_logistics_fnc_addSupplyBox.sqf"];
+cvo_logistics_fnc_addSupplybox = compileScript ["cvo\cvo_logistics_fnc_addSupplyBox.sqf", false, ""];
+cvo_logisitics_fnc_spawnSupplyCrate = compileScript ["cvo\cvo_logisitics_fnc_spawnSupplyCrate.sqf", false, ""];
 
 
 [
@@ -10,6 +11,7 @@ cvo_logistics_fnc_addSupplybox = compileScript ["cvo\cvo_logistics_fnc_addSupply
 	],
 	"Land_WoodenCrate_01_F"
 ] call cvo_logistics_fnc_addSupplybox;
+
 
 [
 	btc_create_object, 
@@ -45,7 +47,6 @@ cvo_logistics_fnc_addSupplybox = compileScript ["cvo\cvo_logistics_fnc_addSupply
 		["rhs_VG40OP_white", 15]
 	],
 	"rhs_7ya37_1_single",
-	objNull,
 	[
 		["B_Respawn_TentDome_F",1]
 	]
@@ -72,7 +73,6 @@ cvo_logistics_fnc_addSupplybox = compileScript ["cvo\cvo_logistics_fnc_addSupply
 		["G_RegulatorMask_F", 6]
 	],
 	"Land_PlasticCase_01_large_CBRN_F",
-	objNull,
 	[
 		["B_SCBA_01_F",6]
 	]
