@@ -443,48 +443,52 @@ class Params {
         texts[]={""};
         default = 0;
     };
-    class cvo_p_custom_construction_array { // CVO - Custom Construction Array
-        title = "Custom Construction Array";
+    class cvo_p_medical_fullHeal { // CVO - Add FullHeal
+        title = "CVO - MEDICAL - Enable FullHeal";
         values[]={0,1};
         texts[]={"Off","On"};
         default = 1;
     };
-
-    class cvo_p_fortify { // CVO - Add Fortify
-        title = "Enable ACE Fortify";
-        values[]={0,1};
-        texts[]={"Off","On"};
-        default = 1;
-    };
-    class cvo_fullHeal { // CVO - Add FullHeal
-        title = "Enable FullHeal";
+    class cvo_p_acre_unconcious { // CVO - Acre - Unconcious Langauge
+        title = "CVO - ACRE - Unconcious Langauge";
         values[]={0,1};
         texts[]={"Off","On"};
         default = 1;
     };
    class cvo_p_arsenal { // CVO - Custom Arsenal
-        title = "Overwrite Arsenal, Custom Ace Arsenal";
+        title = "CVO - ARSENAL - Custom Ace Arsenal";
         values[]={0,1};
         texts[]={"Off","On"};
         default = 1;
     };
-    class cvo_p_arsenal_medicalTab { // CVO - Arsenal
-        title = "Add Medical Tab";
+    class cvo_p_arsenal_medicalTab { // CVO - Arsenal Medical Tab
+        title = "CVO - ARSENAL - Add Medical Tab";
         values[]={0,1};
         texts[]={"Off","On"};
         default = 1;
     };
-    class cvo_p_loadout { // CVO - Custom Loadout Handling
-        title = "Custom Loadout Handling";
+    class cvo_p_arsenal_loadout { // CVO - Custom Loadout Handling
+        title = "CVO - ARSENAL - Custom Loadout Handling";
+        values[]={0,1};
+        texts[]={"Off","On"};
+        default = 1;
+    };
+    class cvo_p_logistics_custom_construction_array { // CVO - Custom Construction Array
+        title = "CVO - LOGISTICS - Custom Construction Array";
+        values[]={0,1};
+        texts[]={"Off","On"};
+        default = 1;
+    };
+    class cvo_p_logistics_fortify { // CVO - Add Fortify
+        title = "CVO - LOGISTICS - Enable ACE Fortify";
         values[]={0,1};
         texts[]={"Off","On"};
         default = 1;
     };
     class cvo_p_logistics_crate { // CVO - Custom Loadout Handling
-        title = "Logistics - Custom Supply Crates";
+        title = "CVO - LOGISTICS - Custom Supply Crates";
         values[]={0,1};
         texts[]={"Off","On"};
         default = 1;
     };
-
 };

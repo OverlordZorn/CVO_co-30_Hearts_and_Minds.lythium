@@ -415,5 +415,11 @@ CVO_A_Rifleman = [
 {
 	[_x, false, false] call ace_arsenal_fnc_initBox;
 	[_x, CVO_A_Basic, false] call ace_arsenal_fnc_addVirtualItems;
+	[_x, false] call ace_dragging_fnc_setDraggable;
+	[_x, false] call ace_dragging_fnc_setCarryable;
+	_x setVariable ["ace_cargo_noRename", true];
+	[_x, -1] call ace_cargo_fnc_setSize;
+
 
 } forEach [CVO_arsenal, CVO_arsenal_1, CVO_arsenal_2];
+

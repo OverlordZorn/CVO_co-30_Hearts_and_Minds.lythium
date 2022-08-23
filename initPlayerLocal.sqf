@@ -2,4 +2,6 @@
 
 [compileScript ["cvo\cvo_arsenal_player.sqf"]] call CBA_fnc_directCall;
 
-// [player] call cvo_acre_fnc_unconcious;
+if (cvo_p_acre_unconcious) then {
+	[compileScript ["cvo\cvo_acre_unconcious.sqf"]] call CBA_fnc_directCall;
+	};

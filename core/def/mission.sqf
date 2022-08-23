@@ -102,13 +102,14 @@ btc_p_flag = "btc_p_flag" call BIS_fnc_getParamValue;
 btc_p_debug = "btc_p_debug" call BIS_fnc_getParamValue;
 
 //<< Custom CVO Parameters >>
-cvo_fullHeal = "cvo_fullHeal" call BIS_fnc_getParamValue isEqualTo 1;
-cvo_p_fortify = "cvo_p_fortify" call BIS_fnc_getParamValue isEqualTo 1;
-cvo_p_custom_construction_array = "cvo_p_custom_construction_array" call BIS_fnc_getParamValue isEqualTo 1;
+cvo_p_acre_unconcious = "cvo_p_acre_unconcious" call BIS_fnc_getParamValue isEqualTo 1;
+cvo_p_medical_fullHeal = "cvo_p_medical_fullHeal" call BIS_fnc_getParamValue isEqualTo 1;
+cvo_p_logistics_crate = "cvo_p_logistics_crate" call BIS_fnc_getParamValue isEqualTo 1;
+cvo_p_logistics_fortify = "cvo_p_logistics_fortify" call BIS_fnc_getParamValue isEqualTo 1;
+cvo_p_logistics_custom_construction_array = "cvo_p_logistics_custom_construction_array" call BIS_fnc_getParamValue isEqualTo 1;
 cvo_p_arsenal = "cvo_p_arsenal" call BIS_fnc_getParamValue isEqualTo 1;
 cvo_p_arsenal_medicalTab = "cvo_p_arsenal_medicalTab" call BIS_fnc_getParamValue isEqualTo 1;
-cvo_p_loadout = "cvo_p_loadout" call BIS_fnc_getParamValue isEqualTo 1;
-cvo_p_logistics_crate = "cvo_p_logistics_crate" call BIS_fnc_getParamValue isEqualTo 1;
+cvo_p_arsenal_loadout = "cvo_p_arsenal_loadout" call BIS_fnc_getParamValue isEqualTo 1;
 
 switch (btc_p_debug) do {
     case 0 : {
@@ -530,7 +531,7 @@ btc_construction_array =
     ]
 ];
 
-if (cvo_p_custom_construction_array) then{[compileScript ["cvo\cvo_construction.sqf"]] call CBA_fnc_directCall;};
+if (cvo_p_logistics_custom_construction_array) then{[compileScript ["cvo\cvo_logistiscs_init_construction.sqf"]] call CBA_fnc_directCall;};
 
 (btc_construction_array select 1) params [
     "_cFortifications", "_cStatics", "_cAmmobox",

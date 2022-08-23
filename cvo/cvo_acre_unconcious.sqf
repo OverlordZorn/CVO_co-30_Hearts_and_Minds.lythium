@@ -18,11 +18,11 @@ params ["_player"];
 if (!hasInterface) exitWith {};
 
 // Set languages
-["en", "English"] call acre_api_fnc_babelAddLanguageType;
+["ru", "Russian"] call acre_api_fnc_babelAddLanguageType;
 ["un", "Unconscious"] call acre_api_fnc_babelAddLanguageType;
 
 // Set spoken
-["en"] call acre_api_fnc_babelSetSpokenLanguages;
+["ru"] call acre_api_fnc_babelSetSpokenLanguages;
 
 // Switch language on unconscious toggle
 ["ace_unconscious", {
@@ -46,7 +46,7 @@ if (!hasInterface) exitWith {};
     if (_newUnit getVariable ["ACE_isUnconscious", false]) then {
         ["un"] call acre_api_fnc_babelSetSpokenLanguages;
     } else {
-        ["en"] call acre_api_fnc_babelSetSpokenLanguages;
+        ["ru"] call acre_api_fnc_babelSetSpokenLanguages;
     };
 }, false] call CBA_fnc_addPlayerEventHandler;
 
@@ -57,6 +57,6 @@ if (!hasInterface) exitWith {};
     if (_newCamera == "" && {ACE_player getVariable ["ACE_isUnconscious", false]}) then {
         ["un"] call acre_api_fnc_babelSetSpokenLanguages;
     } else {
-        ["en"] call acre_api_fnc_babelSetSpokenLanguages;
+        ["ru"] call acre_api_fnc_babelSetSpokenLanguages;
     };
 }, false] call CBA_fnc_addPlayerEventHandler;

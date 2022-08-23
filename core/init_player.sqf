@@ -28,7 +28,7 @@ btc_intro_done = [] spawn btc_respawn_fnc_intro;
         player createDiarySubject ["btc_diarylog", localize "STR_BTC_HAM_CON_INFO_ASKHIDEOUT_DIARYLOG", '\A3\ui_f\data\igui\cfg\simpleTasks\types\talk_ca.paa'];
     };
 
-    if (cvo_p_loadout) then {
+    if (cvo_p_arsenal_loadout) then {
         player setVariable ["CVO_Loadout", getUnitLoadout player]; systemChat "Loadout saved";                                                           // set default loadout at spawn
         player addEventHandler ["Respawn", { player setUnitLoadout (player getVariable ["CVO_Loadout", []]);systemChat "Loadout loaded"; }];            // adds EH when respawning, using the previously saved loadout 
         [compileScript ["cvo\cvo_arsenal_loadout.sqf"]] call CBA_fnc_directCall;                                                                        // adds Paperwork Interaction

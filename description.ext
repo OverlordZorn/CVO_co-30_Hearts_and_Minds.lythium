@@ -1,6 +1,6 @@
 
-loadScreen = "cvo\cvo_ham_title.paa";
-author = "Dr. Zorn - Original by Giallustio";
+loadScreen = "cvo\img\cvo_ham_title.paa";
+author = "Giallustio - Adapted for CVO by Zorn";
 onLoadName = $STR_BTC_HAM_DESCR_NAME;
 onLoadMission = $STR_BTC_HAM_DESCR_MISSION;
 enabledebugconsole = 1;
