@@ -1,5 +1,5 @@
 /* WIP
- * Author: Zorn
+ * Author: Zorn, Targetingsnake
  * Adds Ace Action to spawn an AmmoCrate and fills it with a custom Array.
  *
  * Arguments:
@@ -7,8 +7,8 @@
  * 1: Name of the supplyCrateAction <string>
  * 2: Nested Array of content EXCEPT BACKPACKS [["class0", amount], ["classN",#]] <Nested Array>
  * 3: Class of Crate to be used <OBJECT> <Optional - Default: "LandWoodenBox_F">
- * 4: Spawn Location - ideally a invisible helipad or "Tarp_01_Large_Black_F" <Object> <optional - default: objNull>
- * 5: Nested Array of Content BACKPACKS Only [["class0", #], ["classN",#]] <Nested Array > <optional - Default: []>
+ * 4: Nested Array of Content BACKPACKS Only [[class0, #], [classN,#]] <Nested Array > <optional - Default: []>
+ * 5: Spawn Location - ideally a invisible helipad or Tarp_01_Large_Black_F <Object> <optional - default: objNull>
  * 
  * Return Value:
  * None
@@ -22,12 +22,12 @@
 */
 
 params [
-	["_spawner", objNull, [objNull]],
+	["_spawner", objNull],
 	["_name", "defaultName", ["String"]],
-	["_array",[], [[]]],
-	["_spawnloc", objNull, [objNull]],
+	["_array",[]],
 	["_BoxType","Land_WoodenBox_F", ["String"]],
-	["_backpacks", [],[[]]]
+	["_backpacks", []],
+	["_spawnloc", objNull]
 ];
 
 if (_spawner == objNull || _Name == "") exitWith {};
@@ -47,7 +47,7 @@ if (_spawner == btc_create_object) then {
 _code = {
 	systemChat "Code Start.";
 
-	// Defines the Params for inside the code block
+	// Defines the Params
 	params["_BoxType", "_spawnloc", "_name", "_array", "_backpacks"];
 
 	//	_BoxType = "Land_WoodenBox_F";
@@ -59,17 +59,14 @@ _code = {
 	systemChat ("code _array: " + str _array);
 	systemChat ("code _backpacks: " + str _backpacks);
 
-	// refine spawn location
 	_spawnPos = getPosATL _spawnloc;
 	_spawnPos set [2, ((_spawnPos select 2) + 1)];
 
-
-
 	// spawn the desired box at the desired location.
+
 	systemChat ("code _spawnPos: " + str _spawnPos);
 	_box = createVehicle [_BoxType, _spawnPos,[],2,"CAN_COLLIDE"]; 		
 	//_box = _BoxType createVehicle _spawnPos;
-
 
 	// set the custom name for Ace Cargo
 	_box setVariable ["ace_cargo_customname", _name];
@@ -101,8 +98,10 @@ private _action = [
 	_actionname,													// Action Name
 	_actionstring,													// Name for the ACE Interaction Menu
 	"",																// Custom Icon 
-	[_BoxType, _spawnloc, _name, _array, _backpacks] call _code,	// Statement
-	{true}															// Condition
+	{_this call cvo_logisitics_fnc_spawnSupplyCrate},	// Statement
+	{true},															// Condition
+	{},
+	[_BoxType, _spawnloc, _name, _array, _backpacks]
 ] call ace_interact_menu_fnc_createAction;
 
 // Here we define where we the above mentioned action can be called from
