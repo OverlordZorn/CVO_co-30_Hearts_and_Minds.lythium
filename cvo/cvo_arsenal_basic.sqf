@@ -386,11 +386,12 @@ CVO_A_Engineer = [
 	"tsp_stickCharge_auto_mag"];
 
 
-CVO_A_CBRN = ["U_C_CBRN_Suit_01_Blue_F", 
-"U_B_CBRN_Suit_01_White_F",
-"G_AirPurifyingRespirator_01_F",
-"G_RegulatorMask_F", 
-"B_SCBA_01_F"];
+CVO_A_CBRN = [
+	"U_C_CBRN_Suit_01_Blue_F", 
+	"U_B_CBRN_Suit_01_White_F",
+	"G_AirPurifyingRespirator_01_F",
+	"G_RegulatorMask_F", 
+	"B_SCBA_01_F"];
 
 CVO_A_EW = [
 	"hgun_esd_01_F",
