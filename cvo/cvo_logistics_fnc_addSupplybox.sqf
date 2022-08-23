@@ -26,8 +26,8 @@ params [
 	["_name", "defaultName", ["String"]],
 	["_array",[]],
 	["_BoxType","Land_WoodenBox_F", ["String"]],
-	["_spawnloc", objNull],
-	["_backpacks", []]
+	["_backpacks", []],
+	["_spawnloc", objNull]
 ];
 
 if (_spawner == objNull || _Name == "") exitWith {};
