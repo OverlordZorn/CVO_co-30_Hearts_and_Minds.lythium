@@ -3,7 +3,7 @@
 Function: btc_side_fnc_removeRubbish
 
 Description:
-    Remove rubbish on road in city with Nemmera.
+    Remove rubbish on road in city with MT-LB.
 
 Parameters:
     _taskID - Unique task ID. [String]

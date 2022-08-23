@@ -38,7 +38,7 @@ if (isServer) then {
 // ################################################
 // 2. Define Additional Conditions to use Fortify 
 
-cvo_engineerVehicleClass = "B_APC_Tracked_01_CRV_F";
+cvo_engineerVehicleClass = "UK3CB_KRG_B_MTLB_PKT";
 
 [{
 	params ["_unit", "_object", "_cost"];
