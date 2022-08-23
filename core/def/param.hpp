@@ -480,6 +480,11 @@ class Params {
         texts[]={"Off","On"};
         default = 1;
     };
-
+    class cvo_p_logistics_crate { // CVO - Custom Loadout Handling
+        title = "Logistics - Custom Supply Crates";
+        values[]={0,1};
+        texts[]={"Off","On"};
+        default = 1;
+    };
 
 };

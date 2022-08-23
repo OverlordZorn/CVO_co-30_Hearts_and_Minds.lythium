@@ -22,3 +22,5 @@ if (cvo_p_arsenal) then {
 // Init Function
 cvo_acre_fnc_unconcious = compileScript ["cvo\cvo_acre_unconcious.sqf"];
 
+// Init CVO Logistics Custom Ammo createSimpleObject
+if (cvo_p_logistics_crate) then {[compileScript ["cvo\cvo_logistics_init_customSupplyBoxes.sqf"]] call CBA_fnc_directCall;};
