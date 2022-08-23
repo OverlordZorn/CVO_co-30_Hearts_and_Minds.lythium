@@ -19,5 +19,6 @@ if (cvo_p_arsenal) then {
 // Init CVO Loadout
 // core\init_player.sqf around line 31 
 
-// Load function
-cvo_logistics_addSupplyBox = compileScript ["cvo\cvo_logistics_addSupplyBox.sqf"];
+// Init Function
+cvo_acre_fnc_unconcious = compileScript ["cvo\cvo_acre_unconcious.sqf"];
+
