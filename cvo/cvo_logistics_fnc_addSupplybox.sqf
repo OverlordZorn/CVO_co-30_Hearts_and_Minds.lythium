@@ -3,12 +3,12 @@
  * Adds Ace Action to spawn an AmmoCrate and fills it with a custom Array.
  *
  * Arguments:
- * 0: Target supplySpawner <OBJECT>
- * 1: Name of the supplyCrate <string>
- * 2: Nested Array of content EXCEPT BACKPACKS [[class0, amount], [classN,#]] <Nested Array>
+ * 0: Target supplySpawner, where the ace action should be added <OBJECT>
+ * 1: Name of the supplyCrateAction <string>
+ * 2: Nested Array of content EXCEPT BACKPACKS [["class0", amount], ["classN",#]] <Nested Array>
  * 3: Class of Crate to be used <OBJECT> <Optional - Default: "LandWoodenBox_F">
- * 4: Spawn Location - ideally a invisible helipad or Tarp_01_Large_Black_F <Object> <optional - default: objNull>
- * 5: Nested Array of Content BACKPACKS Only [[class0, #], [classN,#]] <Nested Array > <optional - Default: []>
+ * 4: Spawn Location - ideally a invisible helipad or "Tarp_01_Large_Black_F" <Object> <optional - default: objNull>
+ * 5: Nested Array of Content BACKPACKS Only [["class0", #], ["classN",#]] <Nested Array > <optional - Default: []>
  * 
  * Return Value:
  * None
@@ -47,7 +47,7 @@ if (_spawner == btc_create_object) then {
 _code = {
 	systemChat "Code Start.";
 
-	// Defines the Params
+	// Defines the Params for inside the code block
 	params["_BoxType", "_spawnloc", "_name", "_array", "_backpacks"];
 
 	//	_BoxType = "Land_WoodenBox_F";
@@ -59,14 +59,17 @@ _code = {
 	systemChat ("code _array: " + str _array);
 	systemChat ("code _backpacks: " + str _backpacks);
 
+	// refine spawn location
 	_spawnPos = getPosATL _spawnloc;
 	_spawnPos set [2, ((_spawnPos select 2) + 1)];
 
-	// spawn the desired box at the desired location.
 
+
+	// spawn the desired box at the desired location.
 	systemChat ("code _spawnPos: " + str _spawnPos);
 	_box = createVehicle [_BoxType, _spawnPos,[],2,"CAN_COLLIDE"]; 		
 	//_box = _BoxType createVehicle _spawnPos;
+
 
 	// set the custom name for Ace Cargo
 	_box setVariable ["ace_cargo_customname", _name];

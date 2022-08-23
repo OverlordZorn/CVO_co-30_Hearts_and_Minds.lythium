@@ -56,6 +56,7 @@ cvo_logistics_fnc_addSupplybox = compileScript ["cvo\cvo_logistics_fnc_addSupply
 	btc_create_object, 
 	"Metis HAT Package",
 	[
+		["ACE_EntrenchingTool",1],
 		["ace_compat_rhs_afrf3_metis_carry", 1],
 		["ace_compat_rhs_afrf3_mag_9M131F", 3],
 		["ace_compat_rhs_afrf3_mag_9M131M", 7]
