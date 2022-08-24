@@ -39,8 +39,4 @@ _cvo_saveLoadout = [
 		["ACE_MainActions"],									// Parent path of the new action <Array>
 		_cvo_saveLoadout
 	] call ace_interact_menu_fnc_addActionToObject;				// Alternative: ace_interact_menu_fnc_addActionToObject 
-} forEach [
-	cvo_arsenal_loadout,
-	cvo_arsenal_loadout_1,
-	cvo_arsenal_loadout_2
-	];
+} forEach [cvo_arsenal_loadout_0, cvo_arsenal_loadout_1, cvo_arsenal_loadout_2];

@@ -1,7 +1,6 @@
 // Defining Custom Arsenal Pools
+
 //// Basic Kit, for everyone
-
-
 private _CVO_A_Basic_Medical = [
 	"ACE_packingBandage",
 	"ACE_fieldDressing",
@@ -421,5 +420,6 @@ CVO_A_Rifleman = [
 	[_x, -1] call ace_cargo_fnc_setSize;
 
 
-} forEach [CVO_arsenal, CVO_arsenal_1, CVO_arsenal_2];
+} forEach CVO_arsenal_array;
 
+CVO_arsenal_array = [CVO_arsenal_0, CVO_arsenal_1, CVO_arsenal_2];
