@@ -103,10 +103,13 @@ btc_p_debug = "btc_p_debug" call BIS_fnc_getParamValue;
 
 //<< Custom CVO Parameters >>
 cvo_p_acre_unconcious = "cvo_p_acre_unconcious" call BIS_fnc_getParamValue isEqualTo 1;
+
 cvo_p_medical_fullHeal = "cvo_p_medical_fullHeal" call BIS_fnc_getParamValue isEqualTo 1;
+
 cvo_p_logistics_crate = "cvo_p_logistics_crate" call BIS_fnc_getParamValue isEqualTo 1;
 cvo_p_logistics_fortify = "cvo_p_logistics_fortify" call BIS_fnc_getParamValue isEqualTo 1;
 cvo_p_logistics_custom_construction_array = "cvo_p_logistics_custom_construction_array" call BIS_fnc_getParamValue isEqualTo 1;
+
 cvo_p_arsenal = "cvo_p_arsenal" call BIS_fnc_getParamValue isEqualTo 1;
 cvo_p_arsenal_medicalTab = "cvo_p_arsenal_medicalTab" call BIS_fnc_getParamValue isEqualTo 1;
 cvo_p_arsenal_loadout = "cvo_p_arsenal_loadout" call BIS_fnc_getParamValue isEqualTo 1;
