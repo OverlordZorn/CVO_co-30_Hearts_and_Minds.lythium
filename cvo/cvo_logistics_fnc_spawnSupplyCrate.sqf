@@ -28,3 +28,5 @@ if (count _array > 0) then {
 if (count _backpacks > 0) then {
 	{_box addBackpackCargo [_x select 0, _x select 1];} forEach _backpacks;
 };
+
+[_box] call btc_log_fnc_init;
