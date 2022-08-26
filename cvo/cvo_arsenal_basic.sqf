@@ -1,5 +1,8 @@
-// Defining Custom Arsenal Pools
+// Array of Objects the CVO_Arsenal should be acessible from 
+CVO_arsenal_array = [CVO_arsenal_0, CVO_arsenal_1, CVO_arsenal_2];
 
+
+// Defining Custom Arsenal Pools
 //// Basic Kit, for everyone
 private _CVO_A_Basic_Medical = [
 	"ACE_packingBandage",
@@ -301,7 +304,6 @@ CVO_A_Basic append _CVO_A_Basic_Pistols;
 CVO_A_Basic append _CVO_A_Basic_attachments;
 
 CVO_A_Basic append _CVO_A_Basic_csw;
-systemChat str (count CVO_A_Basic);
 
 //// Specific Kit, for certain "Roles" only
 
@@ -364,12 +366,20 @@ CVO_A_MG = [
 	"rhs_100Rnd_762x54mmR",
 	"rhs_100Rnd_762x54mmR_green"];
 
-CVO_A_Marksman = ["UK3CB_SVD_OLD","rhs_10Rnd_762x54mmR_7N1","rhs_acc_pso1m2","ACE_RangeCard","optic_khs_old","rhsusf_acc_harris_swivel"];
+CVO_A_Marksman = [
+	"UK3CB_SVD_OLD",
+	"rhs_10Rnd_762x54mmR_7N1",
+	"rhs_acc_pso1m2",
+	"ACE_RangeCard",
+	"optic_khs_old",
+	"rhsusf_acc_harris_swivel"
+];
 
 CVO_A_AT = ["rhs_weap_rpg7", 
 	"rhs_acc_pgo7v",
 	"rhs_rpg7_PG7V_mag",
-	"rhs_rpg7_OG7V_mag"];
+	"rhs_rpg7_OG7V_mag"
+	];
 
 CVO_A_AA = ["rhs_weap_igla", "rhs_mag_9k38_rocket"];
 
@@ -412,14 +422,11 @@ CVO_A_Rifleman = [
 
 
 {
-	[_x, false, false] call ace_arsenal_fnc_initBox;
-	[_x, CVO_A_Basic, false] call ace_arsenal_fnc_addVirtualItems;
-	[_x, false] call ace_dragging_fnc_setDraggable;
-	[_x, false] call ace_dragging_fnc_setCarryable;
-	_x setVariable ["ace_cargo_noRename", true];
-	[_x, -1] call ace_cargo_fnc_setSize;
+	[_x, false, false] call ace_arsenal_fnc_initBox;					// Initialises ACE Arsenal on boxes
+	[_x, CVO_A_Basic, false] call ace_arsenal_fnc_addVirtualItems;		// Adds the basic list to the arsenal
 
-
+	[_x, false] call ace_dragging_fnc_setDraggable;						// Disables Dragging
+	[_x, false] call ace_dragging_fnc_setCarryable;						// Disables Carrying
+	[_x, -1] call ace_cargo_fnc_setSize;								// Disables Ace Cargo Loading
+	_x setVariable ["ace_cargo_noRename", true];						// Disables Ace Cargo Renaming
 } forEach CVO_arsenal_array;
-
-CVO_arsenal_array = [CVO_arsenal_0, CVO_arsenal_1, CVO_arsenal_2];
