@@ -44,4 +44,4 @@ if (
     [_obj, round ((sizeOf _type)/1.3)] call ace_cargo_fnc_setSpace;
 };
 
-[_obj] call CVO_fnc_logistics_initCreatedObject;
+[_obj] remoteExec ["CVO_fnc_logistics_initCreatedObject", 0, true];
