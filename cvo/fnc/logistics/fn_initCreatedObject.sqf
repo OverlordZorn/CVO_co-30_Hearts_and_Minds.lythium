@@ -10,7 +10,7 @@ private _action = [
 		isNull isVehicleCargo _cargo;
 	}
 ] call ace_interact_menu_fnc_createAction;
-[_object, 0, ["ACE_MainActions"], _action] remoteExec ["ace_interact_menu_fnc_addActionToObject", 0, true];
+[_object, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
 
 _action = [
     "CVO_Logistics_LoadInCargo_Action",
@@ -27,4 +27,4 @@ _action = [
     {},
     [_object]
 ] call ace_interact_menu_fnc_createAction;
-[_object, 0, ["ACE_MainActions", "CVO_Logistics_Action"], _action] remoteExec ["ace_interact_menu_fnc_addActionToObject", 0, true];
+[_object, 0, ["ACE_MainActions", "CVO_Logistics_Action"], _action] call ace_interact_menu_fnc_addActionToObject;
