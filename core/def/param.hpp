@@ -453,7 +453,7 @@ class Params {
         title = "CVO - ACRE - Unconcious Langauge";
         values[]={0,1};
         texts[]={"Off","On"};
-        default = 1;
+        default = 0;
     };
    class cvo_p_arsenal { // CVO - Custom Arsenal
         title = "CVO - ARSENAL - Custom Ace Arsenal";
