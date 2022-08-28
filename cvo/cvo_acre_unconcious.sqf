@@ -33,7 +33,7 @@ if (!hasInterface) exitWith {};
     if (_state) then {
         ["un"] call acre_api_fnc_babelSetSpokenLanguages;
     } else {
-        ["en"] call acre_api_fnc_babelSetSpokenLanguages;
+        ["ru"] call acre_api_fnc_babelSetSpokenLanguages;
     };
 }] call CBA_fnc_addEventHandler;
 
