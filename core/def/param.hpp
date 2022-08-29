@@ -491,4 +491,16 @@ class Params {
         texts[]={"Off","On"};
         default = 1;
     };
+    class cvo_p_env_fastnight { // CVO - Custom Loadout Handling
+        title = "CVO - Environment - Enable Faster Night Time Progression";
+        values[]={0,1};
+        texts[]={"Off","On"};
+        default = 1;
+    };
+    class cvo_p_env_fastnightmulti { // CVO - Custom Loadout Handling
+        title = "CVO - Environment - Enable Faster Night Time Progression";
+        values[]={5,10,30,60,90,120};
+        texts[]={"5x","10x","30x","60x","90x","120x max"};
+        default = 60;
+    };
 };

@@ -114,6 +114,9 @@ cvo_p_arsenal = "cvo_p_arsenal" call BIS_fnc_getParamValue isEqualTo 1;
 cvo_p_arsenal_medicalTab = "cvo_p_arsenal_medicalTab" call BIS_fnc_getParamValue isEqualTo 1;
 cvo_p_arsenal_loadout = "cvo_p_arsenal_loadout" call BIS_fnc_getParamValue isEqualTo 1;
 
+cvo_p_env_fastnight = "cvo_p_env_fastnight" call BIS_fnc_getParamValue isEqualTo 1;
+cvo_p_env_fastnightmulti = "cvo_p_env_fastnightmulti" call BIS_fnc_getParamValue;
+
 switch (btc_p_debug) do {
     case 0 : {
         btc_debug_log = false;

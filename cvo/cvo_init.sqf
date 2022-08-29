@@ -20,3 +20,5 @@ if (cvo_p_arsenal) then 			{[compileScript ["cvo\cvo_arsenal_basic.sqf"]] call C
 // Init CVO Loadout
 // core\init_player.sqf around line 31 
 
+// Init CVO Environment Night Time Multiplyer
+if (cvo_p_env_fastnight) then 		{[compileScript ["cvo\env\cvo_env_init.sqf"]] call CBA_fnc_directCall;};
