@@ -26,7 +26,7 @@ if (count _array > 0) then {
 
 // Fills the Box with with backpacks
 if (count _backpacks > 0) then {
-	{_box addBackpackCargo [_x select 0, _x select 1];} forEach _backpacks;
+	{_box addBackpackCargoGlobal [_x select 0, _x select 1];} forEach _backpacks;
 };
 
 
