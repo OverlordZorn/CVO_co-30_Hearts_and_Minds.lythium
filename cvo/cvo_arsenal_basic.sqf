@@ -253,9 +253,6 @@ private _CVO_A_Basic_Pistols = [
 	"rhs_weap_rsp30_red",
 	"rhs_weap_rsp30_green",
 	"rhs_weap_rsp30_white",
-	"rhs_mag_rsp30_white",
-	"rhs_mag_rsp30_green",
-	"rhs_mag_rsp30_red",
 	
 	"tsp_meleeWeapon_mpl50_black",
 	"tsp_meleeWeapon_ak"
