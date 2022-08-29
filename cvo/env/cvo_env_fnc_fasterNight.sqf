@@ -22,7 +22,7 @@
 scopeName "main";
 
 sleep 5;
-diag_log "[CVO] [ENV] (FasterNight) Start";
+diag_log "[CVO] [ENV] (FasterNight) - Start";
 
 
 params [
@@ -57,24 +57,28 @@ _sunrise = (_sunriseSunset select 0) - 0.5;
 _sunset = (_sunriseSunset select 1) + 0.5; 
 _isDay = _sunrise < daytime && daytime < _sunset;
 
-diag_log ("[CVO] [ENV] (FasterNight) _isDay?: " + str _isDay);
+diag_log ("[CVO] [ENV] (FasterNight) - _sunrise?: " + str _sunrise);
+diag_log ("[CVO] [ENV] (FasterNight) - _sunset?: " + str _sunset);
+
+diag_log ("[CVO] [ENV] (FasterNight) - _isDay?: " + str _isDay);
 
 
 if (_isDay) then {
 	scopeName "turnToNight";										// Change timeMultiplier when it turns night
-	diag_log ("[CVO] [ENV] (FasterNight) currently Day");
+	diag_log ("[CVO] [ENV] (FasterNight) - currently Day");
 	waitUntil {daytime > _sunset};
-	diag_log ("[CVO] [ENV] (FasterNight) currently SunSet");
+	diag_log ("[CVO] [ENV] (FasterNight) - currently SunSet");
 	setTimeMultiplier _multiNight;
+	diag_log ("[CVO] [ENV] (FasterNight) - Multiplier Night applied");
 
 	if (_clearNight) then {scopeName "ClearNight executing.";
-		diag_log ("[CVO] [ENV] (FasterNight) _ClearNight start");
+		diag_log ("[CVO] [ENV] (FasterNight) - _ClearNight start");
 		3600 setOvercast (random 0.4);
-		diag_log ("[CVO] [ENV] (FasterNight) _ClearNight wait begin");
+		diag_log ("[CVO] [ENV] (FasterNight) - _ClearNight wait begin");
 		waitUntil {sleep 3600};
-		diag_log ("[CVO] [ENV] (FasterNight) _ClearNight wait end");
+		diag_log ("[CVO] [ENV] (FasterNight) - _ClearNight wait end");
 		21600 setOvercast (random 0.2);
-		diag_log ("[CVO] [ENV] (FasterNight) _ClearNight wait end");
+		diag_log ("[CVO] [ENV] (FasterNight) - _ClearNight wait end");
 	};
 
 } else {
@@ -82,18 +86,19 @@ if (_isDay) then {
 	scopeName "turnToDay";												// Change timeMultiplier when it turns Day
 
 	if (daytime > _sunset) then {
-		diag_log ("[CVO] [ENV] (FasterNight) currently Evening");
+		diag_log ("[CVO] [ENV] (FasterNight) - currently Evening");
 		waitUntil {daytime < _sunset};
-		diag_log ("[CVO] [ENV] (FasterNight) currently Midnight");
+		diag_log ("[CVO] [ENV] (FasterNight) - currently Midnight");
 		};
 	waitUntil {daytime > _sunrise};
-	diag_log ("[CVO] [ENV] (FasterNight) currently SunRise");
+	diag_log ("[CVO] [ENV] (FasterNight) - currently SunRise");
 	setTimeMultiplier _multiDay;
+	diag_log ("[CVO] [ENV] (FasterNight) - Multiplier Day applied");
 
 };
 
-diag_log ("[CVO] [ENV] (FasterNight) Complete");
-_handle = [_multiDay, _multiNight, _modes, _handle] spawn cvo_env_fnc_fasterNight;
-diag_log ("[CVO] [ENV] (FasterNight) Re-Start");
-diag_log ("[CVO] [ENV] (FasterNight) new handle: " + str _handle);
+diag_log ("[CVO] [ENV] (FasterNight) - Complete");
+_handle = _this spawn cvo_env_fnc_fasterNight;
+diag_log ("[CVO] [ENV] (FasterNight) - Re-Started");
+diag_log ("[CVO] [ENV] (FasterNight) - new handle: " + str _handle);
 

@@ -19,6 +19,11 @@
  * 
  *
  * Public: maybe idfk
+ *
+ *
+ * TODO:
+ *	- Adapt befor usage outside of HAM: _spawnloc adjust default/fail
+ *
 */
 
 params [
@@ -33,6 +38,8 @@ params [
 // Failstate
 if (_spawner == objNull || _Name == "") exitWith {};
 if (_spawner == btc_create_object) then {_spawnloc = btc_create_object_point;};
+
+// diag_log ("[CVO] [LOGISTICS] (CSC) Adding Ace Action for " + str _name);
 
 
 // Adapts Names for the Ace action
@@ -58,5 +65,6 @@ private _action = [
 	_action
 ] call ace_interact_menu_fnc_addActionToObject;		// Alternative: ace_interact_menu_fnc_addActionToClass 
 
+diag_log ("[CVO] [LOGISTICS] (CSC) - Added Ace Action for " + _name);
 
 

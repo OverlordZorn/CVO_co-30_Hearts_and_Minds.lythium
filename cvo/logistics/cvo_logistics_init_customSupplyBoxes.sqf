@@ -1,5 +1,5 @@
-cvo_logistics_fnc_addCustomSupplyBoxAceActionToObject = compileScript ["cvo\cvo_logistics_fnc_addCustomSupplyBoxAceActionToObject.sqf", false, ""];
-cvo_logistics_fnc_spawnSupplyCrate = compileScript ["cvo\cvo_logistics_fnc_spawnSupplyCrate.sqf", false, ""];
+cvo_logistics_fnc_addCustomSupplyBoxAceActionToObject = compileScript ["cvo\logistics\cvo_logistics_fnc_addCustomSupplyBoxAceActionToObject.sqf", false, ""];
+cvo_logistics_fnc_spawnSupplyCrate = compileScript ["cvo\logistics\cvo_logistics_fnc_spawnSupplyCrate.sqf", false, ""];
 
 /* 
 [

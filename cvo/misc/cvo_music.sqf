@@ -19,9 +19,9 @@ params [
 	];
 
 
-if (_playlist == "") exitWith {diag_log "[CVO] [MUSIC]no playlist defined"};
+if (_playlist == "") exitWith {diag_log "[CVO] [MUSIC] - no playlist defined"};
 
-diag_log ("[CVO] [MUSIC] playlist: "+ str _playlist);
+diag_log ("[CVO] [MUSIC] - playlist: "+ str _playlist);
 
 private _song;
 private _selection;
@@ -70,7 +70,6 @@ _selection = switch (_playlist) do {
 }; 
 
 _song = _selection call BIS_fnc_selectRandom;
-
-diag_log ("[CVO] [MUSIC] song: "+ str _song);
-
+diag_log ("[CVO] [MUSIC] - song: "+ str _song);
 _song remoteExec ["playMusic", -2, false]; 
+diag_log ("[CVO] [MUSIC] - playing");

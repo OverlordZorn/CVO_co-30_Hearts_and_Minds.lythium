@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=65;
+	toggles=1089;
 	class ItemIDProvider
 	{
-		nextID=2108;
+		nextID=2112;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1143;
+		nextID=1247;
 	};
 	class Camera
 	{
-		pos[]={12140.649,354.4559,17195.479};
-		dir[]={0.49711725,-0.23036125,0.83668554};
-		up[]={0.11769829,0.9730776,0.1980954};
-		aside[]={0.85980701,5.7806028e-007,-0.51085931};
+		pos[]={12199.198,351.09952,17284.086};
+		dir[]={0.034557726,-0.53996962,-0.84097481};
+		up[]={0.022169974,0.84168452,-0.53951436};
+		aside[]={-0.99915683,0,-0.041057818};
 	};
 };
 binarizationWanted=0;
@@ -156,15 +156,13 @@ addons[]=
 	"A3_Supplies_F_Enoch_Ammoboxes",
 	"A3_Supplies_F_Orange_Ammoboxes",
 	"A3_Structures_F_Heli_Items_Luggage",
-	"A3_Props_F_Enoch_Military_Supplies",
-	"ace_gforces",
-	"ace_parachute"
+	"A3_Props_F_Enoch_Military_Supplies"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=76;
+		items=75;
 		class Item0
 		{
 			className="A3_Modules_F";
@@ -669,13 +667,6 @@ class AddonsMetaData
 			name="Arma 3 Contact Platform - Ammoboxes and Supplies";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
-		};
-		class Item75
-		{
-			className="ace_parachute";
-			name="ACE3 - Parachute";
-			author="ACE-Team";
-			url="https://ace3.acemod.org/";
 		};
 	};
 };
@@ -6944,7 +6935,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=28;
+		items=27;
 		class Item0
 		{
 			dataType="Layer";
@@ -16943,7 +16934,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={12157.236,344.81009,17296.137};
-								angles[]={-0,2.346159,0};
+								angles[]={0,2.346159,0};
 							};
 							side="Empty";
 							flags=4;
@@ -25375,7 +25366,7 @@ class Mission
 				};
 			};
 			id=270;
-			atlOffset=0.047241211;
+			atlOffset=-17.560547;
 		};
 		class Item3
 		{
@@ -28184,7 +28175,7 @@ class Mission
 				};
 			};
 			id=1137;
-			atlOffset=0.22155762;
+			atlOffset=-241.63853;
 		};
 		class Item5
 		{
@@ -38134,7 +38125,7 @@ class Mission
 						};
 					};
 					id=1465;
-					atlOffset=8.9573975;
+					atlOffset=-140.66;
 				};
 				class Item3
 				{
@@ -46539,7 +46530,7 @@ class Mission
 			class Attributes
 			{
 				text="play music when no player at base";
-				onActivation="[""leavebase""] call compileScript [""cvo\cvo_music.sqf""];";
+				onActivation="[""leavebase""] call cvo_fnc_music;";
 				sizeA=250;
 				sizeB=250;
 				timeout[]={60,120,300};
@@ -46581,6 +46572,7 @@ class Mission
 							};
 							id=1829;
 							type="UK3CB_TKA_B_HELI_PILOT";
+							atlOffset=-3.0517578e-005;
 						};
 						class Item1
 						{
@@ -46590,12 +46582,12 @@ class Mission
 								position[]={11778.435,349.85999,17902.535};
 							};
 							side="West";
-							flags=4;
 							class Attributes
 							{
 							};
 							id=1830;
 							type="UK3CB_TKA_B_HELI_PILOT";
+							atlOffset=3.204895;
 						};
 					};
 					class Attributes
@@ -46683,6 +46675,7 @@ class Mission
 				};
 			};
 			id=1841;
+			atlOffset=-212.99515;
 		};
 		class Item26
 		{
@@ -47033,34 +47026,6 @@ class Mission
 				};
 			};
 			id=1954;
-		};
-		class Item27
-		{
-			dataType="Group";
-			side="West";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={12063.252,341.95145,17370.252};
-					};
-					side="West";
-					flags=7;
-					class Attributes
-					{
-					};
-					id=2107;
-					type="B_Pilot_F";
-				};
-			};
-			class Attributes
-			{
-			};
-			id=2106;
 		};
 	};
 };

@@ -537,7 +537,7 @@ btc_construction_array =
     ]
 ];
 
-if (cvo_p_logistics_custom_construction_array) then{[compileScript ["cvo\cvo_logistiscs_init_construction.sqf"]] call CBA_fnc_directCall;};
+if (cvo_p_logistics_custom_construction_array) then{[compileScript ["cvo\logistics\cvo_logistics_init_construction.sqf"]] call CBA_fnc_directCall;};
 
 (btc_construction_array select 1) params [
     "_cFortifications", "_cStatics", "_cAmmobox",

@@ -15,9 +15,3 @@ class cvo_detector_beep_3 {
     sound[] = {"cvo\sounds\chem_detector_beep_3.ogg", 5, 1, 20};
     titles[] = {};
 };
-
-class cvo_heal {
-    name = "cvo_heal";
-    sound[] = {"cvo\sounds\healsound.ogg", 1, 1, 7};
-    titles[] = {};
-};

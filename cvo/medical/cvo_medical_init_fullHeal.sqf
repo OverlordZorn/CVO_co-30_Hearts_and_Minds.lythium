@@ -7,10 +7,11 @@
  */
 
 
+
 // Here you define the code you want to execute, in this case, via a progress bar
 _code = {
-	if (round random 100 < 10) then { 
-		[player, "cvo_heal"] remoteExec [say3D, -2];
+	if (round random 100 < 5) then {
+		playSound3D [getMissionPath "cvo\medical\medical_healsound.ogg", player];
 	};
 	[{
 		[
