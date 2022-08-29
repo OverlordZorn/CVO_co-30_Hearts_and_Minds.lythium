@@ -44,7 +44,7 @@ private _action = [
 	_actionname,													// Action Name
 	_actionstring,													// Name for the ACE Interaction Menu
 	"",																// Custom Icon 
-	{_this call cvo_logistics_fnc_spawnSupplyCrate},	// Statement
+	{_this call cvo_logistics_fnc_spawnSupplyCrate},				// Statement
 	{true},															// Condition
 	{},
 	[_BoxType, _spawnloc, _name, _array, _backpacks]
