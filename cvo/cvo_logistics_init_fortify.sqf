@@ -1,5 +1,6 @@
 // https://ace3.acemod.org/wiki/framework/fortify-framework.html
 
+
 // ################################################
 // 1. Define current Fortify Budget, Objects and Prices
 
@@ -17,6 +18,7 @@ if (isServer) then {
 	["Land_HBarrierTower_F", 50]
 ]] call ace_fortify_fnc_registerObjects;
 };
+
 
 // ################################################
 // 2. Define Additional Conditions to use Fortify 
@@ -121,6 +123,7 @@ _cvo_Fort_preset1 = [
 	{true}										// Condition for action to be shown:
 ] call ace_interact_menu_fnc_createAction;
 
+
 // -> Sandbag Preset
 private _code_p2 = {
 	[{
@@ -183,7 +186,9 @@ private _code_p3 = {
 					["Land_LampHalogen_F",50],
 					["CamoNet_BLUFOR_open_F", 50],
 					["CamoNet_BLUFOR_F", 50],
-					["CamoNet_BLUFOR_big_F", 50]
+					["CamoNet_BLUFOR_big_F", 50],
+					["Land_Plank_01_8m_F", 10],
+					["Land_Plank_01_4m_F",10]
 				]] remoteExec  ["ace_fortify_fnc_registerObjects", 2];
 			}								// codeblock to be executed on completion
 		] call CBA_fnc_progressBar;			// Executing a CBA progressBar from an Ace Interaction results in crash. Delay execution by 1 frame!!!
