@@ -12,4 +12,4 @@ private _medicalTab = [
     "ACE_surgicalKit","ACE_personalAidKit","ACE_bodyBag"
 ];
 [_medicalTab, "Medical", getMissionPath "\cvo\img\redCrystal.paa"] call ace_arsenal_fnc_addRightPanelButton;
-systemChat "MedicalTab Applied";
+diag_log "[CVO] [ARSENAL]" + "MedicalTab Applied";
