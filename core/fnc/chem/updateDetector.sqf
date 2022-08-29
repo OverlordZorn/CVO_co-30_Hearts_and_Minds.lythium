@@ -55,7 +55,8 @@ Author:
     if !(visibleWatch) exitWith {
         [_idPFH] call CBA_fnc_removePerFrameHandler;
     };
-    private _level = selectMin (btc_chem_contaminated apply {player distance _x});
+    private _level = 0;
+    _level = selectMin (btc_chem_contaminated apply {player distance _x});
     if (_level < btc_chem_range) then {
         _level = 1;
     } else {
@@ -76,10 +77,11 @@ Author:
         };
     };
 
+    if (_file == "") exitWith {};
 
     switch (CVO_chemDetector_sound_mode) do {
         case 1: { playSound [_file, false]; };
-        case 2: { player say3D _file; };
+        case 2: { [player, _file] remoteExec ["say3D", 0]; };
         default {};
     };
 }, 1, _this] call CBA_fnc_addPerFrameHandler;
