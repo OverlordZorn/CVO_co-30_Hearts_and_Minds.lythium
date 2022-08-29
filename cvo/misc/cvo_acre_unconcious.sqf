@@ -15,6 +15,8 @@
 
 params ["_player"];
 
+diag_log "[CVO] [ACRE] (Acre Unconcious) - Init Start";
+
 if (!hasInterface) exitWith {};
 
 // Set languages
@@ -32,8 +34,11 @@ if (!hasInterface) exitWith {};
 
     if (_state) then {
         ["un"] call acre_api_fnc_babelSetSpokenLanguages;
+        diag_log ("[CVO] [ACRE] (Acre Unconcious) - " + str _unit + " - setUncon");
     } else {
         ["ru"] call acre_api_fnc_babelSetSpokenLanguages;
+        diag_log ("[CVO] [ACRE] (Acre Unconcious) - " + str _unit + " - setNormal");
+
     };
 }] call CBA_fnc_addEventHandler;
 
@@ -60,3 +65,5 @@ if (!hasInterface) exitWith {};
         ["ru"] call acre_api_fnc_babelSetSpokenLanguages;
     };
 }, false] call CBA_fnc_addPlayerEventHandler;
+
+diag_log "[CVO] [ACRE] (Acre Unconcious) - Init End";
