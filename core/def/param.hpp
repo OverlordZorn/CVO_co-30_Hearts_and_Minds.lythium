@@ -15,7 +15,7 @@ class Params {
         title = __EVAL(format ["      %1", localize "STR_USRACT_TIME_INC"]);
         values[]={1,2,3,4,5,6,7,8,9,10,11,12};
         texts[]={"1","2","3","4","5","6","7","8","9","10","11","12"};
-        default = 6;
+        default = 10;
     };
     class btc_p_load { // Load the savegame (if available)
         title = __EVAL(format ["      %1", localize "STR_BTC_HAM_PARAM_DB_LOAD"]);
@@ -485,20 +485,20 @@ class Params {
         texts[]={"Off","On"};
         default = 1;
     };
-    class cvo_p_logistics_crate { // CVO - Custom Loadout Handling
+    class cvo_p_logistics_crate { // CVO - Custom Supply Crates;
         title = "CVO - LOGISTICS - Custom Supply Crates";
         values[]={0,1};
         texts[]={"Off","On"};
         default = 1;
     };
-    class cvo_p_env_fastnight { // CVO - Custom Loadout Handling
-        title = "CVO - Environment - Enable Faster Night Time Progression";
+    class cvo_p_env_fastnight { // CVO - FasterNight
+        title = "CVO - Environment - Enable FasterNight";
         values[]={0,1};
         texts[]={"Off","On"};
         default = 1;
     };
-    class cvo_p_env_fastnightmulti { // CVO - Custom Loadout Handling
-        title = "CVO - Environment - Enable Faster Night Time Progression";
+    class cvo_p_env_fastnightmulti { // CVO - FasterNight Multiplier
+        title = "CVO - Environment - FasterNight Multiplier";
         values[]={5,10,30,60,90,120};
         texts[]={"5x","10x","30x","60x","90x","120x max"};
         default = 60;
