@@ -15,15 +15,15 @@ _code = {
 	};
 	[{
 		[
-			"Get Treated...",						// Title of progressBar
-			30,										// Duration of progressBar in secounds
-			{true},									// Condition, will check every frame
+			"Get Treated...",												// Title of progressBar
+			30,																// Duration of progressBar in secounds
+			{true},															// Condition, will check every frame
 			{
 				[player] call ace_medical_treatment_fnc_fullHealLocal;		// The actual fucking code
-			}										// codeblock to be executed on completion
-		] call CBA_fnc_progressBar;					// Executing a CBA progressBar from an Ace Interaction results in crash. Delay execution by 1 frame!!!
-	}] call CBA_fnc_execNextFrame;					// <- this will delay the execution by 1 Frame. 
-}; 													// This is the code you want the interaction to execute.
+			}																// codeblock to be executed on completion
+		] call CBA_fnc_progressBar;											// Executing a CBA progressBar from an Ace Interaction results in crash. Delay execution by 1 frame!!!
+	}] call CBA_fnc_execNextFrame;											// <- this will delay the execution by 1 Frame. 
+}; 																			// This is the code you want the interaction to execute.
 
 
 // Here we create the action which we later attach to something
