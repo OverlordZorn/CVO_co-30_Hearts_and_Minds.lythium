@@ -81,7 +81,7 @@ class Params {
         title = __EVAL(format ["      %1", localize "STR_BTC_HAM_RESP_TIMEBEFORESHOWMARKER"]);
         values[]={-1,0,5,10,30,60};
         texts[]={$STR_DISABLED,"0 min","5 min","10 min","30 min","60 min"};
-        default = 30;
+        default = 60;
     };
     class btc_p_respawn_arsenal { // ACE Arsenal available on respawn after been killed:
         title = __EVAL(format ["      %1", localize "STR_BTC_HAM_RESP_ENABLEARSENAL"]);
@@ -135,19 +135,19 @@ class Params {
         title = __EVAL(format ["      %1", localize "STR_BTC_HAM_PARAM_SPWAN_ISOCCUPIED_DENSITY"]);
         values[]={0,10,20,30,40,45,50,60,70,80,90,100};
         texts[]={"0%","10%","20%","30%","40%","45%","50%","60%","70%","80%","90%","100%"};
-        default = 45;
+        default = 70;
     };
     class btc_p_mil_group_ratio { // Enemy density:
         title = __EVAL(format ["      %1", localize "STR_BTC_HAM_PARAM_SPWAN_ENEMY_DENSITY"]);
         values[]={0,10,20,30,40,50,60,70,80,90,100};
         texts[]={"0%","10%","20%","30%","40%","50%","60%","70%","80%","90%","100%"};
-        default = 40;
+        default = 60;
     };
     class btc_p_mil_static_group_ratio { // Enemy static density:
         title = __EVAL(format ["      %1", localize "STR_BTC_HAM_PARAM_SPWAN_ENEMY_STATIC_DENSITY"]);
         values[]={0,10,20,30,40,50,60,70,80,90,100};
         texts[]={"0%","10%","20%","30%","40%","50%","60%","70%","80%","90%","100%"};
-        default = 30;
+        default = 60;
     };
     class btc_p_civ_group_ratio { // Civilian density:
         title = __EVAL(format ["      %1", localize "STR_BTC_HAM_PARAM_SPWAN_CIVILIAN_DENSITY"]);
@@ -165,7 +165,7 @@ class Params {
         title = __EVAL(format ["      %1", localize "STR_BTC_HAM_PARAM_SPWAN_MIL_INHOUSE_DENSITY"]);
         values[]={0,10,20,30,40,50,60,70,80,90,100};
         texts[]={"0%","10%","20%","30%","40%","50%","60%","70%","80%","90%","100%"};
-        default = 70;
+        default = 50;
     };
     class btc_p_veh_armed_ho { // Add armed vehicles in Hideout:
         title = __EVAL(format ["      %1", localize "STR_BTC_HAM_PARAM_SPAWN_ARMEDHIDEOUT"]);
@@ -183,7 +183,7 @@ class Params {
         title = __EVAL(format ["      %1", localize "STR_BTC_HAM_PARAM_SPWAN_PATROL_MAX"]);
         values[]={0,1,2,3,4,5,6,7,8,9,10};
         texts[]={"1","2","3","4","5","6","7","8","9","10"};
-        default = 8;
+        default = 10;
     };
     class btc_p_civ_max_veh { // Maximum number of civilian patrol:
         title = __EVAL(format ["      %1", localize "STR_BTC_HAM_PARAM_SPWAN_CIV_MAX_VEH"]);
@@ -207,7 +207,7 @@ class Params {
         title = __EVAL(format ["      %1", localize "STR_BTC_HAM_PARAM_IED_SPOT"]);
         values[]={0, 1, 2};
         texts[]={$STR_BTC_HAM_PARAM_IED_SPOT_VERYEASY,$STR_BTC_HAM_PARAM_IED_SPOT_EASY,$STR_3DEN_ATTRIBUTES_SPEEDMODE_NORMAL}; //texts[]={"Very easy","Easy","Normal"};
-        default = 1;
+        default = 2;
     };
     class btc_p_ied_placement { // IEDs type of placement:
         title = __EVAL(format ["      %1", localize "STR_BTC_HAM_PARAM_IED_PLACEMENT"]);
@@ -237,7 +237,7 @@ class Params {
         title = __EVAL(format ["      %1", localize "STR_BTC_HAM_PARAM_CACHE_DISTANCE"]);
         values[]={500,1000,1500,2000,2500,3000,3500,4000,5000};
         texts[]={"500 m","1000 m","1500 m","2000 m","2500 m","3000 m","3500 m","4000 m","5000 m"};
-        default = 3000;
+        default = 5000;
     };
     class btc_p_cache_info_ratio { //Cache info ratio:
         title = __EVAL(format ["      %1", localize "STR_BTC_HAM_PARAM_CACHE_RATIO"]);
@@ -249,13 +249,13 @@ class Params {
         title = __EVAL(format ["      %1", localize "STR_BTC_HAM_PARAM_CACHE_DEADINFO"]);
         values[]={0,10,20,30,40,50,60,70,80,90,100};
         texts[]={"100 %","90 %","80 %","70 %","60 %","50 %","40 %","30 %","20 %","10 %","0 %"};
-        default = 80;
+        default = 90;
     };
     class btc_p_info_houseDensity { // Density of intel in house:
         title = __EVAL(format ["      %1", localize "STR_BTC_HAM_PARAM_CACHE_HOUSEINFO"]);
         values[]={0,1,2,3,4,5,6,7,8,9,10,20,30,40,50,60,70,80,90,100};
         texts[]={"0%","1%","2%","3%","4%","5%","6%","7%","8%","9%","10%","20%","30%","40%","50%","60%","70%","80%","90%","100%"};
-        default = 30;
+        default = 50;
     };
     class btc_p_skill_title { // << A3 Skill options >>
         title = $STR_BTC_HAM_PARAM_SKILL_TITLE;
@@ -279,7 +279,7 @@ class Params {
         title = __EVAL(format ["      %1, %2", localize "STR_A3_CFGVEHICLES_MODULESKILL_F_0", localize "STR_BTC_HAM_PARAM_SKILL_AIMACC"]);
         values[]={0,1,2,3,4,5,6,7,8,9,10};
         texts[]={"0","0.1","0.2","0.3","0.4","0.5","0.6","0.7","0.8","0.9","1"};
-        default = 2;
+        default = 3;
     };
     class btc_p_set_skill_aimingShake { // Set skill, aimingShake
         title = __EVAL(format ["      %1, %2", localize "STR_A3_CFGVEHICLES_MODULESKILL_F_0", localize "STR_BTC_HAM_PARAM_SKILL_AIMSKILL"]);
