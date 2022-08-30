@@ -67,7 +67,8 @@ if (_isDay) then {
 		diag_log ("[CVO] [ENV] (FasterNight) - _ClearNight start");
 		3600 setOvercast (random 0.4);
 		diag_log ("[CVO] [ENV] (FasterNight) - _ClearNight wait begin");
-		waitUntil {sleep 600};
+		waitUntil {sleep 600; true};
+		diag_log ("[CVO] [ENV] (FasterNight) - _ClearNight wait end");
 		6000 setOvercast (random 0.2);
 	};
 
