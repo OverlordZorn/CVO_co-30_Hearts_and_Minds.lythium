@@ -181,7 +181,7 @@ private _CVO_A_Basic_Tools = [
 	"ACE_DAGR",
 	"ACE_CableTie",
 	"ACE_Chemlight_Shield",
-	"acex_intelitems_notepad"
+	"acex_intelitems_notepad",
 
 	"ACE_WaterBottle"
 ];
