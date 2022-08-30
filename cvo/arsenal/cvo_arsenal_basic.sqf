@@ -157,10 +157,13 @@ private _CVO_A_Basic_Tools = [
 	"ItemWatch",
 	"ItemCompass",
 
+	"immersion_pops_poppack",
 	"murshun_cigs_cigpack",
 	"murshun_cigs_lighter",
-	"immersion_pops_poppack",
 	"murshun_cigs_matches",
+	"immersion_cigs_cigar0",
+	"immersion_cigs_cigar0_nv",
+
 
 	"ACE_Humanitarian_Ration",
 	"ACE_MapTools",
@@ -177,25 +180,33 @@ private _CVO_A_Basic_Tools = [
 
 	"ACE_DAGR",
 	"ACE_CableTie",
+	"ACE_Chemlight_Shield",
 	"acex_intelitems_notepad"
+
+	"ACE_WaterBottle"
 ];
 
 private _CVO_A_Basic_Throwable =  [
 	"rhs_mag_rdg2_white",
 	"rhs_mag_rdg2_black",
 	"rhs_mag_rgd5",
-	"ACE_HandFlare_Red",
-	"Chemlight_yellow",
-	"ACE_Chemlight_White",
-	"Chemlight_red",
-	"ACE_Chemlight_Orange",
-	"Chemlight_blue",
-	"Chemlight_green",
+
 	"ACE_M84",
+
 	"ACE_HandFlare_Green",
 	"ACE_HandFlare_Yellow",
 	"ACE_HandFlare_Red",
-	"ACE_HandFlare_White"
+	"ACE_HandFlare_White",
+
+	"Chemlight_yellow",
+	"Chemlight_red",
+	"Chemlight_blue",
+	"Chemlight_green",
+	"ACE_Chemlight_Orange",
+	"ACE_Chemlight_White",
+	"ACE_Chemlight_HiWhite",
+	"ACE_Chemlight_UltraHiOrange"
+
 ];
 
 private _CVO_A_Basic_EXO = [
@@ -210,7 +221,14 @@ private _CVO_A_Basic_Rifles = [
     "rhs_weap_ak74m",
 	"rhs_weap_ak105",
 	"rhs_weap_aks74u",
+	"rhs_weap_aks74un",
 	"rhs_weap_aks74n",
+	"rhs_weap_aks74n_2",
+	"rhs_weap_aks74",
+	"rhs_weap_aks74_2",
+	"rhs_weap_ak74n",
+	"rhs_weap_ak74n_2",
+	"rhs_weap_akms",
 
 	"rhs_30Rnd_545x39_7N10_AK",
 	"rhs_30Rnd_545x39_7N10_plum_AK",
@@ -243,7 +261,15 @@ private _CVO_A_Basic_Rifles = [
 
 	"UK3CB_Enfield_Rail",
 	"UK3CB_Enfield_10rnd_Mag",
-	"UK3CB_Enfield_10rnd_Mag_YT"
+	"UK3CB_Enfield_10rnd_Mag_YT",
+
+	"rhs_weap_savz61",
+	"rhsgref_20rnd_765x17_vz61",
+
+	"rhs_weap_pp2000",
+	"rhs_mag_9x19mm_7n21_44",
+	"rhs_mag_9x19mm_7n21_20"
+
 ];
 
 private _CVO_A_Basic_Pistols = [
@@ -259,8 +285,11 @@ private _CVO_A_Basic_Pistols = [
 ];
 
 private _CVO_A_Basic_attachments = [
-	"rhs_acc_2dpZenit",
+	// lights
+	"rhs_acc_2dpZenit",					
 	"rhs_acc_2dpZenit_ris",
+
+	// muzzle
 	"rhs_acc_dtkakm",
 	"rhs_acc_dtk",
 	"rhs_acc_dtk1983",
@@ -271,7 +300,13 @@ private _CVO_A_Basic_attachments = [
 	"rhs_acc_pgs64_74un",
 	"rhs_acc_pgs64_74u",
 	"rhs_acc_pgs64",
-	"rhs_acc_dtk1l"
+	"rhs_acc_dtk1l",
+
+	// optics
+	"rhs_acc_1p63",
+	"rhs_acc_okp7_dovetail",
+	"rhs_acc_ekp8_02",
+	"rhs_acc_pkas"
 ];
 
 private _CVO_A_Basic_csw = [
@@ -300,7 +335,7 @@ CVO_A_Basic append _CVO_A_Basic_Rifles;
 CVO_A_Basic append _CVO_A_Basic_Pistols;
 CVO_A_Basic append _CVO_A_Basic_attachments;
 
-CVO_A_Basic append _CVO_A_Basic_csw;
+// CVO_A_Basic append _CVO_A_Basic_csw;		// for now, CSW only accessible via CSC
 
 //// Specific Kit, for certain "Roles" only
 
@@ -318,18 +353,17 @@ CVO_A_Interpreter = [];
 
 CVO_A_TeamLeader = [
 	"ACRE_PRC148",
+	"rhs_VG40SZ"
+];
+
+CVO_A_GL = [
 	"rhs_weap_ak74m_fullplum_gp25",
     "rhs_weap_ak74m_gp25",
 	"rhs_VOG25",
 	"rhs_VOG25P",
-	"rhs_VG40SZ",
 	"rhs_GRD40_White",
-	"rhs_GRD40_Green",
-	"rhs_GRD40_Red",
 	"rhs_GDM40",
 	"rhs_VG40OP_white",
-	"rhs_VG40OP_red",
-	"rhs_VG40OP_green",
 	"rhs_VG40MD"
 ];
 
@@ -384,9 +418,13 @@ CVO_A_Engineer = [
 	"ACE_VMM3","ACE_VMH3", 
 	"ACE_wirecutter", "ToolKit", 
 	"ACE_Fortify", "ACE_DefusalKit",
+	
+	"DemoCharge_Remote_Mag",
+
 	"rhs_ec75_sand_mag",
-	"rhs_ec400_sand_mag",
 	"rhs_ec200_sand_mag",
+	"rhs_ec400_sand_mag",
+
 	"tsp_frameCharge_mag",
 	"tsp_stickCharge_mag",
 	"tsp_stickCharge_auto_mag"];

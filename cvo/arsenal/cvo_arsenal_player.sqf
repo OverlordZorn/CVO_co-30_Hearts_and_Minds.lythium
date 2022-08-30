@@ -9,11 +9,17 @@ if (player getVariable ["Officer",false]) then {
 	_individualKit append CVO_A_RTO;};
 
 
+if (player getVariable ["GL",false]) then {
+	_individualKit append CVO_A_GL;};
+
+
 if (player getVariable ["Interpreter",false]) then {
+	_individualKit append CVO_A_Interpreter;
 	_individualKit append CVO_A_Officer;};
 
 
 if (player getVariable ["TeamLeader",false]) then {
+	_individualKit append CVO_A_GL;
 	_individualKit append CVO_A_TeamLeader;};
 
 
