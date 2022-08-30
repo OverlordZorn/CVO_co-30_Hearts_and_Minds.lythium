@@ -1,0 +1,46 @@
+sqf
+
+ace_marker_flags_green
+
+getObjectType 8
+
+configfile >> "CfgVehicles" >> "ace_marker_flags_green"
+Parents: ["ace_marker_flags_white","FlagMarker_01_F","NonStrategic","Building","Static","All"]
+
+testArray = 8 allObjects 0;
+testArray
+
+
+[_original, {_x * 10}, true] call CBA_fnc_filter;
+
+
+
+
+_array = 8 allObjects 0;
+count testArray;
+
+filteredArray = [testArray, {typeOf _x == "ace_marker_flags_green"}] call CBA_fnc_filter;
+count filteredArray;
+
+
+testArray = 8 allObjects 0;
+
+typeOf _x == "ace_marker_flags_green";
+
+flagArray = [];
+
+{
+if ( _x == "ace_marker_flags_green") then {
+flagArray pushBack _x; 
+};
+
+} forEach testArray;
+
+count flagArray;
+flagArray;
+
+typeOf (testArray select 0);
+
+
+#########
+

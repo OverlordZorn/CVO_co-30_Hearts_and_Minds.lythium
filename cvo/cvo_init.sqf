@@ -23,6 +23,9 @@ if (cvo_p_arsenal) then 			{[compileScript ["cvo\arsenal\cvo_arsenal_basic.sqf"]
 // Init CVO Environment Night Time Multiplyer
 if (cvo_p_env_fastnight) then 		{[compileScript ["cvo\env\cvo_env_init.sqf"]] call CBA_fnc_directCall;};
 
+// Init CVO Intel - Placeable Flag to Marker
+if (cvo_p_intel_flags) then 		{[compileScript ["cvo\intel\cvo_intel_flag_init.sqf"]] call CBA_fnc_directCall;};
 
 
+// Init CVO Music
 cvo_fnc_music = compile preprocessFile "cvo\misc\cvo_music.sqf";

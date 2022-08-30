@@ -503,4 +503,11 @@ class Params {
         texts[]={"5x","10x","30x","60x","90x","120x max"};
         default = 60;
     };
+    class cvo_p_intel_flags { // CVO - flagToMarker
+        title = "CVO - Intel - Ace Placeable Flags to Markers";
+        values[]={0,1};
+        texts[]={"Off", "On"};
+        default = 1;
+    };
+
 };

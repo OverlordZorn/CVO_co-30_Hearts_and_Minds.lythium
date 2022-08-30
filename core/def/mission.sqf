@@ -117,6 +117,13 @@ cvo_p_arsenal_loadout = "cvo_p_arsenal_loadout" call BIS_fnc_getParamValue isEqu
 cvo_p_env_fastnight = "cvo_p_env_fastnight" call BIS_fnc_getParamValue isEqualTo 1;
 cvo_p_env_fastnightmulti = "cvo_p_env_fastnightmulti" call BIS_fnc_getParamValue;
 
+cvo_p_intel_flags = "cvo_p_intel_flags" call BIS_fnc_getParamValue isEqualTo 1;
+
+
+
+
+//<< Debug sthsth >>
+
 switch (btc_p_debug) do {
     case 0 : {
         btc_debug_log = false;
