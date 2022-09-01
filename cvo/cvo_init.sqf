@@ -12,7 +12,9 @@ if (cvo_p_logistics_crate) then 	{[compileScript ["cvo\logistics\cvo_logistics_i
 // init to be found in /core/def/mission.sqf
 
 // Init CVO Arsenal Tab
-if (cvo_p_arsenal_medicalTab) then 	{[compileScript ["cvo\arsenal\cvo_arsenal_medTab.sqf"]] call CBA_fnc_directCall;};
+if (cvo_p_arsenal_medicalTab) then 	{
+	[compileScript ["cvo\arsenal\cvo_arsenal_Tab_medical.sqf"]] call CBA_fnc_directCall;
+};
 
 // Init CVO Arsenal
 if (cvo_p_arsenal) then 			{[compileScript ["cvo\arsenal\cvo_arsenal_basic.sqf"]] call CBA_fnc_directCall;};
