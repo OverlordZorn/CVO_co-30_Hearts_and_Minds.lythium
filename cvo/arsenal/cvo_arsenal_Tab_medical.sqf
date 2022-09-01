@@ -1,5 +1,3 @@
-// Enables cvo custom Arsenal, based on Role, defined by setVariable / getVariable.
-
 // Adding a custom sub item category
 //// Adding a Medical Tab
 private _medicalTab = [
@@ -11,5 +9,5 @@ private _medicalTab = [
     "ACE_bloodIV","ACE_bloodIV_500","ACE_bloodIV_250",
     "ACE_surgicalKit","ACE_personalAidKit","ACE_bodyBag"
 ];
-[_medicalTab, "Medical", getMissionPath "\cvo\img\redCrystal.paa"] call ace_arsenal_fnc_addRightPanelButton;
+[_medicalTab, "Medical", getMissionPath "\cvo\img\whiteCrystal.paa"] call ace_arsenal_fnc_addRightPanelButton;
 diag_log "[CVO] [ARSENAL]" + "MedicalTab Applied";
