@@ -228,8 +228,7 @@ private _CVO_A_Basic_Rifles = [
 	"rhs_weap_aks74_2",
 	"rhs_weap_ak74n",
 	"rhs_weap_ak74n_2",
-	"rhs_weap_akms",
-
+	
 	"rhs_30Rnd_545x39_7N10_AK",
 	"rhs_30Rnd_545x39_7N10_plum_AK",
 	"rhs_30Rnd_545x39_7N10_desert_AK",
@@ -241,7 +240,7 @@ private _CVO_A_Basic_Rifles = [
 	"rhs_30Rnd_545x39_7N10_2mag_camo_AK",
 	"rhs_30Rnd_545x39_7N10_2mag_AK",
 
-	
+
     "rhs_weap_ak104",
     "rhs_weap_ak103",
 	"rhs_weap_akm",
@@ -269,13 +268,12 @@ private _CVO_A_Basic_Rifles = [
 	"rhs_weap_pp2000",
 	"rhs_mag_9x19mm_7n21_44",
 	"rhs_mag_9x19mm_7n21_20"
-
 ];
 
 private _CVO_A_Basic_Pistols = [
 	"rhs_weap_pya",
 	"rhs_mag_9x19_17",
-	
+
 	"rhs_weap_rsp30_red",
 	"rhs_weap_rsp30_green",
 	"rhs_weap_rsp30_white",
@@ -393,26 +391,30 @@ CVO_A_MG = [
 	"rhs_45Rnd_545X39_7N10_AK",
 	"rhs_45Rnd_545X39_AK_Green",
 	"rhs_60Rnd_545X39_AK_Green",
+
 	"rhs_weap_pkm",
 	"rhs_100Rnd_762x54mmR",
-	"rhs_100Rnd_762x54mmR_green"];
+	"rhs_100Rnd_762x54mmR_green"
+
+	];
 
 CVO_A_Marksman = [
 	"UK3CB_SVD_OLD",
 	"rhs_10Rnd_762x54mmR_7N1",
+
 	"rhs_acc_pso1m2",
 	"ACE_RangeCard",
 	"optic_khs_old",
-	"rhsusf_acc_harris_swivel"
-];
+	"rhsusf_acc_harris_swivel"];
 
 CVO_A_AT = ["rhs_weap_rpg7", 
 	"rhs_acc_pgo7v",
 	"rhs_rpg7_PG7V_mag",
-	"rhs_rpg7_OG7V_mag"
-	];
+	"rhs_rpg7_OG7V_mag"];
 
-CVO_A_AA = ["rhs_weap_igla", "rhs_mag_9k38_rocket"];
+CVO_A_AA = [
+	"rhs_weap_igla",
+	"rhs_mag_9k38_rocket"];
 
 CVO_A_Engineer = [
 	"ACE_VMM3","ACE_VMH3", 
@@ -456,6 +458,11 @@ CVO_A_Rifleman = [
 ];
 
 
+_modLoaded = isClass (configfile >> "CfgPatches" >> "greenmag_main");
+if (_modLoaded) then {[compileScript ["cvo\arsenal\cvo_arsenal_mod_greenmag.sqf"]] call CBA_fnc_directCall;};
+
+
+
 {
 	[_x, false, false] call ace_arsenal_fnc_initBox;					// Initialises ACE Arsenal on boxes
 	[_x, CVO_A_Basic, false] call ace_arsenal_fnc_addVirtualItems;		// Adds the basic list to the arsenal
@@ -465,3 +472,4 @@ CVO_A_Rifleman = [
 	[_x, -1] call ace_cargo_fnc_setSize;								// Disables Ace Cargo Loading
 	_x setVariable ["ace_cargo_noRename", true];						// Disables Ace Cargo Renaming
 } forEach CVO_arsenal_array;
+
