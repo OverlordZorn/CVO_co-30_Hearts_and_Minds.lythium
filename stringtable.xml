@@ -71,13 +71,31 @@
     <Package name="Intro">
         <Container name="Intro">
             <Key ID="STR_BTC_HAM_INTRO_ARSENAL_REDEPLOY">
-                <Original>Arsenal/Re-deploy</Original>
-                <Spanish>Arsenal/Re-deploy</Spanish>
+                <Original>Arsenal/Deploy</Original>
+                <Spanish>Arsenal/Deploy</Spanish>
                 <German>Arsenal/Verlegen</German>
                 <Portuguese>Arsenal/Ressurgir</Portuguese>
                 <Chinesesimp>军火库/重新部署</Chinesesimp>
-                <French>Arsenal/Re-déploiement</French>
+                <French>Arsenal/Déploiement</French>
                 <Czech>Arsenal/Opětovné nasazení</Czech>
+            </Key>
+                <Key ID="STR_BTC_HAM_INTRO_REDEPLOY">
+                <Original>Re-deploy</Original>
+                <Spanish>Re-deploy</Spanish>
+                <German>Verlegen</German>
+                <Portuguese>Ressurgir</Portuguese>
+                <Chinesesimp>重新部署</Chinesesimp>
+                <French>Re-déploiement</French>
+                <Czech>Opětovné nasazení</Czech>
+            </Key>
+            <Key ID="STR_BTC_HAM_INTRO_ARSENAL">
+                <Original>Arsenal</Original>
+                <Spanish>Arsenal</Spanish>
+                <German>Arsenal</German>
+                <Portuguese>Arsenal</Portuguese>
+                <Chinesesimp>军火库</Chinesesimp>
+                <French>Arsenal</French>
+                <Czech>Arsenal</Czech>
             </Key>
             <Key ID="STR_BTC_HAM_INTRO_LOGPOINT">
                 <Original>Rearm/Repair and Objects</Original>
