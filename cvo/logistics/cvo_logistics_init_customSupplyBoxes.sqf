@@ -60,7 +60,7 @@ cvo_logistics_fnc_spawnSupplyCrate = compileScript ["cvo\logistics\cvo_logistics
 		["ace_compat_rhs_afrf3_mag_9M131F", 3],
 		["ace_compat_rhs_afrf3_mag_9M131M", 7]
 	],
-	"Land_WoodenCrate_01_F"
+	"Box_Syndicate_WpsLaunch_F"							// Land_WoodenCrate_01_F
 ] call cvo_logistics_fnc_addCustomSupplyBoxAceActionToObject;
 
 
@@ -71,8 +71,9 @@ cvo_logistics_fnc_spawnSupplyCrate = compileScript ["cvo\logistics\cvo_logistics
 		["U_C_CBRN_Suit_01_Blue_F", 6],
 		["G_RegulatorMask_F", 6]
 	],
-	"Land_PlasticCase_01_large_CBRN_F",
+	"Box_IED_Exp_F",									// Land_PlasticCase_01_large_CBRN_F
 	[
 		["B_SCBA_01_F",6]
 	]
 ] call cvo_logistics_fnc_addCustomSupplyBoxAceActionToObject;
+
