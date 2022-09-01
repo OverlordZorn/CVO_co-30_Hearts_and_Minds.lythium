@@ -8,7 +8,7 @@ class EditorData
 	toggles=65;
 	class ItemIDProvider
 	{
-		nextID=2161;
+		nextID=2162;
 	};
 	class MarkerIDProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={12220.246,347.73239,17287.34};
-		dir[]={-0.36601213,-0.4125253,0.83421612};
-		up[]={-0.16574955,0.91094142,0.37777841};
-		aside[]={0.91576576,-3.9394945e-007,0.40179098};
+		pos[]={12316.109,344.35034,17371.443};
+		dir[]={-0.6599232,-0.41420102,0.62688899};
+		up[]={-0.30033296,0.91016632,0.285299};
+		aside[]={0.68874407,6.0978346e-007,0.72504145};
 	};
 };
 binarizationWanted=0;
@@ -19227,6 +19227,7 @@ class Mission
 								ammo=0;
 								lock="LOCKEDPLAYER";
 								fuel=0;
+								name="cvo_spawn_heal";
 								textures="DES";
 							};
 							id=913;
@@ -23454,7 +23455,7 @@ class Mission
 				class Item15
 				{
 					dataType="Marker";
-					position[]={12203.738,341.95001,17300.029};
+					position[]={12199.704,341.95001,17280.125};
 					name="btc_base";
 					type="UK3CB_Marker_TKP";
 					id=681;
