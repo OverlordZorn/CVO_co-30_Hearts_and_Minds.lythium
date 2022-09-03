@@ -18,7 +18,7 @@
 *		cvo_env_fasterNight_handle = [20, 120, ["CLEARNIGHT"]] spawn cvo_env_fnc_fasterNight;
 */
 scopeName "main";
-
+sleep 30;
 diag_log "[CVO] [ENV] (FasterNight) - Start";
 
 
