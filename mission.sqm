@@ -8,7 +8,7 @@ class EditorData
 	toggles=65;
 	class ItemIDProvider
 	{
-		nextID=2162;
+		nextID=2183;
 	};
 	class MarkerIDProvider
 	{
@@ -16,18 +16,18 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1481;
+		nextID=1641;
 	};
 	class Camera
 	{
-		pos[]={12316.109,344.35034,17371.443};
-		dir[]={-0.6599232,-0.41420102,0.62688899};
-		up[]={-0.30033296,0.91016632,0.285299};
-		aside[]={0.68874407,6.0978346e-007,0.72504145};
+		pos[]={12207.567,363.89154,17246.727};
+		dir[]={-0.37059683,-0.46363768,0.80482453};
+		up[]={-0.19392537,0.88601822,0.42114657};
+		aside[]={0.90834975,-3.2037497e-007,0.41826829};
 	};
 };
 binarizationWanted=0;
-sourceName="cvo_co@30_hearts_and_minds";
+sourceName="CVO_co@30_Hearts_and_Minds";
 addons[]=
 {
 	"A3_Modules_F",
@@ -155,13 +155,15 @@ addons[]=
 	"A3_Supplies_F_Enoch_Ammoboxes",
 	"A3_Supplies_F_Orange_Ammoboxes",
 	"A3_Structures_F_Heli_Items_Luggage",
-	"A3_Props_F_Enoch_Military_Supplies"
+	"A3_Props_F_Enoch_Military_Supplies",
+	"A3_Props_F_AoW_Civilian_Gallery",
+	"A3_Props_F_AoW_Items_Decorative"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=74;
+		items=75;
 		class Item0
 		{
 			className="A3_Modules_F";
@@ -662,6 +664,13 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item74
+		{
+			className="A3_Props_F_AoW";
+			name="Arma 3 Art of War - Decorative and Mission ";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 dlcs[]=
@@ -674,7 +683,8 @@ dlcs[]=
 	"Heli",
 	"Orange",
 	"Oldman",
-	"RHS_USAF"
+	"RHS_USAF",
+	"Aow"
 };
 randomSeed=6826011;
 class ScenarioData
@@ -6928,7 +6938,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=27;
+		items=29;
 		class Item0
 		{
 			dataType="Layer";
@@ -20731,14 +20741,14 @@ class Mission
 							class PositionInfo
 							{
 								position[]={12172.883,341.95145,17275.598};
-								angles[]={0,2.2212176,0};
+								angles[]={0,2.2212107,0};
 							};
 							side="West";
 							flags=6;
 							class Attributes
 							{
 								skill=0.60000002;
-								init="this setVariable [""side_mission"",true];" \n "this setVariable [""Officer"",true];" \n "this setVariable [""TeamLeader"",true];";
+								init="this setVariable [""side_mission"",true];" \n "this setVariable [""Officer"",true];" \n "this setVariable [""TeamLeader"",true];" \n "this setVariable [""interpreter"",true];";
 								description="Officer@1-0 COY HQ";
 								isPlayer=1;
 								isPlayable=1;
@@ -20872,14 +20882,14 @@ class Mission
 							class PositionInfo
 							{
 								position[]={12173.434,341.95145,17276.654};
-								angles[]={0,2.2465549,0};
+								angles[]={0,2.2465529,0};
 							};
 							side="West";
 							flags=4;
 							class Attributes
 							{
 								skill=0.60000002;
-								init="this setVariable [""interpreter"",true]";
+								init="this setVariable [""interpreter"",true];";
 								description="Interpreter@1-0 COY HQ";
 								isPlayable=1;
 								class Inventory
@@ -46473,6 +46483,559 @@ class Mission
 				};
 			};
 			id=1954;
+		};
+		class Item27
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={12179.902,342.69492,17286.398};
+				angles[]={6.2260604,2.3649559,6.215868};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				disableSimulation=1;
+			};
+			id=2163;
+			type="GalleryFrame_01_large_portrait_F";
+			atlOffset=0.092010498;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ObjectTextureCustom0";
+					expression="_this setObjectTextureGlobal [0,_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="cvo\img\Leaderportrait.paa";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
+		};
+		class Item28
+		{
+			dataType="Layer";
+			name="painting tests";
+			state=3;
+			class Entities
+			{
+				items=15;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={12272.025,342.69492,17420.557};
+						angles[]={0,1.5027111,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						disableSimulation=1;
+					};
+					id=2164;
+					type="GalleryFrame_01_large_portrait_F";
+					atlOffset=0.092010498;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ObjectTextureCustom0";
+							expression="_this setObjectTextureGlobal [0,_value]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="cvo\img\Leaderportrait.paa";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="allowDamage";
+							expression="_this allowdamage _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=0;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={12271.61,342.07501,17418.936};
+						angles[]={0,3.1200602,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+					};
+					id=2165;
+					type="Land_Photoframe_02_standing_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ObjectTextureCustom0";
+							expression="_this setObjectTextureGlobal [0,_value]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="a3\props_f_aow\items\decorative\data\photoframe_02_aaf_co.paa";
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={12271.297,342.16443,17417.979};
+						angles[]={0,3.4439549,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+					};
+					id=2166;
+					type="Land_Photoframe_01_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ObjectTextureCustom0";
+							expression="_this setObjectTextureGlobal [0,_value]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="a3\props_f_orange\items\decorative\data\photos_camo_co.paa";
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={12273.915,341.96634,17416.531};
+						angles[]={0,4.1314473,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+					};
+					id=2167;
+					type="Land_Photoframe_01_broken_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ObjectTextureCustom0";
+							expression="_this setObjectTextureGlobal [0,_value]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="a3\props_f_orange\items\decorative\data\photos_camo_co.paa";
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item4
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={12272.85,342.48767,17418.418};
+						angles[]={0,1.8026011,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+					};
+					id=2168;
+					type="GalleryFrame_02_large_rectangle_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ObjectTextureCustom0";
+							expression="_this setObjectTextureGlobal [0,_value]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="a3\props_f_aow\civilian\gallery\data\galleryframe_02_rectangle_picture_co.paa";
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item5
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={12272.838,342.60291,17420.02};
+						angles[]={0,1.4932634,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+					};
+					id=2169;
+					type="GalleryFrame_01_large_portrait_F";
+				};
+				class Item6
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={12272.966,342.79526,17416.641};
+						angles[]={0,1.9479795,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+					};
+					id=2170;
+					type="GalleryFrame_01_large_v1_F";
+					atlOffset=0.25894165;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ObjectTextureCustom0";
+							expression="_this setObjectTextureGlobal [0,_value]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="cvo\img\Leaderportrait.paa";
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item7
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={12272.389,342.53452,17414.326};
+						angles[]={0,2.414098,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+					};
+					id=2171;
+					type="GalleryFrame_01_large_v2_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ObjectTextureCustom0";
+							expression="_this setObjectTextureGlobal [0,_value]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="a3\props_f_aow\civilian\gallery\data\galleryframe_02_picture_co.paa";
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item8
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={12277.186,342.58688,17434.584};
+						angles[]={0,2.6257248,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+					};
+					id=2172;
+					type="GalleryFrame_01_large_v3_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ObjectTextureCustom0";
+							expression="_this setObjectTextureGlobal [0,_value]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="a3\props_f_aow\civilian\gallery\data\galleryframe_03_picture_co.paa";
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item9
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={12271.207,343.78662,17414.051};
+						angles[]={0,2.2158697,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+					};
+					id=2173;
+					type="GalleryFrame_02_F";
+					atlOffset=1.5008545;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ObjectTextureCustom0";
+							expression="_this setObjectTextureGlobal [0,_value]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="a3\props_f_aow\civilian\gallery\data\galleryframe_02_rectangle_picture_alt_co.paa";
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item10
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={12272.208,343.79449,17415.297};
+						angles[]={0,2.3839092,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+					};
+					id=2174;
+					type="GalleryFrame_02_square_F";
+					atlOffset=1.2662659;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ObjectTextureCustom0";
+							expression="_this setObjectTextureGlobal [0,_value]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="a3\props_f_aow\civilian\gallery\data\galleryframe_02_square_picture_co.paa";
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item11
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={12275.738,342.54788,17422.992};
+						angles[]={0,1.5055908,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+					};
+					id=2175;
+					type="Canvas_01_Large_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ObjectTextureCustom0";
+							expression="_this setObjectTextureGlobal [0,_value]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="cvo\img\Leaderportrait.paa";
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item12
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={12273.179,342.3692,17424.723};
+						angles[]={0,1.1088251,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+					};
+					id=2176;
+					type="Canvas_01_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ObjectTextureCustom0";
+							expression="_this setObjectTextureGlobal [0,_value]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="cvo\img\Leaderportrait.paa";
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item13
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={12271.356,342.36801,17421.781};
+						angles[]={0,1.3284922,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+					};
+					id=2177;
+					type="Canvas_01_Square_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ObjectTextureCustom0";
+							expression="_this setObjectTextureGlobal [0,_value]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="cvo\img\Leaderportrait.paa";
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item14
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={12270.442,342.24716,17422.947};
+						angles[]={0,1.1953062,0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+					};
+					id=2178;
+					type="Canvas_01_Small_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ObjectTextureCustom0";
+							expression="_this setObjectTextureGlobal [0,_value]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="cvo\img\Leaderportrait.paa";
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+			};
+			id=2182;
+			atlOffset=0.063537598;
 		};
 	};
 };
