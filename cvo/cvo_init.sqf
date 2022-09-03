@@ -12,7 +12,7 @@ if (cvo_p_logistics_crate) then 	{[compileScript ["cvo\logistics\cvo_logistics_i
 // init to be found in /core/def/mission.sqf
 
 // Init CVO Arsenal Tab
-if (cvo_p_arsenal_medicalTab) then 	{
+if (cvo_p_arsenal_Tab_custom) then 	{
 	[compileScript ["cvo\arsenal\cvo_arsenal_Tab_medical.sqf"]] call CBA_fnc_directCall;
 };
 
@@ -31,3 +31,5 @@ if (cvo_p_intel_flags) then 		{[compileScript ["cvo\intel\cvo_intel_flag_init.sq
 
 // Init CVO Music
 cvo_fnc_music = compile preprocessFile "cvo\misc\cvo_music.sqf";
+
+cvo_side_fnc_distanceCondition = compile preprocessFile "core\fnc\side\cvo_side_fnc_distanceCondition.sqf";
