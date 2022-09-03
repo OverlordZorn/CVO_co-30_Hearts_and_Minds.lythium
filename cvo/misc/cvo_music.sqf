@@ -72,4 +72,4 @@ _selection = switch (_playlist) do {
 _song = _selection call BIS_fnc_selectRandom;
 diag_log ("[CVO] [MUSIC] - song: "+ str _song);
 _song remoteExec ["playMusic", -2, false]; 
-diag_log ("[CVO] [MUSIC] - playing");
+diag_log ("[CVO] [MUSIC] - playing.");
