@@ -28,9 +28,11 @@ params [
 private _usefuls = btc_city_all select {
     !isNull _x &&
     !((_x getVariable ["type", ""]) in ["NameLocal", "Hill", "NameMarine", "StrongpointArea"]) &&
-    !(_x getVariable ["occupied", false])
+    !(_x getVariable ["occupied", false])&&
+    ([_x] call cvo_side_fnc_distanceCondition)
 };
 if (_usefuls isEqualTo []) exitWith {[] spawn btc_side_fnc_create;};
+
 private _city2 = selectRandom _usefuls;
 
 private _area = (getNumber (configFile >> "CfgWorlds" >> worldName >> "MapSize"))/4;

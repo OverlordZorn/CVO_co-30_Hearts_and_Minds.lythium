@@ -111,7 +111,7 @@ cvo_p_logistics_fortify = "cvo_p_logistics_fortify" call BIS_fnc_getParamValue i
 cvo_p_logistics_custom_construction_array = "cvo_p_logistics_custom_construction_array" call BIS_fnc_getParamValue isEqualTo 1;
 
 cvo_p_arsenal = "cvo_p_arsenal" call BIS_fnc_getParamValue isEqualTo 1;
-cvo_p_arsenal_medicalTab = "cvo_p_arsenal_medicalTab" call BIS_fnc_getParamValue isEqualTo 1;
+cvo_p_arsenal_Tab_custom = "cvo_p_arsenal_Tab_custom" call BIS_fnc_getParamValue isEqualTo 1;
 cvo_p_arsenal_loadout = "cvo_p_arsenal_loadout" call BIS_fnc_getParamValue isEqualTo 1;
 
 cvo_p_env_fastnight = "cvo_p_env_fastnight" call BIS_fnc_getParamValue isEqualTo 1;
@@ -119,7 +119,7 @@ cvo_p_env_fastnightmulti = "cvo_p_env_fastnightmulti" call BIS_fnc_getParamValue
 
 cvo_p_intel_flags = "cvo_p_intel_flags" call BIS_fnc_getParamValue isEqualTo 1;
 
-
+cvo_p_side_distance = "cvo_p_side_distance" call BIS_fnc_getParamValue;
 
 
 //<< Debug sthsth >>

@@ -27,7 +27,8 @@ params [
 private _useful = btc_city_all select {
     !isNull _x &&
     _x getVariable ["occupied", false] &&
-    !((_x getVariable ["type", ""]) in ["NameLocal", "Hill", "NameMarine", "StrongpointArea"])
+    !((_x getVariable ["type", ""]) in ["NameLocal", "Hill", "NameMarine", "StrongpointArea"]) &&
+    ([_x] call cvo_side_fnc_distanceCondition)
 };
 if (_useful isEqualTo []) exitWith {[] spawn btc_side_fnc_create;};
 private _city = selectRandom _useful;

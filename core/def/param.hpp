@@ -461,8 +461,8 @@ class Params {
         texts[]={"Off","On"};
         default = 1;
     };
-    class cvo_p_arsenal_medicalTab { // CVO - Arsenal Medical Tab
-        title = "CVO - ARSENAL - Add Medical Tab";
+    class cvo_p_arsenal_Tab_custom { // CVO - Arsenal Custom Tab
+        title = "CVO - ARSENAL - Add Custom Tabs";
         values[]={0,1};
         texts[]={"Off","On"};
         default = 1;
@@ -509,5 +509,10 @@ class Params {
         texts[]={"Off", "On"};
         default = 1;
     };
-
+    class cvo_p_side_distance { // CVO - Custom Sidemission Distance
+        title = "CVO - Sidemission - Adds a maximum Distance in KM for Sidemissions to spawn from Base & FOBS";
+        values[]={0,3000,4000,5000,6000,7000,8000,9000,10000};
+        texts[]={"Off", "3 km","4 km","5 km","6 km","7 km","8 km","9 km","10 km" };
+        default = 7000;
+    };
 };
