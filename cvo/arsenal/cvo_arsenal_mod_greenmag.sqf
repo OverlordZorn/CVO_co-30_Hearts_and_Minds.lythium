@@ -36,4 +36,4 @@ CVO_A_Basic 		append _greenMag_Basic_items;
 CVO_A_MG		 	append _greenMag_A_MG;
 CVO_A_Marksman 		append _greenMag_A_Marskman;
 
-if (cvo_p_arsenal_medicalTab) then 	{[compileScript ["cvo\arsenal\cvo_arsenal_Tab_greenMag.sqf"]] call CBA_fnc_directCall;};
+if (cvo_p_arsenal_Tab_custom) then 	{[compileScript ["cvo\arsenal\cvo_arsenal_Tab_greenMag.sqf"]] call CBA_fnc_directCall;};
