@@ -1,23 +1,19 @@
-/* ----------------------------------------------------------------------------
-Function: cvo_logistics_fnc_initCreatedObject
+/*
+    Author: Skippie
 
-Description:
-    Initializes an object with CVO logistics actions.
+    Description:
+        Initializes an object with CVO logistics actions.
 
-Parameters:
-    _object - object that will be initialized
+    Parameter(s):
+        0: OBJECT - object that will be initialized
 
-Returns:
-    (none)
 
-Examples:
-    (begin example)
+    Returns:
+        NOTHING
+
+    Examples:
         [cursorObject] call cvo_logistics_fnc_initCreatedObject;
-    (end)
-
-Author:
-    Skippie
----------------------------------------------------------------------------- */
+*/
 
 params ["_object"];
 
@@ -63,3 +59,5 @@ if (!((typeOf _object) isKindOf "Static")) then {
     ] call ace_interact_menu_fnc_createAction;
     [_object, 0, ["ACE_MainActions", "CVO_Logistics_Action"], _action] call ace_interact_menu_fnc_addActionToObject;
 };
+
+["CVO Logistics: object %1 has been initialized", str _obj] call BIS_fnc_logFormat;

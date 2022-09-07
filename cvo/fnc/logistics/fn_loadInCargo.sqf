@@ -1,24 +1,20 @@
-/* ----------------------------------------------------------------------------
-Function: cvo_logistics_fnc_loadInCargo
+/*
+    Author: Skippie
 
-Description:
-    Loads an object into a vehicle's ViV cargo.
+    Description:
+    	Loads an object into a vehicle's ViV cargo.
 
-Parameters:
-    _obj - object that will be loaded
-    _vehicle = vehicle that will receive the object
+    Parameter(s):
+        0: OBJECT - object that will be initialized
+        1: OBJECT - vehicle that will receive the object
 
-Returns:
-    (none)
 
-Examples:
-    (begin example)
+    Returns:
+        NOTHING
+
+    Examples:
         [cursorObject, nearestObjects [cursorObject, ["Car", "Truck"], 10] select 0] call cvo_logistics_fnc_loadInCargo;
-    (end)
-
-Author:
-    Skippie
----------------------------------------------------------------------------- */
+*/
 
 params [
     ["_obj", objNull, [objNull]],
@@ -33,7 +29,6 @@ _timeToLoad = ((5 max (_objSize*2)) min 20);
 _possibleToLoad = (_vehicle canVehicleCargo _obj) select 0;
 
 if (!_possibleToLoad) exitWith { hint "The vehicle doesn't have enough room for this cargo" };
-
 
 [
 	_timeToLoad,
