@@ -10,7 +10,7 @@ if (("btc_p_chem" call BIS_fnc_getParamValue) isEqualTo 1) then {
 
 
 	// ACE Actions
-	cvo_cbrn_gvar_detector_mode = 2;
+	cvo_cbrn_gvar_detector_mode = cvo_cbrn_set_detector_defaultMode;
 
 
 	private _action = [

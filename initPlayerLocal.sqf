@@ -1,4 +1,4 @@
-#include "cvo\init\cvo_cbrn.sqf"
+#include "cvo\init\cvo_cbrn_local.sqf"
 
 [compileScript ["cvo\arsenal\cvo_arsenal_player.sqf"]] call CBA_fnc_directCall;
 
