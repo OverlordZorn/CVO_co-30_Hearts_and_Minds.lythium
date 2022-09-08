@@ -45,7 +45,7 @@ if ((!visibleWatch) && ("ChemicalDetector_01_watch_F" in (assignedItems player))
             if (_level < btc_chem_range) then {
                 _level = 5.0;
             } else {
-                _level = (floor ((btc_chem_range / _level)*50))/10;
+                _level = (floor ((btc_chem_range / _level)*10))/10;
             };
 
             _uiDetector ctrlAnimateModel ["Threat_Level_Source", _level, true];
@@ -61,7 +61,7 @@ if ((!visibleWatch) && ("ChemicalDetector_01_watch_F" in (assignedItems player))
                 [_id] call CBA_fnc_removePerFrameHandler;
             };
 
-            if (btc_chem_contaminated isEqualTo []) exitWith {};
+            if ((btc_chem_contaminated isEqualTo []) || (cvo_cbrn_gvar_detector_mode == 0)) exitWith {};
 
             _level = selectMin (btc_chem_contaminated apply {player distance _x});
 
@@ -81,8 +81,8 @@ if ((!visibleWatch) && ("ChemicalDetector_01_watch_F" in (assignedItems player))
                 _sound = "cvo_detector_beep_1";
             };
 
-            switch (CVO_chemDetector_sound_mode) do {
-                case 1: { playSoundUI [_sound, 1]; };
+            switch (cvo_cbrn_gvar_detector_mode) do {
+                case 1: { playSoundUI [_sound, cvo_cbrn_set_detector_volume]; };
                 case 2: { [player, _sound, 30] remoteExec ["say3D", -2]; };
                 default {};
             };
