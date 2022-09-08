@@ -16,12 +16,8 @@
         addUserActionEventHandler ["Watch", "Activate", cvo_cbrn_fnc_eventHandler_uiDetector];
 */
 
-systemChat "handler triggered";
-
 if ((!visibleWatch) && ("ChemicalDetector_01_watch_F" in (assignedItems player))) then {
     private ["_ui", "_uiDetector"];
-
-    systemChat "detector in inventory and watch is not visible";
 
     _ui = uiNamespace getVariable "RscWeaponChemicalDetector";
     _uiDetector = _ui displayCtrl 101;
@@ -51,8 +47,6 @@ if ((!visibleWatch) && ("ChemicalDetector_01_watch_F" in (assignedItems player))
             } else {
                 _level = (floor ((btc_chem_range / _level)*50))/10;
             };
-
-            systemChat str _level;
 
             _uiDetector ctrlAnimateModel ["Threat_Level_Source", _level, true];
         }, 0.3, [_uiDetector]] call CBA_fnc_addPerFrameHandler;
@@ -86,8 +80,6 @@ if ((!visibleWatch) && ("ChemicalDetector_01_watch_F" in (assignedItems player))
             if (_level < 2.0) then {
                 _sound = "cvo_detector_beep_1";
             };
-
-            systemChat _sound;
 
             switch (CVO_chemDetector_sound_mode) do {
                 case 1: { playSoundUI [_sound, 1]; };
