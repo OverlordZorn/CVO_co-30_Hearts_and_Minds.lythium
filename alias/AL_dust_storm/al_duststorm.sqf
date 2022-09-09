@@ -37,12 +37,14 @@ sleep 0.1;
 	sleep (x_duration_storm * 1.5);
 	
 	al_duststorm_on = false;
+
+	
 	publicVariable "al_duststorm_on";
 
 // restaureaza parametri vreme ## resets the weather parameter
-	120 setFog al_foglevel;
-	120 setRain al_rainlevel;
-	120 setLightnings al_thundlevel;
+	180 setFog al_foglevel;
+	180 setRain al_rainlevel;
+	180 setLightnings al_thundlevel;
 //	180 setOvercast al_overforecast;
 	setWind [al_windlevel select 0, al_windlevel select 1, true];
 	//forceWeatherChange;
@@ -62,16 +64,16 @@ sleep 0.1;
 
 	// Define New BTC_AI_Skill Array
 	private _mod = [
-    1,      //general 
-    0.5,    // aimAccuracy
-    0.7,    // aimShake
-    0.7,    // aimSpeed
+    0.5,      //general 
+    0.20,    // aimAccuracy
+    0.5,    // aimShake
+    0.4,    // aimSpeed
     1,      // endurance
-    0.25,   // spotDistance
-    0.25,   // spotTime
-    0.6,    // courage
-    0.8,    // reloadSpeed
-    0.5     // Commanding
+    0.15,   // spotDistance
+    0.15,   // spotTime
+    0.4,    // courage
+    0.5,    // reloadSpeed
+    0.4     // Commanding
     ];
 
 	private _array = [];
