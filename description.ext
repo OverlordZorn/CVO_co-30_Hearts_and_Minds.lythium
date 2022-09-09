@@ -29,7 +29,7 @@ class RscTitles {
 
 class CfgFunctions {
     // add your own functions below
-    #include "cvo\fnc\functions.hpp"
+    #include "cvo\CfgFunctions.hpp"
 };
 
 // CBA XEH
@@ -52,7 +52,7 @@ class Extended_InitPost_EventHandlers {
 
 class CfgSounds {
     sounds[] = {};
-    #include "cvo\sounds\sounds.hpp"
+    #include "cvo\CfgSounds.hpp"
     #include "alias\sound\sandstormsounds.hpp"
 };
 
