@@ -43,7 +43,7 @@ if ((!visibleWatch) && ("ChemicalDetector_01_watch_F" in (assignedItems player))
             _level = selectMin (btc_chem_contaminated apply {player distance _x});
 
             if (_level < btc_chem_range) then {
-                _level = 5.0;
+                _level = 1.0;
             } else {
                 _level = (floor ((btc_chem_range / _level)*10))/10;
             };
@@ -66,24 +66,24 @@ if ((!visibleWatch) && ("ChemicalDetector_01_watch_F" in (assignedItems player))
             _level = selectMin (btc_chem_contaminated apply {player distance _x});
 
             if (_level < btc_chem_range) then {
-                _level = 5.0;
+                _level = 1.0;
             } else {
-                _level = (floor (btc_chem_range / _level * 10)) / 2;
+                _level = (floor (btc_chem_range / _level * 10)) / 10;
             };
 
-            if (_level < 0.5) exitWith {};
+            if (_level < 0.1) exitWith {};
 
-            _sound = "cvo_detector_beep_3";
-            if (_level < 4.0) then {
-                _sound = "cvo_detector_beep_2";
+            _sound = "chem_detector_beep_3";
+            if (_level < 0.8) then {
+                _sound = "chem_detector_beep_2";
             };
-            if (_level < 2.0) then {
-                _sound = "cvo_detector_beep_1";
+            if (_level < 0.4) then {
+                _sound = "chem_detector_beep_1";
             };
 
             switch (cvo_cbrn_gvar_detector_mode) do {
                 case 1: { playSoundUI [_sound, cvo_cbrn_set_detector_volume]; };
-                case 2: { [player, _sound, 30] remoteExec ["say3D", -2]; };
+                case 2: { playSound3D [ (format ["%1%2.ogg", getMissionPath "cvo\cbrn\sounds\", _sound]), vehicle player, false, getPosASL player, 5, 1, 30]; };
                 default {};
             };
         }, 1.5, []] call CBA_fnc_addPerFrameHandler;

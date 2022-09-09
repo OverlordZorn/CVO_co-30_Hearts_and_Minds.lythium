@@ -16,18 +16,18 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1722;
+		nextID=1749;
 	};
 	class Camera
 	{
-		pos[]={12265.642,383.84592,17240.49};
-		dir[]={0.70738268,-0.50484651,0.49471384};
-		up[]={0.41371152,0.86320871,0.28933248};
-		aside[]={0.57310981,-3.8417056e-008,-0.8194797};
+		pos[]={12202.391,373.71988,17275.82};
+		dir[]={-0.69541842,-0.71842551,0.016063107};
+		up[]={-0.71823394,0.69560391,0.016590111};
+		aside[]={0.023092318,0,0.99973333};
 	};
 };
 binarizationWanted=0;
-sourceName="CVO_co@30_Hearts_and_Minds";
+sourceName="CVO_co-30_Hearts_and_Minds";
 addons[]=
 {
 	"A3_Modules_F",
