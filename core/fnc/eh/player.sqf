@@ -74,7 +74,7 @@ if (btc_p_chem) then {
     ["DeconShower_01_F", "init", {(_this select 0) setVariable ['bin_deconshower_disableAction', true];}, true, [], true] call CBA_fnc_addClassEventHandler;
     ["DeconShower_02_F", "init", {(_this select 0) setVariable ['bin_deconshower_disableAction', true];}, true, [], true] call CBA_fnc_addClassEventHandler;
 
-    [] call btc_chem_fnc_ehDetector;
+    //[] call btc_chem_fnc_ehDetector;
 };
 
 if (btc_p_spect) then {

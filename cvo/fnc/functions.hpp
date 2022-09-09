@@ -1,10 +1,20 @@
-class CVO {
+class CVO_Logistics {
+	tag = "cvo_logistics";
+
 	class Logistics {
-		class logistics_initCreatedObject {
-			file = "cvo\fnc\logistics\fn_initCreatedObject.sqf";
-		};
-		class logistics_loadInCargo {
-			file = "cvo\fnc\logistics\fn_loadInCargo.sqf";
-		};
+		file = "cvo\fnc\logistics";
+
+		class initCreatedObject;
+		class loadInCargo;
+	};
+};
+
+class CVO_CBRN {
+	tag = "cvo_cbrn";
+
+	class EventHandlers {
+		file = "cvo\fnc\cbrn";
+
+		class eventHandler_detector;
 	};
 };
