@@ -58,7 +58,7 @@ sleep 0.1;
 // reduces AI Skill during the storm
 [_duration_duststorm] spawn {
 	private ["_duration_duststorm"];
-	_duration_duststorm = this select 0;
+	_duration_duststorm = _this select 0;
 
 	// Define New BTC_AI_Skill Array
 	private _mod = [
