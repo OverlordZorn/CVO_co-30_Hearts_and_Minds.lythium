@@ -53,6 +53,7 @@ class Extended_InitPost_EventHandlers {
 class CfgSounds {
     sounds[] = {};
     #include "cvo\sounds\sounds.hpp"
+    #include "alias\sound\sandstormsounds.hpp"
 };
 
 respawn = 3;
@@ -77,5 +78,6 @@ class CfgMusic
 
 		// filename, volume, pitch
 		sound[]	= { "cvo\sounds\cvo1.ogg", db + 0, 1.0 };
+        titles[] = {1,""};
 	};
 };

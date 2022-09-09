@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1641;
+		nextID=1722;
 	};
 	class Camera
 	{
-		pos[]={12207.567,363.89154,17246.727};
-		dir[]={-0.37059683,-0.46363768,0.80482453};
-		up[]={-0.19392537,0.88601822,0.42114657};
-		aside[]={0.90834975,-3.2037497e-007,0.41826829};
+		pos[]={12265.642,383.84592,17240.49};
+		dir[]={0.70738268,-0.50484651,0.49471384};
+		up[]={0.41371152,0.86320871,0.28933248};
+		aside[]={0.57310981,-3.8417056e-008,-0.8194797};
 	};
 };
 binarizationWanted=0;
@@ -46552,6 +46552,7 @@ class Mission
 					flags=4;
 					class Attributes
 					{
+						presenceCondition="false";
 						disableSimulation=1;
 					};
 					id=2164;
@@ -46600,6 +46601,7 @@ class Mission
 					flags=4;
 					class Attributes
 					{
+						presenceCondition="false";
 					};
 					id=2165;
 					type="Land_Photoframe_02_standing_F";
@@ -46633,6 +46635,7 @@ class Mission
 					flags=4;
 					class Attributes
 					{
+						presenceCondition="false";
 					};
 					id=2166;
 					type="Land_Photoframe_01_F";
@@ -46666,6 +46669,7 @@ class Mission
 					flags=4;
 					class Attributes
 					{
+						presenceCondition="false";
 					};
 					id=2167;
 					type="Land_Photoframe_01_broken_F";
@@ -46699,6 +46703,7 @@ class Mission
 					flags=4;
 					class Attributes
 					{
+						presenceCondition="false";
 					};
 					id=2168;
 					type="GalleryFrame_02_large_rectangle_F";
@@ -46732,6 +46737,7 @@ class Mission
 					flags=4;
 					class Attributes
 					{
+						presenceCondition="false";
 					};
 					id=2169;
 					type="GalleryFrame_01_large_portrait_F";
@@ -46747,6 +46753,7 @@ class Mission
 					side="Empty";
 					class Attributes
 					{
+						presenceCondition="false";
 					};
 					id=2170;
 					type="GalleryFrame_01_large_v1_F";
@@ -46775,12 +46782,13 @@ class Mission
 					class PositionInfo
 					{
 						position[]={12272.389,342.53452,17414.326};
-						angles[]={0,2.414098,0};
+						angles[]={0,2.4141045,0};
 					};
 					side="Empty";
 					flags=4;
 					class Attributes
 					{
+						presenceCondition="false";
 					};
 					id=2171;
 					type="GalleryFrame_01_large_v2_F";
@@ -46795,7 +46803,7 @@ class Mission
 								class data
 								{
 									singleType="STRING";
-									value="a3\props_f_aow\civilian\gallery\data\galleryframe_02_picture_co.paa";
+									value="a3\props_f_aow\civilian\gallery\data\galleryframe_02_rectangle_picture_co.paa";
 								};
 							};
 						};
@@ -46814,6 +46822,7 @@ class Mission
 					flags=4;
 					class Attributes
 					{
+						presenceCondition="false";
 					};
 					id=2172;
 					type="GalleryFrame_01_large_v3_F";
@@ -46846,6 +46855,7 @@ class Mission
 					side="Empty";
 					class Attributes
 					{
+						presenceCondition="false";
 					};
 					id=2173;
 					type="GalleryFrame_02_F";
@@ -46879,6 +46889,7 @@ class Mission
 					side="Empty";
 					class Attributes
 					{
+						presenceCondition="false";
 					};
 					id=2174;
 					type="GalleryFrame_02_square_F";
@@ -46913,6 +46924,7 @@ class Mission
 					flags=4;
 					class Attributes
 					{
+						presenceCondition="false";
 					};
 					id=2175;
 					type="Canvas_01_Large_F";
@@ -46946,6 +46958,7 @@ class Mission
 					flags=4;
 					class Attributes
 					{
+						presenceCondition="false";
 					};
 					id=2176;
 					type="Canvas_01_F";
@@ -46979,6 +46992,7 @@ class Mission
 					flags=4;
 					class Attributes
 					{
+						presenceCondition="false";
 					};
 					id=2177;
 					type="Canvas_01_Square_F";
@@ -47012,6 +47026,7 @@ class Mission
 					flags=4;
 					class Attributes
 					{
+						presenceCondition="false";
 					};
 					id=2178;
 					type="Canvas_01_Small_F";
