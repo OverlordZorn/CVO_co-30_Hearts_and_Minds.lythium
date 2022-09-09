@@ -16,18 +16,18 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1641;
+		nextID=1695;
 	};
 	class Camera
 	{
-		pos[]={12207.567,363.89154,17246.727};
-		dir[]={-0.37059683,-0.46363768,0.80482453};
-		up[]={-0.19392537,0.88601822,0.42114657};
-		aside[]={0.90834975,-3.2037497e-007,0.41826829};
+		pos[]={12310.319,377.103,17299.877};
+		dir[]={-0.89352697,-0.42294341,0.1510943};
+		up[]={-0.41706973,0.90613621,0.070525125};
+		aside[]={0.1667375,-7.4217678e-007,0.98605675};
 	};
 };
 binarizationWanted=0;
-sourceName="CVO_co@30_Hearts_and_Minds";
+sourceName="cvo_co@30_hearts_and_minds";
 addons[]=
 {
 	"A3_Modules_F",
@@ -27178,16 +27178,18 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={12208.488,342.0437,17304.625};
-								angles[]={0,3.9248648,0};
+								position[]={12208.488,342.04346,17304.625};
+								angles[]={0,3.9248617,0};
 							};
 							side="West";
 							flags=7;
 							class Attributes
 							{
+								name="sergej";
 							};
 							id=1071;
 							type="UK3CB_TKP_B_RIF_2";
+							atlOffset=0.092010498;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -27225,7 +27227,7 @@ class Mission
 										class data
 										{
 											singleType="STRING";
-											value="Male01PER";
+											value="Male02RUS";
 										};
 									};
 								};
@@ -27242,7 +27244,20 @@ class Mission
 										};
 									};
 								};
-								nAttributes=4;
+								class Attribute4
+								{
+									property="unitName";
+									expression="_this setname _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Sergej Troska";
+										};
+									};
+								};
+								nAttributes=5;
 							};
 						};
 						class Item1
@@ -27412,6 +27427,7 @@ class Mission
 						speedMode="LIMITED";
 					};
 					id=1070;
+					atlOffset=0.092010498;
 				};
 				class Item8
 				{
@@ -37938,7 +37954,7 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={12249.549,341.95001,17249.367};
+				position[]={12261.143,341.95001,17245.199};
 			};
 			id=1585;
 			type="ModuleEffectsSmoke_F";
