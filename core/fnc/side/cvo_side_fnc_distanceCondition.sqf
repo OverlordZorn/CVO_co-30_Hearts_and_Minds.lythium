@@ -43,10 +43,6 @@ if (cvo_p_side_distance == 0) exitWith {
 if (isNull _startPoint) exitWith {};
 if (_customDistance == 0) then {_customDistance = cvo_p_side_distance}; 
 
-diag_log ("[CVO] [SIDE] (disCon) - ####### Start #########");
-diag_log ("[CVO] [SIDE] (disCon) - maxDistance: " +str cvo_p_side_distance);
-diag_log ("[CVO] [SIDE] (disCon) - Location: " +str _startPoint);
-
 
 // Define Array of _endPoint
 _endPointArray = [];
@@ -68,24 +64,21 @@ if (_fobs > 0) then {
 // [["FOB 123"],[1edc7616b00# 1172314: bagbunker_tower_f.p3d],[bis_o4]]
 // [["FOB 123123","FOB secound"],[1f58f26f580# 1172079: bagbunker_tower_f.p3d,1f595cab580# 1172118: bagbunker_tower_f.p3d],[bis_o4,bis_o5]]
 
-diag_log ("[CVO] [SIDE] (disCon) - checking " + str (count _endPointArray) + " times for Distance");
 private _result = false;
-
+private _distances = [];
 {
     private _name = (_x select 0);
 
     _pos1 = getPos _startPoint;
     _pos2 = getPos (_x select 1);
     private _dis = _pos1 distance _pos2;
+    _distances pushBack _dis;
 
-    diag_log ("[CVO] [SIDE] (disCon) - Distance from " + str _name + ": " + str _dis);
     if (_dis < cvo_p_side_distance) exitWith {
         _result = true;
         };
 } forEach _endPointArray;
 
-diag_log ("[CVO] [SIDE] (disCon) - return: " + str _result);
-
-diag_log ("[CVO] [SIDE] (disCon) - ####### End #########");
+diag_log ("[CVO] [SIDE] (disCon) - Limit: " + str cvo_p_side_distance  + " vs " + str _distances + " => " + str _result + " - Name: " + (_startPoint getVariable "name") );
 
 _result

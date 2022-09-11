@@ -8,7 +8,7 @@ class EditorData
 	toggles=65;
 	class ItemIDProvider
 	{
-		nextID=2183;
+		nextID=2184;
 	};
 	class MarkerIDProvider
 	{
@@ -16,18 +16,18 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=1749;
+		nextID=1884;
 	};
 	class Camera
 	{
-		pos[]={12264.62,377.103,17260.879};
-		dir[]={-0.6339637,-0.67612773,0.3755661};
-		up[]={-0.58173376,0.73676616,0.3446238};
-		aside[]={0.50971323,-1.6270205e-006,0.86041242};
+		pos[]={12179.857,354.88412,17265.541};
+		dir[]={-0.031870611,-0.70815253,0.70536244};
+		up[]={-0.031964507,0.7060563,0.70743281};
+		aside[]={0.99899435,-6.3035623e-007,0.045138907};
 	};
 };
 binarizationWanted=0;
-sourceName="CVO_co-30_Hearts_and_Minds";
+sourceName="CVO_co@30_Hearts_and_Minds";
 addons[]=
 {
 	"A3_Modules_F",
@@ -157,7 +157,8 @@ addons[]=
 	"A3_Structures_F_Heli_Items_Luggage",
 	"A3_Props_F_Enoch_Military_Supplies",
 	"A3_Props_F_AoW_Civilian_Gallery",
-	"A3_Props_F_AoW_Items_Decorative"
+	"A3_Props_F_AoW_Items_Decorative",
+	"A3_Structures_F_Heli_Ind_Airport"
 };
 class AddonsMetaData
 {
@@ -6938,7 +6939,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=29;
+		items=30;
 		class Item0
 		{
 			dataType="Layer";
@@ -21181,7 +21182,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={12175.566,341.95145,17278.072};
-								angles[]={0,2.6372776,0};
+								angles[]={0,2.6372797,0};
 							};
 							side="West";
 							flags=5;
@@ -28180,8 +28181,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={12185.35,345.32498,17291.381};
-						angles[]={0,2.2798388,0};
+						position[]={12176.144,345.32498,17280.588};
+						angles[]={0,3.9711347,0};
 					};
 					side="Empty";
 					flags=4;
@@ -47052,6 +47053,22 @@ class Mission
 			};
 			id=2182;
 			atlOffset=0.063537598;
+		};
+		class Item29
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={12158.574,349.00201,17274.539};
+			};
+			side="Empty";
+			flags=1;
+			class Attributes
+			{
+			};
+			id=2183;
+			type="Windsock_01_F";
+			atlOffset=5.7770081;
 		};
 	};
 };

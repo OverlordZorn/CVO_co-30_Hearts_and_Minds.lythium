@@ -201,4 +201,4 @@ private _greenTab = [
 "greenmag_item_speedloader"];
 
 [_greenTab, "greenMag", getMissionPath "\cvo\img\greenMag.paa"] call ace_arsenal_fnc_addRightPanelButton;
-diag_log "[CVO] [ARSENAL]" + "Green Tab Applied";
+diag_log "[CVO] [ARSENAL] - Green Tab Applied";

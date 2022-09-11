@@ -1,4 +1,4 @@
-diag_log text ("[CVO] [ARSENAL] GreenMod Detected");
+diag_log "[CVO] [ARSENAL] GreenMod Detected";
 
 _greenMag_Basic_items = [
 	
