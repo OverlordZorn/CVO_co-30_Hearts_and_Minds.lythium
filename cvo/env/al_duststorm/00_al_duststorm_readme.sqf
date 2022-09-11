@@ -19,19 +19,21 @@ visibility			- number, as higher the number is as lower the visility and vicever
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>> EXAMPLES <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 ================================================================================================================================
 
+
+
 // DUST STORM example
 
 // wind effect on objects surounding players OFF, wall of dust OFF
-null = [340,600,false,false,false,0.3] execvm "alias\AL_dust_storm\al_duststorm.sqf";
+null = [340,600,false,false,false,0.3] spawn cvo_env_fnc_al_duststorm;
 
 // wind effect on objects surounding players ON, wall of dust OFF
-null = [340,600,true,false,false,0.3] execvm "alias\AL_dust_storm\al_duststorm.sqf";
+null = [340,600,true,false,false,0.3] spawn cvo_env_fnc_al_duststorm;
 
 // wind effect on objects surounding players ON, wall of dust ON, wall of dust non-destructive
-null = [340,600,true,true,false,0.3] execvm "alias\AL_dust_storm\al_duststorm.sqf";
+null = [340,600,true,true,false,0.3] spawn cvo_env_fnc_al_duststorm;
 
 // wind effect on objects surounding players ON, wall of dust ON, wall of dust destructive
-null = [340,600,true,true,true,0.3] execvm "alias\AL_dust_storm\al_duststorm.sqf";
+null = [340,600,true,true,true,0.3] spawn cvo_env_fnc_al_duststorm;
 
 
 // Example for storm coming and going randomly
@@ -46,6 +48,27 @@ if (isServer) then {
 	publicVariable "my_dust_storm_duration";
 };
 waitUntil {(!isNil "my_dust_storm_duration") and (!isNil "pause_between_dust_storm")};
-null = [340,my_dust_storm_duration,false,false,false,0.3] execvm "AL_dust_storm\al_duststorm.sqf";
+null = [340,my_dust_storm_duration,false,false,false,0.3] execvm spawn cvo_env_fnc_al_duststorm;
 sleep (my_dust_storm_duration + pause_between_dust_storm);
 };
+
+
+==============================================================================================
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> IMPORT <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+==============================================================================================
+
+#####################
+## Define Function ##
+#####################
+cvo_env_fnc_al_duststorm = compileScript ["cvo\env\al_duststorm\al_duststorm.sqf", false, ""];
+
+#####################
+## description.ext ##
+#####################
+
+class CfgSounds {
+    sounds[] = {};
+    #include "cvo\env\al_duststorm\sound\sandstormsounds.hpp"
+};
+
+
