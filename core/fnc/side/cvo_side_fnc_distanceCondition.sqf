@@ -71,7 +71,7 @@ private _distances = [];
 
     _pos1 = getPos _startPoint;
     _pos2 = getPos (_x select 1);
-    private _dis = _pos1 distance _pos2;
+    private _dis = round (_pos1 distance _pos2);
     _distances pushBack _dis;
 
     if (_dis < cvo_p_side_distance) exitWith {

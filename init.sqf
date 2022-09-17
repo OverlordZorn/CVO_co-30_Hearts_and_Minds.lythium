@@ -3,3 +3,4 @@
 
 
 [compileScript ["cvo\cvo_init.sqf"]] call CBA_fnc_directCall;
+
