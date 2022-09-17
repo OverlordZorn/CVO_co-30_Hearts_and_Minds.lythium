@@ -2,18 +2,23 @@ result = [];
 _array = btc_city_all; 
  
  
-for "_i" from 0 to (count _array -1) do { 
- _iteration = _array select _i; 
- _town = []; 
+for "_i" from 0 to (count _array -1) do {
+	_iteration = _array select _i; 
+	_town = [];
 
- if (isNull _iteration) then {continue};
- if (_iteration getVariable ["occupied", false]) then {continue}; 
+	if (isNull _iteration) then {continue};
+	if (_iteration getVariable ["occupied", false]) then {continue}; 
 
-_town pushBack _iteration;
-_town pushBack ( getPos _iteration); 
-_town pushBack (_iteration getVariable ["name", false]); 
-_town pushBack (_iteration getVariable ["occupied", false]);
-result pushBack _town; 
+	_discon = [_iteration] call cvo_side_fnc_distanceCondition;
+	if (!_discon) then {continue};
+
+	_town pushBack _iteration;
+	_town pushBack ( getPos _iteration);
+	_town pushback ( (getPos _iteration) distance (getPos cvo_patrol_helipad) ); 
+	_town pushBack (_iteration getVariable ["name", false]); 
+	_town pushBack (_iteration getVariable ["occupied", false]);
+	_town pushback (_discon);
+	result pushBack _town; 
 };
 
 
@@ -50,3 +55,7 @@ result pushBack _town;
 [1171781: empty.p3d,[8051.66,12977.8,0],"Kunara",false],
 [1171783: empty.p3d,[3812.69,17822.4,0],"MartinFob",false]
 ]
+
+[[1171672: empty.p3d,[11039.7,20261.7,6.10352e-005],2574.6,"Alfaraz",false,true]
+,[1171722: empty.p3d,[7771.74,19272.1,0],4555.99,"Doran",false,true]
+,[1171746: empty.p3d,[8051.66,12977.8,0],6384.78,"Kunara",false,true]]
