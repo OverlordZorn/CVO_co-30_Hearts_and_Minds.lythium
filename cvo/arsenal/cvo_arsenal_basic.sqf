@@ -147,6 +147,8 @@ private _CVO_A_Basic_Bino = [
 	//"Nikon_DSLR",
 	"Old_Camera_HUD",
 	"Old_Camera",
+	"Old_Camera_Color_HUD",
+	"Old_Camera_Color",
 	"rhs_tr8_periscope_pip",
 	"rhs_tr8_periscope",
 	"Binocular"
@@ -239,6 +241,10 @@ private _CVO_A_Basic_Rifles = [
 	"rhs_30Rnd_545x39_7N10_2mag_desert_AK",
 	"rhs_30Rnd_545x39_7N10_2mag_camo_AK",
 	"rhs_30Rnd_545x39_7N10_2mag_AK",
+	
+	"rhs_30Rnd_545x39_7N6_AK",
+	"rhs_30Rnd_545x39_7N6M_AK",
+	"rhs_30Rnd_545x39_AK_green",
 
 
     "rhs_weap_ak104",
