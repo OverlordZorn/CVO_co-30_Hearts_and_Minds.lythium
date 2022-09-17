@@ -50,6 +50,32 @@ cvo_logistics_fnc_spawnSupplyCrate = compileScript ["cvo\logistics\cvo_logistics
 	]
 ] call cvo_logistics_fnc_addCustomSupplyBoxAceActionToObject;
 
+[
+	btc_create_object, 
+	"Night Fight Package",
+	[
+		["ACE_HandFlare_White", 50],
+		["rhs_30Rnd_545x39_AK_green", 10],
+		["rhs_weap_rsp30_white", 50],
+		["rhs_VG40OP_white", 50],
+		["rhs_weap_ak74m_gp25", 1]
+
+	],
+	"rhs_7ya37_1_single"
+] call cvo_logistics_fnc_addCustomSupplyBoxAceActionToObject;
+
+[
+	btc_create_object, 
+	"PKM Package",
+	[
+		["rhs_weap_pkm",1],
+		["rhs_100Rnd_762x54mmR", 10],
+		["rhs_100Rnd_762x54mmR_green", 10]
+	],
+	"rhs_7ya37_1_single"
+] call cvo_logistics_fnc_addCustomSupplyBoxAceActionToObject;
+
+
 
 [
 	btc_create_object, 
