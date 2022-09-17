@@ -166,6 +166,7 @@ if (isServer) then {
 
     //SIDE
     btc_side_fnc_create = compileScript ["core\fnc\side\create.sqf"];
+    btc_side_fnc_create_rubbish = compileScript ["core\fnc\side\create_rubbish.sqf"];
     btc_side_fnc_get_city = compileScript ["core\fnc\side\get_city.sqf"];
     btc_side_fnc_mines = compileScript ["core\fnc\side\mines.sqf"];
     btc_side_fnc_supply = compileScript ["core\fnc\side\supply.sqf"];
