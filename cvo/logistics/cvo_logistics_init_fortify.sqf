@@ -2,10 +2,17 @@
 
 
 // ################################################
-// 1. Define current Fortify Budget, Objects and Prices
+// Define:
+cvo_engineerVehicleClass = "UK3CB_KRG_B_MTLB_PKT";
+cvo_refillObject = btc_create_object;
+cvo_maxBudget = 5000;
+cvo_refillBudget = 1000;
+
+
+// Default Fortify Budget, Objects and Prices
 
 if (isServer) then {
-[west, 5000, [
+[west, cvo_maxBudget, [
 	["Land_HBarrier_3_F", 15],
 	["Land_HBarrier_5_F", 25],
 	["Land_HBarrier_Big_F", 10],
@@ -20,17 +27,16 @@ if (isServer) then {
 };
 
 
-// ################################################
-// 2. Define Additional Conditions to use Fortify 
 
-cvo_engineerVehicleClass = "UK3CB_KRG_B_MTLB_PKT";
+// ################################################
+// 2. Additional Conditions to use Fortify 
+
 
 [{
 	params ["_unit", "_object", "_cost"];
 
-	private _condition1 = (_unit) getVariable ["Engineer", false];
-	
-	private _condition2 = 1 >= cvo_engineerVehicleClass countType (_unit nearEntities ["Tank",100]); // scans near entities, filtered by tanks. Then counts the amount of 
+	private _condition1 = (_unit) getVariable ["Engineer", false];									 	// player needs setVariable ["Engineer", true]
+	private _condition2 = 1 >= cvo_engineerVehicleClass countType (_unit nearEntities ["Tank",100]); 	// scans near entities, filtered by tanks. Then counts the amount of 
 
 	private _case1 = if (_condition1) then {true}
 		else {"You're not an engineer" remoteExec ["hint", _unit];false};
@@ -43,7 +49,7 @@ cvo_engineerVehicleClass = "UK3CB_KRG_B_MTLB_PKT";
 
 
 // ################################################
-// 3. Replenish building supplies when fortify_vehicle is close enough to tbc_create_object, current maximum loaded: 5000
+// 3. Replenish building supplies when fortify_vehicle is close enough to cvo_refillObject, current maximum loaded: cvo_maxBudget
 
 private _code = {
 	[{
@@ -53,9 +59,9 @@ private _code = {
 			{true},							// Condition, will check every frame
 			{
 				_currentBudget = [west] call ace_fortify_fnc_getBudget;	
-				if (_currentBudget > 4000) then {											// if current Fortify Budget is more then MAX - refillQuantity, top off until max.
-					[west,(5000 - _currentBudget), true] call ace_fortify_fnc_updateBudget;
-				} else { [west, 1000, true] call ace_fortify_fnc_updateBudget; }			// if current FortifyBudget is less then MAX - RefillQuantity, add refillQuantity.
+				if (_currentBudget > (cvo_maxBudget - cvo_refillBudget)) then {							// if current Fortify Budget is more then MAX - refillQuantity, top off until max.
+					[west,(cvo_maxBudget - _currentBudget), true] call ace_fortify_fnc_updateBudget;
+				} else { [west, cvo_refillBudget, true] call ace_fortify_fnc_updateBudget; }			// if current Fortify Budget is less then MAX - RefillQuantity, add refillQuantity.
 			}								// codeblock to be executed on completion
 		] call CBA_fnc_progressBar;			// Executing a CBA progressBar from an Ace Interaction results in crash. Delay execution by 1 frame!!!
 	}] call CBA_fnc_execNextFrame;			// <- this will delay the execution by 1 Frame. 
@@ -69,13 +75,13 @@ _cvo_Fort_refillVehicle = [
 	"",										// Statement - i have no fucking clue what that is supposed to mean
 	_code,									// the code you're executing
 	{
-		(1 >= cvo_engineerVehicleClass countType (btc_create_object_point nearEntities ["Tank",15])) && ([west] call ace_fortify_fnc_getBudget < 5000);
+		(1 >= cvo_engineerVehicleClass countType (cvo_refillObject nearEntities ["Tank",25])) && ([west] call ace_fortify_fnc_getBudget < cvo_maxBudget);
 	}										// Condition for action to be shown:
 ] call ace_interact_menu_fnc_createAction;
 
 // Here we define where we want this action that we created to be attached to
 [
-	btc_create_object,						// Object the action should be assigned to
+	cvo_refillObject,						// Object the action should be assigned to
 	0,										// Type of action, 0 for action, 1 for self-actionIDs
 	["ACE_MainActions","Fortify"],					// Parent path of the new action <Array>
 	_cvo_Fort_refillVehicle							// The Ace_action to be attached
@@ -85,7 +91,7 @@ _cvo_Fort_refillVehicle = [
 
 
 // ################################################
-// 4. Change Presets to have 2 short lists instead of 1 long.
+// 4. Change Presets to have several short lists instead of 1 long.
 
 // -> HBarrier Preset 
 private _code_p1 = {
