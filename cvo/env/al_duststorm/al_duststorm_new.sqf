@@ -1,7 +1,8 @@
 // by ALIAS
 // Dust Storm SCRIPT 
 // Tutorial: https://www.youtube.com/user/aliascartoons
-// example: [windDir, 300,false,false,false,0.3] spawn cvo_env_fnc_al_duststorm_New;
+// example: [300] spawn cvo_env_fnc_al_duststorm_New;
+// example: [600, 0.3, windDir] spawn cvo_env_fnc_al_duststorm_New;
 
 private ["_vizibility","_stormsource","_x_dev","_y_dev"];
 
