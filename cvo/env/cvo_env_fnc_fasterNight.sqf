@@ -29,7 +29,7 @@ params [
 	["_multiDay", 6],
 	["_multiNight", 30],
 	["_multiSunriseSunSet", 1],
-	["_offset", 0.75],
+	["_offset", 0.5],
 	["_modes", [""]]
 ]; 
 
@@ -65,10 +65,10 @@ private _isDay = _sunriseStart < daytime && daytime < _sunsetEnd;
 private _isSunset = daytime > _sunsetStart && daytime < _sunsetEnd;
 
 diag_log ("[CVO] [ENV] (FasterNight) - CurrentTime: " + str daytime );
-diag_log ("[CVO] [ENV] (FasterNight) -   NightTime: " + str _sunsetEnd + " --0--> " + str _sunriseStart + " Realtime Duration: " + str round ( (24 - _sunsetEnd + _sunriseStart ) / _multiNight * 60)+ " min.");
-diag_log ("[CVO] [ENV] (FasterNight) -     Sunrise: " + str _sunriseStart + " -----> " + str _sunriseEnd + " Realtime Duration: " + str round ( (_sunriseEnd - _sunriseStart ) / _multiSunriseSunSet * 60)+ " min.");
-diag_log ("[CVO] [ENV] (FasterNight) -     DayTime: " + str _sunriseEnd + " -----> " + str _sunsetStart + " Realtime Duration: " + str round ( (_sunsetStart - _sunriseEnd ) / _multiDay * 60)+ " min.");
-diag_log ("[CVO] [ENV] (FasterNight) -      Sunset: " + str _sunsetStart + " -----> " + str _sunsetEnd + " Realtime Duration: " + str round ( (_sunsetEnd - _sunsetStart ) / _multiSunriseSunSet * 60 )+ " min.");
+diag_log ("[CVO] [ENV] (FasterNight) -   NightTime: " + str _sunsetEnd + 	" --0--> " + str _sunriseStart + 	" Realtime Duration: " + str round ( (24 - _sunsetEnd + _sunriseStart ) / _multiNight * 60)+ " min.");
+diag_log ("[CVO] [ENV] (FasterNight) -     Sunrise: " + str _sunriseStart + " -----> " + str _sunriseEnd + 		" Realtime Duration: " + str round ( (_sunriseEnd - _sunriseStart ) / _multiSunriseSunSet * 60)+ " min.");
+diag_log ("[CVO] [ENV] (FasterNight) -     DayTime: " + str _sunriseEnd + 	" -----> " + str _sunsetStart + 	" Realtime Duration: " + str round ( (_sunsetStart - _sunriseEnd ) / _multiDay * 60)+ " min.");
+diag_log ("[CVO] [ENV] (FasterNight) -      Sunset: " + str _sunsetStart +	" -----> " + str _sunsetEnd + 		" Realtime Duration: " + str round ( (_sunsetEnd - _sunsetStart ) / _multiSunriseSunSet * 60 )+ " min.");
 
 
 // NightTime Past Midnight
