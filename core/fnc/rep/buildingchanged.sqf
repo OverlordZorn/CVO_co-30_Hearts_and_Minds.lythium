@@ -1,25 +1,19 @@
 
 /* ----------------------------------------------------------------------------
 Function: btc_rep_fnc_buildingchanged
-
 Description:
     Change reputation on building damage.
-
 Parameters:
     _from - Previous building object. [Object]
     _to - New building object. [Object]
     _isRuin - If changes to ruins. [Boolean]
-
 Returns:
-
 Examples:
     (begin example)
         _result = [] call btc_rep_fnc_buildingchanged;
     (end)
-
 Author:
     mtusnio
-
 ---------------------------------------------------------------------------- */
 
 params [
@@ -28,12 +22,17 @@ params [
     ["_isRuin", false, [false]]
 ];
 
-private _classname = toUpper typeOf _from;
+private _classname = toUpper (([[_from]] call btc_fnc_typeOf) select 0);
 private _malus = [btc_rep_malus_building_damaged, btc_rep_malus_building_destroyed] select _isRuin;
 private _skipCategories = false;
 
 // Accept only static, terrain buildings, discard any dynamically created ones but keep already damaged buildings.
-if ((getObjectType _from != 1) && !(_from in btc_buildings_changed)) exitWith {};
+if (
+    (getObjectType _from != 1) &&
+    !(_from in btc_buildings_changed) ||
+    {_classname isKindOf "Wall"} ||
+    {_from call ace_logistics_wirecutter_fnc_isFence}
+) exitWith {};
 
 btc_buildings_changed pushBack _to;
 
@@ -57,7 +56,7 @@ if (!_skipCategories) then {
 };
 
 if (btc_debug) then {
-    [format ["%1 to %2. Malus: %3", typeOf _from, typeOf _to, _malus], __FILE__, [btc_debug, false]] call btc_debug_fnc_message;
+    [format ["%1 to %2. Malus: %3", _classname, typeOf _to, _malus], __FILE__, [btc_debug, false]] call btc_debug_fnc_message;
 };
 
 _malus call btc_rep_fnc_change;
