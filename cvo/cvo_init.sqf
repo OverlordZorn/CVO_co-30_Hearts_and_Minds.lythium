@@ -43,4 +43,8 @@ if (cvo_p_intel_flags) then 		{[compileScript ["cvo\intel\cvo_intel_flag_init.sq
 // Starts Server Restart Message + Save Script
 execVM "cvo\misc\cvo_server_restart.sqf";
 
+// Init JND Debug Console
+execVM "cvo\misc\JND_debugv2.sqf";
+
 diag_log ("[CVO] [INIT] (cvo_init.sqf) - END");
+
