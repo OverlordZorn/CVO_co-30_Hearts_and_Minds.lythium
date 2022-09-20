@@ -48,3 +48,4 @@ execVM "cvo\misc\JND_debugv2.sqf";
 
 diag_log ("[CVO] [INIT] (cvo_init.sqf) - END");
 
+ 
