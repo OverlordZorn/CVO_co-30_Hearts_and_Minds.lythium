@@ -1,31 +1,37 @@
-class uragan_1
+class hurricane
 {
-	name = "uragan_1";
-	sound[] = {"cvo\env\al_duststorm\sound\uragan_1.ogg", db+5, 1};
+	name = "hurricane";
+	sound[] = {"cvo\env\al_duststorm\sound\hurricane.ogg", db+5, 1};
 	titles[] = {1, ""};
 };
-class bcg_wind
+class strong_wind
 {
-	name = "bcg_wind";
-	sound[] = {"cvo\env\al_duststorm\sound\bcg_wind.ogg", db+5, 1};
+	name = "strong_wind";
+	sound[] = {"cvo\env\al_duststorm\sound\strong_wind.ogg", db+5, 1};
 	titles[] = {1, ""};
 };	
-class rafala_1
+class windburst_1
 {
-	name = "rafala_1";
-	sound[] = {"cvo\env\al_duststorm\sound\rafala_1.ogg", db+10, 1};
+	name = "windburst_1";
+	sound[] = {"cvo\env\al_duststorm\sound\windburst_1.ogg", db+10, 1};
+	titles[] = {1, ""};
+};
+class windburst_2
+{
+	name = "windburst_2";
+	sound[] = {"cvo\env\al_duststorm\sound\windburst_2.ogg", db+10, 1};
+	titles[] = {1, ""};
+};		
+class windburst_3_dr
+{
+	name = "windburst_3_dr";
+	sound[] = {"cvo\env\al_duststorm\sound\windburst_3_dr.ogg", db+1, 1};
 	titles[] = {1, ""};
 };	
-class rafala_4_dr
+class windburst_4_st
 {
-	name = "rafala_4_dr";
-	sound[] = {"cvo\env\al_duststorm\sound\rafala_4_dr.ogg", db+1, 1};
-	titles[] = {1, ""};
-};	
-class rafala_5_st
-{
-	name = "rafala_5_st";
-	sound[] = {"cvo\env\al_duststorm\sound\rafala_5_st.ogg", db+1, 1};
+	name = "windburst_4_st";
+	sound[] = {"cvo\env\al_duststorm\sound\windburst_4_st.ogg", db+1, 1};
 	titles[] = {1, ""};
 };
 class sandstorm

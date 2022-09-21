@@ -52,7 +52,7 @@ sleep 0.1;
 
 [] spawn {
 	while {al_duststorm_on} do {
-		["bcg_wind"] remoteExec ["playSound"];
+		["strong_wind"] remoteExec ["playSound"];
 		sleep 67;
 	};
 };
@@ -128,7 +128,7 @@ if (_dust_wall) then
 		_stormsource_s = _this select 0;
 		while {al_duststorm_on} do 
 		{
-			[_stormsource_s,["uragan_1",2000]] remoteExec ["say3d"];
+			[_stormsource_s,["hurricane",2000]] remoteExec ["say3d"];
 			sleep 40;
 		};
 	};
@@ -188,7 +188,7 @@ if (_effect_on_objects) then {
 		//durata_rafala = 1+random 5;	sleep 30+random 120;
 		sleep 1;
 		[] spawn {
-			_rafale = ["rafala_1","sandstorm","rafala_4_dr","rafala_5_st"] call BIS_fnc_selectRandom;
+			_rafale = ["windburst_1","sandstorm","windburst_3_dr","windburst_4_st"] call BIS_fnc_selectRandom;
 			[_rafale] remoteExec ["playSound"];
 		};
 		
@@ -212,7 +212,7 @@ if (_effect_on_objects) then {
 };
 
 while {al_duststorm_on} do {
-	_rafale = ["rafala_1","sandstorm","rafala_4_dr","rafala_5_st"] call BIS_fnc_selectRandom;
+	_rafale = ["windburst_1","sandstorm","windburst_3_dr","windburst_4_st"] call BIS_fnc_selectRandom;
 	[_rafale] remoteExec ["playSound"];
 	sleep 60+random 120;
 };

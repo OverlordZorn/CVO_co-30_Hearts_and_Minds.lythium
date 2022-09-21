@@ -16,7 +16,7 @@ params [
 	["_dust_wall", false, [false]],
 	["_lethal_wall", false, [false]]
 ];
-
+ 
 /* old
 _direction_duststorm	= _this select 0;
 _duration_duststorm		= _this select 1;
@@ -36,42 +36,56 @@ al_foglevel		= fogParams;
 al_rainlevel	= rain;
 al_thundlevel	= lightnings;
 al_windlevel	= wind;
+al_overcast		= overcast;
 publicVariable "al_foglevel";
 publicVariable "al_rainlevel";
 publicVariable "al_thundlevel";
 publicVariable "al_windlevel";
+publicVariable "al_overpast";
+
 /*
 al_overforecast	= overcastForecast;
 publicVariable "al_overforecast";
 */
 sleep 0.1;
 
+// ###############################
+// ## resets the weather parameter
+// Server Only
+
 [_duration_duststorm] spawn {
 	x_duration_storm = _this select 0;
 	sleep (x_duration_storm * 1.1);
 	
 	al_duststorm_on = false;
-
-	
 	publicVariable "al_duststorm_on";
 
-// restaureaza parametri vreme ## resets the weather parameter
+
 	180 setFog al_foglevel;
 	180 setRain al_rainlevel;
 	180 setLightnings al_thundlevel;
-//	180 setOvercast al_overforecast;
+    180 setOvercast al_overforecast;
 	setWind [al_windlevel select 0, al_windlevel select 1, true];
 	//forceWeatherChange;
 };
 
+// ###############################
+// Windsound 1 - can be extended before and after the storm itself
+// Server Only
+
 [] spawn {
 	while {al_duststorm_on} do {
-		["bcg_wind"] remoteExec ["playSound"];
+		["strong_wind"] remoteExec ["playSound"];
 		sleep 67;
 	};
 };
 
-// reduces AI Skill during the storm
+// ###############################
+// reduces AI Skill via btc_ai_skill during the storm
+// this way, it should affect newly spawned Ai during the storm as well as currently spawned AI.
+// Note for future: this needs adaptation when used outside of BTC Hearts and Minds. It could ether
+// Server only
+
 [_duration_duststorm] spawn {
 	private ["_duration_duststorm"];
 	_duration_duststorm = _this select 0;
@@ -109,6 +123,11 @@ sleep 0.1;
 };
 
 
+// ###############################
+// Controls FOG
+// Server Only
+
+
 [_vizibility, _duration_duststorm] spawn {
 	private ["_vizibility", "_duration_duststorm"];
 	_vizibility = _this select 0;
@@ -137,7 +156,14 @@ sleep 0.1;
 
 };
 
+// #############
+// Spawns the Alias Duststorm effect script
+// RemoteExecute due to it being local to every client as the particles are spawned around the player locally
+
 [[],"cvo\env\al_duststorm\alias_duststorm_effect.sqf"] remoteExec ["execVM",0,true];
+
+// ##############
+// Dustwall script
 
 if (_dust_wall) then 
 {
@@ -158,7 +184,7 @@ if (_dust_wall) then
 		_stormsource_s = _this select 0;
 		while {al_duststorm_on} do 
 		{
-			[_stormsource_s,["uragan_1",2000]] remoteExec ["say3d"];
+			[_stormsource_s,["hurricane",2000]] remoteExec ["say3d"];
 			sleep 40;
 		};
 	};
@@ -166,8 +192,11 @@ if (_dust_wall) then
 	[_stormsource,_direction_duststorm] spawn {private ["_stormsource","_direction_duststorm"]; _stormsource = _this select 0; _direction_duststorm = _this select 1; while {al_duststorm_on} do {_stormsource setPos (_stormsource getRelPos [10,_direction_duststorm]);sleep 5}};
 };
 
+// ############
+// sets the wind storm direction depending on input value (default should be windDir really)
+// server only
+
 if (_direction_duststorm == 0) then {_direction_duststorm = 360};
-// seteaza wind storm functie de directie ## set wind storm depending on the direction
 raport = 360/_direction_duststorm;
 raport = round (raport * (10 ^ 2)) / (10 ^ 2);
 if (raport >= 4) then {fctx = 1; fcty = 1;}	else {if (raport >= 2) then {fctx = 1; fcty = -1;}else { if (raport >=1.33) then {fctx = -1; fcty = -1;}else {fctx = -1; fcty = 1;};};};
@@ -218,7 +247,7 @@ if (_effect_on_objects) then {
 		//durata_rafala = 1+random 5;	sleep 30+random 120;
 		sleep 1;
 		[] spawn {
-			_rafale = ["rafala_1","sandstorm","rafala_4_dr","rafala_5_st"] call BIS_fnc_selectRandom;
+			_rafale = ["windburst_1","sandstorm","windburst_3_dr","windburst_4_st"] call BIS_fnc_selectRandom;
 			[_rafale] remoteExec ["playSound"];
 		};
 		
@@ -241,9 +270,12 @@ if (_effect_on_objects) then {
 	};
 };
 
+// #########
+// plays additional, randomized sounds during the storm duration
+// Global execution, therefore server only
 while {al_duststorm_on} do {
-	_rafale = ["rafala_1","sandstorm","rafala_4_dr","rafala_5_st"] call BIS_fnc_selectRandom;
+	_rafale = ["windburst_1","windburst_2","windburst_3_dr","windburst_4_st", "sandstorm"] call BIS_fnc_selectRandom;
 	[_rafale] remoteExec ["playSound"];
-	sleep 60+random 120;
+	sleep (50 + random 120);
 };
 if (_dust_wall) then {deleteVehicle _stormsource;}
