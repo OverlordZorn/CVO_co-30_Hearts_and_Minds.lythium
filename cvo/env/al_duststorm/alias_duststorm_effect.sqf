@@ -5,6 +5,7 @@ if (!hasInterface) exitWith {};
 
 enableCamShake true;
 
+// Camera Shake
 [] spawn {
 	while {al_duststorm_on} do {
 		addCamShake [0.1,27,17];
@@ -12,7 +13,7 @@ enableCamShake true;
 	};
 };
 
-// increase
+// Film Grain
 [] spawn {
 	grain_sand = 0;
 	while {grain_sand<2} do {
@@ -25,11 +26,12 @@ enableCamShake true;
 	};
 };
 
+// Color Correction
 [] spawn {
 	sleep 5;
 	col_fct =1;
 	while {col_fct>0.86} do {
-		"colorCorrections" ppEffectAdjust[col_fct, 1, 0.01, [-0.14, 0.17, 0.33, col_fct-1],[col_fct, -0.4, col_fct, col_fct],[-0.57, col_fct, -1.2, col_fct]];
+		"colorCorrections" ppEffectAdjust[0.86, 1, 0.01, [-0.14, 0.17, 0.33, -0.14],[0.86, -0.4, 0.86, 0.86],[-0.57, 0.86, -1.2, 0.86]];
 		"colorCorrections" ppEffectCommit 0;
 		"colorCorrections" ppEffectEnable true;
 		col_fct = col_fct-0.001;
@@ -38,6 +40,8 @@ enableCamShake true;
 };
 
 sleep 15;
+
+// Film Grain Increase?
 
 while {al_duststorm_on} do {
 	effect_screen = ppEffectCreate ["FilmGrain", 2000]; 
@@ -88,9 +92,11 @@ while {al_duststorm_on} do {
 	
 
 	_leaves_p_drop			= 0.2+random 0.5;
+	_leaves_p setDropInterval _leaves_p_drop;
+
 	_alias_drop_fog_factor	= 0.01+random 0.1;
 	
-	_leaves_p setDropInterval _leaves_p_drop;
+
 	_alias_local_fog_1 setDropInterval _alias_drop_fog_factor;
 	_alias_local_fog_2 setDropInterval _alias_drop_fog_factor;
 	_alias_local_fog_3 setDropInterval _alias_drop_fog_factor;

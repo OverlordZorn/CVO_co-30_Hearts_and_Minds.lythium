@@ -2,7 +2,9 @@
 // Gradual Dust Storm SCRIPT 
 
 if (!isServer) exitWith {};
-if (cvo_env_ds_running) exitWith (diag_log ("[CVO] [ENV] [DS] (Start) - Exit: Duststorm already running!";));
+
+if (isNil "cvo_env_ds_running") then 	{cvo_env_ds_running = false; publicVariable "cvo_env_ds_running";};
+if (cvo_env_ds_running) exitWith 	{diag_log "[CVO] [ENV] [DS] (Start) - Exit: Duststorm already running!";};
 
 params [
 	["_duration", 600, [0]],
@@ -11,159 +13,123 @@ params [
 //	["_effect_on_objects", false, [false]]
 ];
 
+sleep 1;
+
+diag_log ("[CVO] [ENV] [DS] (Start) - " + format ["Duration: %1 - Direction: %2", _duration, _direction]);
+
+// ## ## Store Pre Storm Weather Data
+
+ds_foglevel			= fogParams;
+
+ds_overcast			= overcast;
+ds_rainlevel		= rain;
+ds_thundlevel		= lightnings;
+
+ds_wind				= wind;
+ds_windstr			= windStr;
+ds_windgusts		= gusts;
+
+
 
 // establish killswitch
 cvo_env_ds_running = true;
-
-
-// Store Pre Storm Weather Data
-
-ds_foglevel		= fogParams;
-ds_rainlevel	= rain;
-ds_thundlevel	= lightnings;
-ds_windstr		= windStr;
-ds_windgusts	= gusts
-ds_overcast		= overcast;
-publicVariable "ds_foglevel";
-publicVariable "ds_rainlevel";
-publicVariable "ds_thundlevel";
-publicVariable "ds_windlevel";
-publicVariable "ds_overcast";
-
+diag_log ("[CVO] [ENV] [DS] (Init) - " + format ["Starting Duststorm: %1 ", cvo_env_ds_running]);
 
 
 // phase definition
-cvo_env_ds_ptime = _duration / 10;
+cvo_env_ds_phasetime = _duration / 10;
 cvo_env_ds_phase = 0;
 
+// spawns the pace maker
 [_duration] spawn {
 	params ["_duration"];
 	
-	while {cvo_env_ds_running && (cvo_env_ds_phase <= 10)} do {
+	while { cvo_env_ds_running && ( cvo_env_ds_phase <= 10 ) } do {
+		cvo_env_ds_phase = cvo_env_ds_phase + 1;
 		publicVariable "cvo_env_ds_phase";
-		sleep cvo_env_ds_ptime;
+		sleep cvo_env_ds_phasetime;
+		diag_log ("[CVO] [ENV] [DS] (Phase) - " + format ["Current Phase: %1 ", cvo_env_ds_phase]);
 	};
+
 	cvo_env_ds_running = false;
 	publicVariable "cvo_env_ds_running";
+	diag_log ("[CVO] [ENV] [DS] (Phase) - " + format ["Current Phase: %1 ", cvo_env_ds_running]);
+
 	cvo_env_ds_phase = nil;
 };
 
-// Controls the weather
+// ### ### ### Controls the weather
 
+// ### ### FOG CONTROL
+[] spawn {			// FOG Control
 
-// controls the fog
-
-ds_fog_stage = [0,0,0];
-ds_fog_max 	 = [0,0,0];
-ds_fog_post	 = [0,0,0];
-
-
-
-ds_fog = ds_fog_stage;
-
-
-[_duration] spawn {
-	params ["_duration"];
-
-
-	while {cvo_env_ds_running} do {
-
-
-		
-		
-	};
-
-	(1 * evo_env_ds_ptime) setFog ds_foglevel;
-
-};
-
-
-[_duration] spawn {
-	params ["_duration"];
-
-	ds_fog_stage = [0,0,0];
-	ds_fog_max 	 = [0,0,0];
-	ds_fog_post	 = [0,0,0];
-
-	ds_fog = ds_fog_stage;
-
-	(2 * evo_env_ds_ptime) setWindForce 1;
-	(2 * cvo_env_ds_ptime) setWindStr 1;
-	(2 * cvo_env_ds_ptime) setGusts 1;
-
-	waitUntil {sleep 1; cvo_env_ds_phase >= 3};
-	ds_fog = ds_fog_max;
-
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-
-
-
-
-//hint str _direction;
-
-al_duststorm_on = true;
-publicVariable "al_duststorm_on";
-
-al_foglevel		= fogParams;
-al_rainlevel	= rain;
-al_thundlevel	= lightnings;
-al_windlevel	= wind;
-al_overcast		= overcast;
-publicVariable "al_foglevel";
-publicVariable "al_rainlevel";
-publicVariable "al_thundlevel";
-publicVariable "al_windlevel";
-publicVariable "al_overpast";
-
-/*
-al_overforecast	= overcastForecast;
-publicVariable "al_overforecast";
-*/
-sleep 0.1;
-
-// ###############################
-// ## resets the weather parameter
-// Server Only
-
-[_duration] spawn {
-	x_duration_storm = _this select 0;
-	sleep (x_duration_storm * 1.1);
+	_ds_fog_stage	= [0.03, 0.005, 200];
+	_ds_fog_max 	= [0.03, 0.006, 600];
+	_ds_fog_post	= [0.03, 0.005, 400];
 	
-	al_duststorm_on = false;
-	publicVariable "al_duststorm_on";
 
 
-	180 setFog al_foglevel;
-	180 setRain al_rainlevel;
-	180 setLightnings al_thundlevel;
-    180 setOvercast al_overforecast;
-	setWind [al_windlevel select 0, al_windlevel select 1, true];
-	//forceWeatherChange;
+	[(2 * cvo_env_ds_phasetime), _ds_fog_stage, true] 	spawn cvo_env_fnc_setFogFlexible;
+
+	waitUntil {sleep (2 * cvo_env_ds_phasetime); true};
+
+	[(2 * cvo_env_ds_phasetime), _ds_fog_max,true] 		spawn cvo_env_fnc_setFogFlexible;
+	waitUntil {sleep (2 * cvo_env_ds_phasetime);true};
+
+	[(2 * cvo_env_ds_phasetime), _ds_fog_max,true] 		spawn cvo_env_fnc_setFogFlexible;
+	waitUntil {sleep (3 * cvo_env_ds_phasetime);true};
+
+	[(3 * cvo_env_ds_phasetime), _ds_fog_post,true] 	spawn cvo_env_fnc_setFogFlexible;
+
 };
+
+[] spawn {			// Weather Control @ EXIT
+	waitUntil {sleep 60; !cvo_env_ds_running};
+
+	cvo_env_ds_phasetime setOvercast 	ds_overcast;
+	cvo_env_ds_phasetime setFog 		ds_foglevel;
+	cvo_env_ds_phasetime setRain 		ds_rainlevel;
+	cvo_env_ds_phasetime setLightnings 	ds_thundlevel;
+	//					 setWind		ds_wind;
+	cvo_env_ds_phasetime setWindStr		ds_windstr;
+	cvo_env_ds_phasetime setGusts		ds_windgusts;
+
+
+	ds_overcast		= nil;
+	ds_foglevel 	= nil;
+	ds_rainlevel 	= nil;
+	ds_thundlevel 	= nil;
+	ds_wind 		= nil;
+	ds_windstr 		= nil;
+	ds_windgusts	= nil;
+
+
+};
+
+[] spawn { 			// WIND CONTROL
+	params ["_duration"];
+
+
+};
+
+
+					// DEBUG Viewer
+[] spawn {
+	while {cvo_env_ds_running} do {
+	hintSilent (format ["FogParams:\nValue: %1\nDecay: %2\nFogBase: %3", fogParams#0, fogParams#1, fogParams#2]);
+	sleep 1;
+}};
+
+
+
+
+
+
+
+
+
+/*
+
 
 // ###############################
 // Windsound 1 - can be extended before and after the storm itself
@@ -220,37 +186,6 @@ sleep 0.1;
 
 
 // ###############################
-// Controls FOG
-// Server Only
-
-
-[_vizibility, _duration] spawn {
-	private ["_vizibility", "_duration"];
-	_vizibility = _this select 0;
-	_duration = _this select 1;
-
-	private _startTime = time;
-
-	while {(_startTime + (2 * _duration / 4)) > time} do {
-		private _asl = (call cvo_env_fnc_al_getAvgASL) select 0;
-		120 setFog [0.01, 0.005, (600 + _asl)];
-		sleep 120;
-	};
-
-		while {(_startTime + (3 * _duration / 4) > time)} do {
-		private _asl = (call cvo_env_fnc_al_getAvgASL) select 0;
-		120 setFog [0.02, 0.005, (850 + _asl)];
-		sleep 120;
-	};
-
-	while {(_startTime + (4 * _duration / 4) > time)} do {
-		private _asl = (call cvo_env_fnc_aal_getAvgASL) select 0;
-		120 setFog [0.01, 0.005, (600 + _asl)];
-		sleep 120;
-	};
-
-
-};
 
 // #############
 // Spawns the Alias Duststorm effect script
@@ -262,6 +197,9 @@ sleep 0.1;
 // ############
 // sets the wind storm direction depending on input value (default should be windDir really)
 // server only
+
+// ############
+// Wind control
 
 if (_direction == 0) then {_direction = 360};
 raport = 360/_direction;
@@ -298,3 +236,5 @@ while {al_duststorm_on} do {
 	[_rafale] remoteExec ["playSound"];
 	sleep 60+random 120;
 };
+
+*/

@@ -15,11 +15,8 @@
 *
 */
 
-diag_log "[CVO] [ENV] (allPlayersASL) - Start";
-
 private _arr = [];
 {_arr pushback (name _x) } forEach allPlayers;
-diag_log ("[CVO] [ENV] (allPlayersASL) - allPlayers: "+ str _arr);
 
 private _allPlayers = call BIS_fnc_listPlayers;
 private _allASL = [];
@@ -43,11 +40,6 @@ private _max = (_allASL call CBA_fnc_findMax) select 0;
 private _range = _max - _min;
 
 
-diag_log ("[CVO] [ENV] (allPlayersASL) - Comparing: "+ str _allPlayers + " - ASLs: " + str _allASL);
-diag_log ("[CVO] [ENV] (allPlayersASL) - Result:  Range: " + str _range + "m - Min: " + str _min + "m - Max: " + str _max + "m.");
-
-
-
 
 private _result = [];
 
@@ -57,6 +49,7 @@ private _result = [];
 		https://cbateam.github.io/CBA_A3/docs/files/arrays/fnc_sortNestedArray-sqf.html
 		https://community.bistudio.com/wiki/BIS_fnc_consolidateArray
 */ 
+
 private _arr2 = [];
 
 private _bracketSize = 25;
@@ -68,8 +61,5 @@ _avgASL = ((_arr2 select 0) select 0) * _bracketSize + _bracketSize * 0.5;
 _avgASL = [_allASL, _avgASL] call BIS_fnc_nearestNum;
 _result = [_avgASL, _range];
 
-
-
-diag_log ("[CVO] [ENV] (allPlayersASL) - Result: " + str (_result select 0) + " Range: " + str _range + "m - Min: " + str _min + "m - Max: " + str _max + "m.");
+diag_log ("[CVO] [ENV] (allPlayersASL) - " + format ["return: %1 - ASLs: %2 - Min: %3 - Max: %4",_result, _allASL, _min, _max]);
 _result
-
