@@ -511,7 +511,12 @@ btc_construction_array =
         }),
         [
             //"Ammobox"
-            "Land_WoodenBox_F"
+            "Land_WoodenBox_F",
+            "Box_Syndicate_WpsLaunch_F",
+            "Land_PlasticCase_01_large_CBRN_F",
+            "Box_IED_Exp_F"
+
+
 
         ] + (_allClassSorted select {
             _x isKindOf "ReammoBox_F" &&
