@@ -20,7 +20,7 @@
 */
 scopeName "main";
 
-waitUntil {sleep 1; time > 0 };
+waitUntil {sleep 25; time > 0 };
 
 diag_log "[CVO] [ENV] (FasterNight) - Start";
 
@@ -35,6 +35,8 @@ params [
 
 // Limit timeMultiplier range 0.1 - 120
 {	_x = 0.1 max (_x min 120);} forEach [_multiDay, _multiNight];
+
+
 
 // Modes of Operation
 _clearNight = false; 																// Removes/Reduces Cloud Cover during night to ensure certain visibility
