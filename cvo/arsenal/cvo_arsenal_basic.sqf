@@ -378,6 +378,7 @@ CVO_A_RTO = ["ACRE_PRC77",
 	"ACRE_VHF30108MAST"];
 
 CVO_A_Medic = [
+	"rhs_medic_bag", 
 	"ACE_quikclot", 
 	"ACE_elasticBandage", 
 	"ACE_adenosine", 
