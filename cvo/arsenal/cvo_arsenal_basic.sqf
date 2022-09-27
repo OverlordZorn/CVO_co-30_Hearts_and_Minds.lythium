@@ -136,8 +136,12 @@ private _CVO_A_Basic_Face = [
 	"UK3CB_G_Neck_Shemag_KLR_tan",
 	"UK3CB_G_Neck_Shemag_KL_blk"];
 
-private _CVO_A_Basic_NVG = [
-	//"rhs_1PN138"
+private _CVO_A_Basic_NightFight = [
+	"rhs_acc_perst1ik_ris",
+	"rhs_acc_perst1ik",
+	"rhs_acc_perst3",
+	"rhs_acc_perst3_top",
+	"rhs_1PN138"
 ];
 
 private _CVO_A_Basic_Bino = [
@@ -277,8 +281,18 @@ private _CVO_A_Basic_Rifles = [
 ];
 
 private _CVO_A_Basic_Pistols = [
+	"rhs_weap_pb_6p9",
+	"rhs_acc_6p9_suppressor",
+
+	"rhs_weap_makarov_pm",
+	"rhs_mag_9x18_8_57N181S",
+
+	"rhs_weap_6p53",
+	"rhs_18rnd_9x21mm_7N28",
+	
 	"rhs_weap_pya",
 	"rhs_mag_9x19_17",
+
 
 	"rhs_weap_rsp30_red",
 	"rhs_weap_rsp30_green",
@@ -313,11 +327,26 @@ private _CVO_A_Basic_attachments = [
 	"rhs_acc_pkas"
 ];
 
-private _CVO_A_Basic_csw = [
-	"ace_compat_rhs_afrf3_mag_9M131M",
-	"ace_compat_rhs_afrf3_mag_9M131F",
-	"ace_compat_rhs_afrf3_metis_carry"
+
+
+private _CVO_A_Basic_enhanced_basic = [
+	"rhs_weap_ak74m_zenitco01",
+	"rhs_weap_ak104_zenitco01",
+	"rhs_weap_ak103_zenitco01",
+	"rhs_weap_ak105_zenitco01",
+	"rhs_30Rnd_545x39_7N22_AK",
+	"rhs_30Rnd_545x39_7N22_plum_AK",
+	"rhs_30Rnd_545x39_7N22_desert_AK",
+	"rhs_30Rnd_545x39_7N22_camo_AK",
+	"rhs_acc_grip_rk6",
+	"rhs_acc_grip_rk2",
+	"rhs_acc_grip_ffg2",
+	"rhs_acc_2dpzenit_ris",
+	"rhs_acc_perst1ik_ris"
 ];
+
+
+
 
 CVO_A_Basic = [];
 CVO_A_Basic append _CVO_A_Basic_Medical; 
@@ -329,7 +358,7 @@ CVO_A_Basic append _CVO_A_Basic_RespawnTent;
 
 CVO_A_Basic append _CVO_A_Basic_Helmets;
 CVO_A_Basic append _CVO_A_Basic_Face;
-CVO_A_Basic append _CVO_A_Basic_NVG;
+CVO_A_Basic append _CVO_A_Basic_NightFight;
 CVO_A_Basic append _CVO_A_Basic_Bino;
 CVO_A_Basic append _CVO_A_Basic_Tools;
 
@@ -338,8 +367,33 @@ CVO_A_Basic append _CVO_A_Basic_EXO;
 CVO_A_Basic append _CVO_A_Basic_Rifles;
 CVO_A_Basic append _CVO_A_Basic_Pistols;
 CVO_A_Basic append _CVO_A_Basic_attachments;
+CVO_A_Basic append _CVO_A_Basic_enhanced_basic;
+
+/*
+### lategame
+# Basic:
+rhs_weap_asval
+rhs_weap_asval_grip
+rhs_acc_perst3_2dp_light_h
+rhs_acc_perst3_2dp_h
+# Sniper
+rhs_weap_vss
+rhs_weap_vss_grip
+rhs_acc_pso1m21
+# AR
+rhs_weap_pkp
+rhs_100Rnd_762x54mmR_7BZ3
+*/
+
+/*
+private _CVO_A_Basic_csw = [
+	"ace_compat_rhs_afrf3_mag_9M131M",
+	"ace_compat_rhs_afrf3_mag_9M131F",
+	"ace_compat_rhs_afrf3_metis_carry"
+];
 
 // CVO_A_Basic append _CVO_A_Basic_csw;		// for now, CSW only accessible via CSC
+*/
 
 //// Specific Kit, for certain "Roles" only
 
@@ -356,19 +410,29 @@ CVO_A_Officer = [
 CVO_A_Interpreter = [];
 
 CVO_A_TeamLeader = [
-	"ACRE_PRC148",
-	"rhs_VG40SZ"
+	"ACRE_PRC148"
 ];
 
 CVO_A_GL = [
 	"rhs_weap_ak74m_fullplum_gp25",
     "rhs_weap_ak74m_gp25",
+	"rhs_weap_akm_gp25",
+	"rhs_weap_akmn_gp25",
+	"rhs_weap_aks74_gp25",
+	"rhs_weap_ak103_gp25",
+	"rhs_weap_ak74n_gp25",
+	"rhs_weap_ak74n_2_gp25",
+	"rhs_weap_akms_gp25",
+	"rhs_weap_aks74n_gp25",
+
 	"rhs_VOG25",
 	"rhs_VOG25P",
 	"rhs_GRD40_White",
 	"rhs_GDM40",
 	"rhs_VG40OP_white",
-	"rhs_VG40MD"
+	"rhs_VG40MD",
+	"rhs_VG40SZ"
+
 ];
 
 CVO_A_RTO = ["ACRE_PRC77",
@@ -408,6 +472,11 @@ CVO_A_MG = [
 CVO_A_Marksman = [
 	"UK3CB_SVD_OLD",
 	"rhs_10Rnd_762x54mmR_7N1",
+
+	"rhs_weap_svdp",
+	"rhs_weap_svds",
+	"rhs_acc_1pn34",
+	"rhs_10Rnd_762x54mmR_7N14", 
 
 	"rhs_acc_pso1m2",
 	"ACE_RangeCard",
