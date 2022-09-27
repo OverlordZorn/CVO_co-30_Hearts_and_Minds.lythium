@@ -8,7 +8,7 @@ class EditorData
 	toggles=578;
 	class ItemIDProvider
 	{
-		nextID=2289;
+		nextID=2291;
 	};
 	class MarkerIDProvider
 	{
@@ -16,18 +16,18 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=2308;
+		nextID=2362;
 	};
 	class Camera
 	{
-		pos[]={12311.1,375.77722,17272.988};
-		dir[]={-0.84200513,-0.44598144,0.30391601};
-		up[]={-0.41955903,0.89498419,0.15143853};
-		aside[]={0.33954862,2.5280169e-006,0.94072038};
+		pos[]={12231.016,358.33105,17296.57};
+		dir[]={-0.80233157,-0.58038437,0.13940223};
+		up[]={-0.57181984,0.81433982,0.099351376};
+		aside[]={0.17118153,-2.8876821e-007,0.98524612};
 	};
 };
 binarizationWanted=0;
-sourceName="cvo_co-30_hearts_and_minds";
+sourceName="CVO_co-30_Hearts_and_Minds";
 addons[]=
 {
 	"A3_Modules_F",
@@ -6933,7 +6933,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=31;
+		items=30;
 		class Item0
 		{
 			dataType="Layer";
@@ -16566,7 +16566,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={12238.84,342.68234,17323.615};
-						angles[]={0,3.8350582,-0};
+						angles[]={0,3.8350582,0};
 					};
 					side="Empty";
 					flags=4;
@@ -17116,7 +17116,7 @@ class Mission
 					name="btc_vehicles";
 					class Entities
 					{
-						items=23;
+						items=24;
 						class Item0
 						{
 							dataType="Comment";
@@ -19405,9 +19405,164 @@ class Mission
 							id=1943;
 							type="UK3CB_KRG_B_MTLB_PKT";
 						};
+						class Item23
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={12169.095,343.87656,17278.283};
+								angles[]={0,2.2264619,0};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								textures="DES";
+							};
+							id=2288;
+							type="UK3CB_KDF_O_Gaz66_Ammo";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="VehicleCustomization";
+									expression="if (local _this) then {([_this] + _value + [true]) call (uinamespace getvariable 'BIS_fnc_initVehicle')};";
+									class Value
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="ARRAY";
+														class value
+														{
+															items=2;
+															class Item0
+															{
+																class data
+																{
+																	singleType="STRING";
+																	value="DES";
+																};
+															};
+															class Item1
+															{
+																class data
+																{
+																	singleType="SCALAR";
+																	value=1;
+																};
+															};
+														};
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="ARRAY";
+														class value
+														{
+															items=10;
+															class Item0
+															{
+																class data
+																{
+																	singleType="STRING";
+																	value="cover_hide";
+																};
+															};
+															class Item1
+															{
+																class data
+																{
+																	singleType="SCALAR";
+																	value=0;
+																};
+															};
+															class Item2
+															{
+																class data
+																{
+																	singleType="STRING";
+																	value="spare_hide";
+																};
+															};
+															class Item3
+															{
+																class data
+																{
+																	singleType="SCALAR";
+																	value=0;
+																};
+															};
+															class Item4
+															{
+																class data
+																{
+																	singleType="STRING";
+																	value="bench_hide";
+																};
+															};
+															class Item5
+															{
+																class data
+																{
+																	singleType="SCALAR";
+																	value=0;
+																};
+															};
+															class Item6
+															{
+																class data
+																{
+																	singleType="STRING";
+																	value="rear_numplate_hide";
+																};
+															};
+															class Item7
+															{
+																class data
+																{
+																	singleType="SCALAR";
+																	value=1;
+																};
+															};
+															class Item8
+															{
+																class data
+																{
+																	singleType="STRING";
+																	value="light_hide";
+																};
+															};
+															class Item9
+															{
+																class data
+																{
+																	singleType="SCALAR";
+																	value=1;
+																};
+															};
+														};
+													};
+												};
+											};
+										};
+									};
+								};
+								nAttributes=1;
+							};
+						};
 					};
 					id=249;
-					atlOffset=0.13104248;
+					atlOffset=0.1116333;
 				};
 				class Item9
 				{
@@ -25125,8 +25280,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={12175.892,352.01492,17310.814};
-						angles[]={0,3.0466509,-0};
+						position[]={12175.773,352.02887,17310.701};
+						angles[]={0,3.0466466,0};
 					};
 					side="Empty";
 					flags=4;
@@ -25134,8 +25289,9 @@ class Mission
 					{
 						name="btc_gear_object";
 					};
-					id=1962;
-					type="Land_MapBoard_F";
+					id=2290;
+					type="MapBoard_altis_F";
+					atlOffset=0.013946533;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -25169,7 +25325,7 @@ class Mission
 				};
 			};
 			id=270;
-			atlOffset=4.5562744;
+			atlOffset=4.5632324;
 		};
 		class Item3
 		{
@@ -46882,161 +47038,6 @@ class Mission
 				};
 			};
 			id=2272;
-		};
-		class Item30
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={12169.095,343.87656,17278.283};
-				angles[]={0,2.2264619,-0};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				textures="DES";
-			};
-			id=2288;
-			type="UK3CB_KDF_O_Gaz66_Ammo";
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="VehicleCustomization";
-					expression="if (local _this) then {([_this] + _value + [true]) call (uinamespace getvariable 'BIS_fnc_initVehicle')};";
-					class Value
-					{
-						class data
-						{
-							singleType="ARRAY";
-							class value
-							{
-								items=2;
-								class Item0
-								{
-									class data
-									{
-										singleType="ARRAY";
-										class value
-										{
-											items=2;
-											class Item0
-											{
-												class data
-												{
-													singleType="STRING";
-													value="DES";
-												};
-											};
-											class Item1
-											{
-												class data
-												{
-													singleType="SCALAR";
-													value=1;
-												};
-											};
-										};
-									};
-								};
-								class Item1
-								{
-									class data
-									{
-										singleType="ARRAY";
-										class value
-										{
-											items=10;
-											class Item0
-											{
-												class data
-												{
-													singleType="STRING";
-													value="cover_hide";
-												};
-											};
-											class Item1
-											{
-												class data
-												{
-													singleType="SCALAR";
-													value=0;
-												};
-											};
-											class Item2
-											{
-												class data
-												{
-													singleType="STRING";
-													value="spare_hide";
-												};
-											};
-											class Item3
-											{
-												class data
-												{
-													singleType="SCALAR";
-													value=0;
-												};
-											};
-											class Item4
-											{
-												class data
-												{
-													singleType="STRING";
-													value="bench_hide";
-												};
-											};
-											class Item5
-											{
-												class data
-												{
-													singleType="SCALAR";
-													value=0;
-												};
-											};
-											class Item6
-											{
-												class data
-												{
-													singleType="STRING";
-													value="rear_numplate_hide";
-												};
-											};
-											class Item7
-											{
-												class data
-												{
-													singleType="SCALAR";
-													value=1;
-												};
-											};
-											class Item8
-											{
-												class data
-												{
-													singleType="STRING";
-													value="light_hide";
-												};
-											};
-											class Item9
-											{
-												class data
-												{
-													singleType="SCALAR";
-													value=1;
-												};
-											};
-										};
-									};
-								};
-							};
-						};
-					};
-				};
-				nAttributes=1;
-			};
 		};
 	};
 };
