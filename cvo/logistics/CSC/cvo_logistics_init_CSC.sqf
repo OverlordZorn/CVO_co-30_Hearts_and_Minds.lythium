@@ -1,24 +1,24 @@
-cvo_logistics_fnc_addCustomSupplyBoxAceActionToObject = compileScript ["cvo\logistics\csc\cvo_logistics_fnc_addCustomSupplyBoxAceActionToObject.sqf", false, ""];
-cvo_logistics_fnc_addCustomSupplyBoxAceActionToClass = compileScript ["cvo\logistics\csc\cvo_logistics_fnc_addCustomSupplyBoxAceActionToClass.sqf", false, ""];
-cvo_logistics_fnc_spawnSupplyCrate = compileScript ["cvo\logistics\csc\cvo_logistics_fnc_spawnSupplyCrate.sqf", false, ""];
+cvo_logistics_fnc_addCSC = 		compileScript ["cvo\logistics\CSC\cvo_logistics_fnc_addCSC.sqf", false, ""];
+cvo_logistics_fnc_createCSC = 	compileScript ["cvo\logistics\CSC\cvo_logistics_fnc_createCSC.sqf", false, ""];
 
-/* 
+ 
 // ################
-// adds the packages to a specific object
-
-cvo_csc_source_object = btc_create_object
+// EXAMPLE USAGE
+// 
+/*
 [
-	cvo_csc_source_object, 
+	btc_create_object, 
 	"Monkey Care Package",
 	[
 		["Ace_banana", 100],
 		["Ace_banana", 100]
 	],
 	"Land_WoodenCrate_01_F"
-] call cvo_logistics_fnc_addCustomSupplyBoxAceActionToObject;
+] call cvo_logistics_fnc_addCSC;
 */
 
-/*
+cvo_csc_source_object = btc_create_object;
+
 
 [
 	cvo_csc_source_object, 
@@ -29,7 +29,7 @@ cvo_csc_source_object = btc_create_object
 		["rhs_100Rnd_762x54mmR_green", 6]
 	],
 	"rhs_3Ya40_1_single"
-] call cvo_logistics_fnc_addCustomSupplyBoxAceActionToObject;
+] call cvo_logistics_fnc_addCSC;
 
 
 [
@@ -54,7 +54,7 @@ cvo_csc_source_object = btc_create_object
 	[
 		["B_Respawn_TentDome_F",1]
 	]
-] call cvo_logistics_fnc_addCustomSupplyBoxAceActionToObject;
+] call cvo_logistics_fnc_addCSC;
 
 [
 	cvo_csc_source_object, 
@@ -68,7 +68,7 @@ cvo_csc_source_object = btc_create_object
 
 	],
 	"rhs_7ya37_1_single"
-] call cvo_logistics_fnc_addCustomSupplyBoxAceActionToObject;
+] call cvo_logistics_fnc_addCSC;
 
 [
 	cvo_csc_source_object, 
@@ -79,7 +79,7 @@ cvo_csc_source_object = btc_create_object
 		["rhs_100Rnd_762x54mmR_green", 10]
 	],
 	"rhs_7ya37_1_single"
-] call cvo_logistics_fnc_addCustomSupplyBoxAceActionToObject;
+] call cvo_logistics_fnc_addCSC;
 
 
 
@@ -93,7 +93,7 @@ cvo_csc_source_object = btc_create_object
 		["ace_compat_rhs_afrf3_mag_9M131M", 7]
 	],
 	"Land_WoodenCrate_01_F"							 
-] call cvo_logistics_fnc_addCustomSupplyBoxAceActionToObject;
+] call cvo_logistics_fnc_addCSC;
 
 
 [
@@ -107,14 +107,15 @@ cvo_csc_source_object = btc_create_object
 	[
 		["B_SCBA_01_F",4]
 	]
-] call cvo_logistics_fnc_addCustomSupplyBoxAceActionToObject;
+] call cvo_logistics_fnc_addCSC;
 
-*/
+
+
 
 
 // ################
 // adds the packages to a specific className, in this case, ammo truck
-cvo_csc_source_class = "UK3CB_CW_SOV_O_LATE_Gaz66_Ammo";
+cvo_csc_source_class = "UK3CB_KDF_O_Gaz66_Ammo";
 
 
 [
@@ -126,7 +127,7 @@ cvo_csc_source_class = "UK3CB_CW_SOV_O_LATE_Gaz66_Ammo";
 		["rhs_100Rnd_762x54mmR_green", 6]
 	],
 	"rhs_3Ya40_1_single"
-] call cvo_logistics_fnc_addCustomSupplyBoxAceActionToClass;
+] call cvo_logistics_fnc_addCSC;
 
 
 [
@@ -151,7 +152,7 @@ cvo_csc_source_class = "UK3CB_CW_SOV_O_LATE_Gaz66_Ammo";
 	[
 		["B_Respawn_TentDome_F",1]
 	]
-] call cvo_logistics_fnc_addCustomSupplyBoxAceActionToClass;
+] call cvo_logistics_fnc_addCSC;
 
 [
 	cvo_csc_source_class, 
@@ -165,7 +166,7 @@ cvo_csc_source_class = "UK3CB_CW_SOV_O_LATE_Gaz66_Ammo";
 
 	],
 	"rhs_7ya37_1_single"
-] call cvo_logistics_fnc_addCustomSupplyBoxAceActionToClass;
+] call cvo_logistics_fnc_addCSC;
 
 [
 	cvo_csc_source_class, 
@@ -176,7 +177,7 @@ cvo_csc_source_class = "UK3CB_CW_SOV_O_LATE_Gaz66_Ammo";
 		["rhs_100Rnd_762x54mmR_green", 10]
 	],
 	"rhs_7ya37_1_single"
-] call cvo_logistics_fnc_addCustomSupplyBoxAceActionToClass;
+] call cvo_logistics_fnc_addCSC;
 
 
 
@@ -190,7 +191,7 @@ cvo_csc_source_class = "UK3CB_CW_SOV_O_LATE_Gaz66_Ammo";
 		["ace_compat_rhs_afrf3_mag_9M131M", 7]
 	],
 	"Land_WoodenCrate_01_F"							 
-] call cvo_logistics_fnc_addCustomSupplyBoxAceActionToClass;
+] call cvo_logistics_fnc_addCSC;
 
 
 [
@@ -204,5 +205,4 @@ cvo_csc_source_class = "UK3CB_CW_SOV_O_LATE_Gaz66_Ammo";
 	[
 		["B_SCBA_01_F",4]
 	]
-] call cvo_logistics_fnc_addCustomSupplyBoxAceActionToClass;
-
+] call cvo_logistics_fnc_addCSC;
