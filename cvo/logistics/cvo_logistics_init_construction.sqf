@@ -12,13 +12,14 @@ btc_construction_array = [
 	[ 	// Vehicles
 		[	//"Land_Pod_Heli_Transport_04_medevac_black_F",
 			//"UK3CB_TKA_B_M113_AMB",
-			"UK3CB_ARD_B_Hilux_Ambulance",
-			"UK3CB_ARD_B_GAZ_Vodnik_MedEvac",
-			"UK3CB_KDF_O_Gaz66_Med",
-			"UK3CB_TKP_B_YAVA",
-			"UK3CB_TKP_B_Lada_Police",
 			"UK3CB_TKP_B_UAZ_Open",
-			"UK3CB_TKP_B_UAZ_Closed"			
+			"UK3CB_TKP_B_UAZ_Closed",
+			"UK3CB_ARD_B_GAZ_Vodnik_MedEvac",
+			"UK3CB_ARD_B_Hilux_Ambulance",
+			"UK3CB_KDF_O_Gaz66_Ammo",
+			"UK3CB_KDF_O_Gaz66_Med",
+			"UK3CB_TKP_B_Lada_Police",
+			"UK3CB_TKP_B_YAVA"
 		],
 
 		// Statics
@@ -41,7 +42,11 @@ btc_construction_array = [
 		"ACE_medicalSupplyCrate_advanced",
 		"ACE_fastropingSupplyCrate",
 		"ACE_Box_Chemlights",
-		"Land_WoodenBox_F"
+		"Land_WoodenBox_F",
+        "Box_Syndicate_WpsLaunch_F",
+        "Land_PlasticCase_01_large_CBRN_F",
+		"Box_IED_Exp_F"
+
 		],
 		
 
@@ -67,7 +72,3 @@ btc_construction_array = [
 		"FlexibleTank_01_sand_F"]
 	]
 ];
-
-
-
-

@@ -2,8 +2,32 @@
 _parameter = _this select 2;
 _parameter params["_BoxType", "_spawnloc", "_name", "_array", "_backpacks"];
 
-_spawnPos = getPosATL _spawnloc;
-_spawnPos set [2, ((_spawnPos select 2) + 1)];
+diag_log (format ["Parameters: %1", _this]);
+
+
+private ["_spawnPos", "_size"];
+
+_spawnPos = [];
+_size = _target call BIS_fnc_boundingBoxDimensions;
+diag_log (format ["_target: %1 - _size = %2", _target, _size]);
+
+
+if (_spawnloc isEqualTo "REL")  then {
+
+	_spawnPos = _target getRelPos [(_size#0 / 2) + 3 ,180];
+	diag_log (format ["post getRelPos _spawnPos: %1", _spawnPos]);
+
+} else {
+
+	_spawnPos = getPosATL _spawnloc;
+
+	};
+
+
+diag_log (format ["pre set[2,1] _spawnPos: %1", _spawnPos]);
+_spawnPos set [2,1];
+diag_log (format ["post set [2,1] _spawnPos: %1", _spawnPos]);
+
 
 diag_log ("[CVO] [LOGISTICS] (CSC) - " + _name + " - Start");
 

@@ -21,11 +21,13 @@
  * Public: maybe idfk
  *
  *
+ * TODO:
+ *	- Adapt befor usage outside of HAM: _spawnloc adjust default/fail
  *
 */
 
 params [
-	["_spawner", objNull],
+	["_spawner", ""],
 	["_name", "defaultName", ["String"]],
 	["_array",[]],
 	["_BoxType","Land_WoodenBox_F", ["String"]],
@@ -34,8 +36,10 @@ params [
 ];
 
 // Failstate
-if (_spawner == objNull || _Name == "") exitWith {};
-if (_spawner == btc_create_object) then {_spawnloc = btc_create_object_point;} else {_spawnloc = _spawner getRelPos [5,0]};			// untested
+if (_spawner == "" || _Name == "") exitWith {};
+
+// if (_spawnloc == objNull) then {_spawnloc = "REL"};
+_spawnloc = "REL";
 
 // diag_log ("[CVO] [LOGISTICS] (CSC) Adding Ace Action for " + str _name);
 
@@ -61,7 +65,7 @@ private _action = [
 	0,												// Type of action, 0 for action, 1 for self-actionIDs
 	["ACE_MainActions"],							// Parent path of the new action <Array>
 	_action
-] call ace_interact_menu_fnc_addActionToObject;		// Alternative: ace_interact_menu_fnc_addActionToClass 
+] call ace_interact_menu_fnc_addActionToClass;		// Alternative: ace_interact_menu_fnc_addActionToClass 
 
 diag_log ("[CVO] [LOGISTICS] (CSC) - Added Ace Action for " + _name);
 

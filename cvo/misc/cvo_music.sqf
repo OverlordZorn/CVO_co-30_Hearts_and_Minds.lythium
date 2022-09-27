@@ -28,7 +28,8 @@ private _selection;
 
 _selection = switch (_playlist) do {
 	case "leavebase": {
-		[
+		[	
+			"papers",
 			"CVO1",
 			"AmbientTrack01_F",
 			"AmbientTrack01a_F",
