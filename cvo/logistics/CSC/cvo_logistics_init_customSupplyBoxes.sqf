@@ -1,10 +1,14 @@
-cvo_logistics_fnc_addCustomSupplyBoxAceActionToObject = compileScript ["cvo\logistics\cvo_logistics_fnc_addCustomSupplyBoxAceActionToObject.sqf", false, ""];
-cvo_logistics_fnc_addCustomSupplyBoxAceActionToClass = compileScript ["cvo\logistics\cvo_logistics_fnc_addCustomSupplyBoxAceActionToClass.sqf", false, ""];
-cvo_logistics_fnc_spawnSupplyCrate = compileScript ["cvo\logistics\cvo_logistics_fnc_spawnSupplyCrate.sqf", false, ""];
+cvo_logistics_fnc_addCustomSupplyBoxAceActionToObject = compileScript ["cvo\logistics\csc\cvo_logistics_fnc_addCustomSupplyBoxAceActionToObject.sqf", false, ""];
+cvo_logistics_fnc_addCustomSupplyBoxAceActionToClass = compileScript ["cvo\logistics\csc\cvo_logistics_fnc_addCustomSupplyBoxAceActionToClass.sqf", false, ""];
+cvo_logistics_fnc_spawnSupplyCrate = compileScript ["cvo\logistics\csc\cvo_logistics_fnc_spawnSupplyCrate.sqf", false, ""];
 
 /* 
+// ################
+// adds the packages to a specific object
+
+cvo_csc_source_object = btc_create_object
 [
-	btc_create_object, 
+	cvo_csc_source_object, 
 	"Monkey Care Package",
 	[
 		["Ace_banana", 100],
@@ -14,10 +18,10 @@ cvo_logistics_fnc_spawnSupplyCrate = compileScript ["cvo\logistics\cvo_logistics
 ] call cvo_logistics_fnc_addCustomSupplyBoxAceActionToObject;
 */
 
-
+/*
 
 [
-	btc_create_object, 
+	cvo_csc_source_object, 
 	"Basic Ammo Package",
 	[
 		["rhs_10Rnd_762x54mmR_7N1", 30],
@@ -29,7 +33,7 @@ cvo_logistics_fnc_spawnSupplyCrate = compileScript ["cvo\logistics\cvo_logistics
 
 
 [
-	btc_create_object, 
+	cvo_csc_source_object, 
 	"Combat Patrol Package",
 	[
 		["ACE_bodyBag", 10],
@@ -53,7 +57,7 @@ cvo_logistics_fnc_spawnSupplyCrate = compileScript ["cvo\logistics\cvo_logistics
 ] call cvo_logistics_fnc_addCustomSupplyBoxAceActionToObject;
 
 [
-	btc_create_object, 
+	cvo_csc_source_object, 
 	"Night Fight Package",
 	[
 		["ACE_HandFlare_White", 50],
@@ -67,7 +71,7 @@ cvo_logistics_fnc_spawnSupplyCrate = compileScript ["cvo\logistics\cvo_logistics
 ] call cvo_logistics_fnc_addCustomSupplyBoxAceActionToObject;
 
 [
-	btc_create_object, 
+	cvo_csc_source_object, 
 	"PKM Package",
 	[
 		["rhs_weap_pkm",1],
@@ -80,7 +84,7 @@ cvo_logistics_fnc_spawnSupplyCrate = compileScript ["cvo\logistics\cvo_logistics
 
 
 [
-	btc_create_object, 
+	cvo_csc_source_object, 
 	"Metis HAT Package",
 	[
 		["ACE_EntrenchingTool",1],
@@ -93,7 +97,7 @@ cvo_logistics_fnc_spawnSupplyCrate = compileScript ["cvo\logistics\cvo_logistics
 
 
 [
-	btc_create_object, 
+	cvo_csc_source_object, 
 	"CBRN Package",
 	[
 		["U_C_CBRN_Suit_01_Blue_F", 4],
@@ -105,16 +109,16 @@ cvo_logistics_fnc_spawnSupplyCrate = compileScript ["cvo\logistics\cvo_logistics
 	]
 ] call cvo_logistics_fnc_addCustomSupplyBoxAceActionToObject;
 
-
+*/
 
 
 // ################
-// adds the packages to the vehicle className
-
+// adds the packages to a specific className, in this case, ammo truck
+cvo_csc_source_class = "UK3CB_CW_SOV_O_LATE_Gaz66_Ammo";
 
 
 [
-	"UK3CB_CW_SOV_O_LATE_Gaz66_Ammo", 
+	cvo_csc_source_class, 
 	"Basic Ammo Package",
 	[
 		["rhs_10Rnd_762x54mmR_7N1", 30],
@@ -126,7 +130,7 @@ cvo_logistics_fnc_spawnSupplyCrate = compileScript ["cvo\logistics\cvo_logistics
 
 
 [
-	"UK3CB_CW_SOV_O_LATE_Gaz66_Ammo", 
+	cvo_csc_source_class, 
 	"Combat Patrol Package",
 	[
 		["ACE_bodyBag", 10],
@@ -150,7 +154,7 @@ cvo_logistics_fnc_spawnSupplyCrate = compileScript ["cvo\logistics\cvo_logistics
 ] call cvo_logistics_fnc_addCustomSupplyBoxAceActionToClass;
 
 [
-	"UK3CB_CW_SOV_O_LATE_Gaz66_Ammo", 
+	cvo_csc_source_class, 
 	"Night Fight Package",
 	[
 		["ACE_HandFlare_White", 50],
@@ -164,7 +168,7 @@ cvo_logistics_fnc_spawnSupplyCrate = compileScript ["cvo\logistics\cvo_logistics
 ] call cvo_logistics_fnc_addCustomSupplyBoxAceActionToClass;
 
 [
-	"UK3CB_CW_SOV_O_LATE_Gaz66_Ammo", 
+	cvo_csc_source_class, 
 	"PKM Package",
 	[
 		["rhs_weap_pkm",1],
@@ -177,7 +181,7 @@ cvo_logistics_fnc_spawnSupplyCrate = compileScript ["cvo\logistics\cvo_logistics
 
 
 [
-	"UK3CB_CW_SOV_O_LATE_Gaz66_Ammo", 
+	cvo_csc_source_class, 
 	"Metis HAT Package",
 	[
 		["ACE_EntrenchingTool",1],
@@ -190,7 +194,7 @@ cvo_logistics_fnc_spawnSupplyCrate = compileScript ["cvo\logistics\cvo_logistics
 
 
 [
-	"UK3CB_CW_SOV_O_LATE_Gaz66_Ammo", 
+	cvo_csc_source_class, 
 	"CBRN Package",
 	[
 		["U_C_CBRN_Suit_01_Blue_F", 4],

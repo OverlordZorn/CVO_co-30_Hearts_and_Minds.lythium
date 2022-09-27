@@ -16,7 +16,7 @@ if (cvo_p_logistics_fortify) then 	{[compileScript ["cvo\logistics\cvo_logistics
 
 
 // Init CVO Logistics Custom Ammo createSimpleObject
-if (cvo_p_logistics_crate) then 	{[compileScript ["cvo\logistics\cvo_logistics_init_customSupplyBoxes.sqf"]] call CBA_fnc_directCall;};
+if (cvo_p_logistics_crate) then 	{[compileScript ["cvo\logistics\CSC\cvo_logistics_init_customSupplyBoxes.sqf"]] call CBA_fnc_directCall;};
 
 // Init CVO Custom Spawnable Objects
 //cvo_p_logistics_custom_construction_array
