@@ -16,18 +16,18 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=2416;
+		nextID=2497;
 	};
 	class Camera
 	{
-		pos[]={12240.192,377.26215,17323.531};
-		dir[]={-0.70049191,-0.68445379,-0.20240369};
-		up[]={-0.65756816,0.7290442,-0.19000167};
-		aside[]={-0.27761137,-1.3936078e-006,0.96076477};
+		pos[]={12234.362,373.02612,17305.125};
+		dir[]={-0.85656518,-0.51010603,-0.079093926};
+		up[]={-0.50798756,0.86008763,-0.046907306};
+		aside[]={-0.091959745,-9.4666757e-007,0.9958508};
 	};
 };
 binarizationWanted=0;
-sourceName="cvo_co@30_hearts_and_minds";
+sourceName="CVO_co@30_Hearts_and_Minds";
 addons[]=
 {
 	"A3_Modules_F",
@@ -35969,7 +35969,6 @@ class Mission
 		{
 			dataType="Layer";
 			name="Base HQ Building";
-			state=1;
 			class Entities
 			{
 				items=65;
@@ -35979,7 +35978,7 @@ class Mission
 					class PositionInfo
 					{
 						position[]={12178.896,352.13016,17311.232};
-						angles[]={0,3.9542122,0};
+						angles[]={0,3.9542179,0};
 					};
 					side="Empty";
 					flags=5;
@@ -35988,6 +35987,23 @@ class Mission
 					};
 					id=2269;
 					type="Jbad_Mil_ControlTower";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="allowDamage";
+							expression="_this allowdamage _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=0;
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item1
 				{
@@ -38239,16 +38255,35 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={12180.479,342.98648,17299.984};
-						angles[]={0,6.0877929,0};
+						position[]={12180.479,342.98694,17299.984};
+						angles[]={0,6.0877957,0};
 					};
 					side="Empty";
 					flags=4;
 					class Attributes
 					{
+						disableSimulation=1;
 					};
 					id=2306;
 					type="Land_jbad_b_amygdalusn1s_longstem";
+					atlOffset=0.00045776367;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="allowDamage";
+							expression="_this allowdamage _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=0;
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item61
 				{
@@ -38256,15 +38291,33 @@ class Mission
 					class PositionInfo
 					{
 						position[]={12180.663,342.29568,17299.902};
-						angles[]={0,0.77392399,0};
+						angles[]={0,0.77393132,0};
 					};
 					side="Empty";
 					flags=5;
 					class Attributes
 					{
+						disableSimulation=1;
 					};
 					id=2305;
 					type="Land_ConcreteTreePlanter_01_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="allowDamage";
+							expression="_this allowdamage _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=0;
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item62
 				{
@@ -38306,16 +38359,34 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={12181.393,348.16245,17311.01};
-						angles[]={0.011298103,2.3841095,0.0060241357};
+						position[]={12181.393,348.16226,17311.01};
+						angles[]={0.011292281,2.3841023,0.006021386};
 					};
 					side="Empty";
-					flags=4;
 					class Attributes
 					{
+						disableSimulation=1;
 					};
 					id=2307;
 					type="Land_SolarPanel_2_F";
+					atlOffset=4.1904602;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="allowDamage";
+							expression="_this allowdamage _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=0;
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item64
 				{
