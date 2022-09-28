@@ -38,7 +38,7 @@ private _useful = btc_city_all select {
         } count (_city getVariable ["ieds", []])) >= _minNumberOfSubTask
     }
 };
-if (_useful isEqualTo []) exitWith {[] spawn btc_side_fnc_create;};
+if (_useful isEqualTo []) exitWith {};
 private _city = selectRandom _useful;
 
 
