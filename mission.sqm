@@ -8,7 +8,7 @@ class EditorData
 	toggles=578;
 	class ItemIDProvider
 	{
-		nextID=2291;
+		nextID=2292;
 	};
 	class MarkerIDProvider
 	{
@@ -16,18 +16,18 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=2362;
+		nextID=2389;
 	};
 	class Camera
 	{
-		pos[]={12231.016,358.33105,17296.57};
-		dir[]={-0.80233157,-0.58038437,0.13940223};
-		up[]={-0.57181984,0.81433982,0.099351376};
-		aside[]={0.17118153,-2.8876821e-007,0.98524612};
+		pos[]={12182.88,345.0386,17298.961};
+		dir[]={-0.16365145,-0.29630077,0.94101632};
+		up[]={-0.050771285,0.95508289,0.29194015};
+		aside[]={0.98525387,2.7543865e-007,0.17134564};
 	};
 };
 binarizationWanted=0;
-sourceName="CVO_co-30_Hearts_and_Minds";
+sourceName="CVO_co@30_Hearts_and_Minds";
 addons[]=
 {
 	"A3_Modules_F",
@@ -157,7 +157,8 @@ addons[]=
 	"A3_Props_F_Enoch_Military_Supplies",
 	"A3_Props_F_AoW_Items_Decorative",
 	"A3_Structures_F_Mil_Helipads",
-	"A3_Structures_F_Mil_Barracks"
+	"A3_Structures_F_Mil_Barracks",
+	"A3_Props_F_Orange_Civilian_InfoBoards"
 };
 class AddonsMetaData
 {
@@ -6933,7 +6934,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=30;
+		items=31;
 		class Item0
 		{
 			dataType="Layer";
@@ -20697,7 +20698,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={12174.356,341.95145,17270.947};
+								position[]={12180.991,341.95145,17305.572};
 								angles[]={0,0.73849601,0};
 							};
 							side="West";
@@ -25280,7 +25281,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={12175.773,352.02887,17310.701};
+						position[]={12176.036,352.01492,17311.016};
 						angles[]={0,3.0466466,0};
 					};
 					side="Empty";
@@ -25291,7 +25292,6 @@ class Mission
 					};
 					id=2290;
 					type="MapBoard_altis_F";
-					atlOffset=0.013946533;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -25325,7 +25325,7 @@ class Mission
 				};
 			};
 			id=270;
-			atlOffset=4.5632324;
+			atlOffset=4.5562744;
 		};
 		class Item3
 		{
@@ -47038,6 +47038,54 @@ class Mission
 				};
 			};
 			id=2272;
+		};
+		class Item30
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={12181.91,343.76154,17306.221};
+				angles[]={0,0.7737394,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="cvo_jobboard";
+				disableSimulation=1;
+			};
+			id=2291;
+			type="Land_MapBoard_01_Wall_F";
+			atlOffset=1.2600098;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ObjectTextureCustom0";
+					expression="_this setObjectTextureGlobal [0,_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="cvo\img\CVO_Jobboard.paa";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
 		};
 	};
 };
