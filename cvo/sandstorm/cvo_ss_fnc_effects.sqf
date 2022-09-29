@@ -2,7 +2,7 @@
 // Tutorial: https://www.youtube.com/user/aliascartoons
 
 if (!hasInterface) 			exitWith {};
-if (!cvo_env_ds_running) 	exitWith {};
+if (!cvo_ss_running) 	exitWith {};
 
 
 /*		template
@@ -10,11 +10,11 @@ if (!cvo_env_ds_running) 	exitWith {};
 // ##########################
 // xyz)
 [] spawn {
-	if (!cvo_env_ds_running) 	exitWith {};
+	if (!cvo_ss_running) 	exitWith {};
 
-	waitUntil {sleep 5; cvo_env_ds_phase >= ### };
+	waitUntil {sleep 5; cvo_ss_phase >= ### };
 
-	while {sleep 5; cvo_env_ds_running && (cvo_env_ds_phase <= ###)} do {
+	while {sleep 5; cvo_ss_running && (cvo_ss_phase <= ###)} do {
 
 	};
 };
@@ -27,18 +27,18 @@ if (!cvo_env_ds_running) 	exitWith {};
 
 // Camera Shake (Phase 4 - 8)
 [] spawn {
-	waitUntil {sleep 5; cvo_env_ds_phase >= 4};
-	diag_log "[CVO] [ENV] [DS] (CameraShake) Enabled";
+	waitUntil {sleep 5; cvo_ss_phase >= 4};
+	diag_log "[CVO] [SandStorm] (CameraShake) Enabled";
 	enableCamShake true;
 
-	while {sleep 5; cvo_env_ds_running && (cvo_env_ds_phase <= 8)} do {
+	while {sleep 5; cvo_ss_running && (cvo_ss_phase <= 8)} do {
 		addCamShake [0.1,27,17];
 		sleep 15+random 120;
 	};
 
 	resetCamShake;
 	enableCamShake false;
-	diag_log "[CVO] [ENV] [DS] (CameraShake) Disabled";
+	diag_log "[CVO] [SandStorm] (CameraShake) Disabled";
 };
 
 
@@ -46,26 +46,26 @@ if (!cvo_env_ds_running) 	exitWith {};
 // Film Grain (2-4 Increase to Max ### 5-7 Maintain ###
 
 [] spawn {
-	waitUntil {sleep 5; cvo_env_ds_phase >= 2};
-	diag_log "[CVO] [ENV] [DS] (Filmgrain) Enabled";
-	if (!cvo_env_ds_running) 	exitWith {};
+	waitUntil {sleep 5; cvo_ss_phase >= 2};
+	diag_log "[CVO] [SandStorm] (Filmgrain) Enabled";
+	if (!cvo_ss_running) 	exitWith {};
 	ppGrain = 	ppEffectCreate ["FilmGrain", 2000]; 
 	ppGrain		ppEffectEnable true;
 	ppGrain 	ppEffectAdjust [0.1,0.1,2,0.1,0.1,true];
-	ppGrain 	ppEffectCommit (3 * cvo_env_ds_phasetime);
+	ppGrain 	ppEffectCommit (3 * cvo_ss_phasetime);
 	};
 
 // Film Grain EXIT
 [] spawn {
-	waitUntil {sleep 5; (!cvo_env_ds_running)};
+	waitUntil {sleep 5; (!cvo_ss_running)};
 	
 	ppGrain 	ppEffectAdjust [0,0,0,0,0,true];
-	ppGrain 	ppEffectCommit (2 * cvo_env_ds_phasetime);
+	ppGrain 	ppEffectCommit (2 * cvo_ss_phasetime);
 
-	waitUntil {sleep (2 * cvo_env_ds_phasetime); true};
+	waitUntil {sleep (2 * cvo_ss_phasetime); true};
 	ppGrain ppEffectEnable false;
 	ppEffectDestroy ppGrain;
-	diag_log "[CVO] [ENV] [DS] (CameraShake) Disabled";
+	diag_log "[CVO] [SandStorm] (CameraShake) Disabled";
 };
 
 // ##########################
@@ -89,30 +89,30 @@ cc_02 = [	0.98,	0.93,	0.08,		// Brightness	-	Contrast	-	Contrast Offset
 
 // Starting the CC effect
 [] spawn {
-	waitUntil {sleep 5; cvo_env_ds_phase >= 2 };
-	if (!cvo_env_ds_running) 	exitWith {};
+	waitUntil {sleep 5; cvo_ss_phase >= 2 };
+	if (!cvo_ss_running) 	exitWith {};
 	ppCC = ppEffectCreate ["ColorCorrections", 1500];
 	ppCC ppEffectEnable true;
 
 	ppCC ppEffectAdjust cc_al;
-	ppCC ppEffectCommit (2 * cvo_env_ds_phasetime);
-	diag_log "[CVO] [ENV] [DS] (ColorC) Enabled - Turning to CC_AL ";
-	waitUntil {sleep 5; cvo_env_ds_phase >= 6 };
-	if (!cvo_env_ds_running) 	exitWith {};
+	ppCC ppEffectCommit (2 * cvo_ss_phasetime);
+	diag_log "[CVO] [SandStorm] (ColorC) Enabled - Turning to CC_AL ";
+	waitUntil {sleep 5; cvo_ss_phase >= 6 };
+	if (!cvo_ss_running) 	exitWith {};
 
 	ppCC ppEffectAdjust cc_02;
-	ppCC ppEffectCommit (1 * cvo_env_ds_phasetime);
-	diag_log "[CVO] [ENV] [DS] (ColorC) Enabled - Turning to CC_02 ";
+	ppCC ppEffectCommit (1 * cvo_ss_phasetime);
+	diag_log "[CVO] [SandStorm] (ColorC) Enabled - Turning to CC_02 ";
 };
 // ColorCorrection EXIT
 [] spawn {
-	waitUntil {sleep 5; !cvo_env_ds_running};
+	waitUntil {sleep 5; !cvo_ss_running};
 	ppCC ppEffectAdjust cc_default;
-	ppCC ppEffectCommit (2 * cvo_env_ds_phasetime);
-	diag_log "[CVO] [ENV] [DS] (ColorC) Enabled - Turning to CC_Default";
-	waitUntil {sleep cvo_env_ds_phasetime; true};
+	ppCC ppEffectCommit (2 * cvo_ss_phasetime);
+	diag_log "[CVO] [SandStorm] (ColorC) Enabled - Turning to CC_Default";
+	waitUntil {sleep cvo_ss_phasetime; true};
 	ppEffectDestroy ppCC;
-	diag_log "[CVO] [ENV] [DS] (ColorC) Disabled";
+	diag_log "[CVO] [SandStorm] (ColorC) Disabled";
 
 };
 
@@ -123,9 +123,9 @@ cc_02 = [	0.98,	0.93,	0.08,		// Brightness	-	Contrast	-	Contrast Offset
 
 // Leaf Particles
 [] spawn {
-	diag_log "[CVO] [ENV] [DS] (ParticleLeaves) Enabled";
+	diag_log "[CVO] [SandStorm] (ParticleLeaves) Enabled";
 	private _i = 0;
-	while {sleep 1; cvo_env_ds_running && (cvo_env_ds_phase <= 9)} do {
+	while {sleep 1; cvo_ss_running && (cvo_ss_phase <= 9)} do {
 
 		_offset = 0;
 		if (speed player > 35) then {_offset = 2.5 * (speed player);};
@@ -143,40 +143,40 @@ cc_02 = [	0.98,	0.93,	0.08,		// Brightness	-	Contrast	-	Contrast Offset
 
 		deletevehicle _leaves_p;
 		_i = _i + 1;
-		diag_log ("[CVO] [ENV] [DS] (ParticleLeaves) Cycle "+str _i);
+		diag_log ("[CVO] [SandStorm] (ParticleLeaves) Cycle "+str _i);
 	};
-	diag_log "[CVO] [ENV] [DS] (ParticleLeaves) Disabled";
+	diag_log "[CVO] [SandStorm] (ParticleLeaves) Disabled";
 };
 
 
 // Dust Particles
 [] spawn {
 
-	cvo_dustParticleHigh = [["\A3\data_f\cl_basic", 1, 0, 1], "", "Billboard", 1, 20, [0, 0, 0], [-1, -1, 0], 3, 10.15, 7.9, 0.01, [10, 10, 20], [[0.65, 0.5, 0.5, 0], [0.65, 0.6, 0.5, 0.5], [1, 0.95, 0.8, 0]], [0.08], 1, 0, "", "", vehicle player,0,true];
-	cvo_dustParticleLow  = [["\A3\data_f\cl_basic", 1, 0, 1], "", "Billboard", 1, 20, [0, 0, 0], [-1, -1, 0], 3, 10.15, 7.9, 0.01, [5, 10, 15], [[0.65, 0.5, 0.5, 0], [0.65, 0.6, 0.5, 0.2], [1, 0.95, 0.8, 0]], [0.08], 1, 0, "", "", vehicle player,0,true];
+	cvo_dustParticleHigh = [["\A3\data_f\cl_basic", 1, 0, 1], "", "Billboard", 1, 20, [0, 0, 0], [-1, -1, 0], 3, 10.15, 7.9, 0.01, [10, 10, 20], 	[[0.65, 0.5, 0.5, 0], [0.65, 0.6, 0.5, 0.5], [1, 0.95, 0.8, 0]], [0.08], 1, 0, "", "", vehicle player,0,true];
+	cvo_dustParticleLow  = [["\A3\data_f\cl_basic", 1, 0, 1], "", "Billboard", 1, 20, [0, 0, 0], [-1, -1, 0], 3, 10.15, 7.9, 0.01, [5, 7, 10], 		[[0.65, 0.5, 0.5, 0], [0.65, 0.6, 0.5, 0.2], [1, 0.95, 0.8, 0]], [0.08], 1, 0, "", "", vehicle player,0,true];
 
-	waitUntil {sleep 5; cvo_env_ds_phase >= 2 };
+	waitUntil {sleep 5; cvo_ss_phase >= 2 };
 
 	cvo_dustParticle = cvo_dustParticleLow;
-	diag_log "[CVO] [ENV] [DS] (ParticleDust) Low Mode";
+	diag_log "[CVO] [SandStorm] (ParticleDust) Low Mode";
 
 	[] spawn {		// turns particle "density" high
-		waitUntil {sleep 5; cvo_env_ds_phase >= 4};
+		waitUntil {sleep 5; cvo_ss_phase >= 4};
 		cvo_dustParticle = cvo_dustParticleHigh;
 		publicVariable "cvo_dustParticle";
-		diag_log "[CVO] [ENV] [DS] (ParticleDust) High Mode";
+		diag_log "[CVO] [SandStorm] (ParticleDust) High Mode";
 	};
 	[] spawn {		// turns particle "density" low
-		waitUntil {sleep 5; cvo_env_ds_phase >= 8};
+		waitUntil {sleep 5; cvo_ss_phase >= 8};
 		cvo_dustParticle = cvo_dustParticleLow;
 		publicVariable "cvo_dustParticle";
-		diag_log "[CVO] [ENV] [DS] (ParticleDust) Low Mode"
+		diag_log "[CVO] [SandStorm] (ParticleDust) Low Mode"
 	};
 
 	
-	diag_log "[CVO] [ENV] [DS] (ParticleDust) Enabled";
+	diag_log "[CVO] [SandStorm] (ParticleDust) Enabled";
 	private _i = 0;
-	while {cvo_env_ds_running} do {
+	while {cvo_ss_running} do {
 
 		_offset = 0;
 		if (speed player > 35) then {_offset = 3 * (speed player);};
@@ -228,5 +228,5 @@ cc_02 = [	0.98,	0.93,	0.08,		// Brightness	-	Contrast	-	Contrast Offset
 	cvo_dustParticle = nil;
 	cvo_dustParticleLow = nil;
 	cvo_dustParticleLow = nil;
-	diag_log "[CVO] [ENV] [DS] (ParticleDust) Disabled";
+	diag_log "[CVO] [SandStorm] (ParticleDust) Disabled";
 };
