@@ -121,4 +121,4 @@ if (typeName _spawner isEqualTo "OBJECT") then {
 	] call ace_interact_menu_fnc_addActionToClass;		
 
 };
-diag_log ("[CVO] [LOGISTICS] (CSC) - Added Ace Action for " + (str _name) + " to " + (str _spawner));
+diag_log format ["[CVO] [LOGISTICS] (CSC) - Successful => Carrier: %1 - CSC: %2", _spawner, _name];
