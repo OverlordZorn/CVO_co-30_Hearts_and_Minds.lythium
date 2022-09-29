@@ -16,18 +16,18 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=2497;
+		nextID=2551;
 	};
 	class Camera
 	{
-		pos[]={12234.362,373.02612,17305.125};
-		dir[]={-0.85656518,-0.51010603,-0.079093926};
-		up[]={-0.50798756,0.86008763,-0.046907306};
-		aside[]={-0.091959745,-9.4666757e-007,0.9958508};
+		pos[]={12218.72,370.38669,17305.174};
+		dir[]={-0.8512162,-0.33997309,-0.39985716};
+		up[]={-0.30772984,0.9404279,-0.1445546};
+		aside[]={-0.42518193,-4.6798959e-008,0.90512794};
 	};
 };
 binarizationWanted=0;
-sourceName="CVO_co@30_Hearts_and_Minds";
+sourceName="cvo_co@30_hearts_and_minds";
 addons[]=
 {
 	"A3_Modules_F",
@@ -697,6 +697,2368 @@ class ScenarioData
 class CustomAttributes
 {
 	class Category0
+	{
+		name="ace_arsenal_DummyCategory";
+		class Attribute0
+		{
+			property="ace_arsenal_DefaultLoadoutsListAttribute";
+			expression="if (!is3DEN) then {ace_arsenal_defaultLoadoutsList = _value}";
+			class Value
+			{
+				class data
+				{
+					singleType="ARRAY";
+					class value
+					{
+						items=2;
+						class Item0
+						{
+							class data
+							{
+								singleType="ARRAY";
+								class value
+								{
+									items=2;
+									class Item0
+									{
+										class data
+										{
+											singleType="STRING";
+											value="CVO CIB Basic NO GUN";
+										};
+									};
+									class Item1
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="ARRAY";
+														class value
+														{
+															items=10;
+															class Item0
+															{
+																class data
+																{
+																	singleType="ARRAY";
+																};
+															};
+															class Item1
+															{
+																class data
+																{
+																	singleType="ARRAY";
+																};
+															};
+															class Item2
+															{
+																class data
+																{
+																	singleType="ARRAY";
+																	class value
+																	{
+																		items=7;
+																		class Item0
+																		{
+																			class data
+																			{
+																				singleType="STRING";
+																				value="rhs_weap_makarov_pm";
+																			};
+																		};
+																		class Item1
+																		{
+																			class data
+																			{
+																				singleType="STRING";
+																				value="";
+																			};
+																		};
+																		class Item2
+																		{
+																			class data
+																			{
+																				singleType="STRING";
+																				value="";
+																			};
+																		};
+																		class Item3
+																		{
+																			class data
+																			{
+																				singleType="STRING";
+																				value="";
+																			};
+																		};
+																		class Item4
+																		{
+																			class data
+																			{
+																				singleType="ARRAY";
+																				class value
+																				{
+																					items=2;
+																					class Item0
+																					{
+																						class data
+																						{
+																							singleType="STRING";
+																							value="rhs_mag_9x18_8_57N181S";
+																						};
+																					};
+																					class Item1
+																					{
+																						class data
+																						{
+																							singleType="SCALAR";
+																							value=8;
+																						};
+																					};
+																				};
+																			};
+																		};
+																		class Item5
+																		{
+																			class data
+																			{
+																				singleType="ARRAY";
+																			};
+																		};
+																		class Item6
+																		{
+																			class data
+																			{
+																				singleType="STRING";
+																				value="";
+																			};
+																		};
+																	};
+																};
+															};
+															class Item3
+															{
+																class data
+																{
+																	singleType="ARRAY";
+																	class value
+																	{
+																		items=2;
+																		class Item0
+																		{
+																			class data
+																			{
+																				singleType="STRING";
+																				value="UK3CB_TKP_I_U_QRF_CombatUniform_BLK";
+																			};
+																		};
+																		class Item1
+																		{
+																			class data
+																			{
+																				singleType="ARRAY";
+																				class value
+																				{
+																					items=12;
+																					class Item0
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=2;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_packingBandage";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=10;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item1
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=2;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_fieldDressing";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=10;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item2
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=2;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_morphine";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=2;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item3
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=2;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_epinephrine";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=2;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item4
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=2;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_tourniquet";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=2;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item5
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=2;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_splint";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=1;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item6
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=2;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_CableTie";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=4;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item7
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=2;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_EarPlugs";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=2;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item8
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=2;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_MapTools";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=1;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item9
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=2;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_Chemlight_Shield";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=1;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item10
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=3;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="Chemlight_red";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=1;
+																									};
+																								};
+																								class Item2
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=1;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item11
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=3;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_Chemlight_White";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=1;
+																									};
+																								};
+																								class Item2
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=1;
+																									};
+																								};
+																							};
+																						};
+																					};
+																				};
+																			};
+																		};
+																	};
+																};
+															};
+															class Item4
+															{
+																class data
+																{
+																	singleType="ARRAY";
+																	class value
+																	{
+																		items=2;
+																		class Item0
+																		{
+																			class data
+																			{
+																				singleType="STRING";
+																				value="UK3CB_TKP_O_V_6b23_ML_6sh92_radio_BLK";
+																			};
+																		};
+																		class Item1
+																		{
+																			class data
+																			{
+																				singleType="ARRAY";
+																				class value
+																				{
+																					items=2;
+																					class Item0
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=2;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACRE_PRC343";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=1;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item1
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=3;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="rhs_mag_9x18_8_57N181S";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=1;
+																									};
+																								};
+																								class Item2
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=8;
+																									};
+																								};
+																							};
+																						};
+																					};
+																				};
+																			};
+																		};
+																	};
+																};
+															};
+															class Item5
+															{
+																class data
+																{
+																	singleType="ARRAY";
+																	class value
+																	{
+																		items=2;
+																		class Item0
+																		{
+																			class data
+																			{
+																				singleType="STRING";
+																				value="UK3CB_TKP_O_B_ASS_BLK";
+																			};
+																		};
+																		class Item1
+																		{
+																			class data
+																			{
+																				singleType="ARRAY";
+																				class value
+																				{
+																					items=11;
+																					class Item0
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=2;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_Chemlight_Shield";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=1;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item1
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=2;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_SpraypaintRed";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=1;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item2
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=2;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_Humanitarian_Ration";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=1;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item3
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=2;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_bodyBag";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=1;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item4
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=2;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_salineIV_500";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=1;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item5
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=2;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_EarPlugs";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=2;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item6
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=2;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_CableTie";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=2;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item7
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=3;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="rhs_mag_rgd5";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=2;
+																									};
+																								};
+																								class Item2
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=1;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item8
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=3;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_M84";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=2;
+																									};
+																								};
+																								class Item2
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=1;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item9
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=3;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_HandFlare_White";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=2;
+																									};
+																								};
+																								class Item2
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=1;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item10
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=3;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="rhs_mag_rdg2_white";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=2;
+																									};
+																								};
+																								class Item2
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=1;
+																									};
+																								};
+																							};
+																						};
+																					};
+																				};
+																			};
+																		};
+																	};
+																};
+															};
+															class Item6
+															{
+																class data
+																{
+																	singleType="STRING";
+																	value="UK3CB_TKP_O_H_Patrolcap_Blk";
+																};
+															};
+															class Item7
+															{
+																class data
+																{
+																	singleType="STRING";
+																	value="";
+																};
+															};
+															class Item8
+															{
+																class data
+																{
+																	singleType="ARRAY";
+																};
+															};
+															class Item9
+															{
+																class data
+																{
+																	singleType="ARRAY";
+																	class value
+																	{
+																		items=6;
+																		class Item0
+																		{
+																			class data
+																			{
+																				singleType="STRING";
+																				value="ItemMap";
+																			};
+																		};
+																		class Item1
+																		{
+																			class data
+																			{
+																				singleType="STRING";
+																				value="";
+																			};
+																		};
+																		class Item2
+																		{
+																			class data
+																			{
+																				singleType="STRING";
+																				value="";
+																			};
+																		};
+																		class Item3
+																		{
+																			class data
+																			{
+																				singleType="STRING";
+																				value="ItemCompass";
+																			};
+																		};
+																		class Item4
+																		{
+																			class data
+																			{
+																				singleType="STRING";
+																				value="ItemWatch";
+																			};
+																		};
+																		class Item5
+																		{
+																			class data
+																			{
+																				singleType="STRING";
+																				value="";
+																			};
+																		};
+																	};
+																};
+															};
+														};
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="HASHMAP";
+														class v
+														{
+														};
+													};
+												};
+											};
+										};
+									};
+								};
+							};
+						};
+						class Item1
+						{
+							class data
+							{
+								singleType="ARRAY";
+								class value
+								{
+									items=2;
+									class Item0
+									{
+										class data
+										{
+											singleType="STRING";
+											value="CVO CIB MEDIC NO GUN";
+										};
+									};
+									class Item1
+									{
+										class data
+										{
+											singleType="ARRAY";
+											class value
+											{
+												items=2;
+												class Item0
+												{
+													class data
+													{
+														singleType="ARRAY";
+														class value
+														{
+															items=10;
+															class Item0
+															{
+																class data
+																{
+																	singleType="ARRAY";
+																};
+															};
+															class Item1
+															{
+																class data
+																{
+																	singleType="ARRAY";
+																};
+															};
+															class Item2
+															{
+																class data
+																{
+																	singleType="ARRAY";
+																	class value
+																	{
+																		items=7;
+																		class Item0
+																		{
+																			class data
+																			{
+																				singleType="STRING";
+																				value="rhs_weap_makarov_pm";
+																			};
+																		};
+																		class Item1
+																		{
+																			class data
+																			{
+																				singleType="STRING";
+																				value="";
+																			};
+																		};
+																		class Item2
+																		{
+																			class data
+																			{
+																				singleType="STRING";
+																				value="";
+																			};
+																		};
+																		class Item3
+																		{
+																			class data
+																			{
+																				singleType="STRING";
+																				value="";
+																			};
+																		};
+																		class Item4
+																		{
+																			class data
+																			{
+																				singleType="ARRAY";
+																				class value
+																				{
+																					items=2;
+																					class Item0
+																					{
+																						class data
+																						{
+																							singleType="STRING";
+																							value="rhs_mag_9x18_8_57N181S";
+																						};
+																					};
+																					class Item1
+																					{
+																						class data
+																						{
+																							singleType="SCALAR";
+																							value=8;
+																						};
+																					};
+																				};
+																			};
+																		};
+																		class Item5
+																		{
+																			class data
+																			{
+																				singleType="ARRAY";
+																			};
+																		};
+																		class Item6
+																		{
+																			class data
+																			{
+																				singleType="STRING";
+																				value="";
+																			};
+																		};
+																	};
+																};
+															};
+															class Item3
+															{
+																class data
+																{
+																	singleType="ARRAY";
+																	class value
+																	{
+																		items=2;
+																		class Item0
+																		{
+																			class data
+																			{
+																				singleType="STRING";
+																				value="UK3CB_TKP_I_U_QRF_CombatUniform_BLK";
+																			};
+																		};
+																		class Item1
+																		{
+																			class data
+																			{
+																				singleType="ARRAY";
+																				class value
+																				{
+																					items=12;
+																					class Item0
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=2;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_packingBandage";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=10;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item1
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=2;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_fieldDressing";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=10;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item2
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=2;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_morphine";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=2;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item3
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=2;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_epinephrine";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=2;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item4
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=2;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_tourniquet";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=2;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item5
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=2;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_splint";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=1;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item6
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=2;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_CableTie";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=4;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item7
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=2;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_EarPlugs";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=2;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item8
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=2;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_MapTools";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=1;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item9
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=2;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_Chemlight_Shield";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=1;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item10
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=3;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="Chemlight_red";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=1;
+																									};
+																								};
+																								class Item2
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=1;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item11
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=3;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_Chemlight_White";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=1;
+																									};
+																								};
+																								class Item2
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=1;
+																									};
+																								};
+																							};
+																						};
+																					};
+																				};
+																			};
+																		};
+																	};
+																};
+															};
+															class Item4
+															{
+																class data
+																{
+																	singleType="ARRAY";
+																	class value
+																	{
+																		items=2;
+																		class Item0
+																		{
+																			class data
+																			{
+																				singleType="STRING";
+																				value="UK3CB_TKP_O_V_6b23_ML_6sh92_radio_BLK";
+																			};
+																		};
+																		class Item1
+																		{
+																			class data
+																			{
+																				singleType="ARRAY";
+																				class value
+																				{
+																					items=2;
+																					class Item0
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=2;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACRE_PRC343";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=1;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item1
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=3;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="rhs_mag_9x18_8_57N181S";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=1;
+																									};
+																								};
+																								class Item2
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=8;
+																									};
+																								};
+																							};
+																						};
+																					};
+																				};
+																			};
+																		};
+																	};
+																};
+															};
+															class Item5
+															{
+																class data
+																{
+																	singleType="ARRAY";
+																	class value
+																	{
+																		items=2;
+																		class Item0
+																		{
+																			class data
+																			{
+																				singleType="STRING";
+																				value="UK3CB_TKP_O_B_ASS_MED_BLK";
+																			};
+																		};
+																		class Item1
+																		{
+																			class data
+																			{
+																				singleType="ARRAY";
+																				class value
+																				{
+																					items=20;
+																					class Item0
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=2;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_Chemlight_Shield";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=1;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item1
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=2;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_SpraypaintRed";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=1;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item2
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=2;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_Humanitarian_Ration";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=1;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item3
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=2;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_EarPlugs";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=2;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item4
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=2;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_CableTie";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=2;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item5
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=2;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_packingBandage";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=10;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item6
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=2;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_fieldDressing";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=10;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item7
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=2;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_elasticBandage";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=40;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item8
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=2;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_surgicalKit";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=1;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item9
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=2;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_tourniquet";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=5;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item10
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=2;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_splint";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=5;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item11
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=2;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_morphine";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=7;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item12
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=2;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_epinephrine";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=7;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item13
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=2;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_adenosine";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=2;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item14
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=2;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_bodyBag";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=3;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item15
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=2;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_bloodIV_500";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=10;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item16
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=2;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_bloodIV";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=5;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item17
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=3;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="rhs_mag_rdg2_white";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=4;
+																									};
+																								};
+																								class Item2
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=1;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item18
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=3;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="ACE_HandFlare_Red";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=3;
+																									};
+																								};
+																								class Item2
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=1;
+																									};
+																								};
+																							};
+																						};
+																					};
+																					class Item19
+																					{
+																						class data
+																						{
+																							singleType="ARRAY";
+																							class value
+																							{
+																								items=3;
+																								class Item0
+																								{
+																									class data
+																									{
+																										singleType="STRING";
+																										value="Chemlight_red";
+																									};
+																								};
+																								class Item1
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=3;
+																									};
+																								};
+																								class Item2
+																								{
+																									class data
+																									{
+																										singleType="SCALAR";
+																										value=1;
+																									};
+																								};
+																							};
+																						};
+																					};
+																				};
+																			};
+																		};
+																	};
+																};
+															};
+															class Item6
+															{
+																class data
+																{
+																	singleType="STRING";
+																	value="UK3CB_TKP_O_H_Patrolcap_Blk";
+																};
+															};
+															class Item7
+															{
+																class data
+																{
+																	singleType="STRING";
+																	value="";
+																};
+															};
+															class Item8
+															{
+																class data
+																{
+																	singleType="ARRAY";
+																};
+															};
+															class Item9
+															{
+																class data
+																{
+																	singleType="ARRAY";
+																	class value
+																	{
+																		items=6;
+																		class Item0
+																		{
+																			class data
+																			{
+																				singleType="STRING";
+																				value="ItemMap";
+																			};
+																		};
+																		class Item1
+																		{
+																			class data
+																			{
+																				singleType="STRING";
+																				value="";
+																			};
+																		};
+																		class Item2
+																		{
+																			class data
+																			{
+																				singleType="STRING";
+																				value="";
+																			};
+																		};
+																		class Item3
+																		{
+																			class data
+																			{
+																				singleType="STRING";
+																				value="ItemCompass";
+																			};
+																		};
+																		class Item4
+																		{
+																			class data
+																			{
+																				singleType="STRING";
+																				value="ItemWatch";
+																			};
+																		};
+																		class Item5
+																		{
+																			class data
+																			{
+																				singleType="STRING";
+																				value="";
+																			};
+																		};
+																	};
+																};
+															};
+														};
+													};
+												};
+												class Item1
+												{
+													class data
+													{
+														singleType="HASHMAP";
+														class v
+														{
+														};
+													};
+												};
+											};
+										};
+									};
+								};
+							};
+						};
+					};
+				};
+			};
+		};
+		nAttributes=1;
+	};
+	class Category1
 	{
 		name="Scenario";
 		class Attribute0
@@ -20705,8 +23067,8 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={12180.991,341.95145,17305.572};
-								angles[]={0,0.73849601,0};
+								position[]={12178.989,346.66644,17315.559};
+								angles[]={0,4.1025834,-0};
 							};
 							side="West";
 							flags=6;
@@ -20846,7 +23208,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={12171.228,341.95145,17271.51};
+								position[]={12179.704,341.95145,17295.326};
 								angles[]={0,0.73849601,0};
 							};
 							side="West";
@@ -20996,7 +23358,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={12172.042,341.95145,17268.662};
+								position[]={12181.016,341.95145,17292.848};
 								angles[]={0,0.73849601,0};
 							};
 							side="West";
@@ -21145,7 +23507,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={12173.905,341.95145,17266.809};
+								position[]={12182.382,341.95145,17290.625};
 								angles[]={0,0.73849601,0};
 							};
 							side="West";
@@ -25345,7 +27707,7 @@ class Mission
 				};
 			};
 			id=270;
-			atlOffset=4.8734741;
+			atlOffset=4.8919067;
 		};
 		class Item3
 		{
@@ -28722,7 +31084,7 @@ class Mission
 						{
 							dataType="Waypoint";
 							loiterAltitude=-3.4028235e+038;
-							position[]={12173.145,341.95001,17268.703};
+							position[]={12170.912,341.95001,17270.809};
 							class Effects
 							{
 							};
