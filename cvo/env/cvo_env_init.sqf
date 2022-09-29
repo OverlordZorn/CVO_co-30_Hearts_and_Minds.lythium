@@ -3,4 +3,4 @@ cvo_env_fnc_dayCycle 		= compileScript ["cvo\env\cvo_env_fnc_dayCycle.sqf", fals
 cvo_env_fnc_dayCycle_handle 		= [btc_p_acctime, cvo_p_env_fastnightmulti] spawn cvo_env_fnc_dayCycle;
  
 // #### Start Sandstorm Environment Init
-execVM "cvo\env\cvo_sandstorm\cvo_ss_init.sqf";
+execVM "cvo\sandstorm\cvo_ss_init.sqf";
