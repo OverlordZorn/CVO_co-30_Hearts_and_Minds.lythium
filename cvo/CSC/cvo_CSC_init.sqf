@@ -14,7 +14,7 @@ cvo_CSC_fnc_spawnCSC = 		compileScript ["cvo\CSC\cvo_CSC_fnc_spawnCSC.sqf", 	fal
 		["Ace_banana", 100]
 	],
 	"Land_WoodenCrate_01_F"
-] call cvo_logistics_fnc_addCSC;
+] call cvo_CSC_fnc_addCSC;
 */
 
 cvo_csc_source_object = btc_create_object;
@@ -29,7 +29,7 @@ cvo_csc_source_object = btc_create_object;
 		["rhs_100Rnd_762x54mmR_green", 6]
 	],
 	"rhs_3Ya40_1_single"
-] call cvo_logistics_fnc_addCSC;
+] call cvo_CSC_fnc_addCSC;
 
 [
 	cvo_csc_source_object, 
@@ -53,7 +53,7 @@ cvo_csc_source_object = btc_create_object;
 	[
 		["B_Respawn_TentDome_F",1]
 	]
-] call cvo_logistics_fnc_addCSC;
+] call cvo_CSC_fnc_addCSC;
 
 [
 	cvo_csc_source_object, 
@@ -67,7 +67,7 @@ cvo_csc_source_object = btc_create_object;
 
 	],
 	"rhs_7ya37_1_single"
-] call cvo_logistics_fnc_addCSC;
+] call cvo_CSC_fnc_addCSC;
 
 [
 	cvo_csc_source_object, 
@@ -78,7 +78,7 @@ cvo_csc_source_object = btc_create_object;
 		["rhs_100Rnd_762x54mmR_green", 10]
 	],
 	"rhs_7ya37_1_single"
-] call cvo_logistics_fnc_addCSC;
+] call cvo_CSC_fnc_addCSC;
 
 
 
@@ -92,7 +92,7 @@ cvo_csc_source_object = btc_create_object;
 		["ace_compat_rhs_afrf3_mag_9M131M", 7]
 	],
 	"Land_WoodenCrate_01_F"							 
-] call cvo_logistics_fnc_addCSC;
+] call cvo_CSC_fnc_addCSC;
 
 
 [
@@ -106,7 +106,7 @@ cvo_csc_source_object = btc_create_object;
 	[
 		["B_SCBA_01_F",4]
 	]
-] call cvo_logistics_fnc_addCSC;
+] call cvo_CSC_fnc_addCSC;
 
 
 
@@ -126,7 +126,7 @@ cvo_csc_source_class = "UK3CB_KDF_O_Gaz66_Ammo";
 		["rhs_100Rnd_762x54mmR_green", 6]
 	],
 	"rhs_3Ya40_1_single"
-] call cvo_logistics_fnc_addCSC;
+] call cvo_CSC_fnc_addCSC;
 
 
 [
@@ -151,7 +151,7 @@ cvo_csc_source_class = "UK3CB_KDF_O_Gaz66_Ammo";
 	[
 		["B_Respawn_TentDome_F",1]
 	]
-] call cvo_logistics_fnc_addCSC;
+] call cvo_CSC_fnc_addCSC;
 
 [
 	cvo_csc_source_class, 
@@ -165,7 +165,7 @@ cvo_csc_source_class = "UK3CB_KDF_O_Gaz66_Ammo";
 
 	],
 	"rhs_7ya37_1_single"
-] call cvo_logistics_fnc_addCSC;
+] call cvo_CSC_fnc_addCSC;
 
 [
 	cvo_csc_source_class, 
@@ -176,7 +176,7 @@ cvo_csc_source_class = "UK3CB_KDF_O_Gaz66_Ammo";
 		["rhs_100Rnd_762x54mmR_green", 10]
 	],
 	"rhs_7ya37_1_single"
-] call cvo_logistics_fnc_addCSC;
+] call cvo_CSC_fnc_addCSC;
 
 
 
@@ -190,7 +190,7 @@ cvo_csc_source_class = "UK3CB_KDF_O_Gaz66_Ammo";
 		["ace_compat_rhs_afrf3_mag_9M131M", 7]
 	],
 	"Land_WoodenCrate_01_F"							 
-] call cvo_logistics_fnc_addCSC;
+] call cvo_CSC_fnc_addCSC;
 
 
 [
@@ -204,4 +204,4 @@ cvo_csc_source_class = "UK3CB_KDF_O_Gaz66_Ammo";
 	[
 		["B_SCBA_01_F",4]
 	]
-] call cvo_logistics_fnc_addCSC;
+] call cvo_CSC_fnc_addCSC;
