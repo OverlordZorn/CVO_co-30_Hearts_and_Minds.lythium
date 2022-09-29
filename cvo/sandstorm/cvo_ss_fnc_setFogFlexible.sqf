@@ -14,7 +14,7 @@ params [
 	["_ds_useAvgASL", false, [false]]
 ];
 
-diag_log ("[CVO] [ENV] [DS] (flexFog) - " + format ["Start - Duration: %1 - Target: %2 - useAvgASL: %3", _ds_duration, _ds_target, _ds_useAvgASL]);
+diag_log ("[CVO] [SandStorm] (flexFog) - " + format ["Start - Duration: %1 - Target: %2 - useAvgASL: %3", _ds_duration, _ds_target, _ds_useAvgASL]);
 
 
 _ds_stepsTotal = 10;														// total count of "steps"
@@ -41,10 +41,10 @@ for "_i" from 1 to _ds_stepsTotal do {
 
 
 	_ds_cycle setFog _ds_arr;
-	diag_log ("[CVO] [ENV] [DS] (flexFog) - " + format ["%1 / %2 - interTarget: %3", _i, _ds_stepsTotal, _ds_arr]);
+	diag_log ("[CVO] [SandStorm] (flexFog) - " + format ["%1 / %2 - interTarget: %3", _i, _ds_stepsTotal, _ds_arr]);
 
 	sleep _ds_cycle;
-	if (!cvo_env_ds_running) exitWith {};
+	if (!cvo_ss_running) exitWith {};
 };
-diag_log ("[CVO] [ENV] [DS] (flexFog) - done - Target: " + str _ds_iteration);
+diag_log ("[CVO] [SandStorm] (flexFog) - done - Target: " + str _ds_iteration);
 
