@@ -64,8 +64,6 @@ private _CVO_A_Basic_Vests = [
 private _CVO_A_Basic_Backpacks = [
     "UK3CB_TKA_O_B_ENG_Khk",
     "UK3CB_TKA_O_B_RIF_Khk",
-    "UK3CB_TKP_I_B_ASS_MED_TAN",
-    "UK3CB_TKP_O_B_ASS_MED_BLK",
     "UK3CB_TKP_O_B_ASS_BLK",
 	"UK3CB_UN_B_B_ASS",
     "B_LegStrapBag_black_F",
@@ -442,7 +440,9 @@ CVO_A_RTO = ["ACRE_PRC77",
 	"ACRE_VHF30108MAST"];
 
 CVO_A_Medic = [
-	"rhs_medic_bag", 
+	"rhs_medic_bag",
+    "UK3CB_TKP_I_B_ASS_MED_TAN",
+    "UK3CB_TKP_O_B_ASS_MED_BLK",
 	"ACE_quikclot", 
 	"ACE_elasticBandage", 
 	"ACE_adenosine", 
