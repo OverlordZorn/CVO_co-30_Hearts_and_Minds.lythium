@@ -42,7 +42,8 @@ btc_construction_array = [
 		"ACE_medicalSupplyCrate_advanced",
 		"ACE_fastropingSupplyCrate",
 		"ACE_Box_Chemlights",
-		"Land_WoodenBox_F",							// added CustomSupplyCrates  to the delete mechanic
+		"Land_WoodenBox_F",
+		"Land_WoodenCrate_01_F",					// added CustomSupplyCrates  to the delete mechanic
         "Box_Syndicate_WpsLaunch_F",				// added CustomSupplyCrates  to the delete mechanic
         "Land_PlasticCase_01_large_CBRN_F",			// added CustomSupplyCrates  to the delete mechanic
 		"Box_IED_Exp_F"								// added CustomSupplyCrates  to the delete mechanic
