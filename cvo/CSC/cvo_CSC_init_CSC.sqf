@@ -1,5 +1,5 @@
-cvo_CSC_fnc_addCSC = 		compileScript ["cvo\CSC\cvo_CSC_fnc_addCSC.sqf", false, ""];
-cvo_CSC_fnc_spawnCSC = 		compileScript ["cvo\CSC\cvo_CSC_fnc_spawnCSC.sqf", false, ""];
+cvo_CSC_fnc_addCSC = 		compileScript ["cvo\CSC\cvo_CSC_fnc_addCSC.sqf", 	false, ""];
+cvo_CSC_fnc_spawnCSC = 		compileScript ["cvo\CSC\cvo_CSC_fnc_spawnCSC.sqf", 	false, ""];
 
  
 // ################
