@@ -31,7 +31,6 @@ params [
 	["_backpacks", []],
 	["_spawnloc", objNull]
 ];
-diag_log ("[CVO] [LOGISTICS] (CSC) - ################################## Start ##################################" );
 
 /* private _type = "object";
 if (typeName _spawner isEqualTo "STRING") then {_type = "class";}; */
@@ -45,15 +44,10 @@ if (!(_spawner in CVO_CSC_array)) then {
 	private _root = [
 		"cvo_csc_root",													// Action Name
 		"Take Custom Supply Crates",									// Name for the ACE Interaction Menu
-		"",																// Custom Icon 
+		"\A3\ui_f\data\igui\cfg\simpleTasks\types\box_ca.paa",																// Custom Icon 
 		{},																// Statement
 		{true}															// Condition
 	] call ace_interact_menu_fnc_createAction;
-
-
-diag_log ("[CVO] [LOGISTICS] (CSC) _spawner: " + str _spawner);
-diag_log ("[CVO] [LOGISTICS] (CSC) _spawner typeName: " + str (typeName _spawner));
-
 
 	if (typeName _spawner isEqualTo "OBJECT") then {
 		_test = [
@@ -62,8 +56,6 @@ diag_log ("[CVO] [LOGISTICS] (CSC) _spawner typeName: " + str (typeName _spawner
 			["ACE_MainActions"],							// Parent path of the new action <Array>
 			_root
 		] call ace_interact_menu_fnc_addActionToObject;
-		diag_log ("[CVO] [LOGISTICS] (CSC) Added csc root to object");
-		diag_log ("[CVO] [LOGISTICS] (CSC) result: " + str _test);
 
 	} else {
 
@@ -73,29 +65,21 @@ diag_log ("[CVO] [LOGISTICS] (CSC) _spawner typeName: " + str (typeName _spawner
 			["ACE_MainActions"],							// Parent path of the new action <Array>
 			_root
 		] call ace_interact_menu_fnc_addActionToClass;		
-		diag_log ("[CVO] [LOGISTICS] (CSC) Added csc root to class");
-		diag_log ("[CVO] [LOGISTICS] (CSC) result: " + str _test);
 	};
 
 	CVO_CSC_array pushBack _spawner;
-	diag_log ("[CVO] [LOGISTICS] (CSC) updated CVO_CSC: " + str CVO_CSC);
 };
 
-diag_log ("[CVO] [LOGISTICS] (CSC) _this: " + str _this);
 
 // BTC HAM Check
 if (_spawner isEqualTo btc_create_object) then {_spawnloc = btc_create_object_point;} else {_spawnloc = "REL"};			// untested
-diag_log ("[CVO] [LOGISTICS] (CSC) post BTC Ham Check: " + str _spawnloc);
 
 
 
-diag_log ("[CVO] [LOGISTICS] (CSC) Adding Ace Action for " + str _name);
 
 // Adapts Names for the Ace action
 private _actionname = ("CVO_spawnbox_" + str _name);
 private _actionstring = (           "" + str _name);
-diag_log ("[CVO] [LOGISTICS] (CSC) _actionname " + str _actionname);
-diag_log ("[CVO] [LOGISTICS] (CSC) 		 _name " + str _name);
 
 
 
@@ -104,7 +88,7 @@ diag_log ("[CVO] [LOGISTICS] (CSC) 		 _name " + str _name);
 private _action = [
 	_actionname,													// Action Name
 	_actionstring,													// Name for the ACE Interaction Menu
-	"",																// Custom Icon 
+	"\A3\ui_f\data\igui\cfg\simpleTasks\types\box_ca.paa",																// Custom Icon 
 	{_this call cvo_logistics_fnc_createCSC},						// Statement
 	{true},															// Condition
 	{},
@@ -117,7 +101,6 @@ private _action = [
 // ## ATTACHING THE ACTION to class OR OBJECT
 
 if (typeName _spawner isEqualTo "OBJECT") then {
-	diag_log ("[CVO] [LOGISTICS] (CSC) 	add action to object	 _this " + str _this );
 
 	// TO OBJECT
 	[
@@ -128,7 +111,6 @@ if (typeName _spawner isEqualTo "OBJECT") then {
 	] call ace_interact_menu_fnc_addActionToObject;		// Alternative: ace_interact_menu_fnc_addActionToClass
 
 } else {
-	diag_log ("[CVO] [LOGISTICS] (CSC) 	add action to class	 _this " + str _this );
  		
 	// TO CLASS
 	[
@@ -140,6 +122,3 @@ if (typeName _spawner isEqualTo "OBJECT") then {
 
 };
 diag_log ("[CVO] [LOGISTICS] (CSC) - Added Ace Action for " + (str _name) + " to " + (str _spawner));
-
-
-diag_log ("[CVO] [LOGISTICS] (CSC) - ################################## END ##################################" );
