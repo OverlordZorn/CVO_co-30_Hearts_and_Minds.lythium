@@ -2,7 +2,7 @@
 // Gradual Dust Storm SCRIPT 
 
 if (!isServer) exitWith {};
-if (!canSuspend) exitWith {_this spawn cvo_env_fnc_cvo_duststorm};
+if (!canSuspend) exitWith {_this spawn cvo_ss_fnc_sandstorm};
 
 if (isNil "cvo_env_ds_running") then 	{cvo_env_ds_running = false; publicVariable "cvo_env_ds_running";};
 if (cvo_env_ds_running) exitWith 	{diag_log "[CVO] [ENV] [DS] (Start) - Exit: Duststorm already running!";};
@@ -67,9 +67,9 @@ cvo_env_ds_phase = 0;
 };
 
 // ####################################
-// INIT CVO_Duststorm_Effects.sqf for local effects
+// INIT cvo_sandstorm_Effects.sqf for local effects
 
-[[],"cvo\env\cvo_duststorm\cvo_duststorm_effects.sqf"] remoteExec ["execVM",0,true];
+[[],"cvo\env\cvo_sandstorm\cvo_sandstorm_effects.sqf"] remoteExec ["execVM",0,true];
 
 
 // ####################################

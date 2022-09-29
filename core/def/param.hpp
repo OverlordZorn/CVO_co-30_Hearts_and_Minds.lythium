@@ -485,7 +485,7 @@ class Params {
         texts[]={"Off","On"};
         default = 1;
     };
-    class cvo_p_logistics_crate { // CVO - Custom Supply Crates;
+    class cvo_p_csc { // CVO - Custom Supply Crates;
         title = "CVO - LOGISTICS - Custom Supply Crates";
         values[]={0,1};
         texts[]={"Off","On"};

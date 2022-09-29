@@ -1,5 +1,5 @@
-cvo_logistics_fnc_addCSC = 		compileScript ["cvo\logistics\CSC\cvo_logistics_fnc_addCSC.sqf", false, ""];
-cvo_logistics_fnc_createCSC = 	compileScript ["cvo\logistics\CSC\cvo_logistics_fnc_createCSC.sqf", false, ""];
+cvo_CSC_fnc_addCSC = 		compileScript ["cvo\CSC\cvo_CSC_fnc_addCSC.sqf", false, ""];
+cvo_CSC_fnc_spawnCSC = 		compileScript ["cvo\CSC\cvo_CSC_fnc_spawnCSC.sqf", false, ""];
 
  
 // ################
@@ -30,7 +30,6 @@ cvo_csc_source_object = btc_create_object;
 	],
 	"rhs_3Ya40_1_single"
 ] call cvo_logistics_fnc_addCSC;
-
 
 [
 	cvo_csc_source_object, 
