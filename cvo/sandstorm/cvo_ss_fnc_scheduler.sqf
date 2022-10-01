@@ -28,7 +28,7 @@ diag_log ("[CVO] [SS] (Scheduler) - ### Start ###");
 // ###########################
 // DEFINITION
 
-private _cycleMin = 120; // cycle in minutes. in very extreme cases, a storm can last for about 0.75 times of said duration.
+private _cycleMin = 180; // cycle in minutes. in very extreme cases, a storm can last for about 0.75 times of said duration.
 
 
 // ###########################
@@ -57,7 +57,7 @@ if (cvo_ss_regime isEqualTo 1) then {
 	_durationMin = 15 + round (random 15);
 	_delayMin = floor (_cycleMin - _durationMin) * (round (random 100)) / 100 ;
 	diag_log format ["[CVO] [SS] (Scheduler) - Regime 1 - Delay: %1 - Duration: %2", _delayMin, _durationMin];
-	waitUntil {sleep (_delayMin * 60)};
+	waitUntil {sleep (_delayMin * 60); true};
 	[_durationMin] spawn cvo_env_fnc_cvo_sandstorm;
 };
 
@@ -70,7 +70,7 @@ if (cvo_ss_regime isEqualTo 2) then {
 	
 	for "_i" from 1 to _frq do {
 		diag_log format ["[CVO] [SS] (Scheduler) - Regime 2 - Frq: %3 - DelayMin: %1 - DurationMin: %2 - _iteration: %4", _delayMin, _durationMin, _frq,_i];
-		waitUntil {sleep (_delayMin * 60)};
+		waitUntil {sleep (_delayMin * 60); true};
 		[_durationMin] spawn cvo_env_fnc_cvo_sandstorm;
 	};
 };
@@ -83,7 +83,7 @@ if (cvo_ss_regime isEqualTo 3) then {
 	_durationMin = 45 + round (random 45);
 	_delayMin = floor (_cycleMin - _durationMin) * (round (random 100)) / 100 ;
 	diag_log format ["[CVO] [SS] (Scheduler) - Regime 3 - Delay: %1 - Duration: %2", _delayMin, _durationMin];
-	waitUntil {sleep (_delayMin * 60)};
+	waitUntil {sleep (_delayMin * 60); true};
 	[_durationMin] spawn cvo_env_fnc_cvo_sandstorm;
 };
 

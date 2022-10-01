@@ -153,7 +153,7 @@ cc_02 = [	0.98,	0.93,	0.08,		// Brightness	-	Contrast	-	Contrast Offset
 [] spawn {
 
 	cvo_dustParticleHigh = [["\A3\data_f\cl_basic", 1, 0, 1], "", "Billboard", 1, 20, [0, 0, 0], [-1, -1, 0], 3, 10.15, 7.9, 0.01, [10, 10, 20], 	[[0.65, 0.5, 0.5, 0], [0.65, 0.6, 0.5, 0.5], [1, 0.95, 0.8, 0]], [0.08], 1, 0, "", "", vehicle player,0,true];
-	cvo_dustParticleLow  = [["\A3\data_f\cl_basic", 1, 0, 1], "", "Billboard", 1, 20, [0, 0, 0], [-1, -1, 0], 3, 10.15, 7.9, 0.01, [5, 7, 10], 		[[0.65, 0.5, 0.5, 0], [0.65, 0.6, 0.5, 0.2], [1, 0.95, 0.8, 0]], [0.08], 1, 0, "", "", vehicle player,0,true];
+	cvo_dustParticleLow  = [["\A3\data_f\cl_basic", 1, 0, 1], "", "Billboard", 1, 20, [0, 0, 0], [-1, -1, 0], 3, 10.15, 7.9, 0.01, [3, 4, 7], 		[[0.65, 0.5, 0.5, 0], [0.65, 0.6, 0.5, 0.2], [1, 0.95, 0.8, 0]], [0.08], 1, 0, "", "", vehicle player,0,true];
 
 	waitUntil {sleep 5; cvo_ss_phase >= 2 };
 
@@ -167,7 +167,7 @@ cc_02 = [	0.98,	0.93,	0.08,		// Brightness	-	Contrast	-	Contrast Offset
 		diag_log "[CVO] [SandStorm] (ParticleDust) High Mode";
 	};
 	[] spawn {		// turns particle "density" low
-		waitUntil {sleep 5; cvo_ss_phase >= 8};
+		waitUntil {sleep 5; cvo_ss_phase >= 7};
 		cvo_dustParticle = cvo_dustParticleLow;
 		publicVariable "cvo_dustParticle";
 		diag_log "[CVO] [SandStorm] (ParticleDust) Low Mode"
@@ -181,39 +181,54 @@ cc_02 = [	0.98,	0.93,	0.08,		// Brightness	-	Contrast	-	Contrast Offset
 		_offset = 0;
 		if (speed player > 35) then {_offset = 3 * (speed player);};
 
-		
-		_alias_local_fog_1 = "#particlesource" createVehicleLocal (getpos player); 
-		_alias_local_fog_1 setParticleParams cvo_dustParticle;
-		_alias_local_fog_1 setParticleCircle [10, [3, 3, 0]];
-		_alias_local_fog_1 setParticleRandom [10, [0.25, 0.25, 0], [1, 1, 0], 1, 1, [0, 0, 0, 0.1], 0, 0];
-		if (vehicle player != player) then {_alias_local_fog_1 attachto [vehicle player, [0,_offset,0]];} else {_alias_local_fog_1 attachto [player, [0,_offset,0]];};
+		_local_fog_array = []
 
+		
+		if (cvo_ss_phase >= 3 && cvo_ss_phase <= 8) then {
+			_alias_local_fog_1 = "#particlesource" createVehicleLocal (getpos player); 
+			_alias_local_fog_1 setParticleParams cvo_dustParticle;
+			_alias_local_fog_1 setParticleCircle [20, [3, 3, 0]];
+			_alias_local_fog_1 setParticleRandom [10, [0.25, 0.25, 0], [1, 1, 0], 1, 1, [0, 0, 0, 0.1], 0, 0];
+			if (vehicle player != player) then {_alias_local_fog_1 attachto [vehicle player, [0,_offset,0]];} else {_alias_local_fog_1 attachto [player, [0,_offset,0]];};
+			_local_fog_array pushback _alias_local_fog1;
+		};
 
-		_alias_local_fog_2 = "#particlesource" createVehicleLocal (getpos player); 
-		if (vehicle player != player) then {_alias_local_fog_2 attachto [vehicle player, [0,_offset,0]];} else {_alias_local_fog_2 attachto [player, [0,_offset,0]];};
-		_alias_local_fog_2 setParticleCircle [50, [3, 3, 0]];
-		_alias_local_fog_2 setParticleRandom [10, [0.25, 0.25, 0], [1, 1, 0], 1, 1, [0, 0, 0, 0.1], 0, 0];
-		_alias_local_fog_2 setParticleParams cvo_dustParticle;
-		
-		_alias_local_fog_3 = "#particlesource" createVehicleLocal (getpos player); 
-		if (vehicle player != player) then {_alias_local_fog_3 attachto [vehicle player, [0,_offset,0]];} else {_alias_local_fog_3 attachto [player, [0,_offset,0]];};
-		_alias_local_fog_3 setParticleCircle [90, [3, 3, 0]];
-		_alias_local_fog_3 setParticleRandom [10, [0.25, 0.25, 0], [1, 1, 0], 1, 1, [0, 0, 0, 0.1], 0, 0];
-		_alias_local_fog_3 setParticleParams cvo_dustParticle;
-		
-		_alias_local_fog_4 = "#particlesource" createVehicleLocal (getpos player); 
-		if (vehicle player != player) then {_alias_local_fog_4 attachto [vehicle player, [0,_offset,0]];} else {_alias_local_fog_4 attachto [player, [0,_offset,0]];};
-		_alias_local_fog_4 setParticleCircle [130, [3, 3, 0]];
-		_alias_local_fog_4 setParticleRandom [10, [0.25, 0.25, 0], [1, 1, 0], 1, 1, [0, 0, 0, 0.1], 0, 0];
-		_alias_local_fog_4 setParticleParams cvo_dustParticle;
-		
-		_alias_local_fog_5 = "#particlesource" createVehicleLocal (getpos player); 
-		if (vehicle player != player) then {_alias_local_fog_5 attachto [vehicle player, [0,_offset,0]];} else {_alias_local_fog_5 attachto [player, [0,_offset,0]];};
-		_alias_local_fog_5 setParticleCircle [170, [3, 3, 0]];
-		_alias_local_fog_5 setParticleRandom [10, [0.25, 0.25, 0], [1, 1, 0], 1, 1, [0, 0, 0, 0.1], 0, 0];
-		_alias_local_fog_5 setParticleParams cvo_dustParticle;
+		if (cvo_ss_phase >= 5 && cvo_ss_phase <= 8) then {
+			_alias_local_fog_2 = "#particlesource" createVehicleLocal (getpos player); 
+			if (vehicle player != player) then {_alias_local_fog_2 attachto [vehicle player, [0,_offset,0]];} else {_alias_local_fog_2 attachto [player, [0,_offset,0]];};
+			_alias_local_fog_2 setParticleCircle [60, [3, 3, 0]];
+			_alias_local_fog_2 setParticleRandom [10, [0.25, 0.25, 0], [1, 1, 0], 1, 1, [0, 0, 0, 0.1], 0, 0];
+			_alias_local_fog_2 setParticleParams cvo_dustParticle;
+			_local_fog_array pushback _alias_local_fog2;
+		};
 
-		_local_fog_array = [_alias_local_fog_1,_alias_local_fog_2,_alias_local_fog_3,_alias_local_fog_4,_alias_local_fog_5];
+		if (cvo_ss_phase >= 3) then {
+			_alias_local_fog_3 = "#particlesource" createVehicleLocal (getpos player); 
+			if (vehicle player != player) then {_alias_local_fog_3 attachto [vehicle player, [0,_offset,0]];} else {_alias_local_fog_3 attachto [player, [0,_offset,0]];};
+			_alias_local_fog_3 setParticleCircle [90, [3, 3, 0]];
+			_alias_local_fog_3 setParticleRandom [10, [0.25, 0.25, 0], [1, 1, 0], 1, 1, [0, 0, 0, 0.1], 0, 0];
+			_alias_local_fog_3 setParticleParams cvo_dustParticle;
+			_local_fog_array pushback _alias_local_fog3;
+		};
+
+		if (cvo_ss_phase >= 4 && cvo_ss_phase <= 7) then {
+			_alias_local_fog_4 = "#particlesource" createVehicleLocal (getpos player); 
+			if (vehicle player != player) then {_alias_local_fog_4 attachto [vehicle player, [0,_offset,0]];} else {_alias_local_fog_4 attachto [player, [0,_offset,0]];};
+			_alias_local_fog_4 setParticleCircle [130, [3, 3, 0]];
+			_alias_local_fog_4 setParticleRandom [10, [0.25, 0.25, 0], [1, 1, 0], 1, 1, [0, 0, 0, 0.1], 0, 0];
+			_alias_local_fog_4 setParticleParams cvo_dustParticle;
+			_local_fog_array pushback _alias_local_fog4;
+		};
+		
+		if (true) then {
+			_alias_local_fog_5 = "#particlesource" createVehicleLocal (getpos player); 
+			if (vehicle player != player) then {_alias_local_fog_5 attachto [vehicle player, [0,_offset,0]];} else {_alias_local_fog_5 attachto [player, [0,_offset,0]];};
+			_alias_local_fog_5 setParticleCircle [170, [3, 3, 0]];
+			_alias_local_fog_5 setParticleRandom [10, [0.25, 0.25, 0], [1, 1, 0], 1, 1, [0, 0, 0, 0.1], 0, 0];
+			_alias_local_fog_5 setParticleParams cvo_dustParticle;	
+			_local_fog_array pushback _alias_local_fog5;
+		};
+
 
 		{
 			_alias_drop_fog_factor	= 0.01+random 0.1;
