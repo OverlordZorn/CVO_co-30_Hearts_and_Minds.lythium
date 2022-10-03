@@ -27,7 +27,7 @@ for "_i" from 1 to _ds_stepsTotal do {
 	if (_ds_useAvgASL) then {
 		_ds_iteration = [];
 		{_ds_iteration pushback _x } forEach _ds_target;
-		_ds_fogASL = (call cvo_env_fnc_al_getAvgASL)#0;
+		_ds_fogASL = (call cvo_ss_fnc_getAvgASL)#0;
 		_ds_iteration set [2, ( (_ds_target#2) + _ds_fogASL)];
 	};
 	// diag_log 
