@@ -52,14 +52,15 @@ btc_construction_array = [
 		
 
 		// Containers
-		["Land_Cargo20_military_green_F",
+		["Land_Cargo10_military_green_F",
+		 "Land_Cargo20_military_green_F",
 		"Land_Cargo40_military_green_F"],
 
 		// Supplies
-		["Land_Cargo20_IDAP_F"],
+		["Land_Cargo10_IDAP_F"],
 
 		// FOB
-		["Land_Cargo20_blue_F"],
+		["Land_Cargo10_blue_F"],
 
 		// Decontamination 
 		["DeconShower_01_F"],
