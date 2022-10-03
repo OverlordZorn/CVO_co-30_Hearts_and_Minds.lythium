@@ -8,7 +8,7 @@ class EditorData
 	toggles=577;
 	class ItemIDProvider
 	{
-		nextID=2352;
+		nextID=2355;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=2740;
+		nextID=2821;
 	};
 	class Camera
 	{
-		pos[]={12218.207,367.04227,17271.008};
-		dir[]={0.43485287,-0.52447802,0.73200125};
-		up[]={0.2678698,0.85142398,0.45091349};
-		aside[]={0.85973763,0,-0.51073599};
+		pos[]={12213.16,360.27603,17309.523};
+		dir[]={-0.89090568,-0.42385983,-0.16321011};
+		up[]={-0.41692427,0.9057256,-0.076378703};
+		aside[]={-0.1801971,5.534821e-008,0.98363471};
 	};
 };
 binarizationWanted=0;
@@ -9301,7 +9301,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=29;
+		items=30;
 		class Item0
 		{
 			dataType="Layer";
@@ -19191,7 +19191,7 @@ class Mission
 										class data
 										{
 											singleType="STRING";
-											value="[[[[""FirstAidKit""],[1]],[[],[]],[[],[]],[[],[]]],false]";
+											value="[[[[],[]],[[],[]],[[""ACRE_PRC148"",""ACRE_PRC343""],[10,10]],[[],[]]],false]";
 										};
 									};
 								};
@@ -40605,7 +40605,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={12185.843,343.05005,17307.281};
-								angles[]={-0,3.8241737,0};
+								angles[]={0,3.8241737,0};
 							};
 							side="Empty";
 							flags=4;
@@ -40621,7 +40621,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={12184.998,343.05005,17308.332};
-								angles[]={-0,5.043292,0};
+								angles[]={0,5.043292,0};
 							};
 							side="Empty";
 							flags=4;
@@ -49689,6 +49689,22 @@ class Mission
 				};
 			};
 			id=2272;
+		};
+		class Item29
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={12224.103,344.03342,17298.248};
+				angles[]={0,2.3995607,-0};
+			};
+			side="Empty";
+			flags=5;
+			class Attributes
+			{
+			};
+			id=2352;
+			type="Jbad_Mil_Barracks";
 		};
 	};
 };

@@ -16,6 +16,8 @@ params [
 // converts _duration from minutes into secounds.
 
 _duration = _duration * 60;
+cvo_ss_duration = _duration;
+publicVariable "cvo_ss_duration";
 
 // ######### 
 // Establish Killswitch
@@ -64,7 +66,11 @@ cvo_ss_phase = 0;
 	diag_log ("[CVO] [SandStorm] (Phase) - " + format ["Current Phase: %1 ", cvo_ss_running]);
 
 	sleep 10;
-	cvo_ss_phase = nil;
+	cvo_ss_phase = 99;
+	publicVariable "cvo_ss_running";
+	cvo_ss_duration = 0; 
+	publicVariable "cvo_ss_running";
+
 	diag_log ("[CVO] [SandStorm] (PaceMaker) - Exit");
 };
 
@@ -268,7 +274,7 @@ ss_windgusts		= gusts;
 		sleep 67;
 	};
 
-	diag_log ("[CVO] [SandStorm] (Wind 12) - End");
+	diag_log ("[CVO] [SandStorm] (Wind 1) - End");
 };
 
 // #########
@@ -300,25 +306,3 @@ ss_windgusts		= gusts;
 
 	diag_log ("[CVO] [SandStorm] (Wind 3) - End");
 };
-
-
-
-// ##################################
-// DEBUG Viewer
-
-/*
-[_duration] spawn {
-	diag_log ("[CVO] [SandStorm] (DebugHint) - Init");
-	params ["_duration"];
-	private _cvo_env_ds_startTime = time;
-
-
-	while {cvo_ss_running} do {
-		sleep 0.5;
-		private _pastTime = round (time - _cvo_env_ds_startTime);
-		hintSilent (format ["Time: %4s / %5s - Phase: %6\nFogParams:\nValue: %1\nDecay: %2\nFogBase: %3", fogParams#0, fogParams#1, fogParams#2,_pastTime, _duration, cvo_ss_phase]);
-		sleep 1;
-	};
-	diag_log ("[CVO] [SandStorm] (DebugHint) - End");
-};
-*/

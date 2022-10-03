@@ -1,6 +1,5 @@
 // by ALIAS
 // Tutorial: https://www.youtube.com/user/aliascartoons
-
 if (!hasInterface) 			exitWith {};
 if (!cvo_ss_running) 	exitWith {};
 
@@ -20,7 +19,6 @@ if (!cvo_ss_running) 	exitWith {};
 };
 
 */
-
 
 // ##########################
 // Post Processing Effects
