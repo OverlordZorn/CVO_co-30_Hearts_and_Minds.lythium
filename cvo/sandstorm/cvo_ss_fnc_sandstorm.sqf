@@ -31,6 +31,18 @@ publicVariable "cvo_ss_phasetime";
 cvo_ss_phase = 0;
 
 
+[_duration] spawn {
+	params ["_duration"];
+	cvo_ss_remaining = _duration;
+	while {cvo_ss_running} do {
+				cvo_ss_remaining = cvo_ss_remaining - 1;
+				publicVariable "cvo_ss_remaining";
+				sleep 1;
+	};
+	cvo_ss_remaining = 0;
+};
+
+
 // ######### 
 // Pace Maker
 [_duration] spawn {
@@ -107,23 +119,21 @@ ss_windgusts		= gusts;
 	_ss_fog_post	= [0.03, 0.005, 400];
 	
 	//  ######## Execution
-	[(2 * cvo_ss_phasetime), _ss_fog_stage, true] 	spawn cvo_env_fnc_setFogFlexible;
-
+	[(2 * cvo_ss_phasetime), _ss_fog_stage, true] 	spawn cvo_ss_fnc_setFogFlexible;
 	waitUntil {sleep (2 * cvo_ss_phasetime); true};
 	if (!cvo_ss_running) 	exitWith {};
 
 
-	[(2 * cvo_ss_phasetime), _ss_fog_max,true] 		spawn cvo_env_fnc_setFogFlexible;
+	[(2 * cvo_ss_phasetime), _ss_fog_max,true] 		spawn cvo_ss_fnc_setFogFlexible;
 	waitUntil {sleep (2 * cvo_ss_phasetime);true};
 	if (!cvo_ss_running) 	exitWith {};
 
 
-	[(2 * cvo_ss_phasetime), _ss_fog_max,true] 		spawn cvo_env_fnc_setFogFlexible;
-
-	waitUntil {sleep (4 * cvo_ss_phasetime);true};
+	[(2 * cvo_ss_phasetime), _ss_fog_max,true] 		spawn cvo_ss_fnc_setFogFlexible;
+	waitUntil {sleep (8 * cvo_ss_phasetime);true};
 	if (!cvo_ss_running) 	exitWith {};
 
-	[(3 * cvo_ss_phasetime), _ss_fog_post,true] 	spawn cvo_env_fnc_setFogFlexible;
+	[(4 * cvo_ss_phasetime), _ss_fog_post,true] 	spawn cvo_ss_fnc_setFogFlexible;
 	diag_log ("[CVO] [SandStorm] (FogControl) - Exit");
 };
 
@@ -131,7 +141,7 @@ ss_windgusts		= gusts;
 //  WIND CONTROL ## This is some Blackmagic voodoo shit taken directly from Alias' Sandstorm script. Only addition is is the 1. Line to avoid Devide by Zero error.
 
 [_direction] spawn {
-	waitUntil {sleep 1; cvo_ss_phase >= 3};
+	waitUntil {sleep 1; cvo_ss_phase >= 1};
 
 	diag_log ("[CVO] [SandStorm] (WindControl) - Init"); 			
 	params ["_direction"];
@@ -155,16 +165,16 @@ ss_windgusts		= gusts;
 	//  ######## Execution
 	while {incr && cvo_ss_running} do 
 	{
-		sleep 0.1;
-		if (inx < abs vx) then {inx = inx+0.01;} else {incrx = true};
-		if (iny < abs vy) then {iny = iny+0.01} else {incry = true};
+		sleep 1;
+		if (inx < abs vx) then {inx = inx+0.1;} else {incrx = true};
+		if (iny < abs vy) then {iny = iny+0.1;} else {incry = true};
 		if (incrx and incry) then {incr=false};
 		winx = floor (inx*fctx/2);
 		winy = floor (iny*fcty/2);
-		setWind [winx,winy,true];
+		setWind [winx,winy,false];
 	};
 
-	diag_log ("[CVO] [SandStorm] (WindControl) - Exit");
+	diag_log ("[CVO] [SandStorm] (WindControl) - Increase complete");
 };
 
 [] spawn {	// Wind Control @ EXIT
@@ -189,10 +199,10 @@ ss_windgusts		= gusts;
 	waitUntil {sleep 1; !cvo_ss_running};
 
 	//  ######## Execution
-	(2 * cvo_ss_phasetime) setOvercast 		ss_overcast;
-	(2 * cvo_ss_phasetime) setFog 			ss_foglevel;
-	(2 * cvo_ss_phasetime) setRain 			ss_rainlevel;
-	(2 * cvo_ss_phasetime) setLightnings 	ss_thundlevel;
+	(4 * cvo_ss_phasetime) setOvercast 		ss_overcast;
+	(4 * cvo_ss_phasetime) setFog 			ss_foglevel;
+	(4 * cvo_ss_phasetime) setRain 			ss_rainlevel;
+	(4 * cvo_ss_phasetime) setLightnings 	ss_thundlevel;
 
 	//  ######## Cleanup
 	ss_overcast		= nil;
@@ -251,37 +261,37 @@ ss_windgusts		= gusts;
 
 [] spawn {
 	
-	diag_log ("[CVO] [SandStorm] (Wind 2) - Init");
+	diag_log ("[CVO] [SandStorm] (Wind 1) - Init");
 	
 	while {cvo_ss_running} do {
 		["strong_wind"] remoteExec ["playSound"];
 		sleep 67;
 	};
 
-	diag_log ("[CVO] [SandStorm] (Wind 2) - End");
+	diag_log ("[CVO] [SandStorm] (Wind 12) - End");
 };
 
 // #########
-// SOUND - WIND 1 (Phase 3 to 8)
+// SOUND - WIND 2 (Phase 3 to 8)
 
 [] spawn {
 	waitUntil {sleep 1; cvo_ss_phase >= 3};
-	diag_log ("[CVO] [SandStorm] (Wind 1) - Init");
+	diag_log ("[CVO] [SandStorm] (Wind 2) - Init");
 
 	while {cvo_ss_running && (cvo_ss_phase <= 8)} do {
 		_rafale = ["windburst_1","windburst_2","windburst_3_dr","windburst_4_st"] call BIS_fnc_selectRandom;
 		[_rafale] remoteExec ["playSound"];
 		sleep 15+random 60;
 	};
-	diag_log ("[CVO] [SandStorm] (Wind 1) - End");
+	diag_log ("[CVO] [SandStorm] (Wind 2) - End");
 };
 
 // #########
 // SOUND - WIND 3 (Phase 5,6,7)
 
 [] spawn {
-	diag_log ("[CVO] [SandStorm] (Wind 3) - Init");
 	waitUntil {sleep 1; (cvo_ss_phase >= 5)};
+	diag_log ("[CVO] [SandStorm] (Wind 3) - Init");
 
 	while {cvo_ss_running && (cvo_ss_phase <= 7)} do {
 		["hurricane"] remoteExec ["playSound"];

@@ -60,9 +60,9 @@ if (!cvo_ss_running) 	exitWith {};
 	waitUntil {sleep 5; (!cvo_ss_running)};
 	
 	ppGrain 	ppEffectAdjust [0,0,0,0,0,true];
-	ppGrain 	ppEffectCommit (2 * cvo_ss_phasetime);
+	ppGrain 	ppEffectCommit (4 * cvo_ss_phasetime);
 
-	waitUntil {sleep (2 * cvo_ss_phasetime); true};
+	waitUntil {sleep (4 * cvo_ss_phasetime); true};
 	ppGrain ppEffectEnable false;
 	ppEffectDestroy ppGrain;
 	diag_log "[CVO] [SandStorm] (CameraShake) Disabled";
@@ -101,16 +101,16 @@ cc_02 = [	0.98,	0.93,	0.08,		// Brightness	-	Contrast	-	Contrast Offset
 	if (!cvo_ss_running) 	exitWith {};
 
 	ppCC ppEffectAdjust cc_02;
-	ppCC ppEffectCommit (1 * cvo_ss_phasetime);
+	ppCC ppEffectCommit (2 * cvo_ss_phasetime);
 	diag_log "[CVO] [SandStorm] (ColorC) Enabled - Turning to CC_02 ";
 };
 // ColorCorrection EXIT
 [] spawn {
 	waitUntil {sleep 5; !cvo_ss_running};
 	ppCC ppEffectAdjust cc_default;
-	ppCC ppEffectCommit (2 * cvo_ss_phasetime);
+	ppCC ppEffectCommit (4 * cvo_ss_phasetime);
 	diag_log "[CVO] [SandStorm] (ColorC) Enabled - Turning to CC_Default";
-	waitUntil {sleep cvo_ss_phasetime; true};
+	waitUntil {sleep 4 * cvo_ss_phasetime; true};
 	ppEffectDestroy ppCC;
 	diag_log "[CVO] [SandStorm] (ColorC) Disabled";
 
@@ -124,7 +124,6 @@ cc_02 = [	0.98,	0.93,	0.08,		// Brightness	-	Contrast	-	Contrast Offset
 // Leaf Particles
 [] spawn {
 	diag_log "[CVO] [SandStorm] (ParticleLeaves) Enabled";
-	private _i = 0;
 	while {sleep 1; cvo_ss_running && (cvo_ss_phase <= 9)} do {
 
 		_offset = 0;
@@ -142,8 +141,6 @@ cc_02 = [	0.98,	0.93,	0.08,		// Brightness	-	Contrast	-	Contrast Offset
 		sleep (1 + random 6);
 
 		deletevehicle _leaves_p;
-		_i = _i + 1;
-		diag_log ("[CVO] [SandStorm] (ParticleLeaves) Cycle "+str _i);
 	};
 	diag_log "[CVO] [SandStorm] (ParticleLeaves) Disabled";
 };
@@ -181,16 +178,16 @@ cc_02 = [	0.98,	0.93,	0.08,		// Brightness	-	Contrast	-	Contrast Offset
 		_offset = 0;
 		if (speed player > 35) then {_offset = 3 * (speed player);};
 
-		_local_fog_array = []
+		_local_fog_array = [];
 
 		
-		if (cvo_ss_phase >= 3 && cvo_ss_phase <= 8) then {
+		if ((cvo_ss_phase >= 3) && (cvo_ss_phase <= 8)) then {
 			_alias_local_fog_1 = "#particlesource" createVehicleLocal (getpos player); 
 			_alias_local_fog_1 setParticleParams cvo_dustParticle;
 			_alias_local_fog_1 setParticleCircle [20, [3, 3, 0]];
 			_alias_local_fog_1 setParticleRandom [10, [0.25, 0.25, 0], [1, 1, 0], 1, 1, [0, 0, 0, 0.1], 0, 0];
 			if (vehicle player != player) then {_alias_local_fog_1 attachto [vehicle player, [0,_offset,0]];} else {_alias_local_fog_1 attachto [player, [0,_offset,0]];};
-			_local_fog_array pushback _alias_local_fog1;
+			_local_fog_array pushback _alias_local_fog_1;
 		};
 
 		if (cvo_ss_phase >= 5 && cvo_ss_phase <= 8) then {
@@ -199,7 +196,7 @@ cc_02 = [	0.98,	0.93,	0.08,		// Brightness	-	Contrast	-	Contrast Offset
 			_alias_local_fog_2 setParticleCircle [60, [3, 3, 0]];
 			_alias_local_fog_2 setParticleRandom [10, [0.25, 0.25, 0], [1, 1, 0], 1, 1, [0, 0, 0, 0.1], 0, 0];
 			_alias_local_fog_2 setParticleParams cvo_dustParticle;
-			_local_fog_array pushback _alias_local_fog2;
+			_local_fog_array pushback _alias_local_fog_2;
 		};
 
 		if (cvo_ss_phase >= 3) then {
@@ -208,7 +205,7 @@ cc_02 = [	0.98,	0.93,	0.08,		// Brightness	-	Contrast	-	Contrast Offset
 			_alias_local_fog_3 setParticleCircle [90, [3, 3, 0]];
 			_alias_local_fog_3 setParticleRandom [10, [0.25, 0.25, 0], [1, 1, 0], 1, 1, [0, 0, 0, 0.1], 0, 0];
 			_alias_local_fog_3 setParticleParams cvo_dustParticle;
-			_local_fog_array pushback _alias_local_fog3;
+			_local_fog_array pushback _alias_local_fog_3;
 		};
 
 		if (cvo_ss_phase >= 4 && cvo_ss_phase <= 7) then {
@@ -217,7 +214,7 @@ cc_02 = [	0.98,	0.93,	0.08,		// Brightness	-	Contrast	-	Contrast Offset
 			_alias_local_fog_4 setParticleCircle [130, [3, 3, 0]];
 			_alias_local_fog_4 setParticleRandom [10, [0.25, 0.25, 0], [1, 1, 0], 1, 1, [0, 0, 0, 0.1], 0, 0];
 			_alias_local_fog_4 setParticleParams cvo_dustParticle;
-			_local_fog_array pushback _alias_local_fog4;
+			_local_fog_array pushback _alias_local_fog_4;
 		};
 		
 		if (true) then {
@@ -226,7 +223,7 @@ cc_02 = [	0.98,	0.93,	0.08,		// Brightness	-	Contrast	-	Contrast Offset
 			_alias_local_fog_5 setParticleCircle [170, [3, 3, 0]];
 			_alias_local_fog_5 setParticleRandom [10, [0.25, 0.25, 0], [1, 1, 0], 1, 1, [0, 0, 0, 0.1], 0, 0];
 			_alias_local_fog_5 setParticleParams cvo_dustParticle;	
-			_local_fog_array pushback _alias_local_fog5;
+			_local_fog_array pushback _alias_local_fog_5;
 		};
 
 
