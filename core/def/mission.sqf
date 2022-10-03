@@ -411,7 +411,7 @@ btc_g_civs = ["HandGrenade", "MiniGrenade", "ACE_M84", "ACE_M84"];
 btc_animals_type = ["Hen_random_F", "Cock_random_F", "Fin_random_F", "Alsatian_Random_F", "Goat_random_F", "Sheep_random_F"];
 
 //FOB
-btc_fob_mat = "Land_Cargo20_blue_F";
+btc_fob_mat = "Land_Cargo10_blue_F";
 btc_fob_structure = "Flag_TKP";
 btc_fob_flag = "Land_MapBoard_F";
 btc_fob_id = 0;
@@ -438,7 +438,7 @@ btc_info_hideout_radius = 4000;
 btc_info_intels = ["Land_Camera_01_F", "Land_HandyCam_F"];
 
 //Supplies
-btc_supplies_cargo = "Land_Cargo20_IDAP_F";
+btc_supplies_cargo = "Land_Cargo10_IDAP_F";
 btc_supplies_mat = [
     _allClassSorted select {_x isKindOf "Land_FoodSack_01_cargo_base_F"},
     _allClassSorted select {_x isKindOf "Land_WaterBottle_01_stack_F"}
@@ -454,7 +454,7 @@ btc_type_hazmat = ["HazmatBag_01_F", "Land_MetalBarrel_F"] + (_allClassSorted se
 });
 
 //Containers
-btc_containers_mat = ["Land_Cargo20_military_green_F", "Land_Cargo40_military_green_F"];
+btc_containers_mat = ["Land_Cargo10_military_green_F","Land_Cargo20_military_green_F", "Land_Cargo40_military_green_F"];
 
 //Player
 btc_player_side = west;
@@ -718,6 +718,6 @@ btc_flag_textures = [
 
 //Respawn
 btc_body_bagTicketPlayer = 1;
-btc_body_enemyTicket = 1;
+btc_body_enemyTicket = 0.5;
 
 btc_startDate = [1995, 7, 24, 4, 45];
