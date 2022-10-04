@@ -62,6 +62,15 @@ private _CVO_A_Basic_Vests = [
 ];
 
 private _CVO_A_Basic_Backpacks = [
+	"B_Kitbag_rgr",
+	"B_Kitbag_cbr",
+	"rhs_tortila_black",
+	"UK3CB_TKA_O_B_RIF_Khk",
+	"UK3CB_TKA_O_B_RIF_Tan",
+	"UK3CB_CW_SOV_O_EARLY_B_Sidor_RIF",
+	"UK3CB_CW_SOV_O_LATE_B_Sidor_RIF",
+
+
     "UK3CB_TKA_O_B_ENG_Khk",
     "UK3CB_TKA_O_B_RIF_Khk",
     "UK3CB_TKP_O_B_ASS_BLK",
@@ -96,6 +105,7 @@ private _CVO_A_Basic_Helmets = [
 	"UK3CB_TKA_O_H_6b27m_ESS_Tan",
 	"UK3CB_ADA_B_H_6b27m_ml_ESS_OLI",
 	"UK3CB_ADA_B_H_6b27m_ml_OLI",
+
 	"UK3CB_H_Beanie_02_GRY",
 	"UK3CB_H_Beanie_02_BRN",
 	"UK3CB_H_Beanie_02_BLK",
@@ -374,13 +384,19 @@ rhs_weap_asval
 rhs_weap_asval_grip
 rhs_acc_perst3_2dp_light_h
 rhs_acc_perst3_2dp_h
+
 # Sniper
 rhs_weap_vss
 rhs_weap_vss_grip
 rhs_acc_pso1m21
+
 # AR
 rhs_weap_pkp
 rhs_100Rnd_762x54mmR_7BZ3
+rhs_100Rnd_762x54mmR_7N26
+rhs_100Rnd_762x54mmR_7BZ3
+
+
 */
 
 /*
@@ -464,6 +480,7 @@ CVO_A_MG = [
 	"rhs_60Rnd_545X39_AK_Green",
 
 	"rhs_weap_pkm",
+	"rhs_100Rnd_762x54mmR_7N13",
 	"rhs_100Rnd_762x54mmR",
 	"rhs_100Rnd_762x54mmR_green"
 
