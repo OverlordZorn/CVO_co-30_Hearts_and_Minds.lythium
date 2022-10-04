@@ -20,7 +20,6 @@ cvo_jb_fnc_cooldown = {
 	};
 };
 
-
 _action = ["Cooldown","Cooldown","\A3\ui_f\data\igui\cfg\simpleTasks\types\wait_ca.paa",{""},{!cvo_jobboard_cooldown}] call ace_interact_menu_fnc_createAction;
 [cvo_jobboard, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToObject;
 
@@ -104,3 +103,11 @@ _action = ["convoy","Convoy","\A3\ui_f\data\igui\cfg\simpleTasks\types\car_ca.pa
 
 _action = ["captureOfficer","Capture Officer","\A3\ui_f\data\igui\cfg\simpleTasks\types\car_ca.paa",{[false, "btc_side_fnc_capture_officier"] remoteExec ["btc_side_fnc_create", 2];	[] spawn cvo_jb_fnc_cooldown;	},{cvo_jobboard_cooldown}] call ace_interact_menu_fnc_createAction;
 [cvo_jobboard, 0, ["ACE_MainActions","AmbushConvoy"], _action] call ace_interact_menu_fnc_addActionToObject;
+
+
+
+
+// Adds Rubbish Removal Mission Request on the engineering Vehicle
+
+_action = ["removeRubbish","Remove Rubbish","\A3\ui_f\data\igui\cfg\simpleTasks\types\danger_ca.paa",{[false, "btc_side_fnc_removeRubbish"] remoteExec ["btc_side_fnc_create", 2];	[] spawn cvo_jb_fnc_cooldown;	},{true}] call ace_interact_menu_fnc_createAction;
+[cvo_engineerVehicleClass, 1, ["ACE_MainActions","CivilianAID"], _action] call ace_interact_menu_fnc_addActionToClass;
