@@ -32,14 +32,14 @@ params [
 	["_spawnloc", objNull]
 ];
 
-/* private _type = "object";
-if (typeName _spawner isEqualTo "STRING") then {_type = "class";}; */
 
+// ### Creates an Array to store all already existing "Menu Nodes" when the Array doesnt exist yet.
 if (isNil "CVO_CSC_array") then {
 	CVO_CSC_array = [];
-	diag_log ("[CVO] [LOGISTICS] (CSC) created CVO_CSC: " + str CVO_CSC);
+	diag_log ("[CVO] [LOGISTICS] (CSC) created CVO_CSC_Array.");
 };
 
+// ### Creates CSC Menu Node if the _spawner does not carries a CSC Menu Node yet.
 if (!(_spawner in CVO_CSC_array)) then {
 	private _root = [
 		"cvo_csc_root",													// Action Name
@@ -71,17 +71,13 @@ if (!(_spawner in CVO_CSC_array)) then {
 };
 
 
-// BTC HAM Check
+// ### Uses the BTC_create_object_point in case of Hearts an Minds
 if (_spawner isEqualTo btc_create_object) then {_spawnloc = btc_create_object_point;} else {_spawnloc = "REL"};			// untested
 
 
-
-
-// Adapts Names for the Ace action
+// ### Adapts Names for the Ace action
 private _actionname = ("CVO_spawnbox_" + str _name);
 private _actionstring = (           "" + str _name);
-
-
 
 
 // ## Creating the ACTION itself. should be universal for OBJ and Class
@@ -94,8 +90,6 @@ private _action = [
 	{},
 	[_BoxType, _spawnloc, _name, _array, _backpacks]
 ] call ace_interact_menu_fnc_createAction;
-
-
 
 
 // ## ATTACHING THE ACTION to class OR OBJECT
