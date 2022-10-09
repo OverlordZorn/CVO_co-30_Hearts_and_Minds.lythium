@@ -20,6 +20,7 @@ diag_log "[CVO] [ACRE] (Acre Unconcious) - Init Start";
 if (!hasInterface) exitWith {};
 
 // Set languages
+["tak", "Takistani"] call acre_api_fnc_babelAddLanguageType;
 ["ru", "Russian"] call acre_api_fnc_babelAddLanguageType;
 ["un", "Unconscious"] call acre_api_fnc_babelAddLanguageType;
 
