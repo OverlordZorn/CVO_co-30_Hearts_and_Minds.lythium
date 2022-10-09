@@ -102,16 +102,16 @@ cc_02 = [	0.98,	0.93,	0.08,		// Brightness	-	Contrast	-	Contrast Offset
 	ppCC ppEffectCommit (2 * cvo_ss_phasetime);
 	diag_log "[CVO] [SandStorm] (ColorC) Enabled - Turning to CC_02 ";
 };
+
 // ColorCorrection EXIT
 [] spawn {
 	waitUntil {sleep 5; !cvo_ss_running};
 	ppCC ppEffectAdjust cc_default;
 	ppCC ppEffectCommit (4 * cvo_ss_phasetime);
 	diag_log "[CVO] [SandStorm] (ColorC) Enabled - Turning to CC_Default";
-	waitUntil {sleep 4 * cvo_ss_phasetime; true};
+	waitUntil {sleep 6 * cvo_ss_phasetime; true};
 	ppEffectDestroy ppCC;
 	diag_log "[CVO] [SandStorm] (ColorC) Disabled";
-
 };
 
 

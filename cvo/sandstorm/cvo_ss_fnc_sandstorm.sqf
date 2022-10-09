@@ -101,7 +101,7 @@ ss_windgusts		= gusts;
 // Simple Weather Control during the Storm
 
 
-(cvo_ss_phasetime * 4) setOvercast ((5 + floor random 5)/10);
+(cvo_ss_phasetime * 4) setOvercast 1;
 [] spawn {
 	(cvo_ss_phasetime * 1) setRain 0;
 	waitUntil {sleep (1 * cvo_ss_phasetime); true};
@@ -109,6 +109,7 @@ ss_windgusts		= gusts;
 	(cvo_ss_phasetime * 7) setRain 0;
 	waitUntil {sleep (7 * cvo_ss_phasetime); true};
 	if (!cvo_ss_running) 	exitWith {};
+	(cvo_ss_phasetime * 4) setOvercast ss_overcast;
 	(cvo_ss_phasetime * 8) setRain ((5 + floor random 5)/10);
 };
 
@@ -206,7 +207,7 @@ ss_windgusts		= gusts;
 
 	//  ######## Execution
 	(4 * cvo_ss_phasetime) setOvercast 		ss_overcast;
-	(4 * cvo_ss_phasetime) setFog 			ss_foglevel;
+	(5 * cvo_ss_phasetime) setFog 			ss_foglevel;
 	(4 * cvo_ss_phasetime) setRain 			ss_rainlevel;
 	(4 * cvo_ss_phasetime) setLightnings 	ss_thundlevel;
 
