@@ -47,7 +47,11 @@ cvo_csc_source_object = btc_create_object;
 		["ACE_HandFlare_White", 10],
 		["rhs_30Rnd_545x39_7N10_AK", 10],
 		["rhs_weap_rsp30_white", 20],
-		["rhs_VG40OP_white", 20]
+		["rhs_VG40OP_white", 20],
+		["ACE_fieldDressing", 20],
+		["ACE_packingBandage", 20],
+		["ACE_elasticBandage", 10]
+
 	],
 	"rhs_7ya37_1_single",
 	[
