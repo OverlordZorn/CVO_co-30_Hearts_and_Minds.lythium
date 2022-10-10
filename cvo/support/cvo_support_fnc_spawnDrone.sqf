@@ -77,7 +77,7 @@ cvo_support_drones set [0, _id];
 _return pushBack _id;
 _return params ["_uav", "_crew", "_group", "_id"];
 
-[_targetSide, "HQ"] sideChat (format ["Be Advised, the UAV has been deployed and is heading towards %1 - HQ OUT", (mapGridPosition _destination)]);
+[[_targetSide, "HQ"], format["Be Advised, the UAV has been deployed and is heading towards %1 - HQ OUT", (mapGridPosition _destination)]] remoteExec ["sidechat"];
 
 if (_removeNV) then {
 	_uav disableNVGEquipment true;
@@ -91,6 +91,8 @@ if (_removeTI) then {
 };
 
 cvo_support_drones pushBack _return;
+publicVariable "cvo_support_drones";
+
 _return spawn {
 	params ["_uav", "_crew", "_group", "_id", "_startPos", "_targetSide", "_travelSide"];
 	waitUntil {sleep 5; not alive _uav};
@@ -99,6 +101,7 @@ _return spawn {
 			_x#3 isEqualTo _id
 			} else {false}
 		});
+	publicVariable "cvo_support_drones";
 	diag_log format ["[CVO] [Support] (spawnDrone) - UAV ID: %1 has been removed from cvo_support_drones", _id];
 };
 
@@ -121,9 +124,7 @@ _targetSideGroup = createGroup [_targetSide, true];
 _crew joinSilent _targetSideGroup;
 _return set [2, _targetSideGroup];
 
-[_targetSide, "HQ"] sideChat (format ["Be Advised, the UAV has reached the Target Area - Control Transfered - HQ OUT", (mapGridPosition _destination)]);
-
-
+[[_targetSide, "HQ"], format["Be Advised, the UAV has reached the Target Area - Control Transfered - HQ OUT", (mapGridPosition _destination)]] remoteExec ["sidechat"];
 
 _wpLoiter = _targetSideGroup addWaypoint [_destination, 200];
 
@@ -145,12 +146,12 @@ _return spawn {
 		sleep 15;
 
 		if ((fuel _uav) < 0.5) then {
-			[_targetSide, "HQ"] sideChat "Be Advised, the UAV is running out of fuel and returning to base. - HQ OUT";
+			[[_targetSide, "HQ"],"Be Advised, the UAV is running out of fuel and returning to base. - HQ OUT"] remoteExec ["sidechat"];
 			_active = false;
 		};
 
 		if (selectMax (getAllHitPointsDamage _uav # 2 ) > 0.5) then {
-			[_targetSide, "HQ"] sideChat "Be Advised, the UAV has been damaged. Deployment aborted. - HQ OUT";
+			[[_targetSide, "HQ"], "Be Advised, the UAV has been damaged. Deployment aborted. - HQ OUT"] remoteExec ["sidechat"];
 			_active = false;
 		};
 
