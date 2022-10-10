@@ -49,6 +49,9 @@ execVM "cvo\misc\JND_debugv2.sqf";
 // Init Players Job Board
 execVM "cvo\misc\cvo_jobboard.sqf";
 
+// Init Support Drones
+execVM "cvo\support\cvo_support_init.sqf";
+
 diag_log ("[CVO] [INIT] (cvo_init.sqf) - END");
 
  
