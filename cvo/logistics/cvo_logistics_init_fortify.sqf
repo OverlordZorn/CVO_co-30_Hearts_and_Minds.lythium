@@ -72,10 +72,10 @@ private _code = {
 _cvo_Fort_refillVehicle = [
 	"CVO_Fort_refillVehicle",				// Action Name
 	"Replenish the Building Supplies",		// Name for the ACE Interaction Menu
-	"",										// Statement - i have no fucking clue what that is supposed to mean
+	"\A3\ui_f\data\igui\cfg\simpleTasks\types\refuel_ca.paa",										
 	_code,									// the code you're executing
 	{
-		(1 >= cvo_engineerVehicleClass countType (cvo_refillObject nearEntities ["Tank",25])) && ([west] call ace_fortify_fnc_getBudget < cvo_maxBudget);
+		(1 >= (cvo_engineerVehicleClass countType (cvo_refillObject nearEntities ["Tank",25]))) && ([west] call ace_fortify_fnc_getBudget < cvo_maxBudget);
 	}										// Condition for action to be shown:
 ] call ace_interact_menu_fnc_createAction;
 
@@ -92,6 +92,12 @@ _cvo_Fort_refillVehicle = [
 
 // ################################################
 // 4. Change Presets to have several short lists instead of 1 long.
+
+// Initial Node
+
+_action = ["CVO_Fort_Node","Change Fortify Blueprints","\A3\ui_f\data\igui\cfg\simpleTasks\types\box_ca.paa",{""},{true}] call ace_interact_menu_fnc_createAction;
+[cvo_engineerVehicleClass, 0, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToClass;
+
 
 // -> HBarrier Preset 
 private _code_p1 = {
@@ -124,7 +130,7 @@ private _code_p1 = {
 _cvo_Fort_preset1 = [
 	"CVO_Fort_preset1",						// Action Name
 	"Get Sandbag Blueprints",				// Name for the ACE Interaction Menu
-	"",										// Statement - i have no fucking clue what that is supposed to mean
+	"\A3\ui_f\data\igui\cfg\simpleTasks\types\documents_ca.paa",										// Statement - i have no fucking clue what that is supposed to mean
 	_code_p1,									// the code you're executing
 	{true}										// Condition for action to be shown:
 ] call ace_interact_menu_fnc_createAction;
@@ -161,7 +167,7 @@ private _code_p2 = {
 _cvo_Fort_preset2 = [
 	"CVO_Fort_preset2",						// Action Name
 	"Get Sand Back Blueprints",				// Name for the ACE Interaction Menu
-	"",										// Statement - i have no fucking clue what that is supposed to mean
+	"\A3\ui_f\data\igui\cfg\simpleTasks\types\documents_ca.paa",										// Statement - i have no fucking clue what that is supposed to mean
 	_code_p2,									// the code you're executing
 	{true}										// Condition for action to be shown:
 ] call ace_interact_menu_fnc_createAction;
@@ -207,7 +213,7 @@ private _code_p3 = {
 _cvo_Fort_preset3 = [
 	"CVO_Fort_preset3",						// Action Name
 	"Get Concrete and Other Blueprints",	// Name for the ACE Interaction Menu
-	"",										// Statement - i have no fucking clue what that is supposed to mean
+	"\A3\ui_f\data\igui\cfg\simpleTasks\types\documents_ca.paa",										// Statement - i have no fucking clue what that is supposed to mean
 	_code_p3,									// the code you're executing
 	{true}										// Condition for action to be shown:
 ] call ace_interact_menu_fnc_createAction;
@@ -219,7 +225,7 @@ _cvo_Fort_preset3 = [
 {[
 	cvo_engineerVehicleClass,						// Object the action should be assigned to
 	0,												// Type of action, 0 for action, 1 for self-actionIDs
-	["ACE_MainActions"],							// Parent path of the new action <Array>
+	["ACE_MainActions","CVO_Fort_Node"],			// Parent path of the new action <Array>
 	_x												// The Ace_action to be attached
 ] call ace_interact_menu_fnc_addActionToClass;		// Alternative: ace_interact_menu_fnc_addActionToObject 
 } forEach [_cvo_Fort_preset1,_cvo_Fort_preset2,_cvo_Fort_preset3];
