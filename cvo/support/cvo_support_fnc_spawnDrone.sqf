@@ -171,7 +171,8 @@ _return spawn {
 	sleep 5;
 	_wp1 = _exitGroup addWaypoint [_startPos, 10];
 	_wp1 setWaypointSpeed "FULL";
-	waitUntil {Sleep 5; (_uav distance2D _startPos) < 500};
+	_timeout = (serverTime + 600);
+	waitUntil {Sleep 5; ((_uav distance2D _startPos) < 500) OR (serverTime > _timeout)};
 	sleep 30;
 	deleteVehicleCrew _uav; deleteVehicle _uav;
 };
