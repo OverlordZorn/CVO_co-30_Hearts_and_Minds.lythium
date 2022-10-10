@@ -110,4 +110,4 @@ _action = ["captureOfficer","Capture Officer","\A3\ui_f\data\igui\cfg\simpleTask
 // Adds Rubbish Removal Mission Request on the engineering Vehicle
 
 _action = ["removeRubbish","Remove Rubbish","\A3\ui_f\data\igui\cfg\simpleTasks\types\danger_ca.paa",{[false, "btc_side_fnc_removeRubbish"] remoteExec ["btc_side_fnc_create", 2];	[] spawn cvo_jb_fnc_cooldown;	},{true}] call ace_interact_menu_fnc_createAction;
-[cvo_engineerVehicleClass, 1, ["ACE_MainActions","CivilianAID"], _action] call ace_interact_menu_fnc_addActionToClass;
+[cvo_engineerVehicleClass, 1, ["ACE_MainActions"], _action] call ace_interact_menu_fnc_addActionToClass;
