@@ -468,7 +468,8 @@ CVO_A_Medic = [
     "ACE_bloodIV",
 	"ACE_bloodIV_500",
 	"ACE_bloodIV_250",
-    "ACE_surgicalKit"];
+    "ACE_surgicalKit",
+	"ACE_suture"];
 
 CVO_A_MG = [
 	"ACE_SpareBarrel_Item",

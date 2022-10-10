@@ -7,7 +7,8 @@ private _medicalTab = [
 	"ACE_salineIV", "ACE_salineIV_500","ACE_salineIV_250",
 	"ACE_plasmaIV","ACE_plasmaIV_500","ACE_plasmaIV_250",
     "ACE_bloodIV","ACE_bloodIV_500","ACE_bloodIV_250",
-    "ACE_surgicalKit","ACE_personalAidKit","ACE_bodyBag"
+    "ACE_personalAidKit","ACE_bodyBag",
+	"ACE_surgicalKit","ACE_suture"
 ];
 [_medicalTab, "Medical", getMissionPath "\cvo\img\whiteCrystal.paa"] call ace_arsenal_fnc_addRightPanelButton;
 diag_log "[CVO] [ARSENAL] - Medical Tab Applied";
