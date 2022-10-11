@@ -22,9 +22,6 @@ cvo_ss_fnc_scheduler 			= compileScript	["cvo\sandstorm\cvo_ss_fnc_scheduler.sqf
 cvo_ss_phase = 0;
 cvo_ss_remaining = 0;
 
-// Why is this not starting shit? 
-
-
 // # NODE
 
 _action = ["cvo_ss_zeus_node","CVO SANDSTORM","\A3\ui_f\data\igui\cfg\simpleTasks\types\talk_ca.paa",{},{isNil "cvo_ss_running" || {!cvo_ss_running} }] call ace_interact_menu_fnc_createAction;
