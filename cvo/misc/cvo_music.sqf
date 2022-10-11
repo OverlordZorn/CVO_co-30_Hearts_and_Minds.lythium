@@ -8,26 +8,39 @@
  * None
  *
  * Example:
+ * ["INITZEUS"] call cvo_fnc_music;
  * ["leaveBase"] call cvo_fnc_music;
  *
  * Public: i guess so?
 */
 
 
-params [
-	["_playlist", "", [""]]
-	];
+params [	["_playlist", "", [""]]];
 
 
 if (_playlist == "") exitWith {diag_log "[CVO] [MUSIC] - no playlist defined"};
+if (_playlist isEqualTo "INITZEUS") exitWith {
 
-diag_log ("[CVO] [MUSIC] - playlist: "+ str _playlist);
+	_action = ["cvo_music_zeus_node","CVO Music","\A3\ui_f\data\igui\cfg\simpleTasks\types\m_ca.paa",{},{true}] call ace_interact_menu_fnc_createAction;
+	[["ACE_ZeusActions"], _action] call ace_interact_menu_fnc_addActionToZeus;
+
+	_action = ["cvo_music_zeus_playlists","Playlists","\A3\ui_f\data\igui\cfg\simpleTasks\types\documents_ca.paa",{},{true}] call ace_interact_menu_fnc_createAction;
+	[["ACE_ZeusActions","cvo_music_zeus_node"], _action] call ace_interact_menu_fnc_addActionToZeus;
+
+	_action = ["cvo_music_zeus_pl_leaveBase","Leave Base","\A3\ui_f\data\igui\cfg\simpleTasks\types\takeoff_ca.paa",{["leaveBase"] call cvo_fnc_music},{true}] call ace_interact_menu_fnc_createAction;
+	[["ACE_ZeusActions","cvo_music_zeus_node","cvo_music_zeus_playlists"], _action] call ace_interact_menu_fnc_addActionToZeus;
+
+	diag_log ("[CVO] [MUSIC] - Zeus Actions Established");
+};
+
+
+diag_log format ["[CVO] [MUSIC] - playlist: %1", _playlist];
 
 private _song;
 private _selection;
 
 _selection = switch (_playlist) do {
-	case "leavebase": {
+	case "leaveBase": {
 		[	
 			"papers",
 			"CVO1",
@@ -69,8 +82,10 @@ _selection = switch (_playlist) do {
 		];
 	};
 }; 
+diag_log format ["[CVO] [MUSIC] - Selection: %1.",_selection];
 
 _song = _selection call BIS_fnc_selectRandom;
-diag_log ("[CVO] [MUSIC] - song: "+ str _song);
+
+
 _song remoteExec ["playMusic", -2, false]; 
-diag_log ("[CVO] [MUSIC] - playing.");
+diag_log format ["[CVO] [MUSIC] - playing song: %1.",_song];
