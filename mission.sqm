@@ -16,18 +16,18 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=3185;
+		nextID=3213;
 	};
 	class Camera
 	{
-		pos[]={12283.419,391.52133,17306.791};
-		dir[]={-0.77717614,-0.62121892,-0.10062315};
-		up[]={-0.61608577,0.78363222,-0.079766184};
-		aside[]={-0.12840518,-2.4872497e-007,0.99174654};
+		pos[]={11191.854,358.43262,2795.0879};
+		dir[]={0.04224829,-0.4871448,0.87229884};
+		up[]={0.023566397,0.87332118,0.48657447};
+		aside[]={0.99882931,0,-0.048376575};
 	};
 };
 binarizationWanted=0;
-sourceName="CVO_co@30_Hearts_and_Minds";
+sourceName="cvo_co@30_hearts_and_minds";
 addons[]=
 {
 	"A3_Modules_F",
@@ -48432,7 +48432,7 @@ class Mission
 			class Attributes
 			{
 				text="1. playMusic emptyBase 1-5min";
-				onActivation="[""leavebase""] call cvo_fnc_music;";
+				onActivation="[""leaveBase""] call cvo_fnc_music;";
 				sizeA=250;
 				sizeB=250;
 				timeout[]={60,120,300};
@@ -49330,7 +49330,7 @@ class Mission
 			class Attributes
 			{
 				text="2. playMusic emptyBase 15-30min";
-				onActivation="[""leavebase""] call cvo_fnc_music;";
+				onActivation="[""leaveBase""] call cvo_fnc_music;";
 				sizeA=250;
 				sizeB=250;
 				timeout[]={900,1500,1800};
