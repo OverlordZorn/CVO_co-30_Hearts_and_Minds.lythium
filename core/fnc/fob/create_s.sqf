@@ -40,7 +40,7 @@ private _structure = createVehicle [_fob_structure, _pos, [], 0, "CAN_COLLIDE"];
 
 _structure setDir _direction;
 
-_flag setObjectTextureGlobal [0,(getMissionPath "\cvo\img\cvo_whiteboard.paa")];
+_flag setObjectTextureGlobal [0,(getMissionPath "\cvo\img\CVO_MapBoard_Default_CO.paa")];
 _flag setMass 0.001;
 
 private _marker = createMarker [_FOB_name, _pos];
@@ -56,5 +56,7 @@ _marker setMarkerShape "ICON";
 [_flag, "Deleted", {[_thisArgs select 0, _thisArgs select 1] call BIS_fnc_removeRespawnPosition}, [btc_player_side, _flag, _FOB_name] call BIS_fnc_addRespawnPosition] call CBA_fnc_addBISEventHandler;
 
 _structure addEventHandler ["Killed", btc_fob_fnc_killed];
+
+publicVariable "btc_fobs";
 
 [_marker, _structure, _flag]
