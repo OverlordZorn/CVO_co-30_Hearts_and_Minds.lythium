@@ -201,7 +201,8 @@ private _code_p3 = {
 					["CamoNet_BLUFOR_big_F", 50],
 					["Land_Plank_01_8m_F", 10],
 					["Land_Plank_01_4m_F",10],
-					["Land_HelipadSquare_F",10]
+					["Land_HelipadSquare_F",10],
+					["Land_Net_Fence_Gate_F", 25]
 				]] remoteExec  ["ace_fortify_fnc_registerObjects", 2];
 			}								// codeblock to be executed on completion
 		] call CBA_fnc_progressBar;			// Executing a CBA progressBar from an Ace Interaction results in crash. Delay execution by 1 frame!!!
