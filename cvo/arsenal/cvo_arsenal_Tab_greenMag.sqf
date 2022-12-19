@@ -198,6 +198,8 @@ private _greenTab = [
 "greenmag_ammo_9x39_basic_30Rnd",
 "greenmag_ammo_9x39_basic_60Rnd",
 
+"CVO_greenmag_ammo_9x39_basic_60Rnd",
+
 "greenmag_item_speedloader"];
 
 [_greenTab, "greenMag", getMissionPath "\cvo\img\greenMag.paa"] call ace_arsenal_fnc_addRightPanelButton;
