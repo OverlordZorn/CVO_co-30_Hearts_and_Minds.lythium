@@ -38,7 +38,7 @@ private _array = [
     ['\A3\ui_f\data\igui\cfg\simpleTasks\types\whiteboard_ca.paa',  _color, _gear_object_pos, 1.1, 1.1, 0, localize "STR_BTC_HAM_INTRO_REDEPLOY", 1],                                          //Re-deploy
     ['\A3\ui_f\data\igui\cfg\simpleTasks\types\whiteboard_ca.paa',  _color, cvo_jobboard, 1.1, 1.1, 0, "Job Board", 1],                                                                        //Job Board
     ['\A3\ui_f\data\igui\cfg\simpleTasks\types\rifle_ca.paa',       _color, getPos CVO_Arsenal_0, 1.1, 1.1, 0, localize "STR_BTC_HAM_INTRO_ARSENAL", 1],                                       //Arsenal
-    ['\A3\ui_f\data\igui\cfg\actions\heal_ca.paa',                  _color, getPos cvo_spawn_heal, 1.1, 1.1, 0, "Full Heal", 1],                                                               //Heal
+//    ['\A3\ui_f\data\igui\cfg\actions\heal_ca.paa',                  _color, getPos cvo_spawn_heal, 1.1, 1.1, 0, "Full Heal", 1],                                                               //Heal - throws error?
     //['\A3\Ui_f\data\Logos\a_64_ca.paa', _color, [_gear_object_pos_x, _gear_object_pos_y, _gear_object_pos_z + 2], 1.1, 1.1, 0, "", 1],
     //['\A3\ui_f\data\map\vehicleicons\iconCar_ca.paa', _color, [_create_object_pos_x, _create_object_pos_y, _create_object_pos_z + 5], 0.9, 0.9, 90, "", 1],
     ['\A3\ui_f\data\igui\cfg\simpleTasks\types\repair_ca.paa', _color, [_create_object_pos_x, _create_object_pos_y, _create_object_pos_z + 2.5], 0.9, 0.9, 0, "", 1],
@@ -60,4 +60,3 @@ private _days = (_date vectorDiff _startingDate) vectorDotProduct [365, 30.5, 1]
 ] call BIS_fnc_establishingShot;
 
 enableSaving [false, false];
-
