@@ -14,7 +14,8 @@ _greenMag_Basic_items = [
 	"greenmag_ammo_765x17_basic_60Rnd",
 
    	"greenmag_ammo_9x19_basic_30Rnd",
-	"greenmag_ammo_9x19_basic_60Rnd"
+	"greenmag_ammo_9x19_basic_60Rnd",
+	"CVO_greenmag_ammo_9x39_basic_60Rnd"
 ];
 
 _greenMag_A_MG = [
