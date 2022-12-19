@@ -9,7 +9,8 @@ if (cvo_ss_running) exitWith 	{diag_log "[CVO] [Sandstorm] (Start) - Exit: Dusts
 
 params [
 	["_duration", 30, [0]],
-	["_direction", windDir, [0]]
+	["_direction", windDir, [0]],
+	["_intensity", 1, [0]]
 ];
 
 
