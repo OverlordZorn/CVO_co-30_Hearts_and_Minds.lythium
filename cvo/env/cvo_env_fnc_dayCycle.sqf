@@ -30,18 +30,16 @@ waitUntil {sleep 5; time > 0 };
 
 diag_log "[CVO] [ENV] (dayCycle) - Start";
 
-
 params [
-	["_multiDay", 5],
-	["_multiNight", 25],
-	["_multiSunriseSunSet", 1],
-	["_offset", 0.5],
-	["_modes", [""]]
+	["_multiDay", 5, [0]],
+	["_multiNight", 25, [0]],
+	["_multiSunriseSunSet", 1, [0]],
+	["_offset", 0.75, [0]],
+	["_modes", [""], [""]]
 ]; 
 
 // Limit timeMultiplier range 0.1 - 120
 {	_x = 0.1 max (_x min 120);} forEach [_multiDay, _multiNight];
-
 
 
 /* // Modes of Operation
@@ -57,28 +55,27 @@ if (!(count _modes == 1 && _modes select 0 == "")) then {
 
 if (isNil "cvo_env_dayCycle") then {cvo_env_dayCycle = ""; publicVariable "cvo_env_dayCycle";};
 
-private _sunriseSunset = date call BIS_fnc_sunriseSunsetTime; 
-private _sunrise = (_sunriseSunset select 0);
-private _sunriseStart = _sunrise - _offset;
-private _sunriseEnd = _sunrise + _offset;
+(date call BIS_fnc_sunriseSunsetTime) params ["_sunrise", "_sunset"];
 
-private _sunset = (_sunriseSunset select 1); 
-private _sunsetStart = _sunset - _offset;
-private _sunsetEnd = _sunset + _offset;
+private ["_sunriseStart", "_sunriseEnd", "_sunsetStart", "_sunsetEnd", "_isNight", "_isDay", "_isSunset"];
+_sunriseStart = _sunrise - _offset;
+_sunriseEnd = _sunrise + _offset;
+
+_sunsetStart = _sunset - _offset;
+_sunsetEnd = _sunset + _offset;
 
 // Define and Detect Phases
-private _isNight = daytime >= _sunsetEnd;
-private _isDay = _sunriseStart < daytime && daytime < _sunsetEnd;
-
-private _isSunset = daytime > _sunsetStart && daytime < _sunsetEnd;
+_isNight = daytime >= _sunsetEnd;
+_isDay = _sunriseStart < daytime && daytime < _sunsetEnd;
+_isSunset = daytime > _sunsetStart && daytime < _sunsetEnd;
 
 cvo_env_dayCycle_rl_day_duration = round ( (24 - _sunsetEnd + _sunriseStart ) / _multiNight * 60) + round ( (_sunriseEnd - _sunriseStart ) / _multiSunriseSunSet * 60) + round ( (_sunsetStart - _sunriseEnd ) / _multiDay * 60) + round ( (_sunsetEnd - _sunsetStart ) / _multiSunriseSunSet * 60 );
 
 diag_log ("[CVO] [ENV] (dayCycle) - CurrentTime: " + str daytime );
-diag_log ("[CVO] [ENV] (dayCycle) -   NightTime: " + str _sunsetEnd + 	" --0--> " + str _sunriseStart + 	" Realtime Duration: " + str round ( (24 - _sunsetEnd + _sunriseStart ) / _multiNight * 60)+ " min.");
-diag_log ("[CVO] [ENV] (dayCycle) -     Sunrise: " + str _sunriseStart + " -----> " + str _sunriseEnd + 	" Realtime Duration: " + str round ( (_sunriseEnd - _sunriseStart ) / _multiSunriseSunSet * 60)+ " min.");
-diag_log ("[CVO] [ENV] (dayCycle) -     DayTime: " + str _sunriseEnd + 	" -----> " + str _sunsetStart + 	" Realtime Duration: " + str round ( (_sunsetStart - _sunriseEnd ) / _multiDay * 60)+ " min.");
-diag_log ("[CVO] [ENV] (dayCycle) -      Sunset: " + str _sunsetStart +	" -----> " + str _sunsetEnd + 		" Realtime Duration: " + str round ( (_sunsetEnd - _sunsetStart ) / _multiSunriseSunSet * 60 )+ " min.");
+diag_log ("[CVO] [ENV] (dayCycle) -   NightTime: " + (_sunsetEnd 	toFixed 2 )+ " --0--> " 	+( _sunriseStart  toFixed 2) +	" Realtime Duration: " + str round ( (24 - _sunsetEnd + _sunriseStart ) / _multiNight * 60)+ " min.");
+diag_log ("[CVO] [ENV] (dayCycle) -     Sunrise: " + (_sunriseStart  toFixed 2 ) + " -----> " 	+( _sunriseEnd  	toFixed 2) +	" Realtime Duration: " + str round ( (_sunriseEnd - _sunriseStart ) / _multiSunriseSunSet * 60)+ " min.");
+diag_log ("[CVO] [ENV] (dayCycle) -     DayTime: " + (_sunriseEnd  	toFixed 2) + " -----> " 	+( _sunsetStart  	toFixed 2) +	" Realtime Duration: " + str round ( (_sunsetStart - _sunriseEnd ) / _multiDay * 60)+ " min.");
+diag_log ("[CVO] [ENV] (dayCycle) -      Sunset: " + (_sunsetStart 	toFixed 2) + " -----> " 	+( _sunsetEnd  	toFixed 2) +	" Realtime Duration: " + str round ( (_sunsetEnd - _sunsetStart ) / _multiSunriseSunSet * 60 )+ " min.");
 diag_log ("[CVO] [ENV] (dayCycle) -      Daytime Duration in Reallife Time: " + str cvo_env_dayCycle_rl_day_duration);
 
 // NightTime Past Midnight

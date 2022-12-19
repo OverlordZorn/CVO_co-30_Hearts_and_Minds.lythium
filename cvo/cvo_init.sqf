@@ -55,6 +55,13 @@ execVM "cvo\misc\cvo_jobboard.sqf";
 // Init Support Drones
 execVM "cvo\support\cvo_support_init.sqf";
 
+// Init Map Module
+execVM "cvo\map\cvo_map_init.sqf";
+
+// Init Fast Travel for Vehicles
+execVM "cvo\FTVic\cvo_FTVic_init.sqf";
+
+
 diag_log ("[CVO] [INIT] (cvo_init.sqf) - END");
 
  
