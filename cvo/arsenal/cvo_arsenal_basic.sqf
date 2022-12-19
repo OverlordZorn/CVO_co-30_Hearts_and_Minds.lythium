@@ -18,7 +18,7 @@ private _CVO_A_Basic_Medical = [
 	"ACE_bodyBag"
 ];
 
-private _CVO_A_Basic_RespawnTent = [
+ private _CVO_A_Basic_RespawnTent = [
 	"B_Respawn_TentA_F",
 	"B_Respawn_Sleeping_bag_F",
 	"B_Patrol_Respawn_bag_F",
@@ -196,6 +196,7 @@ private _CVO_A_Basic_Tools = [
 	"ACE_CableTie",
 	"ACE_Chemlight_Shield",
 	"acex_intelitems_notepad",
+	"ACE_Flashlight_KSF1",
 
 	"ACE_WaterBottle"
 ];
@@ -354,6 +355,24 @@ private _CVO_A_Basic_enhanced_basic = [
 ];
 
 
+private _CVO_A_Basic_suppressed = [
+	"rhs_weap_asval",
+	"rhs_weap_asval_grip",
+	"rhs_acc_perst3_2dp_light_h",
+	"rhs_acc_perst3_2dp_h",
+	"rhs_20rnd_9x39mm_SP6",
+	"rhs_20rnd_9x39mm_SP5",
+	"rhs_10rnd_9x39mm_SP6",
+	"rhs_10rnd_9x39mm_SP5",
+	"CVO_greenmag_ammo_9x39_basic_60Rnd"
+];
+
+private _CVO_A_Basic_suppressors = [
+"rhs_acc_tgpv",
+"rhs_acc_dtk4long",
+"rhs_acc_dtk4short"
+];
+
 
 
 CVO_A_Basic = [];
@@ -362,7 +381,7 @@ CVO_A_Basic append _CVO_A_Basic_Radios;
 CVO_A_Basic append _CVO_A_Basic_Uniforms; 
 CVO_A_Basic append _CVO_A_Basic_Vests; 
 CVO_A_Basic append _CVO_A_Basic_Backpacks;
-CVO_A_Basic append _CVO_A_Basic_RespawnTent;
+// CVO_A_Basic append _CVO_A_Basic_RespawnTent;
 
 CVO_A_Basic append _CVO_A_Basic_Helmets;
 CVO_A_Basic append _CVO_A_Basic_Face;
@@ -376,28 +395,10 @@ CVO_A_Basic append _CVO_A_Basic_Rifles;
 CVO_A_Basic append _CVO_A_Basic_Pistols;
 CVO_A_Basic append _CVO_A_Basic_attachments;
 CVO_A_Basic append _CVO_A_Basic_enhanced_basic;
-
-/*
-### lategame
-# Basic:
-rhs_weap_asval
-rhs_weap_asval_grip
-rhs_acc_perst3_2dp_light_h
-rhs_acc_perst3_2dp_h
-
-# Sniper
-rhs_weap_vss
-rhs_weap_vss_grip
-rhs_acc_pso1m21
-
-# AR
-rhs_weap_pkp
-rhs_100Rnd_762x54mmR_7BZ3
-rhs_100Rnd_762x54mmR_7N26
-rhs_100Rnd_762x54mmR_7BZ3
+CVO_A_Basic append _CVO_A_Basic_suppressed;
+CVO_A_Basic append _CVO_A_Basic_suppressors;
 
 
-*/
 
 /*
 private _CVO_A_Basic_csw = [
@@ -551,19 +552,34 @@ CVO_A_Rifleman = [
 	"tsp_paperclip"
 ];
 
+CVO_A_Marksman_late = [
+"rhs_weap_vss",
+"rhs_weap_vss_grip",
+"rhs_acc_pso1m21"
+];
+
+CVO_A_MG_late = [
+"rhs_weap_pkp",
+"rhs_100Rnd_762x54mmR_7BZ3",
+"rhs_100Rnd_762x54mmR_7N26",
+"rhs_100Rnd_762x54mmR_7BZ3"
+];
+
+
+CVO_A_Marksman append CVO_A_Marksman_late;
+CVO_A_MG append CVO_A_MG_late;
+
 
 _modLoaded = isClass (configfile >> "CfgPatches" >> "greenmag_main");
 if (_modLoaded) then {[compileScript ["cvo\arsenal\cvo_arsenal_mod_greenmag.sqf"]] call CBA_fnc_directCall;};
 
-
-
 {
-	[_x, false, false] call ace_arsenal_fnc_initBox;					// Initialises ACE Arsenal on boxes
-	[_x, CVO_A_Basic, false] call ace_arsenal_fnc_addVirtualItems;		// Adds the basic list to the arsenal
+	[_x, false, false] 			call ace_arsenal_fnc_initBox;				// Initialises ACE Arsenal on boxes
+	[_x, CVO_A_Basic, false] 	call ace_arsenal_fnc_addVirtualItems;		// Adds the basic list to the arsenal
 
-	[_x, false] call ace_dragging_fnc_setDraggable;						// Disables Dragging
-	[_x, false] call ace_dragging_fnc_setCarryable;						// Disables Carrying
-	[_x, -1] call ace_cargo_fnc_setSize;								// Disables Ace Cargo Loading
-	_x setVariable ["ace_cargo_noRename", true];						// Disables Ace Cargo Renaming
+	[_x, false] 				call ace_dragging_fnc_setDraggable;			// Disables Dragging
+	[_x, false] 				call ace_dragging_fnc_setCarryable;			// Disables Carrying
+	[_x, -1] 					call ace_cargo_fnc_setSize;					// Disables Ace Cargo Loading
+	_x setVariable ["ace_cargo_noRename", true];							// Disables Ace Cargo Renaming
 } forEach CVO_arsenal_array;
 
