@@ -1,6 +1,6 @@
 /* WIP
- * Author: Zorn, Targetingsnake
- * Adds Ace Action to spawn an AmmoCrate and fills it with a custom Array.
+ * Author: Zorn
+ * spawn an AmmoCrate and fills it with a custom Array.
  *
  * Arguments:
  * 0: Target supplySpawner, where the ace action should be added <OBJECT> or <CLASS as STRING>

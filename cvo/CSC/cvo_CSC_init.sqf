@@ -26,7 +26,13 @@ _cvo_csc_source = "UK3CB_KDF_O_Gaz66_Ammo";
 	[
 		["rhs_10Rnd_762x54mmR_7N1", 30],
 		["rhs_30Rnd_545x39_7N10_AK", 30],
-		["rhs_100Rnd_762x54mmR_green", 6]
+		["rhs_100Rnd_762x54mmR_green", 6],
+		["greenmag_beltlinked_762x54_basic_100",10],
+		["greenmag_ammo_762x54_basic_60Rnd",10],
+		["greenmag_ammo_762x39_basic_60Rnd",20],
+		["greenmag_ammo_545x39_basic_60Rnd",5],
+		["greenmag_item_speedloader",5]
+		
 	],
 	"rhs_3Ya40_1_single"
 ] call cvo_CSC_fnc_addCSC;
@@ -101,8 +107,10 @@ _cvo_csc_source = "UK3CB_KDF_O_Gaz66_Ammo";
 	"PKM Package",
 	[
 		["rhs_weap_pkm",1],
-		["rhs_100Rnd_762x54mmR", 10],
-		["rhs_100Rnd_762x54mmR_green", 10]
+		["rhs_100Rnd_762x54mmR", 5],
+		["rhs_100Rnd_762x54mmR_green", 5],
+		["greenmag_beltlinked_762x54_basic_100",20],
+		["greenmag_item_speedloader",1]
 	],
 	"rhs_7ya37_1_single"
 ] call cvo_CSC_fnc_addCSC;
@@ -127,7 +135,8 @@ _cvo_csc_source = "UK3CB_KDF_O_Gaz66_Ammo";
 	"CBRN Package",
 	[
 		["U_C_CBRN_Suit_01_Blue_F", 4],
-		["G_RegulatorMask_F", 4]
+		["G_RegulatorMask_F", 4],
+		["ChemicalDetector_01_watch_F", 2]
 	],
 	"Land_PlasticCase_01_large_CBRN_F",									
 	[
