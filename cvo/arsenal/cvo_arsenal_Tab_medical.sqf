@@ -12,3 +12,9 @@ private _medicalTab = [
 ];
 [_medicalTab, "Medical", getMissionPath "\cvo\img\whiteCrystal.paa"] call ace_arsenal_fnc_addRightPanelButton;
 diag_log "[CVO] [ARSENAL] - Medical Tab Applied";
+
+
+/*
+Alternative with built-in graphic:
+[_medicalTab, "Medical", "\A3\ui_f\data\igui\cfg\actions\heal_ca.paa"] call ace_arsenal_fnc_addRightPanelButton;
+*/
